@@ -21,9 +21,9 @@ export function BansosIndicatorCard({ indicator }: BansosIndicatorCardProps) {
         <div className="flex flex-col gap-6">
           <div className="flex items-center gap-3.5">
             <div className="w-12 h-12 p-3 bg-white/10 rounded-xl shadow-inner backdrop-blur-md flex items-center justify-center">
-              <Icon size={24} className="text-white" />
+              <Icon size={24} className="text-[#FFC400]" />
             </div>
-            <h3 className="text-xl font-bold leading-tight max-w-[140px]" style={{ fontFamily: 'var(--font-timeless)' }}>
+            <h3 className="text-xl font-bold leading-tight max-w-[140px] font-timeless">
               {indicator.label}
             </h3>
           </div>
@@ -33,8 +33,7 @@ export function BansosIndicatorCard({ indicator }: BansosIndicatorCardProps) {
         </div>
         <div className="flex items-center justify-center">
           <span 
-            className="text-6xl font-normal leading-none" 
-            style={{ fontFamily: 'var(--font-upakarti)' }}
+            className="text-6xl font-normal leading-none font-timeless" 
           >
             {indicator.value}
           </span>

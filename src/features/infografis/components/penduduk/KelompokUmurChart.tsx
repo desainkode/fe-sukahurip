@@ -37,7 +37,7 @@ export function KelompokUmurChart({
   const chartConfig = {
     total: {
       label: "Jumlah",
-      color: "#F0B100",
+      color: "#FFC400",
     },
   } satisfies ChartConfig;
 
@@ -51,13 +51,13 @@ export function KelompokUmurChart({
           <Icon size={24} strokeWidth={2.2} className="relative z-10" />
         </div>
 
-        <h3 className="whitespace-pre-line font-[Georgia,serif] text-[31px] font-bold leading-[1.05] text-[#0B0D10] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1">
+        <h3 className="whitespace-pre-line font-timeless text-[31px] font-bold leading-[1.05] text-[#000418] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1">
           {title}
         </h3>
       </div>
 
-      <div className="relative overflow-hidden rounded-[20px] bg-linear-to-b from-[#FFFFFF] to-[#0B281F] p-4 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1 group-hover:shadow-[0_18px_34px_rgba(0,0,0,0.16)] sm:p-5 md:p-6">
-        <div className="absolute inset-5 rounded-2xl border border-white/10 bg-linear-to-b from-white/20 via-white/12 to-[#0B281F]/18 backdrop-blur-[2px]" />
+      <div className="relative overflow-hidden rounded-[20px] bg-linear-to-b from-[#FFFFFF] to-[#000418] p-4 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1 group-hover:shadow-[0_18px_34px_rgba(0,0,0,0.16)] sm:p-5 md:p-6">
+        <div className="absolute inset-5 rounded-2xl border border-white/10 bg-linear-to-b from-white/20 via-white/12 to-[#000418]/18 backdrop-blur-[2px]" />
 
         <div className="relative z-10">
           <ChartContainer
@@ -74,9 +74,9 @@ export function KelompokUmurChart({
             >
               <defs>
                 <linearGradient id={`${gradientKey}-total`} x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#009966" />
-                  <stop offset="56%" stopColor="#8EA95A" />
-                  <stop offset="100%" stopColor="#F0B100" />
+                  <stop offset="0%" stopColor="#072ac8" />
+                  <stop offset="56%" stopColor="#5666AD" />
+                  <stop offset="100%" stopColor="#FFC400" />
                 </linearGradient>
               </defs>
               <CartesianGrid horizontal={false} vertical={false} />
@@ -91,7 +91,7 @@ export function KelompokUmurChart({
                   fill: "#000000",
                   fontSize: 16,
                   fontWeight: 700,
-                  fontFamily: "Georgia, serif",
+                  className: "font-timeless",
                 }}
               />
               <XAxis

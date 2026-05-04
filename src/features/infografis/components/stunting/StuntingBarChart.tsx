@@ -18,7 +18,7 @@ interface StuntingBarChartProps {
 
 export function StuntingBarChart({ data }: StuntingBarChartProps) {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-linear-to-b from-[#0B281F] via-[#1a3a2f] to-[#0B281F] p-8 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+    <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-linear-to-b from-[#000418] via-[#181F3C] to-[#000418] p-8 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
       {/* Spotlight Effect */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,255,255,0.08)_0%,_transparent_60%)] pointer-events-none" />
       
@@ -27,9 +27,9 @@ export function StuntingBarChart({ data }: StuntingBarChartProps) {
           <BarChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 20 }}>
             <defs>
               <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#F0B100" />
-                <stop offset="40%" stopColor="#D49C00" />
-                <stop offset="100%" stopColor="#0B281F" stopOpacity={0.8} />
+                <stop offset="0%" stopColor="#FFC400" />
+                <stop offset="40%" stopColor="#D4A300" />
+                <stop offset="100%" stopColor="#000418" stopOpacity={0.8} />
               </linearGradient>
             </defs>
             
@@ -55,14 +55,14 @@ export function StuntingBarChart({ data }: StuntingBarChartProps) {
             <Tooltip
               cursor={{ fill: 'rgba(255,255,255,0.03)' }}
               contentStyle={{
-                backgroundColor: '#0B281F',
+                backgroundColor: '#000418',
                 border: '1px solid rgba(255,255,255,0.1)',
                 borderRadius: '16px',
                 color: '#fff',
                 fontSize: '12px',
                 boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
               }}
-              itemStyle={{ color: '#F0B100', fontWeight: 'bold' }}
+              itemStyle={{ color: '#FFC400', fontWeight: 'bold' }}
               labelStyle={{ color: 'rgba(255,255,255,0.5)', marginBottom: '4px' }}
               formatter={(value) => [`${value}%`, 'Prevalensi']}
             />

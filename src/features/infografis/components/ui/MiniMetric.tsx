@@ -16,10 +16,10 @@ interface MiniMetricProps {
 }
 
 const cardBackgrounds = [
-  'bg-[linear-gradient(240.32deg,#081713_2.66%,#165D4A_49.79%,#081713_97.84%)]',
-  'bg-[#006045]',
-  'bg-[#009966]',
-  'bg-[#F0B100]',
+  'bg-[linear-gradient(240.32deg,#070A18_2.66%,#122161_49.79%,#070A18_97.84%)]',
+  'bg-[#001260]',
+  'bg-[#072ac8]',
+  'bg-[#FFC400]',
 ]
 
 function getIconByLabel(label: string): LucideIcon {

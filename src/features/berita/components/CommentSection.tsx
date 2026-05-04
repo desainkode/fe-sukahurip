@@ -38,36 +38,36 @@ export function CommentSection() {
   };
 
   return (
-    <section className="mt-16 border-t border-[#0B281F]/5 pt-16">
+    <section className="mt-16 border-t border-[#000418]/5 pt-16">
       <div className="flex items-center gap-3 mb-10">
-        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0B281F]/5 text-[#0B281F]">
+        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#000418]/5 text-[#000418]">
           <MessageSquare size={24} />
         </div>
         <div>
-          <h3 className="text-2xl font-bold text-[#0B281F]">Komentar Warga</h3>
-          <p className="text-[14px] text-[#0B281F]/50">{comments.length} diskusi aktif</p>
+          <h3 className="text-2xl font-bold text-[#000418]">Komentar Warga</h3>
+          <p className="text-[14px] text-[#000418]/50">{comments.length} diskusi aktif</p>
         </div>
       </div>
 
       {/* Comment Form */}
       <form onSubmit={handleSubmit} className="mb-12">
-        <div className="relative overflow-hidden rounded-3xl border border-[#0B281F]/10 bg-white p-2 shadow-sm focus-within:border-[#009966]/30 focus-within:ring-4 focus-within:ring-[#009966]/5">
+        <div className="relative overflow-hidden rounded-3xl border border-[#000418]/10 bg-white p-2 shadow-sm focus-within:border-[#072ac8]/30 focus-within:ring-4 focus-within:ring-[#072ac8]/5">
           <textarea
             value={newComment}
             onChange={(e) => setNewComment(e.target.value)}
             placeholder="Tulis pendapat atau pertanyaan Anda..."
-            className="w-full min-h-[120px] resize-none border-none bg-transparent p-4 text-[15px] outline-none placeholder:text-[#0B281F]/30"
+            className="w-full min-h-[120px] resize-none border-none bg-transparent p-4 text-[15px] outline-none placeholder:text-[#000418]/30"
           />
-          <div className="flex items-center justify-between border-t border-[#0B281F]/5 p-3">
-            <div className="flex items-center gap-2 px-3 text-[12px] text-[#0B281F]/40">
-              <User size={14} />
+          <div className="flex items-center justify-between border-t border-[#000418]/5 p-3">
+            <div className="flex items-center gap-2 px-3 text-[12px] text-[#000418]/40">
+              <User size={24} />
               Berkomentar sebagai tamu
             </div>
             <button
               type="submit"
-              className="flex items-center gap-2 rounded-2xl bg-[#0B281F] px-6 py-3 text-[14px] font-bold text-white transition-all hover:bg-[#009966] hover:shadow-lg active:scale-95"
+              className="flex items-center gap-2 rounded-2xl bg-[#000418] px-6 py-3 text-[14px] font-bold text-white transition-all hover:bg-[#072ac8] hover:shadow-lg active:scale-95"
             >
-              Kirim Komentar <Send size={16} />
+              Kirim Komentar <Send size={24} />
             </button>
           </div>
         </div>
@@ -77,20 +77,20 @@ export function CommentSection() {
       <div className="space-y-8">
         {comments.map((comment) => (
           <div key={comment.id} className="flex gap-4 sm:gap-6">
-            <div className="h-12 w-12 shrink-0 overflow-hidden rounded-2xl border border-[#0B281F]/10 bg-[#F6F8F7] p-2">
-              <User className="h-full w-full text-[#0B281F]/20" />
+            <div className="h-12 w-12 shrink-0 overflow-hidden rounded-2xl border border-[#000418]/10 bg-[#F6F6F8] p-2">
+              <User className="h-full w-full text-[#000418]/20" />
             </div>
             <div className="flex-1">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
-                <p className="text-[15px] font-bold text-[#0B281F]">{comment.author}</p>
-                <p className="text-[12px] text-[#0B281F]/40">{comment.createdAt}</p>
+                <p className="text-[15px] font-bold text-[#000418]">{comment.author}</p>
+                <p className="text-[12px] text-[#000418]/40">{comment.createdAt}</p>
               </div>
-              <p className="text-[15px] leading-relaxed text-[#0B281F]/70">
+              <p className="text-[15px] leading-relaxed text-[#000418]/70">
                 {comment.content}
               </p>
               <div className="mt-4 flex items-center gap-4">
-                <button className="text-[12px] font-bold text-[#009966] hover:underline">Balas</button>
-                <button className="text-[12px] font-bold text-[#0B281F]/40 hover:text-red-500">Sukai</button>
+                <button className="text-[12px] font-bold text-[#072ac8] hover:underline">Balas</button>
+                <button className="text-[12px] font-bold text-[#000418]/40 hover:text-red-500">Sukai</button>
               </div>
             </div>
           </div>

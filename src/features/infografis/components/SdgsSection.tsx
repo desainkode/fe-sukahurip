@@ -1,35 +1,134 @@
-import { SectionHeader, StatPill } from './ui'
-import { sectionCardClass } from '../constants/styles'
-import { sdgsContent } from '../config/infografis-content'
+'use client'
+
+import React, { useState } from 'react'
+import { sdgsDetailData } from '../config/sdgs-data'
+import { SdgsHeader } from './sdgs/SdgsHeader'
+import { SdgsSummaryCards } from './sdgs/SdgsSummaryCards'
+import { SdgsGoalsGrid } from './sdgs/SdgsGoalsGrid'
+import { SdgsCharts } from './sdgs/SdgsCharts'
+import { SdgsInsights } from './sdgs/SdgsInsights'
+import { SdgsPrograms } from './sdgs/SdgsPrograms'
+import { SdgsDetailView } from './sdgs/SdgsDetailView'
+import { SectionHeader } from '../../home/components/ui/SectionHeader'
+import * as LucideIcons from 'lucide-react'
 
 export function SdgsSection() {
+  const [selectedGoalId, setSelectedGoalId] = useState<number | null>(null)
+
+  const counts = {
+    tercapai: sdgsDetailData.goals.filter(g => g.status === 'Tercapai').length,
+    berkembang: sdgsDetailData.goals.filter(g => g.status === 'Berkembang').length,
+    belum: sdgsDetailData.goals.filter(g => g.status === 'Belum Tercapai').length,
+  }
+
+  const selectedGoal = selectedGoalId 
+    ? sdgsDetailData.goals.find(g => g.id === selectedGoalId) 
+    : null
+
+  const relatedPrograms = selectedGoalId
+    ? sdgsDetailData.programs.filter(p => p.goalId === selectedGoalId)
+    : []
+
+  const handleBack = () => setSelectedGoalId(null)
+
   return (
-    <div className={sectionCardClass + ' bg-[#006548] text-[#F4F3EF] shadow-[0_14px_28px_rgba(0,0,0,0.18)]'}>
-      <SectionHeader
-        title={sdgsContent.title}
-        description={sdgsContent.description}
-        variant="dark"
+    <div className="flex flex-col gap-10">
+      {/* 1. Header with Breadcrumbs */}
+      <SdgsHeader 
+        villageName={sdgsDetailData.villageName}
+        district={sdgsDetailData.district}
+        regency={sdgsDetailData.regency}
+        year={sdgsDetailData.year}
+        onBack={handleBack}
+        currentGoal={selectedGoal?.title}
       />
 
-      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center">
-        <div className="rounded-3xl border border-white/15 bg-white/10 p-5 backdrop-blur-sm md:p-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#A4F4CF]">
-            Fokus Target
-          </p>
-          <p className="mt-3 text-[28px] font-bold leading-tight md:text-[30px]">
-            17 Tujuan Pembangunan
-          </p>
-          <p className="mt-3 text-[13px] leading-6 text-[#D0FAE5]/80 md:text-[14px]">
-            Panel ini siap diisi grafik, capaian, dan indikator prioritas agar evaluasi program pembangunan lebih mudah dilakukan.
-          </p>
-        </div>
+      {selectedGoalId && selectedGoal ? (
+        /* DETAIL VIEW */
+        <SdgsDetailView 
+          goal={selectedGoal}
+          relatedPrograms={relatedPrograms}
+          onBack={handleBack}
+        />
+      ) : (
+        /* DASHBOARD VIEW */
+        <>
+          {/* 2. Summary Cards */}
+          <SdgsSummaryCards 
+            totalGoals={18}
+            overallScore={sdgsDetailData.overallScore}
+            counts={counts}
+          />
 
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
-          {sdgsContent.indicators.map((item) => (
-            <StatPill key={item.label} label={item.label} value={item.value} />
-          ))}
-        </div>
-      </div>
+          {/* 3. Goals Grid */}
+          <div className="rounded-[32px] bg-white p-6 shadow-xl border border-[#072ac8]/5 md:p-10">
+            <SectionHeader 
+              title={['18 Tujuan', 'SDGs Desa']}
+              description="SDGs Desa adalah upaya terpadu mewujudkan Desa tanpa kemiskinan dan kelaparan, Desa ekonomi tumbuh merata, Desa peduli kesehatan, Desa peduli lingkungan, Desa peduli pendidikan, Desa ramah perempuan, Desa berjejaring, dan Desa tanggap budaya."
+              showInfoButton
+              icon={LucideIcons.ListChecks}
+            />
+            <div className="mt-8">
+              <SdgsGoalsGrid 
+                goals={sdgsDetailData.goals} 
+                onGoalClick={setSelectedGoalId} 
+              />
+            </div>
+          </div>
+
+          {/* 4. Data Visualization */}
+          <div className="rounded-[32px] bg-white p-6 shadow-xl border border-[#072ac8]/5 md:p-10">
+            <SectionHeader 
+              title={['Visualisasi', 'Capaian SDGs']}
+              description="Penyajian data capaian SDGs Desa dalam bentuk grafik untuk memudahkan pemantauan dan evaluasi progres pembangunan berkelanjutan di tingkat desa."
+              showInfoButton
+              icon={LucideIcons.BarChart3}
+            />
+            <div className="mt-8">
+              <SdgsCharts goals={sdgsDetailData.goals} />
+            </div>
+          </div>
+
+          {/* 5. Insights: Strengths & Challenges */}
+          <div className="rounded-[32px] bg-white p-6 shadow-xl border border-[#072ac8]/5 md:p-10">
+            <SectionHeader 
+              title={['Ringkasan', 'Insight Strategis']}
+              description="Analisis singkat mengenai kekuatan dan tantangan utama desa dalam mencapai tujuan pembangunan berkelanjutan berdasarkan data indikator SDGs."
+              showInfoButton
+              icon={LucideIcons.Lightbulb}
+            />
+            <div className="mt-8">
+              <SdgsInsights 
+                strengths={sdgsDetailData.insights.strengths}
+                challenges={sdgsDetailData.insights.challenges}
+              />
+            </div>
+          </div>
+
+          {/* 6. Village Programs */}
+          <div className="rounded-[32px] bg-white p-6 shadow-xl border border-[#072ac8]/5 md:p-10">
+            <SectionHeader 
+              title={['Program Desa', 'Pendukung SDGs']}
+              description="Daftar program dan kegiatan pemerintah desa yang berkontribusi langsung terhadap pencapaian target-target SDGs Desa Sukahurip."
+              showInfoButton
+              icon={LucideIcons.Briefcase}
+            />
+            <div className="mt-8">
+              <SdgsPrograms 
+                programs={sdgsDetailData.programs} 
+                onGoalClick={setSelectedGoalId}
+              />
+            </div>
+          </div>
+
+          {/* 7. Footer / Data Source */}
+          <footer className="mt-4 border-t border-[#072ac8]/10 pt-8 text-center">
+            <p className="text-xs font-bold text-[#000418]/30 uppercase tracking-[0.2em]">
+              Sumber: {sdgsDetailData.source}
+            </p>
+          </footer>
+        </>
+      )}
     </div>
   )
 }

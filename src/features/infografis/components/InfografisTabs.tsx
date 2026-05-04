@@ -25,7 +25,7 @@ export default function InfografisTabs() {
   }
 
   return (
-    <div className="bg-linear-to-b from-[#0B281F] via-[#0B281F] to-[#004F3B]">
+    <div className="bg-linear-to-b from-[#000418] via-[#000418] to-[#000E4F]">
       <HeroSection activeTab={activeTab} onChangeTab={setActiveTab} />
 
       <section className="bg-[#FFFFFF] px-4 py-8 md:px-10 md:py-10 lg:px-12 lg:py-12 transition-colors duration-300 ease-out">

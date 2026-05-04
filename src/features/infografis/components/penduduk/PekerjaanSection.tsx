@@ -11,34 +11,18 @@ import {
 } from "../../config/penduduk-data";
 import { PekerjaanTopCard } from "./PekerjaanTopCard";
 import { PekerjaanDetailCard } from "./PekerjaanDetailCard";
+import { SectionHeader } from "../../../home/components/ui/SectionHeader";
 
 export function PekerjaanSection() {
   return (
     <section className={sectionCardClass + " bg-[#ffffff]"}>
       <div className="flex flex-col gap-7">
-        <div className="relative grid gap-4 border-b border-[#0B281F]/10 pb-6 pr-14 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1.45fr)] md:items-start md:gap-6 md:pr-16">
-          <h2 className="hero-reveal font-[Georgia,serif] text-[26px] font-bold leading-[1.06] text-[#0B281F] md:text-[34px] lg:text-[42px]" style={{ animationDelay: "40ms" }}>
-            Berdasarkan
-            <br />
-            Pekerjaan
-          </h2>
-
-          <p className="hero-reveal max-w-none pt-0.5 text-[12px] leading-6 text-[#0B281F]/80 md:text-[13px] md:leading-7" style={{ animationDelay: "140ms" }}>
-            Kelompok Berdasarkan Pekerjaan merupakan penyajian data penduduk
-            menurut jenis atau bidang pekerjaan yang disajikan secara
-            transparan and akurat untuk mendukung perencanaan serta
-            pengambilan kebijakan secara tepat sasaran.
-          </p>
-
-          <button
-            type="button"
-            aria-label="Informasi berdasarkan pekerjaan"
-            className="hero-reveal absolute right-0 top-0 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#0B281F] text-white transition-transform duration-300 hover:-translate-y-0.5 md:h-14 md:w-14"
-            style={{ animationDelay: "220ms" }}
-          >
-            <Briefcase size={22} strokeWidth={2.2} />
-          </button>
-        </div>
+        <SectionHeader 
+          title={["Berdasarkan", "Pekerjaan"]}
+          description="Kelompok Berdasarkan Pekerjaan merupakan penyajian data penduduk menurut jenis atau bidang pekerjaan yang disajikan secara transparan and akurat untuk mendukung perencanaan serta pengambilan kebijakan secara tepat sasaran."
+          showInfoButton
+          icon={Briefcase}
+        />
 
         <div className="hero-reveal grid grid-cols-2 gap-4 md:grid-cols-3 lg:gap-5" style={{ animationDelay: "180ms" }}>
           {PEKERJAAN_TOP_CARDS.map((item, idx) => (
@@ -54,7 +38,7 @@ export function PekerjaanSection() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
-          <div className="hero-reveal relative overflow-hidden rounded-[24px] bg-linear-to-br from-[#F0B100] to-[#D4940A] p-6 sm:p-8 md:p-10" style={{ animationDelay: "260ms" }}>
+          <div className="hero-reveal relative overflow-hidden rounded-[24px] bg-linear-to-br from-[#FFC400] to-[#DEAA00] p-6 sm:p-8 md:p-10" style={{ animationDelay: "260ms" }}>
             <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/5 blur-3xl" />
             <div className="pointer-events-none absolute -bottom-12 -left-12 h-40 w-40 rounded-full bg-black/5 blur-2xl" />
 
@@ -90,7 +74,7 @@ export function PekerjaanSection() {
             </div>
           </div>
 
-          <div className="hero-reveal relative overflow-hidden rounded-[24px] bg-linear-to-br from-[#009966] to-[#005239] p-6 sm:p-8 md:p-10" style={{ animationDelay: "340ms" }}>
+          <div className="hero-reveal relative overflow-hidden rounded-[24px] bg-linear-to-br from-[#072ac8] to-[#000F52] p-6 sm:p-8 md:p-10" style={{ animationDelay: "340ms" }}>
             <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/5 blur-3xl" />
             <div className="pointer-events-none absolute -bottom-12 -left-12 h-40 w-40 rounded-full bg-black/10 blur-2xl" />
 

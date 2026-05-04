@@ -19,9 +19,9 @@ export default function StructureSection() {
           {/* Text Content */}
           <div className="hero-reveal flex flex-col gap-6">
             <div className="flex flex-col gap-6">
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#1e96fc]/10 px-4 py-1.5 border border-[#1e96fc]/20 w-fit">
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#ffc600]/10 px-4 py-1.5 border border-[#1e96fc]/20 w-fit">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#1e96fc]" />
-                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1e96fc]">Perangkat Desa</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#ffc600]">Perangkat Desa</span>
               </div>
               
               <h2 className="hero-reveal text-[38px] font-bold leading-[1.1] tracking-tight text-[#072ac8] md:text-[52px]">
@@ -37,15 +37,15 @@ export default function StructureSection() {
             <div className="flex items-center gap-6">
               <Link
                 href="/struktur"
-                className="group inline-flex items-center gap-3 rounded-2xl bg-[#072ac8] px-8 py-4 text-[15px] font-black text-[#1e96fc] shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl active:scale-95"
+                className="group inline-flex items-center gap-3 rounded-2xl bg-[#072ac8] px-8 py-4 text-[15px] font-black text-[#ffc600] shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl active:scale-95"
               >
                 Seluruh Staf
-                <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+                <ArrowRight size={24} className="transition-transform group-hover:translate-x-1" />
               </Link>
               
               <div className="flex flex-col items-start lg:hidden">
-                <span className="flex items-center gap-1 text-[11px] font-bold text-[#052119]/40 uppercase tracking-widest">
-                  Geser <ChevronRight size={14} className="animate-bounce-x" />
+                <span className="flex items-center gap-1 text-[11px] font-bold text-[#040922]/40 uppercase tracking-widest">
+                  Geser <ChevronRight size={24} className="animate-bounce-x" />
                 </span>
               </div>
             </div>
@@ -78,11 +78,11 @@ export default function StructureSection() {
                     {/* Info */}
                     <div className="absolute bottom-0 left-0 right-0 p-8">
                       <div className="flex flex-col">
-                        <span className="mb-2 w-fit rounded-lg bg-[#1e96fc]/20 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-[#1e96fc] backdrop-blur-md">
+                        <span className="mb-2 w-fit rounded-lg bg-[#ffc600]/20 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-[#ffc600] backdrop-blur-md">
                           {item.jabatan}
                         </span>
                         <h4 className="font-upakarti text-[24px] font-bold text-white md:text-[28px]">{item.nama}</h4>
-                        <div className="mt-4 h-1 w-0 bg-[#ffc600] transition-all duration-500 group-hover:w-full" />
+                        <div className="mt-4 h-1 w-0 bg-[#FFC400] transition-all duration-500 group-hover:w-full" />
                       </div>
                     </div>
                   </div>

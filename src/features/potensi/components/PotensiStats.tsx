@@ -17,15 +17,15 @@ export function PotensiStats() {
         return (
           <div 
             key={idx}
-            className="group relative overflow-hidden rounded-[32px] border border-[#0B281F]/5 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+            className="group relative overflow-hidden rounded-[32px] border border-[#000418]/5 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
           >
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0B281F]/5 text-[#0B281F] transition-colors group-hover:bg-[#009966] group-hover:text-white">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#000418]/5 text-[#000418] transition-colors group-hover:bg-[#072ac8] group-hover:text-white">
               <Icon size={24} />
             </div>
-            <p className="text-[12px] font-bold uppercase tracking-widest text-[#0B281F]/40">{stat.label}</p>
+            <p className="text-[12px] font-bold uppercase tracking-widest text-[#000418]/40">{stat.label}</p>
             <div className="mt-1 flex items-baseline gap-2">
-              <h3 className="text-3xl font-bold text-[#0B281F]">{stat.value}</h3>
-              <span className="text-[12px] font-medium text-[#0B281F]/50">{stat.unit}</span>
+              <h3 className="text-3xl font-bold text-[#000418]">{stat.value}</h3>
+              <span className="text-[12px] font-medium text-[#000418]/50">{stat.unit}</span>
             </div>
           </div>
         );

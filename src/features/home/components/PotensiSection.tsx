@@ -24,7 +24,7 @@ export default function PotensiSection() {
             {POTENSI_PREVIEW.map((item, index) => (
               <article 
                 key={item.title} 
-                className="hero-reveal group relative flex h-full w-[280px] shrink-0 snap-start flex-col overflow-hidden rounded-[40px] bg-[#052119] p-6 text-left shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl md:w-[340px] lg:w-full"
+                className="hero-reveal group relative flex h-full w-[280px] shrink-0 snap-start flex-col overflow-hidden rounded-[40px] bg-[#040922] p-6 text-left shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl md:w-[340px] lg:w-full"
                 style={{ animationDelay: `${200 + index * 100}ms` }}
               >
               {/* Background Accent */}
@@ -35,17 +35,17 @@ export default function PotensiSection() {
 
               <div className="relative z-10 flex flex-col h-full">
                 <div className="flex items-center justify-between">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/5 text-white/80 transition-all group-hover:bg-white/10 group-hover:text-[#00D492]">
-                    <item.icon size={28} strokeWidth={1.5} />
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/5 text-white/80 transition-all group-hover:bg-white/10 group-hover:text-[#ffc600]">
+                    <item.icon size={20} strokeWidth={1.5} />
                   </div>
-                  <Sparkles size={20} className="text-[#F0B100] opacity-0 transition-opacity group-hover:opacity-100" />
+                  <Sparkles size={20} className="text-[#FFC400] opacity-0 transition-opacity group-hover:opacity-100" />
                 </div>
 
                 <h3 className="font-upakarti mt-6 text-[28px] font-bold leading-tight text-white md:text-[32px]">
                   {item.title}
                 </h3>
 
-                <p className="mt-4 text-[14px] leading-relaxed text-[#D0FAE5]/50">
+                <p className="mt-4 text-[14px] leading-relaxed text-[#d0e7ff]/50">
                   {item.description}
                 </p>
 
@@ -56,13 +56,13 @@ export default function PotensiSection() {
                     fill
                     className="object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-[#052119] via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-linear-to-t from-[#040922] via-transparent to-transparent opacity-60" />
                 </div>
 
                 <div className="mt-6 flex items-center justify-between border-t border-white/5 pt-4">
-                  <span className="text-[12px] font-black uppercase tracking-widest text-[#00D492]">Eksplorasi</span>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F0B100] text-[#052119] transition-all group-hover:rotate-45">
-                    <ArrowRight size={20} strokeWidth={2.5} />
+                  <span className="text-[12px] font-black uppercase tracking-widest text-[#ffc600]">Eksplorasi</span>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FFC400] text-[#040922] transition-all group-hover:rotate-45">
+                    <ArrowRight size={18} strokeWidth={2.5} />
                   </div>
                 </div>
               </div>
@@ -77,10 +77,10 @@ export default function PotensiSection() {
         <div className="flex justify-center pt-2">
           <Link
             href="/potensi"
-            className="group inline-flex items-center gap-3 rounded-2xl border border-[#052119]/10 bg-[#F4F3EF] px-10 py-4 text-[15px] font-black text-[#052119] transition-all hover:bg-[#052119] hover:text-[#00D492] hover:shadow-xl active:scale-95"
+            className="group inline-flex items-center gap-3 rounded-2xl border border-[#040922]/10 bg-[#F4F3EE] px-10 py-4 text-[15px] font-black text-[#040922] transition-all hover:bg-[#040922] hover:text-[#ffc600] hover:shadow-xl active:scale-95"
           >
             Lihat Potensi Lainnya
-            <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
       </div>

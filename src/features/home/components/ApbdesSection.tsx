@@ -9,7 +9,7 @@ import { SectionHeader } from "./ui/SectionHeader";
 const apbdesYears = [2026, 2025, 2024, 2023, 2022];
 const apbdesStatistik = [
   { label: "Total Pendapatan", value: "3.54B", icon: TrendingUp, color: "from-[#1e96fc] to-[#072ac8]" },
-  { label: "Total Belanja", value: "3.12B", icon: Wallet, color: "from-[#ffc600] to-[#fcf300]" },
+  { label: "Total Belanja", value: "3.12B", icon: Wallet, color: "from-[#FFC400] to-[#FCC100]" },
   { label: "Sisa Anggaran", value: "420M", icon: PieChart, color: "from-white/20 to-white/10" },
 ];
 
@@ -41,7 +41,7 @@ export default function ApbdesSection() {
           {/* Background Elements */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[40px]">
             <div className="absolute inset-0 bg-linear-to-br from-[#072ac8] via-[#1e96fc] to-[#072ac8]" />
-            <div className="absolute top-0 right-0 h-96 w-96 -translate-y-1/2 translate-x-1/2 rounded-full bg-[#1e96fc]/10 blur-[120px]" />
+            <div className="absolute top-0 right-0 h-96 w-96 -translate-y-1/2 translate-x-1/2 rounded-full bg-[#ffc600]/10 blur-[120px]" />
             
             <svg
               className="animate-ocean-wave absolute bottom-0 left-0 h-32 w-[200%] opacity-20"
@@ -57,8 +57,8 @@ export default function ApbdesSection() {
 
           <div className="relative z-30 mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
             <div className="flex flex-col gap-2">
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#1e96fc]">Laporan Keuangan</span>
-              <h3 className="font-upakarti text-[32px] font-bold leading-tight md:text-[42px]">
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#ffc600]">Laporan Keuangan</span>
+              <h3 className="font-timeless text-[32px] font-bold leading-tight md:text-[42px]">
                 APBDes Tahun {selectedYear}
               </h3>
             </div>
@@ -107,9 +107,9 @@ export default function ApbdesSection() {
                   style={{ animationDelay: `${200 + index * 100}ms` }}
                 >
                   <div className={`absolute inset-0 rounded-full bg-linear-to-br opacity-0 transition-opacity duration-500 group-hover/card:opacity-10 ${item.color}`} />
-                  <item.icon className="mb-2 text-[#1e96fc] size-5 sm:size-6 sm:mb-3" />
+                  <item.icon className="mb-2 text-[#ffc600] size-5 sm:size-6 sm:mb-3" />
                   <span className="text-[9px] font-black uppercase tracking-widest text-white/40 sm:text-[10px]">Rp.</span>
-                  <p className="mt-1 font-upakarti text-[22px] font-bold leading-none sm:text-[32px] md:text-[38px] lg:text-[44px]">{item.value}</p>
+                  <p className="mt-1 font-timeless text-[22px] font-bold leading-none sm:text-[32px] md:text-[38px] lg:text-[44px]">{item.value}</p>
                   <p className="mt-1 px-2 text-center text-[9px] font-bold uppercase tracking-tight text-white/60 sm:mt-2 sm:px-4 sm:text-[11px]">{item.label}</p>
                 </div>
               ))}
@@ -122,10 +122,10 @@ export default function ApbdesSection() {
               <div className="flex flex-col w-full gap-4 sm:flex-row sm:justify-center lg:justify-start">
                 <Link
                   href="/infografis/apbdes"
-                  className="hero-reveal group inline-flex items-center justify-center gap-3 rounded-2xl bg-[#ffc600] px-8 py-4 text-[15px] font-black text-[#072ac8] shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl active:scale-95"
+                  className="hero-reveal group inline-flex items-center justify-center gap-3 rounded-2xl bg-[#FFC400] px-8 py-4 text-[15px] font-black text-[#072ac8] shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl active:scale-95"
                 >
                   Detail Anggaran
-                  <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+                  <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>

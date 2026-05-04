@@ -54,10 +54,10 @@ function SummaryTile({
   note: string;
 }) {
   return (
-    <article className="rounded-[20px] border border-[#0B281F]/10 bg-white p-5 shadow-[0_10px_24px_rgba(11,40,31,0.05)]">
-      <p className="text-[11px] uppercase tracking-[0.16em] text-[#0B281F]/60">{label}</p>
-      <p className="mt-2 font-[Georgia,serif] text-[32px] font-bold leading-none text-[#0B281F]">{value}</p>
-      <p className="mt-2 text-[12px] leading-5 text-[#0B281F]/70">{note}</p>
+    <article className="rounded-[20px] border border-[#000418]/10 bg-white p-5 shadow-[0_10px_24px_rgba(0,4,24,0.05)]">
+      <p className="text-[11px] uppercase tracking-[0.16em] text-[#000418]/60">{label}</p>
+      <p className="mt-2 font-[Georgia,serif] text-[32px] font-bold leading-none text-[#000418]">{value}</p>
+      <p className="mt-2 text-[12px] leading-5 text-[#000418]/70">{note}</p>
     </article>
   );
 }
@@ -69,7 +69,7 @@ function JobCard({
   item: JobItem;
   accent: "gold" | "green";
 }) {
-  const glowClass = accent === "gold" ? "from-[#F0B100] to-[#D4940A]" : "from-[#009966] to-[#005239]";
+  const glowClass = accent === "gold" ? "from-[#FFC400] to-[#DEAA00]" : "from-[#072ac8] to-[#000F52]";
 
   return (
     <article className="relative overflow-hidden rounded-[20px] border border-white/12 bg-white/12 p-5 shadow-[0_12px_28px_rgba(0,0,0,0.10)] backdrop-blur-sm sm:p-6">
@@ -93,8 +93,8 @@ function JobCard({
           </div>
         </div>
 
-        <div className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/20 bg-[#0B281F] px-3 py-1.5 text-[11px] font-bold text-white/92">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#00E0A1]" />
+        <div className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/20 bg-[#000418] px-3 py-1.5 text-[11px] font-bold text-white/92">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#a2d6f9]" />
           {item.persentase}%
         </div>
       </div>
@@ -125,12 +125,12 @@ function JobSection({
   active: boolean;
 }) {
   const wrapperClass = accent === "gold"
-    ? "from-[#F0B100] to-[#D4940A]"
-    : "from-[#009966] to-[#005239]";
+    ? "from-[#FFC400] to-[#DEAA00]"
+    : "from-[#072ac8] to-[#000F52]";
 
   return (
     <section id={id} className="scroll-mt-8">
-      <div className={`relative overflow-hidden rounded-[24px] bg-linear-to-br ${wrapperClass} p-6 sm:p-8 md:p-10 ${active ? "ring-2 ring-[#0B281F]/14" : ""}`}>
+      <div className={`relative overflow-hidden rounded-[24px] bg-linear-to-br ${wrapperClass} p-6 sm:p-8 md:p-10 ${active ? "ring-2 ring-[#000418]/14" : ""}`}>
         <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/5 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-12 -left-12 h-40 w-40 rounded-full bg-black/10 blur-2xl" />
 
@@ -208,21 +208,21 @@ export default async function PekerjaanPage({
     ];
 
   return (
-    <main className="min-h-screen bg-[#F6F8F7] pb-12">
+    <main className="min-h-screen bg-[#F6F6F8] pb-12">
       {/* Full Width Hero Section */}
-      <section className="relative overflow-hidden bg-[#0B281F] pt-28 pb-16 text-white shadow-2xl sm:pt-32 md:pt-36 lg:pt-40 lg:pb-24">
-        <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-[#00E0A1]/12 blur-[100px]" />
-        <div className="pointer-events-none absolute -left-16 -bottom-16 h-80 w-80 rounded-full bg-[#F0B100]/10 blur-[110px]" />
+      <section className="relative overflow-hidden bg-[#000418] pt-28 pb-16 text-white shadow-2xl sm:pt-32 md:pt-36 lg:pt-40 lg:pb-24">
+        <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-[#a2d6f9]/12 blur-[100px]" />
+        <div className="pointer-events-none absolute -left-16 -bottom-16 h-80 w-80 rounded-full bg-[#FFC400]/10 blur-[110px]" />
         
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative z-10 flex flex-col items-center text-center">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-[#00E0A1] backdrop-blur-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#00E0A1] animate-pulse" />
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-[#a2d6f9] backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#a2d6f9] animate-pulse" />
               Detail Infografis Desa
             </div>
 
             <h1 className="max-w-4xl font-[Georgia,serif] text-[40px] font-bold leading-[1.05] tracking-tight sm:text-[52px] lg:text-[64px]">
-              Eksplorasi <span className="text-[#00E0A1]">Jenis Pekerjaan</span>
+              Eksplorasi <span className="text-[#a2d6f9]">Jenis Pekerjaan</span>
               <br />
               Warga Sukahurip
             </h1>
@@ -238,33 +238,33 @@ export default async function PekerjaanPage({
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <Link
             href="/infografis"
-            className="inline-flex items-center gap-2 self-start rounded-full border border-[#0B281F]/10 bg-white px-4 py-2 text-[13px] font-semibold text-[#0B281F] shadow-[0_10px_24px_rgba(11,40,31,0.08)] transition-transform duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 self-start rounded-full border border-[#000418]/10 bg-white px-4 py-2 text-[13px] font-semibold text-[#000418] shadow-[0_10px_24px_rgba(0,4,24,0.08)] transition-transform duration-300 hover:-translate-y-0.5"
           >
-            <ArrowLeft size={16} />
+            <ArrowLeft size={24} />
             Kembali ke Infografis
           </Link>
 
-          <div className="inline-flex items-center gap-2 self-start rounded-full border border-[#0B281F]/10 bg-white px-4 py-2 text-[12px] font-semibold text-[#0B281F]/70 shadow-[0_10px_24px_rgba(11,40,31,0.06)]">
-            <Briefcase size={14} />
+          <div className="inline-flex items-center gap-2 self-start rounded-full border border-[#000418]/10 bg-white px-4 py-2 text-[12px] font-semibold text-[#000418]/70 shadow-[0_10px_24px_rgba(0,4,24,0.06)]">
+            <Briefcase size={24} />
             Halaman detail pekerjaan
           </div>
         </div>
 
 
-        <section className="rounded-[30px] bg-white px-5 py-6 shadow-[0_18px_50px_rgba(11,40,31,0.08)] sm:px-6 md:px-7 md:py-7 lg:px-8 lg:py-8">
-          <div className="grid gap-4 border-b border-[#0B281F]/10 pb-6 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.45fr)_auto] md:items-start md:gap-6">
-            <h2 className="font-[Georgia,serif] text-[26px] font-bold leading-[1.06] text-[#0B281F] md:text-[34px] lg:text-[42px]">
+        <section className="rounded-[30px] bg-white px-5 py-6 shadow-[0_18px_50px_rgba(0,4,24,0.08)] sm:px-6 md:px-7 md:py-7 lg:px-8 lg:py-8">
+          <div className="grid gap-4 border-b border-[#000418]/10 pb-6 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.45fr)_auto] md:items-start md:gap-6">
+            <h2 className="font-[Georgia,serif] text-[26px] font-bold leading-[1.06] text-[#000418] md:text-[34px] lg:text-[42px]">
               Ringkasan
               <br />
               Statistik
             </h2>
 
-            <p className="max-w-none pt-0.5 text-[12px] leading-6 text-[#0B281F]/80 md:text-[13px] md:leading-7">
+            <p className="max-w-none pt-0.5 text-[12px] leading-6 text-[#000418]/80 md:text-[13px] md:leading-7">
               Menampilkan data View All pekerjaan dengan cakupan lebih lengkap agar mudah dibaca, lebih rapi, dan konsisten dengan desain infografis lainnya.
             </p>
 
-            <div className="inline-flex h-14 w-14 shrink-0 items-center justify-center self-start rounded-full bg-[#0B281F] text-white">
-              <Briefcase size={22} strokeWidth={2.2} />
+            <div className="inline-flex h-14 w-14 shrink-0 items-center justify-center self-start rounded-full bg-[#000418] text-white">
+              <Briefcase size={24} strokeWidth={2.2} />
             </div>
           </div>
 
@@ -294,13 +294,13 @@ export default async function PekerjaanPage({
           <div className="mt-5 flex flex-wrap gap-3">
             <a
               href="#pertanian"
-              className={`inline-flex items-center rounded-full border px-4 py-2 text-[12px] font-bold transition-all duration-300 hover:-translate-y-0.5 ${activeSection === "pertanian" ? "border-[#F0B100]/20 bg-[#FFF7DD] text-[#8A6200]" : "border-[#0B281F]/10 bg-white text-[#0B281F]/75"}`}
+              className={`inline-flex items-center rounded-full border px-4 py-2 text-[12px] font-bold transition-all duration-300 hover:-translate-y-0.5 ${activeSection === "pertanian" ? "border-[#FFC400]/20 bg-[#FFF7DD] text-[#8A6A00]" : "border-[#000418]/10 bg-white text-[#000418]/75"}`}
             >
               Pertanian
             </a>
             <a
               href="#profesional"
-              className={`inline-flex items-center rounded-full border px-4 py-2 text-[12px] font-bold transition-all duration-300 hover:-translate-y-0.5 ${activeSection === "profesional" ? "border-[#009966]/20 bg-[#EDF9F4] text-[#005239]" : "border-[#0B281F]/10 bg-white text-[#0B281F]/75"}`}
+              className={`inline-flex items-center rounded-full border px-4 py-2 text-[12px] font-bold transition-all duration-300 hover:-translate-y-0.5 ${activeSection === "profesional" ? "border-[#072ac8]/20 bg-[#ECEFFA] text-[#000F52]" : "border-[#000418]/10 bg-white text-[#000418]/75"}`}
             >
               Profesional
             </a>

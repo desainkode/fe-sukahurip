@@ -23,21 +23,21 @@ export function ApbdesSection() {
           href="/infografis/apbdes"
           className="inline-flex items-center gap-2 rounded-full border border-[#072ac8]/10 bg-white px-4 py-2 text-[11px] font-bold text-[#072ac8] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
         >
-          Lihat Semua Detail <ArrowRight size={14} />
+          Lihat Semua Detail <ArrowRight size={24} />
         </Link>
       </div>
       <div className="relative mb-6 border-b border-[#072ac8]/10 pb-6 pr-14 md:grid md:grid-cols-[minmax(0,1.05fr)_minmax(0,1.45fr)] md:items-start md:gap-6 md:pr-16">
-        <h2 className="hero-reveal whitespace-pre-line font-[Georgia,serif] text-[26px] font-bold leading-[1.08] tracking-[0.01em] text-[#0B0D10] md:text-[30px] lg:text-[38px]">
+        <h2 className="hero-reveal whitespace-pre-line font-[Georgia,serif] text-[26px] font-bold leading-[1.08] tracking-[0.01em] text-[#000418] md:text-[30px] lg:text-[38px]">
           APB Desa{`\n`}Sukahurip
         </h2>
 
-        <p className="hero-reveal mt-4 max-w-none pt-0.5 text-[12px] leading-6 text-[#0B0D10]/82 md:mt-0 md:text-[13px] md:leading-7">
+        <p className="hero-reveal mt-4 max-w-none pt-0.5 text-[12px] leading-6 text-[#000418]/82 md:mt-0 md:text-[13px] md:leading-7">
           APBDes Sukahurip merupakan informasi mengenai anggaran pendapatan dan belanja desa yang mencakup rincian pendapatan,
           belanja, dan pembiayaan sebagai dasar transparansi serta perencanaan pembangunan desa.
         </p>
 
-        <div className="hero-reveal absolute right-0 top-0 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#072ac8] text-[#F3F8F6] shadow-[0_10px_20px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_24px_rgba(0,0,0,0.2)] md:h-14 md:w-14">
-          <CircleDollarSign size={20} strokeWidth={2.4} />
+        <div className="hero-reveal absolute right-0 top-0 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#072ac8] text-[#F3F4F8] shadow-[0_10px_20px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_24px_rgba(0,0,0,0.2)] md:h-14 md:w-14">
+          <CircleDollarSign size={24} strokeWidth={2.4} />
         </div>
       </div>
 

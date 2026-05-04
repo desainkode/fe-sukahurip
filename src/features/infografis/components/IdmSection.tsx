@@ -1,20 +1,43 @@
-import { SectionHeader, MiniMetric } from './ui'
-import { sectionCardClass } from '../constants/styles'
-import { idmContent } from '../config/infografis-content'
+'use client'
+
+import React from 'react'
+import { SectionHeader } from '../../home/components/ui/SectionHeader'
+import { idmDetailData } from '../config/idm-data'
+import { IdmHeroCard } from './idm/IdmHeroCard'
+import { IdmDimensionCard } from './idm/IdmDimensionCard'
+import { IdmCharts } from './idm/IdmCharts'
+import { IdmDetails } from './idm/IdmDetails'
+import { Award } from 'lucide-react'
 
 export function IdmSection() {
   return (
-    <div className={sectionCardClass + ' bg-white'}>
+    <div className="flex flex-col gap-10">
       <SectionHeader
-        title={idmContent.title}
-        description={idmContent.description}
+        title={['Indeks Desa', 'Membangun']}
+        description={idmDetailData.description}
+        showInfoButton
+        icon={Award}
       />
 
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
-        {idmContent.indicators.map((item) => (
-          <MiniMetric key={item.label} label={item.label} value={item.value} />
+      {/* 1. Main IDM Card */}
+      <IdmHeroCard data={idmDetailData} />
+
+      {/* 2. Dimension Scores Grid */}
+      <div className="grid gap-6 md:grid-cols-3">
+        {idmDetailData.dimensions.map((dim, idx) => (
+          <IdmDimensionCard 
+            key={dim.name} 
+            dimension={dim} 
+            delay={200 + idx * 100} 
+          />
         ))}
       </div>
+
+      {/* 3. Charts Visualization */}
+      <IdmCharts data={idmDetailData} />
+
+      {/* 4. Strategic Analysis & Details */}
+      <IdmDetails data={idmDetailData} />
     </div>
   )
 }

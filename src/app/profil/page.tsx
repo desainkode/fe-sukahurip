@@ -9,7 +9,7 @@ import { mockProfile } from "@/features/profile/config/mock-data";
 
 export default function ProfilePage() {
   return (
-    <main className="min-h-screen bg-[#F6F8F7] overflow-x-hidden">
+    <main className="min-h-screen bg-[#F6F6F8] overflow-x-hidden">
       <ProfileHero name={mockProfile.name} slogan={mockProfile.slogan} />
       
       <div id="profile-content" className="relative z-20 py-12 space-y-12 md:py-20 md:space-y-24 pb-24 md:pb-32">

@@ -38,8 +38,7 @@ export function PekerjaanDetailCard({
             <div className="inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-white/25 bg-black text-white shadow-[0_10px_24px_rgba(0,0,0,0.16)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 sm:h-17 sm:w-17">
               <div className="text-center leading-none">
                 <span
-                  className="block text-[21px] font-bold sm:text-[24px]"
-                  style={{ fontFamily: "var(--font-upakarti)" }}
+                  className="block text-[21px] font-bold sm:text-[24px] font-timeless"
                 >
                   {kode}
                 </span>
@@ -47,7 +46,7 @@ export function PekerjaanDetailCard({
             </div>
             <div className="min-w-0">
               <h3
-                className="font-[Georgia,serif] text-[18px] font-bold leading-[1.12] sm:text-[19px]"
+                className="font-timeless text-[18px] font-bold leading-[1.12] sm:text-[19px]"
                 style={{ color: textColor }}
               >
                 {nama}
@@ -60,8 +59,8 @@ export function PekerjaanDetailCard({
               </p>
             </div>
           </div>
-          <div className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/20 bg-[#0B281F] px-3.5 py-1.5 text-[11px] font-bold text-white/92 backdrop-blur-sm transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-0.5">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#00E0A1]" />
+          <div className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/20 bg-[#000418] px-3.5 py-1.5 text-[11px] font-bold text-white/92 backdrop-blur-sm transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-0.5">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#a2d6f9]" />
             {persentase}%
           </div>
         </div>
@@ -72,8 +71,8 @@ export function PekerjaanDetailCard({
               Jumlah penduduk
             </p>
             <p
-              className="mt-1 text-[32px] font-bold leading-none sm:text-[36px]"
-              style={{ color: textColor, fontFamily: "var(--font-upakarti)" }}
+              className="mt-1 text-[32px] font-bold leading-none sm:text-[36px] font-timeless"
+              style={{ color: textColor }}
             >
               {jumlah}
             </p>

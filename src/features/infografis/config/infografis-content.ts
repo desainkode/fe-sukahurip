@@ -189,13 +189,13 @@ export const bansosContent: BansosSectionContent = {
       label: 'Jenis Bantuan',
       value: '10',
       description: 'Total program bantuan sosial yang dijalankan di desa.',
-      color: 'bg-emerald-800',
+      color: 'bg-desa-blue-800',
     },
     {
       label: 'Total Anggaran Tahunan',
       value: '10',
       description: 'Jumlah dana dialokasikan untuk program bantuan sosial selama satu tahun.',
-      color: 'bg-emerald-600',
+      color: 'bg-desa-blue-600',
     },
     {
       label: 'Jumlah Program Bantuan',
@@ -210,42 +210,42 @@ export const bansosContent: BansosSectionContent = {
       value: '3.542',
       unit: 'Orang',
       description: 'Jumlah warga yang masih terdaftar sebagai penerima bantuan sosial.',
-      color: 'from-emerald-950 via-emerald-600 to-emerald-950',
+      color: 'from-desa-blue-950 via-desa-blue-600 to-desa-blue-950',
     },
     {
       label: 'Penerima Baru',
       value: '3.542',
       unit: 'Orang',
       description: 'Jumlah warga yang baru terdaftar sebagai penerima bantuan.',
-      color: 'bg-[#0B281F]',
+      color: 'bg-[#000418]',
     },
     {
       label: 'Alokasi Bantuan',
       value: '3.542',
       unit: 'RP.',
       description: 'Jumlah anggaran bantuan yang dialokasikan untuk masyarakat.',
-      color: 'bg-[#0B281F]',
+      color: 'bg-[#000418]',
     },
     {
       label: 'Bantuan Tersalurkan',
       value: '3.542',
       unit: 'RP.',
       description: 'Jumlah bantuan yang telah disalurkan kepada penerima.',
-      color: 'from-emerald-950 via-emerald-600 to-emerald-950',
+      color: 'from-desa-blue-950 via-desa-blue-600 to-desa-blue-950',
     },
     {
       label: 'Sisa Alokasi Bantuan',
       value: '3.542',
       unit: 'RP.',
       description: 'Sisa anggaran bantuan yang belum disalurkan.',
-      color: 'bg-[#0B281F]',
+      color: 'bg-[#000418]',
     },
     {
       label: 'Total Penerima',
       value: '3.542',
       unit: 'RP.',
       description: 'Jumlah keseluruhan warga yang menerima bantuan sosial.',
-      color: 'bg-[#0B281F]',
+      color: 'bg-[#000418]',
     },
   ],
   distributions: [
@@ -257,11 +257,11 @@ export const bansosContent: BansosSectionContent = {
   ],
   benefitTypes: [
     { name: 'PKH', count: '3.542', color: 'bg-[#D9D9D9]' },
-    { name: 'BPMT', count: '3.542', color: 'bg-[#F0B100]' },
+    { name: 'BPMT', count: '3.542', color: 'bg-[#FFC400]' },
     { name: 'BLT', count: '3.542', color: 'bg-[#D9D9D9]' },
-    { name: 'Sembako', count: '3.542', color: 'bg-[#2D7A65]' },
+    { name: 'Sembako', count: '3.542', color: 'bg-[#29397E]' },
     { name: 'Beasiswa', count: '3.542', color: 'bg-[#D9D9D9]' },
-    { name: 'Rutilahu', count: '3.542', color: 'bg-[#00945E]' },
+    { name: 'Rutilahu', count: '3.542', color: 'bg-[#001B94]' },
   ],
 }
 
@@ -279,28 +279,28 @@ export const stuntingContent: StuntingSectionContent = {
       value: '3.542',
       description: 'Jumlah keseluruhan anak yang menjadi sasaran pendataan di desa.',
       icon: 'User',
-      color: 'bg-linear-to-br from-[#0B281F] to-[#006045]',
+      color: 'bg-linear-to-br from-[#000418] to-[#001260]',
     },
     {
       label: 'Anak Stunting',
       value: '3.542',
       description: 'Jumlah anak yang terdata mengalami stunting di desa.',
       icon: 'TrendingDown',
-      color: 'bg-linear-to-br from-[#0B281F] to-[#008F5D]',
+      color: 'bg-linear-to-br from-[#000418] to-[#001A8F]',
     },
     {
       label: 'Prevalensi',
       value: '3.542',
       description: 'Anak stunting dibandingkan dengan total anak yang didata.',
       icon: 'Activity',
-      color: 'bg-linear-to-br from-[#008F5D] to-[#00C48C]',
+      color: 'bg-linear-to-br from-[#001A8F] to-[#0024C4]',
     },
     {
       label: 'Target',
       value: '3.542',
       description: 'Target penurunan angka stunting dalam periode tertentu.',
       icon: 'Target',
-      color: 'bg-[#F0B100]',
+      color: 'bg-[#FFC400]',
     },
   ],
   prevalenceByAge: [
@@ -377,11 +377,30 @@ export const idmContent: IdmSectionContent = {
   title: 'Indeks Desa Membangun',
   description:
     'Ringkasan status perkembangan desa berdasarkan skor IDM, kategori kemajuan, dan ruang perbaikan utama yang perlu ditindaklanjuti.',
+  villageName: 'Sukahurip',
+  district: 'Cigedug',
+  regency: 'Garut',
+  year: 2024,
+  currentScore: 0.792,
+  status: 'Maju',
+  statusColor: 'desa-blue-500',
   indicators: [
     { label: 'Status Desa', value: 'Maju' },
     { label: 'Skor IDM', value: '0,792' },
     { label: 'Ruang Perbaikan', value: 'Layanan' },
   ],
+  dimensions: [
+    { name: 'IKS', score: 0.82, fullScore: 1.0, color: '#072ac8' },
+    { name: 'IKE', score: 0.71, fullScore: 1.0, color: '#ffc600' },
+    { name: 'IKL', score: 0.85, fullScore: 1.0, color: '#10b981' },
+  ],
+  trends: [
+    { year: 2021, score: 0.654 },
+    { year: 2022, score: 0.712 },
+    { year: 2023, score: 0.792 },
+  ],
+  interpretation: 'Desa Sukahurip menunjukkan tren peningkatan signifikan dalam aspek ketahanan sosial dan lingkungan.',
+  source: 'Kementerian Desa, PDT, dan Transmigrasi',
 }
 
 // ============================================================================
@@ -392,9 +411,44 @@ export const sdgsContent: SdgsSectionContent = {
   title: 'SDGs Desa',
   description:
     'Menampilkan progres indikator pembangunan berkelanjutan yang dipantau desa dalam satu panel ringkas dan mudah dibaca.',
-  indicators: [
-    { label: 'Indikator Dipantau', value: '17' },
-    { label: 'Target Prioritas', value: '6' },
-    { label: 'Progress', value: '72%' },
+  villageName: 'Sukahurip',
+  district: 'Cigedug',
+  regency: 'Garut',
+  year: 2024,
+  overallScore: 72,
+  goals: [
+    {
+      id: 1,
+      title: 'Desa Tanpa Kemiskinan',
+      score: 85,
+      status: 'Tercapai',
+      color: '#e11d48',
+      image: '/img/sdgs/sdg1.png',
+      description: 'Menjamin tidak ada warga yang hidup di bawah garis kemiskinan.',
+      indicators: [
+        { name: 'Penerima Bansos', value: '100%', status: 'Baik' },
+      ],
+    },
+    {
+      id: 2,
+      title: 'Desa Tanpa Kelaparan',
+      score: 78,
+      status: 'Berkembang',
+      color: '#d97706',
+      image: '/img/sdgs/sdg2.png',
+      description: 'Mewujudkan kemandirian pangan dan kecukupan gizi warga.',
+      indicators: [
+        { name: 'Konsumsi Pangan', value: '92%', status: 'Baik' },
+      ],
+    },
   ],
+  insights: {
+    strengths: ['Pendidikan Dasar Terjamin', 'Akses Air Bersih Layak'],
+    challenges: ['Pertumbuhan Ekonomi Digital', 'Pengolahan Limbah Terpadu'],
+  },
+  programs: [
+    { name: 'Peningkatan UMKM Lokal', goalId: 8, status: 'Berjalan' },
+    { name: 'Sanitasi Lingkungan Sehat', goalId: 6, status: 'Selesai' },
+  ],
+  source: 'Sistem Informasi Desa Sukahurip',
 }

@@ -6,13 +6,13 @@ import { usePathname } from "next/navigation";
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isAuthPage = pathname === "/layanan-masyarakat/login" || pathname === "/layanan-masyarakat/daftar";
+  const isLayananPage = pathname.startsWith('/auth') || pathname.startsWith('/layanan');
 
   return (
     <>
-      {!isAuthPage && <Navbar />}
+      {!isLayananPage && <Navbar />}
       <main className="flex-1">{children}</main>
-      {!isAuthPage && <Footer />}
+      {!isLayananPage && <Footer />}
     </>
   );
 }

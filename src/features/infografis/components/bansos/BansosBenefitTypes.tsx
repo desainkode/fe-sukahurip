@@ -12,7 +12,7 @@ export function BansosBenefitTypes({ benefitTypes }: BansosBenefitTypesProps) {
 
     return (
         <div className="rounded-3xl bg-white p-6">
-            <h3 className="mb-6 text-xl font-bold text-[#0B281F]">Penerima Bantuan per Jenis</h3>
+            <h3 className="mb-6 text-xl font-bold text-[#000418]">Penerima Bantuan per Jenis</h3>
 
             <div className={`grid ${gridCols} gap-3`}>
                 {benefitTypes.map((benefit) => (
@@ -38,8 +38,8 @@ export function BansosBenefitTypes({ benefitTypes }: BansosBenefitTypesProps) {
             </div>
 
             {/* Info box */}
-            <div className="mt-8 rounded-2xl border border-[#00B373]/20 bg-[#F0FFF8] p-5">
-                <p className="text-sm font-medium text-[#0B281F]">Informasi Penting</p>
+            <div className="mt-8 rounded-2xl border border-[#0021B3]/20 bg-[#F0F3FF] p-5">
+                <p className="text-sm font-medium text-[#000418]">Informasi Penting</p>
                 <ul className="mt-3 space-y-2 text-xs text-[#666]">
                     <li>✓ PKH (Program Keluarga Harapan) - untuk pemberdayaan keluarga</li>
                     <li>✓ BPNT (Bantuan Pangan Non Tunai) - untuk pangan</li>

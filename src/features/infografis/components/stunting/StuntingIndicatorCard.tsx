@@ -17,35 +17,26 @@ export function StuntingIndicatorCard({ indicator }: StuntingIndicatorCardProps)
 
   return (
     <div
-      className={`${indicator.color} relative overflow-hidden rounded-xl p-5 text-white shadow-lg h-full flex flex-col`}
+      className={`${indicator.color} relative overflow-hidden rounded-3xl p-6 text-white shadow-xl h-full flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl group/card`}
     >
-      <div className="flex items-start justify-between">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-md">
-            <Icon size={20} />
-          </div>
-          <span className="text-sm font-semibold opacity-90">{indicator.label}</span>
-        </div>
-      </div>
+      <div className={`absolute inset-0 bg-linear-to-br from-white/10 to-transparent opacity-0 transition-opacity duration-500 group-hover/card:opacity-100`} />
+      
+      <Icon className="mb-3 text-[#FFC400] size-6 sm:size-7" />
+      
+      <p className="mt-1 font-timeless text-[28px] font-bold leading-none sm:text-[32px] md:text-[36px] lg:text-[40px]">
+        {indicator.value}
+      </p>
+      
+      <span className="mt-2 text-[10px] font-bold uppercase tracking-tight text-white/60 sm:text-[11px]">
+        {indicator.label}
+      </span>
 
-      <div className="mt-6 flex items-end justify-between">
-        <div className="w-full">
-          <div className="flex items-baseline justify-between">
-             <span
-              className="text-4xl font-bold leading-none tracking-tight"
-              style={{ fontFamily: 'var(--font-upakarti)' }}
-            >
-              {indicator.value}
-            </span>
-          </div>
-          <p className="mt-4 text-[10px] leading-relaxed opacity-70">
-            {indicator.description}
-          </p>
-        </div>
-      </div>
+      <p className="mt-4 text-[9px] leading-relaxed opacity-40 line-clamp-2 px-2">
+        {indicator.description}
+      </p>
 
       {/* Decorative background element */}
-      <div className="absolute -bottom-6 -right-6 h-24 w-24 rounded-full bg-white/10 blur-2xl" />
+      <div className="absolute -bottom-6 -right-6 h-24 w-24 rounded-full bg-white/5 blur-2xl" />
     </div>
   )
 }

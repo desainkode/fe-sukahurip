@@ -5,6 +5,7 @@ import { Paperclip } from "lucide-react";
 import { sectionCardClass } from "../section-ui";
 import { AGAMA_CARDS } from "../../config/penduduk-data";
 import { AgamaStatCard } from "./AgamaStatCard";
+import { SectionHeader } from "../../../home/components/ui/SectionHeader";
 
 export function AgamaSection() {
   const scrollRef = React.useRef<HTMLDivElement | null>(null);
@@ -32,8 +33,8 @@ export function AgamaSection() {
         const isActive = index === nextIndex;
 
         dot.className = isActive
-          ? "h-2 rounded-full transition-all duration-300 ease-out w-8 bg-[#0B281F] shadow-[0_0_0_4px_rgba(11,40,31,0.08)]"
-          : "h-2 rounded-full transition-all duration-300 ease-out w-2.5 bg-[#0B281F]/20";
+          ? "h-2 rounded-full transition-all duration-300 ease-out w-8 bg-[#000418] shadow-[0_0_0_4px_rgba(0,4,24,0.08)]"
+          : "h-2 rounded-full transition-all duration-300 ease-out w-2.5 bg-[#000418]/20";
       });
     }
   }, []);
@@ -41,26 +42,12 @@ export function AgamaSection() {
   return (
     <section className={sectionCardClass + " bg-[#ffffff]"}>
       <div className="flex flex-col gap-7">
-        <div className="relative grid gap-4 border-b border-[#0B281F]/10 pb-6 pr-14 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1.45fr)] md:items-start md:gap-6 md:pr-16">
-          <h2 className="hero-reveal font-[Georgia,serif] text-[26px] font-bold leading-[1.06] text-[#0B281F] md:text-[34px] lg:text-[42px]">
-            Berdasarkan
-            <br />
-            Agama
-          </h2>
-
-          <p className="hero-reveal max-w-none pt-0.5 text-[12px] leading-6 text-[#0B281F]/80 md:text-[13px] md:leading-7">
-            Kelompok Berdasarkan Agama merupakan penyajian data penduduk menurut agama yang dianut,
-            guna memberikan gambaran komposisi keagamaan masyarakat di suatu wilayah.
-          </p>
-
-          <button
-            type="button"
-            aria-label="Informasi berdasarkan agama"
-            className="hero-reveal absolute right-0 top-0 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#0B281F] text-white transition-transform duration-300 hover:-translate-y-0.5 md:h-14 md:w-14"
-          >
-            <Paperclip size={22} strokeWidth={2.2} />
-          </button>
-        </div>
+        <SectionHeader 
+          title={["Berdasarkan", "Agama"]}
+          description="Kelompok Berdasarkan Agama merupakan penyajian data penduduk menurut agama yang dianut, guna memberikan gambaran komposisi keagamaan masyarakat di suatu wilayah."
+          showInfoButton
+          icon={Paperclip}
+        />
 
         <div
           ref={scrollRef}
@@ -94,8 +81,8 @@ export function AgamaSection() {
               <span
                 key={`agama-pagination-${item.nama}`}
                 className={`h-2 rounded-full transition-all duration-300 ease-out ${isActive
-                  ? "w-8 bg-[#0B281F] shadow-[0_0_0_4px_rgba(11,40,31,0.08)]"
-                  : "w-2.5 bg-[#0B281F]/20"
+                  ? "w-8 bg-[#000418] shadow-[0_0_0_4px_rgba(0,4,24,0.08)]"
+                  : "w-2.5 bg-[#000418]/20"
                   }`}
                 aria-hidden="true"
               />

@@ -14,6 +14,7 @@ import {
   ChartLegend,
   ChartLegendContent,
 } from '@/components/ui/chart'
+import { SectionHeader } from '../../../home/components/ui/SectionHeader'
 
 const chartData = [
   { bidang: 'Pemerintahan', anggaran: 300000000, realisasi: 280000000 },
@@ -26,47 +27,29 @@ const chartData = [
 const chartConfig = {
   anggaran: {
     label: 'Anggaran',
-    color: '#D4DFD9', // Light gray/greenish
+    color: '#D3D6E0', // Light gray/greenish
   },
   realisasi: {
     label: 'Realisasi',
-    color: '#00E0A1', // Emerald green
+    color: '#a2d6f9', // Emerald green
   },
 } satisfies ChartConfig
 
 export function RealisasiAnggaranSection() {
   return (
     <div className="flex flex-col gap-8 md:gap-10">
-      <div className="grid gap-4 border-b border-[#0B281F]/10 pb-6 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1.45fr)_auto] md:items-start md:gap-6">
-        <h2
-          className="hero-reveal whitespace-pre-line font-[Georgia,serif] text-[26px] font-bold leading-[1.08] tracking-[0.01em] text-[#0B0D10] md:text-[30px] lg:text-[38px]"
-          style={{ animationDelay: '40ms' }}
-        >
-          Realisasi
-          <br />
-          Anggaran
-        </h2>
-        <p
-          className="hero-reveal max-w-none pt-0.5 text-[12px] leading-6 text-[#0B0D10]/82 md:text-[13px] md:leading-7"
-          style={{ animationDelay: '140ms' }}
-        >
-          Perbandingan proporsional antara total Anggaran yang direncanakan dengan Realisasi penyerapan dana pada setiap bidang, disajikan secara transparan.
-        </p>
-        <button
-          type="button"
-          aria-label="Informasi realisasi anggaran"
-          className="hero-reveal inline-flex h-12 w-12 shrink-0 items-center justify-center self-start rounded-full bg-[#022F25] text-[#F3F8F6] shadow-[0_10px_20px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_24px_rgba(0,0,0,0.2)] md:h-14 md:w-14"
-          style={{ animationDelay: '220ms' }}
-        >
-          <BarChart2 size={20} strokeWidth={2.4} />
-        </button>
-      </div>
+      <SectionHeader 
+        title={["Realisasi", "Anggaran"]}
+        description="Perbandingan proporsional antara total Anggaran yang direncanakan dengan Realisasi penyerapan dana pada setiap bidang, disajikan secara transparan."
+        showInfoButton
+        icon={BarChart2}
+      />
 
       <div
-        className="hero-reveal relative overflow-hidden rounded-[20px] bg-linear-to-b from-[#FFFFFF] to-[#0B281F] p-4 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-[0_18px_34px_rgba(0,0,0,0.16)] sm:p-6 lg:p-8"
+        className="hero-reveal relative overflow-hidden rounded-[20px] bg-linear-to-b from-[#FFFFFF] to-[#000418] p-4 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-[0_18px_34px_rgba(0,0,0,0.16)] sm:p-6 lg:p-8"
         style={{ animationDelay: '300ms' }}
       >
-        <div className="absolute inset-4 sm:inset-5 rounded-2xl border border-white/10 bg-linear-to-b from-white/20 via-white/12 to-[#0B281F]/18 backdrop-blur-[2px]" />
+        <div className="absolute inset-4 sm:inset-5 rounded-2xl border border-white/10 bg-linear-to-b from-white/20 via-white/12 to-[#000418]/18 backdrop-blur-[2px]" />
 
         <div className="relative z-10">
           <ChartContainer config={chartConfig} className="h-[400px] w-full">
@@ -79,13 +62,13 @@ export function RealisasiAnggaranSection() {
             >
               <defs>
                 <linearGradient id="realisasi-gradient" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#009966" />
-                  <stop offset="56%" stopColor="#8EA95A" />
-                  <stop offset="100%" stopColor="#F0B100" />
+                  <stop offset="0%" stopColor="#072ac8" />
+                  <stop offset="56%" stopColor="#5666AD" />
+                  <stop offset="100%" stopColor="#FFC400" />
                 </linearGradient>
                 <linearGradient id="anggaran-gradient" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#233525ff" />
-                  <stop offset="100%" stopColor="#00E0A1" />
+                  <stop offset="0%" stopColor="#222636ff" />
+                  <stop offset="100%" stopColor="#a2d6f9" />
                 </linearGradient>
               </defs>
               <CartesianGrid horizontal={false} vertical={false} />
@@ -95,7 +78,7 @@ export function RealisasiAnggaranSection() {
                 tickLine={false}
                 axisLine={false}
                 width={120}
-                tick={{ fill: '#000000', fontSize: 13, fontWeight: 700, fontFamily: 'Georgia, serif' }}
+                tick={{ fill: '#000000', fontSize: 13, fontWeight: 700, className: 'font-timeless' }}
               />
               <XAxis type="number" hide />
               <ChartTooltip

@@ -65,15 +65,15 @@ export default function MapSection() {
               <span className="block opacity-90">Peta &</span>
               <span className="block text-transparent bg-clip-text bg-linear-to-r from-[#1e96fc] to-[#a2d6f9]">Batas Wilayah</span>
             </h2>
-            <p className="mt-6 text-[14px] leading-relaxed text-[#D0FAE5]/70 md:text-[16px]">
+            <p className="mt-6 text-[14px] leading-relaxed text-[#d0e7ff]/70 md:text-[16px]">
               Gambaran visual pembagian administratif per dusun beserta batas-batas geografis Desa Sukahurip yang strategis dan terdokumentasi secara digital.
             </p>
           </div>
 
             <div className="hidden h-28 w-28 shrink-0 flex-col items-center justify-center rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md md:flex">
-            <MapPin className="mb-2 text-[#ffc600]" size={24} />
+            <MapPin className="mb-2 text-[#FFC400]" size={24} />
             <p className="text-[20px] font-black leading-none">345</p>
-            <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-[#1e96fc]/60">Migrasi</p>
+            <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-[#ffc600]/60">Migrasi</p>
           </div>
         </div>
 
@@ -81,7 +81,7 @@ export default function MapSection() {
           {/* 1. Left: Boundary Wilayah (Super Compact) */}
           <div className="order-2 flex flex-col gap-4 lg:order-1">
             <div className="flex items-center gap-2 px-1">
-              <LayoutGrid size={14} className="text-[#00D492]" />
+              <LayoutGrid size={24} className="text-[#ffc600]" />
               <h4 className="text-[11px] font-black uppercase tracking-widest text-white/30">Batas Wilayah</h4>
             </div>
             <div className="grid grid-cols-2 gap-2 lg:grid-cols-1">
@@ -99,12 +99,12 @@ export default function MapSection() {
                     setCombinedMapActiveLayer(hasPinned ? "layer-5" : null);
                   }}
                 >
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#ffc600] text-[#072ac8] text-[14px] font-black group-hover:scale-110 transition-transform">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#FFC400] text-[#072ac8] text-[14px] font-black group-hover:scale-110 transition-transform">
                     {item.arah.charAt(0)}
                   </div>
                   <div className="min-w-0">
                     <h4 className="truncate text-[12px] font-bold text-white/90">{item.arah}</h4>
-                    <p className="line-clamp-2 text-[9px] leading-relaxed text-[#D0FAE5]/40">{item.detail}</p>
+                    <p className="line-clamp-2 text-[9px] leading-relaxed text-[#d0e7ff]/40">{item.detail}</p>
                   </div>
                 </button>
               ))}
@@ -113,7 +113,7 @@ export default function MapSection() {
             {/* Legend inside Left Column to save space */}
             <div className="mt-auto hidden flex-col gap-3 rounded-2xl border border-white/5 bg-white/2 p-4 lg:flex">
               <div className="flex items-center gap-2">
-                <Info size={14} className="text-[#00D492]" />
+                <Info size={24} className="text-[#ffc600]" />
                 <h4 className="text-[10px] font-black uppercase tracking-widest text-white/30">Dusun</h4>
               </div>
               <div className="grid grid-cols-2 gap-2">
@@ -156,7 +156,7 @@ export default function MapSection() {
                       >
                         <button
                           type="button"
-                          className={`pointer-events-auto group/marker relative flex h-6 w-6 items-center justify-center rounded-full border-2 border-white/20 transition-all duration-500 shadow-xl ${isActiveMarker ? "scale-125 bg-[#00D492] ring-4 ring-[#00D492]/20" : "bg-[#F0B100] hover:scale-110 hover:bg-[#00D492]"}`}
+                          className={`pointer-events-auto group/marker relative flex h-6 w-6 items-center justify-center rounded-full border-2 border-white/20 transition-all duration-500 shadow-xl ${isActiveMarker ? "scale-125 bg-[#1e96fc] ring-4 ring-[#1e96fc]/20" : "bg-[#FFC400] hover:scale-110 hover:bg-[#ffc600]"}`}
                           onMouseEnter={() => {
                             setIsBoundaryCardHoverActive(true);
                             setHoveredMapMarkerId(marker.id);
@@ -184,7 +184,7 @@ export default function MapSection() {
 
               {/* Legend Hint */}
               <div className="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-black/20 px-3 py-1.5 backdrop-blur-md text-[9px] font-bold text-white/50 border border-white/5">
-                <span className="h-1 w-1 rounded-full bg-[#00D492]" />
+                <span className="h-1 w-1 rounded-full bg-[#1e96fc]" />
                 Interactive Map
               </div>
             </div>
@@ -193,18 +193,18 @@ export default function MapSection() {
           {/* 3. Right: Info Panel & Legend */}
           <div className="order-3 flex flex-col gap-4">
             {/* Active Dusun Card */}
-            <div className="rounded-3xl border border-[#00D492]/30 bg-linear-to-br from-[#00D492]/10 to-transparent p-5 backdrop-blur-xl shadow-xl">
+            <div className="rounded-3xl border border-[#1e96fc]/30 bg-linear-to-br from-[#1e96fc]/10 to-transparent p-5 backdrop-blur-xl shadow-xl">
               <div className="flex items-center justify-between gap-4">
                 <div className="min-w-0">
                   <h3 className="truncate text-[20px] font-black tracking-tight text-white">{activeDusunInfo.nama}</h3>
-                  <p className="truncate text-[10px] font-bold uppercase tracking-widest text-[#00D492]">{activeDusunInfo.kepala}</p>
+                  <p className="truncate text-[10px] font-bold uppercase tracking-widest text-[#ffc600]">{activeDusunInfo.kepala}</p>
                 </div>
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#F0B100] text-[18px] font-black text-[#052119]">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FFC400] text-[18px] font-black text-[#040922]">
                   {activeDusunInfo.id.split('-')[1]}
                 </div>
               </div>
 
-              <p className="mt-4 text-[12px] leading-relaxed text-[#D0FAE5]/50 line-clamp-2">
+              <p className="mt-4 text-[12px] leading-relaxed text-[#d0e7ff]/50 line-clamp-2">
                 {activeDusunInfo.keterangan}
               </p>
 
@@ -212,8 +212,8 @@ export default function MapSection() {
               <div className="mt-5 grid grid-cols-2 gap-2 border-t border-white/10 pt-5">
                 {[
                   { label: "Penduduk", val: activeDusunInfo.penduduk, color: "text-white" },
-                  { label: "Laki-laki", val: activeDusunInfo.laki_laki || "1.408", color: "text-[#F0B100]" },
-                  { label: "Perempuan", val: activeDusunInfo.perempuan || "2.112", color: "text-[#00D492]" },
+                  { label: "Laki-laki", val: activeDusunInfo.laki_laki || "1.408", color: "text-[#FFC400]" },
+                  { label: "Perempuan", val: activeDusunInfo.perempuan || "2.112", color: "text-[#ffc600]" },
                   { label: "Total Unit", val: "1.087", color: "text-white" }
                 ].map((stat, i) => (
                   <div key={i} className="rounded-xl bg-white/5 border border-white/5 p-2.5">
@@ -227,7 +227,7 @@ export default function MapSection() {
             {/* Quick List (Interactive Legend) */}
             <div className="flex-1 rounded-3xl border border-white/5 bg-white/2 p-5">
               <div className="mb-3 flex items-center gap-2">
-                <Users2 size={14} className="text-[#00D492]" />
+                <Users2 size={24} className="text-[#ffc600]" />
                 <h4 className="text-[10px] font-black uppercase tracking-widest text-white/30">Pilih Dusun</h4>
               </div>
               <div className="grid gap-1.5">
@@ -235,7 +235,7 @@ export default function MapSection() {
                   <button
                     key={marker.id}
                     onClick={() => setPinnedMapMarkerId(marker.id)}
-                    className={`flex items-center justify-between gap-3 rounded-lg border px-3 py-2 text-left transition-all ${activeMapMarkerId === marker.id ? "bg-[#00D492]/20 border-[#00D492]/40" : "bg-white/5 border-white/5 hover:bg-white/10"}`}
+                    className={`flex items-center justify-between gap-3 rounded-lg border px-3 py-2 text-left transition-all ${activeMapMarkerId === marker.id ? "bg-[#ffc600]/20 border-[#1e96fc]/40" : "bg-white/5 border-white/5 hover:bg-white/10"}`}
                   >
                     <div className="flex items-center gap-2 min-w-0">
                       <div className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ backgroundColor: marker.warna }} />

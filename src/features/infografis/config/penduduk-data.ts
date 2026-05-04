@@ -25,7 +25,7 @@ export const KARTU_DEMOGRAFI = [
   {
     label: "Total\nDusun",
     angka: "4",
-    bgColor: "#F0B100",
+    bgColor: "#FFC400",
     textColor: "#FEFEFE",
     labelColor: "#FEFEFE",
     icon: House,
@@ -33,7 +33,7 @@ export const KARTU_DEMOGRAFI = [
   {
     label: "Total\nKepala Keluarga",
     angka: "1.087",
-    bgColor: "#009966",
+    bgColor: "#072ac8",
     textColor: "#FEFEFE",
     labelColor: "#FEFEFE",
     icon: Building2,
@@ -41,7 +41,7 @@ export const KARTU_DEMOGRAFI = [
   {
     label: "Total\nWilayah RT/RW",
     angka: "12/5",
-    bgColor: "#006045",
+    bgColor: "#001260",
     textColor: "#FEFEFE",
     labelColor: "#FEFEFE",
     icon: MapPinned,

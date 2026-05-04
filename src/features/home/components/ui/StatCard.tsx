@@ -11,7 +11,7 @@ export function StatCard({
 }: StatCardProps) {
   return (
     <div
-      className={`hero-reveal min-w-0 rounded-xl bg-[#0B281F]/30 p-3 text-center sm:rounded-none sm:bg-transparent sm:p-0 sm:text-left ${className}`}
+      className={`hero-reveal min-w-0 rounded-xl bg-[#000418]/30 p-3 text-center sm:rounded-none sm:bg-transparent sm:p-0 sm:text-left ${className}`}
       style={{ animationDelay: `${delay}ms` }}
     >
       <p className="text-[30px] leading-none tracking-[0.01em] text-white md:text-[36px] md:leading-9">

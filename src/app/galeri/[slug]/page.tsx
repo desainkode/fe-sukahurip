@@ -23,7 +23,7 @@ export default async function GaleriDetailPage({ params }: { params: Promise<{ s
   }
 
   return (
-    <main className="min-h-screen bg-[#F6F8F7] pb-24">
+    <main className="min-h-screen bg-[#F6F6F8] pb-24">
       {/* Hero Header */}
       <section className="relative h-[60vh] min-h-[500px] w-full overflow-hidden">
         <img 
@@ -40,11 +40,11 @@ export default async function GaleriDetailPage({ params }: { params: Promise<{ s
               href="/galeri"
               className="mb-8 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-[13px] font-bold text-white backdrop-blur-md transition-all hover:bg-white/20"
             >
-              <ArrowLeft size={16} />
+              <ArrowLeft size={24} />
               Kembali ke Galeri
             </Link>
             
-            <div className="mb-4 inline-flex rounded-full bg-[#009966] px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-white shadow-lg">
+            <div className="mb-4 inline-flex rounded-full bg-[#072ac8] px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-white shadow-lg">
               {item.category}
             </div>
             
@@ -61,10 +61,10 @@ export default async function GaleriDetailPage({ params }: { params: Promise<{ s
           <div className="lg:col-span-2 space-y-12">
             {/* Story Card */}
             <div className="rounded-[40px] border border-white bg-white p-8 shadow-xl md:p-12">
-              <div className="mb-10 flex flex-wrap gap-6 border-b border-[#0B281F]/5 pb-8">
+              <div className="mb-10 flex flex-wrap gap-6 border-b border-[#000418]/5 pb-8">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0B281F]/5 text-[#0B281F]">
-                    <Calendar size={18} />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#000418]/5 text-[#000418]">
+                    <Calendar size={24} />
                   </div>
                   <div>
                     <p className="text-[11px] font-bold uppercase tracking-widest text-[#072ac8]/30">Tanggal</p>
@@ -72,8 +72,8 @@ export default async function GaleriDetailPage({ params }: { params: Promise<{ s
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0B281F]/5 text-[#0B281F]">
-                    <MapPin size={18} />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#000418]/5 text-[#000418]">
+                    <MapPin size={24} />
                   </div>
                   <div>
                     <p className="text-[11px] font-bold uppercase tracking-widest text-[#072ac8]/30">Lokasi</p>
@@ -82,8 +82,8 @@ export default async function GaleriDetailPage({ params }: { params: Promise<{ s
                 </div>
               </div>
 
-              <h2 className="mb-6 text-2xl font-bold text-[#0B281F]">Tentang Kegiatan</h2>
-              <div className="prose prose-lg max-w-none text-[17px] leading-relaxed text-[#0B281F]/70">
+              <h2 className="mb-6 text-2xl font-bold text-[#000418]">Tentang Kegiatan</h2>
+              <div className="prose prose-lg max-w-none text-[17px] leading-relaxed text-[#000418]/70">
                 <p>{item.longDesc}</p>
               </div>
             </div>
@@ -91,8 +91,8 @@ export default async function GaleriDetailPage({ params }: { params: Promise<{ s
             {/* Photo Gallery */}
             <div className="rounded-[40px] border border-white bg-white p-8 shadow-xl md:p-12">
               <div className="mb-8 flex items-center justify-between">
-                <h2 className="text-2xl font-bold text-[#0B281F]">Koleksi Foto</h2>
-                <span className="text-[13px] font-bold text-[#0B281F]/30 uppercase tracking-widest">{item.photos.length} Momen</span>
+                <h2 className="text-2xl font-bold text-[#000418]">Koleksi Foto</h2>
+                <span className="text-[13px] font-bold text-[#000418]/30 uppercase tracking-widest">{item.photos.length} Momen</span>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 {item.photos.map((img, idx) => (
@@ -107,12 +107,12 @@ export default async function GaleriDetailPage({ params }: { params: Promise<{ s
           {/* Sidebar Info */}
           <div className="space-y-8">
             {/* Highlights Card */}
-            <div className="rounded-[40px] bg-[#0B281F] p-10 text-white shadow-2xl">
+            <div className="rounded-[40px] bg-[#000418] p-10 text-white shadow-2xl">
               <h3 className="mb-8 text-xl font-bold">Informasi Detil</h3>
               <div className="space-y-8">
                 <div className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[#009966]">
-                    <Users size={20} />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[#072ac8]">
+                    <Users size={24} />
                   </div>
                   <div>
                     <p className="text-[12px] font-bold uppercase tracking-widest text-white/40 mb-1">Peserta</p>
@@ -120,8 +120,8 @@ export default async function GaleriDetailPage({ params }: { params: Promise<{ s
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[#F0B100]">
-                    <Target size={20} />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[#FFC400]">
+                    <Target size={24} />
                   </div>
                   <div>
                     <p className="text-[12px] font-bold uppercase tracking-widest text-white/40 mb-1">Tujuan</p>
@@ -130,22 +130,22 @@ export default async function GaleriDetailPage({ params }: { params: Promise<{ s
                 </div>
               </div>
 
-              <button className="mt-10 flex w-full items-center justify-center gap-3 rounded-2xl bg-[#1e96fc] py-5 text-[14px] font-bold shadow-xl transition-all hover:-translate-y-1 hover:bg-[#1e96fc]">
-                <Share2 size={18} />
+              <button className="mt-10 flex w-full items-center justify-center gap-3 rounded-2xl bg-[#1e96fc] py-5 text-[14px] font-bold shadow-xl transition-all hover:-translate-y-1 hover:bg-[#ffc600]">
+                <Share2 size={24} />
                 Bagikan Momen
               </button>
             </div>
 
             {/* Help Widget */}
             <div className="rounded-[40px] border border-white bg-white p-10 shadow-xl">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0B281F]/5 text-[#0B281F]">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#000418]/5 text-[#000418]">
                 <Info size={24} />
               </div>
-              <h3 className="mb-4 text-xl font-bold text-[#0B281F]">Bantuan & Layanan</h3>
-              <p className="text-[14px] leading-relaxed text-[#0B281F]/60">
+              <h3 className="mb-4 text-xl font-bold text-[#000418]">Bantuan & Layanan</h3>
+              <p className="text-[14px] leading-relaxed text-[#000418]/60">
                 Butuh dokumentasi kegiatan ini dalam resolusi tinggi untuk keperluan publikasi? Hubungi sekretariat desa.
               </p>
-              <Link href="/kontak" className="mt-6 inline-block text-[14px] font-bold text-[#009966] hover:underline">
+              <Link href="/kontak" className="mt-6 inline-block text-[14px] font-bold text-[#072ac8] hover:underline">
                 Hubungi Kami &rarr;
               </Link>
             </div>

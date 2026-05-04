@@ -112,10 +112,10 @@ function TableRow({ item }: { item: TableItem }) {
   return (
     <>
       <tr 
-        className={`transition-colors hover:bg-[#F6F8F7] ${
-          item.isTotal ? "bg-[#F0B100]/5 font-bold" : 
-          item.level === 1 ? "font-bold text-[#0B281F]" :
-          item.level === 2 ? "bg-[#F6F8F7]/30 font-semibold" : ""
+        className={`transition-colors hover:bg-[#F6F6F8] ${
+          item.isTotal ? "bg-[#FFC400]/5 font-bold" : 
+          item.level === 1 ? "font-bold text-[#000418]" :
+          item.level === 2 ? "bg-[#F6F6F8]/30 font-semibold" : ""
         }`}
       >
         <td className={`px-4 py-4 text-[12px] md:px-6 ${item.level === 3 ? "pl-10 opacity-60" : ""}`}>
@@ -123,7 +123,7 @@ function TableRow({ item }: { item: TableItem }) {
         </td>
         <td className={`px-4 py-4 text-[13px] md:px-6 ${
           item.level === 2 ? "pl-8" : 
-          item.level === 3 ? "pl-10 text-[#0B281F]/70" : ""
+          item.level === 3 ? "pl-10 text-[#000418]/70" : ""
         }`}>
           {item.uraian}
         </td>
@@ -132,10 +132,10 @@ function TableRow({ item }: { item: TableItem }) {
         </td>
         <td className="px-4 py-4 text-right md:px-6">
           <div className="flex flex-col items-end">
-            <span className="font-mono text-[13px] font-bold text-[#009966]">
+            <span className="font-mono text-[13px] font-bold text-[#072ac8]">
               {formatIDR(item.realisasi)}
             </span>
-            <span className="text-[11px] font-bold text-[#009966]/70">
+            <span className="text-[11px] font-bold text-[#072ac8]/70">
               ({percentage}%)
             </span>
           </div>
@@ -144,20 +144,20 @@ function TableRow({ item }: { item: TableItem }) {
           <button
             onClick={() => setIsExpanded(!isExpanded)}
             className={`flex h-8 w-8 mx-auto items-center justify-center rounded-full transition-all ${
-              isExpanded ? "bg-[#0B281F] text-white shadow-md" : "bg-[#0B281F]/5 text-[#0B281F] hover:bg-[#0B281F]/10"
+              isExpanded ? "bg-[#000418] text-white shadow-md" : "bg-[#000418]/5 text-[#000418] hover:bg-[#000418]/10"
             }`}
           >
-            {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+            {isExpanded ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
           </button>
         </td>
       </tr>
       
       {isExpanded && (
         <tr>
-          <td colSpan={5} className="bg-[#F6F8F7]/50 p-6 md:p-8">
+          <td colSpan={5} className="bg-[#F6F6F8]/50 p-6 md:p-8">
             <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-2 text-[#0B281F]/60">
-                <Camera size={14} />
+              <div className="flex items-center gap-2 text-[#000418]/60">
+                <Camera size={24} />
                 <span className="text-[11px] font-bold uppercase tracking-widest">Dokumentasi & Progres Realisasi</span>
               </div>
               
@@ -172,10 +172,10 @@ function TableRow({ item }: { item: TableItem }) {
                         </div>
                       </div>
                       <div className="p-4">
-                        <p className="text-[13px] font-semibold text-[#0B281F] leading-relaxed">{prog.keterangan}</p>
-                        <div className="mt-3 h-1.5 w-full rounded-full bg-[#F6F8F7]">
+                        <p className="text-[13px] font-semibold text-[#000418] leading-relaxed">{prog.keterangan}</p>
+                        <div className="mt-3 h-1.5 w-full rounded-full bg-[#F6F6F8]">
                           <div 
-                            className="h-full rounded-full bg-[#009966] transition-all duration-1000" 
+                            className="h-full rounded-full bg-[#072ac8] transition-all duration-1000" 
                             style={{ width: `${prog.persentase}%` }} 
                           />
                         </div>
@@ -184,12 +184,12 @@ function TableRow({ item }: { item: TableItem }) {
                   ))}
                 </div>
               ) : (
-                <div className="flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-[#0B281F]/10 py-12 text-center">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#0B281F]/5 text-[#0B281F]/30">
+                <div className="flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-[#000418]/10 py-12 text-center">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#000418]/5 text-[#000418]/30">
                     <ImageIcon size={24} />
                   </div>
-                  <p className="text-[14px] font-medium text-[#0B281F]/40">Belum ada dokumentasi progres visual</p>
-                  <p className="mt-1 text-[12px] text-[#0B281F]/30">Data sedang diperbarui oleh petugas terkait</p>
+                  <p className="text-[14px] font-medium text-[#000418]/40">Belum ada dokumentasi progres visual</p>
+                  <p className="mt-1 text-[12px] text-[#000418]/30">Data sedang diperbarui oleh petugas terkait</p>
                 </div>
               )}
             </div>
@@ -202,8 +202,8 @@ function TableRow({ item }: { item: TableItem }) {
 
 function APBDesTable({ title, data, icon: Icon, themeColor }: { title: string, data: TableItem[], icon: any, themeColor: string }) {
   return (
-    <section className="overflow-hidden rounded-[32px] border border-[#0B281F]/10 bg-white shadow-[0_20px_50px_rgba(11,40,31,0.06)]">
-      <div className="relative flex items-center gap-4 p-6 md:p-8 bg-gradient-to-r from-[#0B281F] to-[#004F3B] text-white">
+    <section className="overflow-hidden rounded-[32px] border border-[#000418]/10 bg-white shadow-[0_20px_50px_rgba(0,4,24,0.06)]">
+      <div className="relative flex items-center gap-4 p-6 md:p-8 bg-gradient-to-r from-[#000418] to-[#000E4F] text-white">
         {/* Decorative Glow */}
         <div className="absolute right-0 top-0 h-full w-32 bg-white/5 blur-2xl" />
         
@@ -219,7 +219,7 @@ function APBDesTable({ title, data, icon: Icon, themeColor }: { title: string, d
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="bg-[#F6F8F7] text-[11px] font-bold uppercase tracking-widest text-[#0B281F]/50">
+            <tr className="bg-[#F6F6F8] text-[11px] font-bold uppercase tracking-widest text-[#000418]/50">
               <th className="px-4 py-5 md:px-6">Kode</th>
               <th className="px-4 py-5 md:px-6">Uraian / Bidang</th>
               <th className="px-4 py-5 text-right md:px-6">Anggaran (Rp)</th>
@@ -227,7 +227,7 @@ function APBDesTable({ title, data, icon: Icon, themeColor }: { title: string, d
               <th className="px-4 py-5 text-center md:px-6">Aksi</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#0B281F]/5">
+          <tbody className="divide-y divide-[#000418]/5">
             {data.map((item, idx) => (
               <TableRow key={`${item.kode}-${idx}`} item={item} />
             ))}
@@ -240,21 +240,21 @@ function APBDesTable({ title, data, icon: Icon, themeColor }: { title: string, d
 
 export default function ApbdesDetailPage() {
   return (
-    <main className="min-h-screen bg-[#F6F8F7] pb-24">
+    <main className="min-h-screen bg-[#F6F6F8] pb-24">
       {/* Full Width Hero Section */}
-      <section className="relative overflow-hidden bg-[#0B281F] pt-28 pb-16 text-white shadow-2xl sm:pt-32 md:pt-36 lg:pt-40 lg:pb-24">
-        <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-[#00E0A1]/12 blur-[100px]" />
-        <div className="pointer-events-none absolute -left-16 -bottom-16 h-80 w-80 rounded-full bg-[#F0B100]/10 blur-[110px]" />
+      <section className="relative overflow-hidden bg-[#000418] pt-28 pb-16 text-white shadow-2xl sm:pt-32 md:pt-36 lg:pt-40 lg:pb-24">
+        <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-[#a2d6f9]/12 blur-[100px]" />
+        <div className="pointer-events-none absolute -left-16 -bottom-16 h-80 w-80 rounded-full bg-[#FFC400]/10 blur-[110px]" />
         
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative z-10 flex flex-col items-center text-center">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-[#00E0A1] backdrop-blur-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#00E0A1] animate-pulse" />
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-[#a2d6f9] backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#a2d6f9] animate-pulse" />
               Laporan Realisasi & Akuntabilitas Desa
             </div>
 
             <h1 className="max-w-4xl font-[Georgia,serif] text-[40px] font-bold leading-[1.05] tracking-tight sm:text-[52px] lg:text-[64px]">
-              Realisasi <span className="text-[#F0B100]">APB Desa</span>
+              Realisasi <span className="text-[#FFC400]">APB Desa</span>
               <br />
               Sukahurip 2026
             </h1>
@@ -271,14 +271,14 @@ export default function ApbdesDetailPage() {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <Link
             href="/infografis"
-            className="inline-flex items-center gap-2 self-start rounded-full border border-[#0B281F]/10 bg-white px-5 py-2.5 text-[13px] font-bold text-[#0B281F] shadow-[0_10px_24px_rgba(11,40,31,0.08)] transition-transform duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 self-start rounded-full border border-[#000418]/10 bg-white px-5 py-2.5 text-[13px] font-bold text-[#000418] shadow-[0_10px_24px_rgba(0,4,24,0.08)] transition-transform duration-300 hover:-translate-y-0.5"
           >
-            <ArrowLeft size={16} />
+            <ArrowLeft size={24} />
             Kembali ke Infografis
           </Link>
 
-          <div className="flex items-center gap-3 rounded-2xl bg-[#009966]/10 px-4 py-2 text-[#009966]">
-            <CheckCircle2 size={18} />
+          <div className="flex items-center gap-3 rounded-2xl bg-[#072ac8]/10 px-4 py-2 text-[#072ac8]">
+            <CheckCircle2 size={24} />
             <span className="text-[13px] font-bold uppercase tracking-wider">Status Realisasi: Berjalan (On-Going)</span>
           </div>
         </div>
@@ -286,22 +286,22 @@ export default function ApbdesDetailPage() {
         {/* Ringkasan Section */}
         <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { label: "Total Pendapatan", value: 1250000000, target: 1625000000, icon: TrendingUp, color: "bg-emerald-500" },
+            { label: "Total Pendapatan", value: 1250000000, target: 1625000000, icon: TrendingUp, color: "bg-desa-blue-500" },
             { label: "Total Belanja", value: 985000000, target: 1645000000, icon: Wallet, color: "bg-red-500" },
-            { label: "Persentase Belanja", value: 60, isPercent: true, icon: BarChart3, color: "bg-amber-500" },
+            { label: "Persentase Belanja", value: 60, isPercent: true, icon: BarChart3, color: "bg-desa-yellow-500" },
             { label: "SiLPA Berjalan", value: 300000000, target: 0, icon: CircleDollarSign, color: "bg-blue-500" },
           ].map((item, idx) => (
-            <article key={idx} className="rounded-3xl border border-[#0B281F]/5 bg-white p-6 shadow-[0_12px_30px_rgba(0,0,0,0.04)]">
+            <article key={idx} className="rounded-3xl border border-[#000418]/5 bg-white p-6 shadow-[0_12px_30px_rgba(0,0,0,0.04)]">
               <div className={`mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl ${item.color} text-white shadow-lg`}>
-                <item.icon size={20} />
+                <item.icon size={24} />
               </div>
-              <p className="text-[12px] font-medium uppercase tracking-widest text-[#0B281F]/40">{item.label}</p>
+              <p className="text-[12px] font-medium uppercase tracking-widest text-[#000418]/40">{item.label}</p>
               <div className="mt-1 flex flex-col">
-                <p className="font-[Georgia,serif] text-xl font-bold text-[#0B281F] sm:text-2xl">
+                <p className="font-[Georgia,serif] text-xl font-bold text-[#000418] sm:text-2xl">
                   {item.isPercent ? `${item.value}%` : formatIDR(item.value)}
                 </p>
                 {item.target && item.target > 0 && (
-                  <p className="text-[11px] text-[#0B281F]/50">Target: {formatIDR(item.target)}</p>
+                  <p className="text-[11px] text-[#000418]/50">Target: {formatIDR(item.target)}</p>
                 )}
               </div>
             </article>
@@ -314,7 +314,7 @@ export default function ApbdesDetailPage() {
             title="1. Pendapatan Desa" 
             data={pendapatanData} 
             icon={TrendingUp} 
-            themeColor="bg-[#009966]" 
+            themeColor="bg-[#072ac8]" 
           />
           
           <APBDesTable 
@@ -328,25 +328,25 @@ export default function ApbdesDetailPage() {
             title="3. Pembiayaan Desa" 
             data={pembiayaanData} 
             icon={CircleDollarSign} 
-            themeColor="bg-[#F0B100]" 
+            themeColor="bg-[#FFC400]" 
           />
         </div>
 
         {/* Final Summary Card */}
-        <section className="relative overflow-hidden rounded-[40px] bg-[#0B281F] p-8 text-white shadow-2xl md:p-12 lg:p-16">
+        <section className="relative overflow-hidden rounded-[40px] bg-[#000418] p-8 text-white shadow-2xl md:p-12 lg:p-16">
           {/* Decorative Background Elements */}
-          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#00E0A1]/10 blur-[80px]" />
-          <div className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-[#F0B100]/5 blur-[80px]" />
+          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#a2d6f9]/10 blur-[80px]" />
+          <div className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-[#FFC400]/5 blur-[80px]" />
 
           <div className="relative z-10 grid gap-12 lg:grid-cols-[1fr_auto]">
             <div className="flex flex-col justify-center">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-[#00E0A1] backdrop-blur-sm">
-                <CheckCircle2 size={14} />
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-[#a2d6f9] backdrop-blur-sm">
+                <CheckCircle2 size={24} />
                 Kesimpulan Laporan
               </div>
               
               <h2 className="max-w-2xl font-[Georgia,serif] text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-                Laporan Realisasi <span className="text-[#00E0A1]">Berjalan</span>
+                Laporan Realisasi <span className="text-[#a2d6f9]">Berjalan</span>
               </h2>
               
               <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-white/60 sm:text-[16px]">
@@ -356,11 +356,11 @@ export default function ApbdesDetailPage() {
               <div className="mt-10 flex flex-wrap gap-4">
                 <div className="rounded-2xl bg-white/5 p-4 backdrop-blur-md border border-white/10">
                   <p className="text-[11px] font-bold uppercase tracking-widest text-white/40">Total Anggaran</p>
-                  <p className="mt-1 text-xl font-bold text-[#F0B100]">{formatIDR(1625000000)}</p>
+                  <p className="mt-1 text-xl font-bold text-[#FFC400]">{formatIDR(1625000000)}</p>
                 </div>
                 <div className="rounded-2xl bg-white/5 p-4 backdrop-blur-md border border-white/10">
                   <p className="text-[11px] font-bold uppercase tracking-widest text-white/40">Total Realisasi</p>
-                  <p className="mt-1 text-xl font-bold text-[#00E0A1]">{formatIDR(1250000000)}</p>
+                  <p className="mt-1 text-xl font-bold text-[#a2d6f9]">{formatIDR(1250000000)}</p>
                 </div>
               </div>
             </div>
@@ -380,7 +380,7 @@ export default function ApbdesDetailPage() {
                     cx="50%"
                     cy="50%"
                     r="45%"
-                    className="fill-none stroke-[#00E0A1]"
+                    className="fill-none stroke-[#a2d6f9]"
                     strokeWidth="10"
                     strokeDasharray="283"
                     strokeDashoffset="65"
@@ -400,8 +400,8 @@ export default function ApbdesDetailPage() {
                 </div>
                 <div className="rounded-2xl bg-white/5 p-5 backdrop-blur-md border border-white/10 flex flex-col justify-between">
                   <p className="text-[10px] font-bold uppercase tracking-widest text-white/40">Status Target</p>
-                  <div className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-[#00E0A1]/20 px-3 py-1 text-[10px] font-bold text-[#00E0A1]">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#00E0A1] animate-pulse" />
+                  <div className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-[#a2d6f9]/20 px-3 py-1 text-[10px] font-bold text-[#a2d6f9]">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#a2d6f9] animate-pulse" />
                     ON TRACK
                   </div>
                 </div>
@@ -410,7 +410,7 @@ export default function ApbdesDetailPage() {
           </div>
           
           <div className="mt-12 flex items-center gap-3 rounded-2xl bg-white/5 p-5 text-[12px] text-white/40 border border-white/5">
-            <Info size={18} className="shrink-0 text-[#F0B100]" />
+            <Info size={24} className="shrink-0 text-[#FFC400]" />
             <p>Data ini merupakan ringkasan eksekutif dari realisasi APBDes Sukahurip. Untuk rincian per kegiatan secara lebih mendalam, silakan klik dropdown pada tabel di atas.</p>
           </div>
         </section>

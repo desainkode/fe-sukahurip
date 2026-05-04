@@ -27,10 +27,10 @@ const pendapatanData = [
 ]
 
 const pieConfig = {
-  dd: { label: 'Dana Desa', color: '#00E0A1' },
-  add: { label: 'Alokasi Dana Desa', color: '#F0B100' },
+  dd: { label: 'Dana Desa', color: '#a2d6f9' },
+  add: { label: 'Alokasi Dana Desa', color: '#FFC400' },
   pad: { label: 'Pendapatan Asli', color: '#FFFFFF' },
-  banprov: { label: 'Bantuan Provinsi', color: '#34D399' },
+  banprov: { label: 'Bantuan Provinsi', color: '#2C4CDB' },
 } satisfies ChartConfig
 
 // Data Simulasi Belanja
@@ -43,7 +43,7 @@ const belanjaData = [
 ]
 
 const barConfig = {
-  total: { label: 'Belanja', color: '#00E0A1' },
+  total: { label: 'Belanja', color: '#a2d6f9' },
 } satisfies ChartConfig
 
 export function GrafikVisualisasiSection() {
@@ -54,9 +54,9 @@ export function GrafikVisualisasiSection() {
   return (
     <div className="flex flex-col gap-8 md:gap-10">
       {/* Header Section */}
-      <div className="grid gap-4 border-b border-[#0B281F]/10 pb-6 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1.45fr)_auto] md:items-start md:gap-6">
+      <div className="grid gap-4 border-b border-[#000418]/10 pb-6 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1.45fr)_auto] md:items-start md:gap-6">
         <h2
-          className="hero-reveal whitespace-pre-line font-[Georgia,serif] text-[26px] font-bold leading-[1.08] tracking-[0.01em] text-[#0B0D10] md:text-[30px] lg:text-[38px]"
+          className="hero-reveal whitespace-pre-line font-[Georgia,serif] text-[26px] font-bold leading-[1.08] tracking-[0.01em] text-[#000418] md:text-[30px] lg:text-[38px]"
           style={{ animationDelay: '40ms' }}
         >
           Grafik &
@@ -64,7 +64,7 @@ export function GrafikVisualisasiSection() {
           Visualisasi
         </h2>
         <p
-          className="hero-reveal max-w-none pt-0.5 text-[12px] leading-6 text-[#0B0D10]/82 md:text-[13px] md:leading-7"
+          className="hero-reveal max-w-none pt-0.5 text-[12px] leading-6 text-[#000418]/82 md:text-[13px] md:leading-7"
           style={{ animationDelay: '140ms' }}
         >
           Diagram interaktif yang menyajikan porsi sumber pendapatan dan alokasi
@@ -74,10 +74,10 @@ export function GrafikVisualisasiSection() {
         <button
           type="button"
           aria-label="Informasi grafik dan visualisasi"
-          className="hero-reveal inline-flex h-12 w-12 shrink-0 items-center justify-center self-start rounded-full bg-[#022F25] text-[#F3F8F6] shadow-[0_10px_20px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_24px_rgba(0,0,0,0.2)] md:h-14 md:w-14"
+          className="hero-reveal inline-flex h-12 w-12 shrink-0 items-center justify-center self-start rounded-full bg-[#072ac8] text-[#F3F4F8] shadow-[0_10px_20px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_24px_rgba(0,0,0,0.2)] md:h-14 md:w-14"
           style={{ animationDelay: '220ms' }}
         >
-          <PieChartIcon size={20} strokeWidth={2.4} />
+          <PieChartIcon size={24} strokeWidth={2.4} />
         </button>
       </div>
 
@@ -86,7 +86,7 @@ export function GrafikVisualisasiSection() {
         
         {/* PIE CHART (PENDAPATAN) */}
         <article
-          className="hero-reveal group relative overflow-hidden rounded-[24px] border border-[#0B281F]/10 bg-linear-to-br from-[#0B281F] to-[#174738] p-6 shadow-[0_16px_40px_rgba(0,0,0,0.12)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-[0_24px_48px_rgba(0,0,0,0.2)] sm:p-8"
+          className="hero-reveal group relative overflow-hidden rounded-[24px] border border-[#000418]/10 bg-linear-to-br from-[#000418] to-[#151E49] p-6 shadow-[0_16px_40px_rgba(0,0,0,0.12)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-[0_24px_48px_rgba(0,0,0,0.2)] sm:p-8"
           style={{ animationDelay: '300ms' }}
         >
           <div className="mb-6 flex items-center justify-between">
@@ -94,12 +94,12 @@ export function GrafikVisualisasiSection() {
               Pendapatan Desa
             </h3>
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm">
-              <ArrowUpRight size={20} />
+              <ArrowUpRight size={24} />
             </div>
           </div>
 
           <div className="relative mx-auto w-full max-w-[280px] aspect-square">
-            <div className="absolute inset-0 rounded-full bg-[#00E0A1]/10 blur-3xl" />
+            <div className="absolute inset-0 rounded-full bg-[#a2d6f9]/10 blur-3xl" />
             <ChartContainer config={pieConfig} className="mx-auto h-full w-full">
               <PieChart>
                 <defs>
@@ -208,7 +208,7 @@ export function GrafikVisualisasiSection() {
                   <span className="text-[12px] font-medium text-white/80">
                     {item.label}
                   </span>
-                  <span className="text-[13px] font-bold text-[#00E0A1]">
+                  <span className="text-[13px] font-bold text-[#a2d6f9]">
                     {item.value}%
                   </span>
                 </div>
@@ -219,18 +219,18 @@ export function GrafikVisualisasiSection() {
 
         {/* BAR CHART (BELANJA) */}
         <article
-          className="hero-reveal group relative flex flex-col overflow-hidden rounded-[24px] bg-linear-to-b from-[#FFFFFF] to-[#0B281F] p-4 shadow-[0_16px_40px_rgba(0,0,0,0.1)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-[0_24px_48px_rgba(0,0,0,0.15)] sm:p-6 lg:p-8"
+          className="hero-reveal group relative flex flex-col overflow-hidden rounded-[24px] bg-linear-to-b from-[#FFFFFF] to-[#000418] p-4 shadow-[0_16px_40px_rgba(0,0,0,0.1)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-[0_24px_48px_rgba(0,0,0,0.15)] sm:p-6 lg:p-8"
           style={{ animationDelay: '400ms' }}
         >
-          <div className="absolute inset-4 sm:inset-5 rounded-2xl border border-white/10 bg-linear-to-b from-white/30 via-white/15 to-[#0B281F]/20 backdrop-blur-[2px]" />
+          <div className="absolute inset-4 sm:inset-5 rounded-2xl border border-white/10 bg-linear-to-b from-white/30 via-white/15 to-[#000418]/20 backdrop-blur-[2px]" />
 
           <div className="relative z-10 flex-1 flex flex-col">
             <div className="mb-4 flex items-center justify-between sm:mb-6">
-              <h3 className="font-[Georgia,serif] text-[20px] font-bold text-[#0B0D10] sm:text-[24px]">
+              <h3 className="font-[Georgia,serif] text-[20px] font-bold text-[#000418] sm:text-[24px]">
                 Belanja Desa
               </h3>
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/5 text-[#0B0D10] backdrop-blur-sm">
-                <BarChart3 size={20} />
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/5 text-[#000418] backdrop-blur-sm">
+                <BarChart3 size={24} />
               </div>
             </div>
 
@@ -249,9 +249,9 @@ export function GrafikVisualisasiSection() {
                 >
                   <defs>
                     <linearGradient id="belanja-gradient" x1="0" y1="0" x2="1" y2="0">
-                      <stop offset="0%" stopColor="#009966" />
-                      <stop offset="56%" stopColor="#8EA95A" />
-                      <stop offset="100%" stopColor="#F0B100" />
+                      <stop offset="0%" stopColor="#072ac8" />
+                      <stop offset="56%" stopColor="#5666AD" />
+                      <stop offset="100%" stopColor="#FFC400" />
                     </linearGradient>
                   </defs>
                   <CartesianGrid horizontal={false} vertical={false} />

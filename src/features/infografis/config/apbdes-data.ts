@@ -88,8 +88,8 @@ export const pendapatanChartGradientIds = Object.fromEntries(
 ) as Record<(typeof pendapatanChartData)[number]['source'], string>
 
 export const pendapatanChartConfig = {
-  'Dana Desa': { label: 'Dana Desa', color: '#00E0A1' },
-  'Alokasi Dana Desa': { label: 'Alokasi Dana Desa', color: '#F0B100' },
-  'Pendapatan Asli Desa': { label: 'Pendapatan Asli Desa', color: '#8FE8C8' },
-  'Lain-lain Pendapatan': { label: 'Lain-lain Pendapatan', color: '#2DCB8C' },
+  'Dana Desa': { label: 'Dana Desa', color: '#a2d6f9' },
+  'Alokasi Dana Desa': { label: 'Alokasi Dana Desa', color: '#FFC400' },
+  'Pendapatan Asli Desa': { label: 'Pendapatan Asli Desa', color: '#8B9CEC' },
+  'Lain-lain Pendapatan': { label: 'Lain-lain Pendapatan', color: '#2545D3' },
 } satisfies ChartConfig

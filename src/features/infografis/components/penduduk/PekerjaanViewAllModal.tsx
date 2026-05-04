@@ -26,13 +26,13 @@ export function PekerjaanViewAllModal({
   bgColor,
 }: PekerjaanViewAllModalProps) {
   const gradients = {
-    yellow: "from-[#F0B100] via-[#D4940A] to-[#B8860B]",
-    green: "from-[#009966] via-[#005239] to-[#003d2e]",
+    yellow: "from-[#FFC400] via-[#DEAA00] to-[#C39600]",
+    green: "from-[#072ac8] via-[#000F52] to-[#000B3D]",
   };
 
   const accentColors = {
-    yellow: "#F0B100",
-    green: "#00E0A1",
+    yellow: "#FFC400",
+    green: "#a2d6f9",
   };
 
   if (!isOpen) return null;

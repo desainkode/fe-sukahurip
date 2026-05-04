@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import { CheckCircle2, Hammer, TrendingUp, ClipboardList } from 'lucide-react'
+import { SectionHeader } from '../../../home/components/ui/SectionHeader'
 
 interface ProgramCardProps {
   title: string
@@ -54,7 +55,7 @@ function ProgramCard({
       </div>
 
       <div className="mt-8 flex-1">
-        <h3 className="font-[Georgia,serif] text-[26px] font-bold leading-[1.1] tracking-tight sm:text-[32px]">
+        <h3 className="font-timeless text-[26px] font-bold leading-[1.1] tracking-tight sm:text-[32px]">
           {title}
         </h3>
         <p className="mt-3 max-w-[95%] text-[11px] leading-relaxed opacity-80 sm:text-[13px]">
@@ -88,9 +89,9 @@ export function ProgramDesaSection() {
       description: 'Meningkatkan produktivitas hasil panen petani dan sistem perairan.',
       location: 'Blok Sawah Lor, Dusun 1',
       status: 'Berjalan',
-      statusDot: 'bg-[#F0B100]', // Yellow dot
-      icon: <Hammer size={20} strokeWidth={2.5} />,
-      bgClass: 'bg-[linear-gradient(135deg,#00C185_0%,#009A64_100%)]',
+      statusDot: 'bg-[#FFC400]', // Yellow dot
+      icon: <Hammer size={24} strokeWidth={2.5} />,
+      bgClass: 'bg-[linear-gradient(135deg,#0023C1_0%,#001C9A_100%)]',
       textClass: 'text-white',
       pillBgClass: 'bg-[#111] text-white shadow-sm',
       iconBgClass: 'bg-[#111]/20 text-white',
@@ -100,8 +101,8 @@ export function ProgramDesaSection() {
       description: 'Peningkatan fasilitas pelayanan publik terpadu untuk masyarakat.',
       location: 'Pusat Pemerintahan Desa',
       status: 'Selesai',
-      statusDot: 'bg-[#00E0A1]', // Green dot
-      icon: <CheckCircle2 size={20} strokeWidth={2.5} />,
+      statusDot: 'bg-[#a2d6f9]', // Green dot
+      icon: <CheckCircle2 size={24} strokeWidth={2.5} />,
       bgClass: 'bg-[#E8EAE9]', // Consistent light gray
       textClass: 'text-[#111]',
       pillBgClass: 'bg-[#111] text-white shadow-sm',
@@ -112,41 +113,23 @@ export function ProgramDesaSection() {
       description: 'Pemberdayaan ekonomi dan keterampilan warga untuk usaha mandiri.',
       location: 'Gedung Serbaguna',
       status: 'Direncanakan',
-      statusDot: 'bg-[#F0B100]', // Yellow dot
-      icon: <TrendingUp size={20} strokeWidth={2.5} />,
-      bgClass: 'bg-[#0B281F]', // Dark Green
+      statusDot: 'bg-[#FFC400]', // Yellow dot
+      icon: <TrendingUp size={24} strokeWidth={2.5} />,
+      bgClass: 'bg-[#000418]', // Dark Green
       textClass: 'text-white',
       pillBgClass: 'bg-white/10 text-white shadow-sm backdrop-blur-sm',
-      iconBgClass: 'bg-[#00E0A1]/20 text-[#00E0A1]',
+      iconBgClass: 'bg-[#a2d6f9]/20 text-[#a2d6f9]',
     },
   ]
 
   return (
     <div className="flex flex-col gap-8 md:gap-10">
-      <div className="grid gap-4 border-b border-[#0B281F]/10 pb-6 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1.45fr)_auto] md:items-start md:gap-6">
-        <h2
-          className="hero-reveal whitespace-pre-line font-[Georgia,serif] text-[26px] font-bold leading-[1.08] tracking-[0.01em] text-[#0B0D10] md:text-[30px] lg:text-[38px]"
-          style={{ animationDelay: '40ms' }}
-        >
-          Program &
-          <br />
-          Kegiatan
-        </h2>
-        <p
-          className="hero-reveal max-w-none pt-0.5 text-[12px] leading-6 text-[#0B0D10]/82 md:text-[13px] md:leading-7"
-          style={{ animationDelay: '140ms' }}
-        >
-          Daftar program prioritas desa yang direncanakan dan dilaksanakan secara terbuka, serta didanai melalui Anggaran Pendapatan dan Belanja Desa (APBDes) dengan prinsip transparansi dan akuntabilitas kepada masyarakat.
-        </p>
-        <button
-          type="button"
-          aria-label="Informasi program desa"
-          className="hero-reveal inline-flex h-12 w-12 shrink-0 items-center justify-center self-start rounded-full bg-[#022F25] text-[#F3F8F6] shadow-[0_10px_20px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_24px_rgba(0,0,0,0.2)] md:h-14 md:w-14"
-          style={{ animationDelay: '220ms' }}
-        >
-          <ClipboardList size={20} strokeWidth={2.4} />
-        </button>
-      </div>
+      <SectionHeader 
+        title={["Program &", "Kegiatan"]}
+        description="Daftar program prioritas desa yang direncanakan dan dilaksanakan secara terbuka, serta didanai melalui Anggaran Pendapatan dan Belanja Desa (APBDes) dengan prinsip transparansi dan akuntabilitas kepada masyarakat."
+        showInfoButton
+        icon={ClipboardList}
+      />
 
       <div className="grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3 xl:gap-8">
         {programs.map((program, index) => (

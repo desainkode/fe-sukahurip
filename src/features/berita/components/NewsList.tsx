@@ -36,31 +36,31 @@ export function NewsList() {
     <section id="news-list" className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8 relative pt-12 md:pt-20">
       {/* Search & Filter Integrated Bar */}
       <div className="sticky top-28 z-40 mb-12 md:mb-20 flex justify-center">
-        <div className="relative flex w-full max-w-3xl items-center gap-1.5 rounded-full border border-white/40 bg-white/70 p-1.5 shadow-[0_20px_50px_rgba(11,40,31,0.1)] backdrop-blur-2xl transition-all focus-within:bg-white focus-within:shadow-[0_25px_60px_rgba(11,40,31,0.15)] sm:gap-2 sm:p-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0B281F] text-white sm:h-12 sm:w-12">
-            <Search size={16} className="sm:size-20" />
+        <div className="relative flex w-full max-w-3xl items-center gap-1.5 rounded-full border border-white/40 bg-white/70 p-1.5 shadow-[0_20px_50px_rgba(0,4,24,0.1)] backdrop-blur-2xl transition-all focus-within:bg-white focus-within:shadow-[0_25px_60px_rgba(0,4,24,0.15)] sm:gap-2 sm:p-2">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#000418] text-white sm:h-12 sm:w-12">
+            <Search size={20} className="sm:size-5" />
           </div>
           
           <input
             type="text"
             placeholder="Cari kabar desa..."
-            className="flex-1 bg-transparent px-2 text-[14px] font-medium text-[#0B281F] outline-none placeholder:text-[#0B281F]/30 sm:text-[15px]"
+            className="flex-1 bg-transparent px-2 text-[14px] font-medium text-[#000418] outline-none placeholder:text-[#000418]/30 sm:text-[15px]"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
 
-          <div className="h-6 w-px bg-[#0B281F]/10 mx-1 sm:h-8" />
+          <div className="h-6 w-px bg-[#000418]/10 mx-1 sm:h-8" />
           
           <div className="relative" ref={filterRef}>
             <button 
               onClick={() => setIsFilterOpen(!isFilterOpen)}
               className={`flex items-center gap-2 rounded-full px-4 py-2.5 text-[12px] font-bold transition-all sm:px-5 sm:py-3 sm:text-[13px] ${
                 isFilterOpen || activeCategory !== "semua"
-                  ? "bg-[#0B281F] text-white shadow-lg"
-                  : "bg-transparent text-[#0B281F] hover:bg-[#0B281F]/5"
+                  ? "bg-[#000418] text-white shadow-lg"
+                  : "bg-transparent text-[#000418] hover:bg-[#000418]/5"
               }`}
             >
-              <Filter size={14} className="sm:size-16" />
+              <Filter size={16} className="sm:size-4" />
               <span className="hidden sm:inline">
                 {activeCategory === "semua" ? "Filter" : newsCategories.find(c => c.slug === activeCategory)?.name}
               </span>
@@ -68,7 +68,7 @@ export function NewsList() {
 
             {/* Minimalist Dropdown Popup */}
             {isFilterOpen && (
-              <div className="absolute right-0 mt-4 w-64 overflow-hidden rounded-[24px] border border-[#0B281F]/5 bg-white p-2 shadow-[0_25px_70px_rgba(0,0,0,0.15)] animate-in zoom-in-95 fade-in duration-200 origin-top-right sm:rounded-[32px]">
+              <div className="absolute right-0 mt-4 w-64 overflow-hidden rounded-[24px] border border-[#000418]/5 bg-white p-2 shadow-[0_25px_70px_rgba(0,0,0,0.15)] animate-in zoom-in-95 fade-in duration-200 origin-top-right sm:rounded-[32px]">
                 <div className="flex flex-col">
                   {newsCategories.map((category) => (
                     <button
@@ -79,12 +79,12 @@ export function NewsList() {
                       }}
                       className={`flex items-center justify-between rounded-2xl px-5 py-3.5 text-left text-[14px] transition-all ${
                         activeCategory === category.slug
-                          ? "bg-[#0B281F]/5 font-bold text-[#0B281F]"
-                          : "text-[#0B281F]/60 hover:bg-[#F6F8F7] hover:text-[#0B281F]"
+                          ? "bg-[#000418]/5 font-bold text-[#000418]"
+                          : "text-[#000418]/60 hover:bg-[#F6F6F8] hover:text-[#000418]"
                       }`}
                     >
                       {category.name}
-                      {activeCategory === category.slug && <Check size={14} className="text-[#009966]" />}
+                      {activeCategory === category.slug && <Check size={24} className="text-[#072ac8]" />}
                     </button>
                   ))}
                 </div>
@@ -102,12 +102,12 @@ export function NewsList() {
           ))}
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center rounded-[40px] border-2 border-dashed border-[#0B281F]/10 py-24 text-center">
-          <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#0B281F]/5 text-[#0B281F]/20">
-            <Search size={40} />
+        <div className="flex flex-col items-center justify-center rounded-[40px] border-2 border-dashed border-[#000418]/10 py-24 text-center">
+          <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#000418]/5 text-[#000418]/20">
+            <Search size={32} />
           </div>
-          <h3 className="text-xl font-bold text-[#0B281F]">Berita Tidak Ditemukan</h3>
-          <p className="mt-2 max-w-xs text-[14px] text-[#0B281F]/50">
+          <h3 className="text-xl font-bold text-[#000418]">Berita Tidak Ditemukan</h3>
+          <p className="mt-2 max-w-xs text-[14px] text-[#000418]/50">
             Maaf, kami tidak dapat menemukan berita yang Anda cari. Coba gunakan kata kunci lain.
           </p>
         </div>

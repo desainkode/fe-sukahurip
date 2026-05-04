@@ -27,7 +27,7 @@ export default function NewsSection() {
               <button
                 key={index}
                 type="button"
-                className="hero-reveal group relative flex h-full w-[280px] shrink-0 snap-start flex-col overflow-hidden rounded-[32px] bg-[#F4F3EF] border border-[#0B281F]/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl text-left md:w-[340px] lg:w-full"
+                className="hero-reveal group relative flex h-full w-[280px] shrink-0 snap-start flex-col overflow-hidden rounded-[32px] bg-[#F4F3EE] border border-[#000418]/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl text-left md:w-[340px] lg:w-full"
                 style={{ animationDelay: `${200 + index * 100}ms` }}
               >
               {/* Image Header */}
@@ -38,31 +38,31 @@ export default function NewsSection() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-[#052119]/80 via-transparent to-transparent" />
-                <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-[#F0B100] px-3 py-1.5 text-[10px] font-black text-[#052119] shadow-lg">
-                  <Leaf size={12} strokeWidth={3} />
+                <div className="absolute inset-0 bg-linear-to-t from-[#040922]/80 via-transparent to-transparent" />
+                <span className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-[#FFC400] px-3 py-1.5 text-[10px] font-black text-[#040922] shadow-lg">
+                  <Leaf size={14} strokeWidth={3} />
                   BERITA TERBARU
                 </span>
               </div>
 
               {/* Content Body */}
               <div className="flex flex-1 flex-col p-5">
-                <div className="mb-4 flex items-center gap-2 text-[11px] font-bold text-[#052119]/40 uppercase tracking-widest">
+                <div className="mb-4 flex items-center gap-1.5 text-[11px] font-bold text-[#040922]/40 uppercase tracking-widest">
                   <Calendar size={14} />
                   <span>Januari 2024</span>
                 </div>
                 
-                <h3 className="font-upakarti text-[20px] font-bold leading-tight text-[#052119] group-hover:text-[#00D492] transition-colors">
+                <h3 className="font-upakarti text-[20px] font-bold leading-tight text-[#040922] group-hover:text-[#ffc600] transition-colors">
                   {item.title}
                 </h3>
                 
-                <p className="mt-4 text-[13px] leading-relaxed text-[#052119]/60 line-clamp-3">
+                <p className="mt-4 text-[13px] leading-relaxed text-[#040922]/60 line-clamp-3">
                   {item.description}
                 </p>
                 
                 <div className="mt-auto pt-4 flex items-center justify-between">
-                  <span className="text-[12px] font-black text-[#052119] uppercase tracking-tighter">Selengkapnya</span>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#052119] text-[#00D492] transition-all group-hover:translate-x-1">
+                  <span className="text-[12px] font-black text-[#040922] uppercase tracking-tighter">Selengkapnya</span>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#040922] text-[#ffc600] transition-all group-hover:translate-x-1">
                     <ArrowRight size={18} strokeWidth={2.5} />
                   </div>
                 </div>

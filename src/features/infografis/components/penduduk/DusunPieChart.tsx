@@ -13,7 +13,7 @@ import { DUSUN_CHART_DATA } from "../../config/penduduk-data";
 export function DusunPieChart({ delayMs }: { delayMs: number }) {
   const chartConfig = {
     dusun1: { label: "Dusun Sukahurip", color: "#1e96fc" },
-    dusun2: { label: "Dusun Citalem", color: "#ffc600" },
+    dusun2: { label: "Dusun Citalem", color: "#FFC400" },
     dusun3: { label: "Dusun Pencut", color: "#FFFFFF" },
     dusun4: { label: "Dusun Mekarjaya", color: "#1e96fc" },
   };
@@ -83,7 +83,7 @@ export function DusunPieChart({ delayMs }: { delayMs: number }) {
               <span className="text-[12px] font-medium text-white/70" style={{ fontFamily: "var(--font-upakarti)" }}>
                 {item.label.replace("Dusun ", "")}
               </span>
-              <span className="text-[13px] font-bold text-[#1e96fc]">{item.value}%</span>
+              <span className="text-[13px] font-bold text-[#ffc600]">{item.value}%</span>
             </div>
           </div>
         ))}

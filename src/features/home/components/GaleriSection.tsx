@@ -24,7 +24,7 @@ export default function GaleriSection() {
             {GALERI_PREVIEW.map((item, index) => (
               <article 
                 key={item.title} 
-                className="hero-reveal group relative flex h-full w-[280px] shrink-0 snap-start flex-col overflow-hidden rounded-[32px] bg-[#F4F3EF] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl md:w-[340px] lg:w-full"
+                className="hero-reveal group relative flex h-full w-[280px] shrink-0 snap-start flex-col overflow-hidden rounded-[32px] bg-[#F4F3EE] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl md:w-[340px] lg:w-full"
                 style={{ animationDelay: `${200 + index * 100}ms` }}
               >
               {/* Image Container */}
@@ -35,17 +35,16 @@ export default function GaleriSection() {
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-[#052119]/60 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#040922]/60 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 
-                {/* Floating Badge */}
-                <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full bg-white/20 px-3 py-1.5 text-white backdrop-blur-md border border-white/10">
+                <div className="absolute left-4 top-4 flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1.5 text-white backdrop-blur-md border border-white/10">
                   <Camera size={14} />
                   <span className="text-[10px] font-black uppercase tracking-widest">{item.tag}</span>
                 </div>
 
                 {/* Hover Icon */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-500 group-hover:opacity-100">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#F0B100] text-[#052119] shadow-2xl scale-50 group-hover:scale-100 transition-transform">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#FFC400] text-[#040922] shadow-2xl scale-50 group-hover:scale-100 transition-transform">
                     <Maximize2 size={24} strokeWidth={2.5} />
                   </div>
                 </div>
@@ -53,10 +52,10 @@ export default function GaleriSection() {
 
               {/* Info Body */}
               <div className="flex flex-col p-6">
-                <h3 className="font-upakarti text-[22px] font-bold leading-tight text-[#052119]">
+                <h3 className="font-upakarti text-[22px] font-bold leading-tight text-[#040922]">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-[14px] leading-relaxed text-[#052119]/60">
+                <p className="mt-3 text-[14px] leading-relaxed text-[#040922]/60">
                   {item.description}
                 </p>
               </div>
@@ -71,10 +70,10 @@ export default function GaleriSection() {
         <div className="flex justify-center pt-4">
           <Link
             href="/galeri"
-            className="group inline-flex items-center gap-4 rounded-2xl bg-[#052119] px-10 py-4 text-[15px] font-black text-[#00D492] shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl active:scale-95"
+            className="group inline-flex items-center gap-4 rounded-2xl bg-[#040922] px-10 py-4 text-[15px] font-black text-[#ffc600] shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl active:scale-95"
           >
             Lihat Galeri Lengkap
-            <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
       </div>

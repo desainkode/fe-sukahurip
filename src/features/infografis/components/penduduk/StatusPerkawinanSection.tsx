@@ -5,32 +5,18 @@ import { HeartHandshake } from "lucide-react";
 import { sectionCardClass } from "../section-ui";
 import { STATUS_PERKAWINAN_IMAGE, STATUS_PERKAWINAN_CARDS } from "../../config/penduduk-data";
 import { StatusPerkawinanStatCard } from "./StatusPerkawinanStatCard";
+import { SectionHeader } from "../../../home/components/ui/SectionHeader";
 
 export function StatusPerkawinanSection() {
   return (
     <section className={sectionCardClass + " bg-[#ffffff]"}>
       <div className="flex flex-col gap-7">
-        <div className="relative grid gap-4 border-b border-[#0B281F]/10 pb-6 pr-14 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1.45fr)] md:items-start md:gap-6 md:pr-16">
-          <h2 className="hero-reveal font-[Georgia,serif] text-[26px] font-bold leading-[1.06] text-[#072ac8] md:text-[34px] lg:text-[42px]">
-            Berdasarkan
-            <br />
-            Status Perkawinan
-          </h2>
-
-          <p className="hero-reveal max-w-none pt-0.5 text-[12px] leading-6 text-[#072ac8]/80 md:text-[13px] md:leading-7">
-            Kelompok Berdasarkan Status Perkawinan merupakan penyajian data penduduk menurut status
-            perkawinan, seperti belum kawin, kawin, cerai hidup, atau cerai mati, untuk memberikan
-            gambaran kondisi sosial masyarakat di suatu wilayah.
-          </p>
-
-          <button
-            type="button"
-            aria-label="Informasi berdasarkan status perkawinan"
-            className="hero-reveal absolute right-0 top-0 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#072ac8] text-white transition-transform duration-300 hover:-translate-y-0.5 md:h-14 md:w-14"
-          >
-            <HeartHandshake size={22} strokeWidth={2.2} />
-          </button>
-        </div>
+        <SectionHeader 
+          title={["Berdasarkan", "Status Perkawinan"]}
+          description="Kelompok Berdasarkan Status Perkawinan merupakan penyajian data penduduk menurut status perkawinan, seperti belum kawin, kawin, cerai hidup, atau cerai mati, untuk memberikan gambaran kondisi sosial masyarakat di suatu wilayah."
+          showInfoButton
+          icon={HeartHandshake}
+        />
 
         <div className="relative overflow-hidden rounded-[24px] bg-linear-to-br from-[#072ac8] to-[#1e96fc]">
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(280px,0.88fr)_minmax(0,1.12fr)] lg:items-center">
@@ -46,16 +32,16 @@ export function StatusPerkawinanSection() {
                   <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
                     <div>
                       <p className="font-bold text-[#FFFFFF] sm:text-[15px]">
-                        Data Perkawinan <span className="text-[#ffc600]">Desa Sukahurip</span>
+                        Data Perkawinan <span className="text-[#FFC400]">Desa Sukahurip</span>
                       </p>
                       <p className="mt-1 text-[12px] text-[#a2d6f9]">Total presentase kawin dan belum kawin</p>
                     </div>
                     <div className="inline-flex items-center gap-1.5 rounded-full border border-[#1e96fc]/70 bg-[#1e96fc] px-3 py-1 text-[12px] font-medium text-white">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#ffc600]" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#FFC400]" />
                       83%
                     </div>
                   </div>
-                  <p className="mt-3 text-[10.5px] italic leading-[1.35] text-[#D0FAE5CC] sm:text-[11px]">
+                  <p className="mt-3 text-[10.5px] italic leading-[1.35] text-[#d0e7ffCC] sm:text-[11px]">
                     Data perkawinan Desa Sukahurip menampilkan persentase penduduk yang berstatus
                     kawin dan belum kawin sebagai gambaran kondisi sosial masyarakat.
                   </p>

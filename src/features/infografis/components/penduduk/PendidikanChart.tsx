@@ -19,8 +19,8 @@ export function PendidikanChart({ delayMs }: { delayMs: number }) {
 
   return (
     <article className="hero-reveal w-full pt-4" style={{ animationDelay: `${delayMs}ms` }}>
-      <div className="relative overflow-hidden rounded-[20px] bg-linear-to-b from-[#FFFFFF] to-[#0B281F] p-4 sm:p-5 md:p-6">
-        <div className="absolute inset-5 rounded-2xl border border-white/10 bg-linear-to-b from-white/20 via-white/12 to-[#0B281F]/18 backdrop-blur-[2px]" />
+      <div className="relative overflow-hidden rounded-[20px] bg-linear-to-b from-[#FFFFFF] to-[#000418] p-4 sm:p-5 md:p-6">
+        <div className="absolute inset-5 rounded-2xl border border-white/10 bg-linear-to-b from-white/20 via-white/12 to-[#000418]/18 backdrop-blur-[2px]" />
 
         <div className="relative z-10">
           <ChartContainer
@@ -35,9 +35,9 @@ export function PendidikanChart({ delayMs }: { delayMs: number }) {
             >
               <defs>
                 <linearGradient id="pendidikan-total" x1="0" y1="1" x2="0" y2="0">
-                  <stop offset="0%" stopColor="#009966" />
-                  <stop offset="56%" stopColor="#8EA95A" />
-                  <stop offset="100%" stopColor="#F0B100" />
+                  <stop offset="0%" stopColor="#072ac8" />
+                  <stop offset="56%" stopColor="#5666AD" />
+                  <stop offset="100%" stopColor="#FFC400" />
                 </linearGradient>
               </defs>
               <CartesianGrid horizontal={true} vertical={false} stroke="rgba(0,0,0,0.05)" />
@@ -49,7 +49,7 @@ export function PendidikanChart({ delayMs }: { delayMs: number }) {
                   fill: "#000000",
                   fontSize: 12,
                   fontWeight: 600,
-                  fontFamily: "Georgia, serif",
+                  className: "font-timeless",
                 }}
                 interval={0}
                 angle={-45}
@@ -63,7 +63,7 @@ export function PendidikanChart({ delayMs }: { delayMs: number }) {
                   fill: "#000000",
                   fontSize: 13,
                   fontWeight: 600,
-                  fontFamily: "Georgia, serif",
+                  className: "font-timeless",
                 }}
                 ticks={[0, 100, 200, 300, 400, 500]}
                 domain={[0, 520]}

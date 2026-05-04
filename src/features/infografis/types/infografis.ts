@@ -148,30 +148,83 @@ export interface StuntingSectionContent {
 // IDM SECTION TYPES
 // ============================================================================
 
+export interface IdmTrend {
+  year: number
+  score: number
+}
+
+export interface IdmDimension {
+  name: string
+  score: number
+  fullScore: number
+  color: string
+}
+
 export interface IdmIndicator {
   label: string
   value: string
+  icon?: string
 }
 
 export interface IdmSectionContent {
   title: string
   description: string
+  villageName: string
+  district: string
+  regency: string
+  year: number
+  currentScore: number
+  status: string
+  statusColor: string
   indicators: IdmIndicator[]
+  dimensions: IdmDimension[]
+  trends: IdmTrend[]
+  interpretation: string
+  source: string
 }
 
 // ============================================================================
 // SDGS SECTION TYPES
 // ============================================================================
 
-export interface SdgsIndicator {
-  label: string
+export interface SdgsGoalIndicator {
+  name: string
   value: string
+  status: 'Baik' | 'Cukup' | 'Kurang'
+}
+
+export interface SdgsGoal {
+  id: number
+  title: string
+  score: number
+  status: 'Tercapai' | 'Berkembang' | 'Belum Tercapai'
+  color: string
+  image: string
+  description: string
+  indicators: SdgsGoalIndicator[]
+}
+
+export interface SdgsProgram {
+  name: string
+  goalId: number
+  status: string
 }
 
 export interface SdgsSectionContent {
   title: string
   description: string
-  indicators: SdgsIndicator[]
+  villageName: string
+  district: string
+  regency: string
+  year: number
+  overallScore: number
+  goals: SdgsGoal[]
+  insights: {
+    strengths: string[]
+    challenges: string[]
+  }
+  programs: SdgsProgram[]
+  source: string
 }
 
 // ============================================================================
@@ -192,8 +245,11 @@ export interface DemografiCardProps {
 }
 
 export interface SectionHeaderProps {
-  title: string
+  title: string | string[]
   description: string
+  showInfoButton?: boolean
+  icon?: any
+  delay?: number
 }
 
 export interface StatPillProps {

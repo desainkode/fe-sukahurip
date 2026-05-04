@@ -7,10 +7,10 @@ interface BansosDistributionCardProps {
 
 export function BansosDistributionCard({ data }: BansosDistributionCardProps) {
   return (
-    <div className="p-4 bg-linear-to-bl from-neutral-900 via-[#004D40] to-neutral-900 rounded-xl shadow-xl text-white flex flex-col gap-3 relative overflow-hidden group h-full">
+    <div className="p-4 bg-linear-to-bl from-neutral-900 via-[#000E4D] to-neutral-900 rounded-xl shadow-xl text-white flex flex-col gap-3 relative overflow-hidden group h-full">
       <div className="flex items-center gap-3 relative z-10">
         <div className="p-2 bg-white/10 rounded-full backdrop-blur-md border border-white/5">
-          <User size={18} className="text-white" />
+          <User size={24} className="text-white" />
         </div>
         <div className="flex flex-col">
           <span className="text-[10px] font-normal opacity-60" style={{ fontFamily: 'var(--font-timeless)' }}>Dusun</span>
@@ -23,7 +23,7 @@ export function BansosDistributionCard({ data }: BansosDistributionCardProps) {
       </p>
 
       <div className="flex justify-between items-end mt-auto relative z-10">
-        <span className="text-amber-400 text-[10px] font-medium uppercase tracking-wider mb-1">Penerima</span>
+        <span className="text-desa-yellow-400 text-[10px] font-medium uppercase tracking-wider mb-1">Penerima</span>
         <div className="flex flex-col items-end">
           <span 
             className="text-4xl font-normal leading-none" 
@@ -31,7 +31,7 @@ export function BansosDistributionCard({ data }: BansosDistributionCardProps) {
           >
             {data.keluarga}
           </span>
-          <span className="text-amber-400 text-[9px] font-medium">Orang</span>
+          <span className="text-desa-yellow-400 text-[9px] font-medium">Orang</span>
         </div>
       </div>
 

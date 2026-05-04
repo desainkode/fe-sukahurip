@@ -13,7 +13,7 @@ export function BansosAllocationCard({ summary }: BansosAllocationCardProps) {
       {/* Left Content */}
       <div className="flex flex-col justify-between flex-1 relative z-10">
         <div className="space-y-3">
-          <h3 className="text-3xl font-bold leading-tight" style={{ fontFamily: 'var(--font-timeless)' }}>
+          <h3 className="text-3xl font-bold leading-tight font-timeless">
             {summary.label}
           </h3>
           <p className="text-[10px] font-normal opacity-80 leading-relaxed max-w-[140px]">
@@ -22,7 +22,7 @@ export function BansosAllocationCard({ summary }: BansosAllocationCardProps) {
         </div>
         
         <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
-          <ArrowUpRight size={16} className="text-white" />
+          <ArrowUpRight size={24} className="text-white" />
         </div>
       </div>
 
@@ -30,16 +30,15 @@ export function BansosAllocationCard({ summary }: BansosAllocationCardProps) {
       <div className="w-1/2 h-full bg-black/30 rounded-xl flex flex-col items-center justify-center backdrop-blur-md border border-white/5 relative z-10 p-4">
         <div className="flex flex-col items-start w-full">
           {summary.unit === 'RP.' && (
-            <span className="text-sm font-bold mb-1" style={{ fontFamily: 'var(--font-timeless)' }}>RP.</span>
+            <span className="text-sm font-bold mb-1 font-timeless">RP.</span>
           )}
           <span 
-            className="text-6xl font-normal leading-none" 
-            style={{ fontFamily: 'var(--font-upakarti)' }}
+            className="text-6xl font-normal leading-none font-timeless" 
           >
             {summary.value}
           </span>
           {summary.unit === 'Orang' && (
-            <span className="text-sm font-bold mt-2" style={{ fontFamily: 'var(--font-timeless)' }}>Orang</span>
+            <span className="text-sm font-bold mt-2 font-timeless">Orang</span>
           )}
         </div>
       </div>

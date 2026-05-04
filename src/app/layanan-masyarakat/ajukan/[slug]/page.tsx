@@ -5,7 +5,7 @@ export default async function AjukanLayananPage({ params }: { params: Promise<{ 
   const { slug } = await params;
   
   return (
-    <main className="min-h-screen bg-[#F6F8F7] pt-24 pb-20">
+    <main className="min-h-screen bg-[#F6F6F8] pt-24 pb-20">
       <SubmissionForm serviceSlug={slug} />
     </main>
   );

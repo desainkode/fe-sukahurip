@@ -14,12 +14,12 @@ export function BansosBenefitTypeCard({ type }: BansosBenefitTypeCardProps) {
     <div className={`p-8 ${type.color} rounded-xl rounded-tr-[80px] rounded-bl-[80px] shadow-xl flex flex-col justify-between h-[360px] relative overflow-hidden group`}>
       <div className="flex flex-col gap-6 relative z-10">
         <div className={`w-12 h-12 ${iconBg} rounded-full flex items-center justify-center`}>
-          <Users size={20} className={textColor} />
+          <Users size={24} className={textColor} />
         </div>
 
         <div className="flex flex-col items-start gap-4">
-          <div className="px-3 py-1 bg-[#0B281F] rounded-full flex items-center gap-2">
-            <div className="w-2 h-2 bg-[#FDC700] rounded-full" />
+          <div className="px-3 py-1 bg-[#000418] rounded-full flex items-center gap-2">
+            <div className="w-2 h-2 bg-[#FDC200] rounded-full" />
             <span className="text-[10px] font-medium text-white">Orang</span>
           </div>
           

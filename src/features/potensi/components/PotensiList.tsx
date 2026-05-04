@@ -41,11 +41,11 @@ export function PotensiList() {
       <div className="mb-12 flex flex-col gap-4 md:mb-16 lg:flex-row lg:items-center lg:justify-between lg:gap-6">
         <div className="flex-1 max-w-2xl">
           <div className="group relative">
-            <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-[#0B281F]/30" size={18} />
+            <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-[#000418]/30" size={24} />
             <input
               type="text"
               placeholder="Cari potensi desa..."
-              className="h-14 w-full rounded-full border border-white bg-white pl-12 pr-6 text-[14px] font-medium shadow-[0_15px_40px_rgba(0,0,0,0.04)] outline-none focus:ring-4 focus:ring-[#0B281F]/5 sm:h-16 sm:pl-14 sm:pr-8 sm:text-[15px]"
+              className="h-14 w-full rounded-full border border-white bg-white pl-12 pr-6 text-[14px] font-medium shadow-[0_15px_40px_rgba(0,0,0,0.04)] outline-none focus:ring-4 focus:ring-[#000418]/5 sm:h-16 sm:pl-14 sm:pr-8 sm:text-[15px]"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -59,8 +59,8 @@ export function PotensiList() {
               onClick={() => setActiveCategory(cat)}
               className={`whitespace-nowrap rounded-full px-5 py-2.5 text-[12px] font-bold transition-all sm:px-6 sm:py-3 sm:text-[13px] ${
                 activeCategory === cat
-                  ? "bg-[#0B281F] text-white shadow-lg"
-                  : "bg-white text-[#0B281F] border border-[#0B281F]/5 hover:bg-[#F6F8F7]"
+                  ? "bg-[#000418] text-white shadow-lg"
+                  : "bg-white text-[#000418] border border-[#000418]/5 hover:bg-[#F6F6F8]"
               }`}
             >
               {cat}
@@ -77,10 +77,10 @@ export function PotensiList() {
           ))}
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center rounded-[40px] border-2 border-dashed border-[#0B281F]/10 py-32 text-center">
-          <Search size={48} className="mb-6 text-[#0B281F]/20" />
-          <h3 className="text-xl font-bold text-[#0B281F]">Potensi Tidak Ditemukan</h3>
-          <p className="mt-2 text-[#0B281F]/50">Coba gunakan kata kunci atau kategori lain.</p>
+        <div className="flex flex-col items-center justify-center rounded-[40px] border-2 border-dashed border-[#000418]/10 py-32 text-center">
+          <Search size={40} className="mb-6 text-[#000418]/20" />
+          <h3 className="text-xl font-bold text-[#000418]">Potensi Tidak Ditemukan</h3>
+          <p className="mt-2 text-[#000418]/50">Coba gunakan kata kunci atau kategori lain.</p>
         </div>
       )}
     </div>

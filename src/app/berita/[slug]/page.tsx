@@ -26,7 +26,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
   const relatedNews = mockNews.filter((item) => item.id !== news.id).slice(0, 2);
 
   return (
-    <main className="min-h-screen bg-[#F6F8F7] pb-24">
+    <main className="min-h-screen bg-[#F6F6F8] pb-24">
       {/* Article Header & Hero */}
       <section className="relative h-[50vh] min-h-[400px] w-full overflow-hidden lg:h-[65vh]">
         <img 
@@ -34,8 +34,8 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
           alt={news.title} 
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B281F] via-[#0B281F]/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B281F]/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#000418] via-[#000418]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#000418]/60 via-transparent to-transparent" />
         
         <div className="absolute inset-0 flex items-end">
           <div className="mx-auto w-full max-w-5xl px-4 pb-12 sm:px-6 lg:px-8">
@@ -43,11 +43,11 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
               href="/berita"
               className="mb-8 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-[13px] font-bold text-white backdrop-blur-md transition-all hover:bg-white/20"
             >
-              <ArrowLeft size={16} />
+              <ArrowLeft size={24} />
               Kembali ke Berita
             </Link>
             
-            <div className="mb-4 inline-flex rounded-full bg-[#009966] px-4 py-1 text-[11px] font-bold uppercase tracking-widest text-white">
+            <div className="mb-4 inline-flex rounded-full bg-[#072ac8] px-4 py-1 text-[11px] font-bold uppercase tracking-widest text-white">
               {news.category.name}
             </div>
             
@@ -62,34 +62,34 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-12 px-4 py-12 sm:px-6 lg:flex-row lg:px-8">
         {/* Main Content Area */}
         <div className="flex-1 lg:max-w-4xl">
-          <article className="rounded-[40px] border border-[#0B281F]/5 bg-white p-8 shadow-2xl md:p-12 lg:p-16">
+          <article className="rounded-[40px] border border-[#000418]/5 bg-white p-8 shadow-2xl md:p-12 lg:p-16">
             {/* Meta Info */}
-            <div className="mb-12 flex flex-wrap items-center justify-between gap-6 border-b border-[#0B281F]/5 pb-8">
+            <div className="mb-12 flex flex-wrap items-center justify-between gap-6 border-b border-[#000418]/5 pb-8">
               <div className="flex items-center gap-4">
-                <div className="h-14 w-14 overflow-hidden rounded-2xl border border-[#0B281F]/10">
+                <div className="h-14 w-14 overflow-hidden rounded-2xl border border-[#000418]/10">
                   <img src={news.author.avatar} alt={news.author.name} className="h-full w-full object-cover" />
                 </div>
                 <div>
-                  <p className="text-[15px] font-bold text-[#0B281F]">{news.author.name}</p>
-                  <p className="text-[12px] text-[#0B281F]/50">{news.author.role}</p>
+                  <p className="text-[15px] font-bold text-[#000418]">{news.author.name}</p>
+                  <p className="text-[12px] text-[#000418]/50">{news.author.role}</p>
                 </div>
               </div>
               
-              <div className="flex items-center gap-6 text-[13px] text-[#0B281F]/60">
+              <div className="flex items-center gap-6 text-[13px] text-[#000418]/60">
                 <div className="flex items-center gap-2">
-                  <Calendar size={16} />
+                  <Calendar size={24} />
                   {news.publishedAt}
                 </div>
                 <div className="flex items-center gap-2">
-                  <Clock size={16} />
+                  <Clock size={24} />
                   {news.readingTime}
                 </div>
               </div>
             </div>
 
             {/* Content Body */}
-            <div className="prose prose-lg max-w-none text-[17px] leading-relaxed text-[#0B281F]/80 prose-headings:font-[Georgia,serif] prose-headings:text-[#0B281F] prose-strong:text-[#0B281F]">
-              <p className="text-xl font-medium leading-relaxed text-[#0B281F]">
+            <div className="prose prose-lg max-w-none text-[17px] leading-relaxed text-[#000418]/80 prose-headings:font-[Georgia,serif] prose-headings:text-[#000418] prose-strong:text-[#000418]">
+              <p className="text-xl font-medium leading-relaxed text-[#000418]">
                 {news.excerpt}
               </p>
               
@@ -101,20 +101,20 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
             </div>
 
             {/* Tags & Actions */}
-            <div className="mt-16 flex flex-col gap-8 border-t border-[#0B281F]/5 pt-8 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mt-16 flex flex-col gap-8 border-t border-[#000418]/5 pt-8 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-3">
-                <span className="text-[13px] font-bold text-[#0B281F]/40 uppercase tracking-widest">Bagikan:</span>
+                <span className="text-[13px] font-bold text-[#000418]/40 uppercase tracking-widest">Bagikan:</span>
                 <div className="flex gap-2">
                   {[Globe, Share2, LinkIcon].map((Icon, idx) => (
-                    <button key={idx} className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0B281F]/5 text-[#0B281F] transition-all hover:bg-[#009966] hover:text-white">
-                      <Icon size={18} />
+                    <button key={idx} className="flex h-10 w-10 items-center justify-center rounded-full bg-[#000418]/5 text-[#000418] transition-all hover:bg-[#072ac8] hover:text-white">
+                      <Icon size={24} />
                     </button>
                   ))}
                 </div>
               </div>
               
-              <button className="flex items-center gap-2 rounded-full border border-[#0B281F]/10 px-6 py-2.5 text-[13px] font-bold text-[#0B281F] transition-all hover:bg-[#0B281F] hover:text-white">
-                <Bookmark size={18} />
+              <button className="flex items-center gap-2 rounded-full border border-[#000418]/10 px-6 py-2.5 text-[13px] font-bold text-[#000418] transition-all hover:bg-[#000418] hover:text-white">
+                <Bookmark size={24} />
                 Simpan Berita
               </button>
             </div>
@@ -129,8 +129,8 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
           {/* Related News */}
           <div className="sticky top-28">
             <div className="mb-6 flex items-center justify-between">
-              <h3 className="text-xl font-bold text-[#0B281F]">Berita Terkait</h3>
-              <Link href="/berita" className="text-[13px] font-bold text-[#009966] hover:underline">Lihat Semua</Link>
+              <h3 className="text-xl font-bold text-[#000418]">Berita Terkait</h3>
+              <Link href="/berita" className="text-[13px] font-bold text-[#072ac8] hover:underline">Lihat Semua</Link>
             </div>
             
             <div className="flex flex-col gap-6">
@@ -140,18 +140,18 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
                     <img src={item.image} alt={item.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
                   <div className="flex flex-col justify-center">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#009966]">{item.category.name}</span>
-                    <h4 className="mt-1 line-clamp-2 text-[14px] font-bold leading-tight text-[#0B281F] group-hover:text-[#009966]">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#072ac8]">{item.category.name}</span>
+                    <h4 className="mt-1 line-clamp-2 text-[14px] font-bold leading-tight text-[#000418] group-hover:text-[#072ac8]">
                       {item.title}
                     </h4>
-                    <p className="mt-2 text-[11px] text-[#0B281F]/40">{item.publishedAt}</p>
+                    <p className="mt-2 text-[11px] text-[#000418]/40">{item.publishedAt}</p>
                   </div>
                 </Link>
               ))}
             </div>
 
             {/* Newsletter Mini */}
-            <div className="mt-10 overflow-hidden rounded-[32px] bg-[#0B281F] p-8 text-white shadow-xl">
+            <div className="mt-10 overflow-hidden rounded-[32px] bg-[#000418] p-8 text-white shadow-xl">
               <h3 className="text-xl font-bold">Tetap Terhubung</h3>
               <p className="mt-3 text-[13px] text-white/60 leading-relaxed">
                 Dapatkan kabar terbaru Desa Sukahurip langsung di kotak masuk Anda.
@@ -162,7 +162,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
                   placeholder="Email Anda..."
                   className="h-12 rounded-xl bg-white/10 px-4 text-[14px] text-white outline-none focus:bg-white/20"
                 />
-                <button className="h-12 rounded-xl bg-[#009966] text-[14px] font-bold transition-all hover:bg-[#00B373]">
+                <button className="h-12 rounded-xl bg-[#072ac8] text-[14px] font-bold transition-all hover:bg-[#0021B3]">
                   Langganan
                 </button>
               </form>

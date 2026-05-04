@@ -26,10 +26,10 @@ function PendapatanChartTooltip({
   const item = payload[0]
   const label = item.name ?? item.dataKey ?? 'Pendapatan'
   const value = typeof item.value === 'number' ? item.value : Number(item.value ?? 0)
-  const color = item.color ?? '#00E0A1'
+  const color = item.color ?? '#a2d6f9'
 
   return (
-    <div className="rounded-2xl border border-white/12 bg-[linear-gradient(160deg,rgba(0,43,34,0.98)_0%,rgba(0,61,48,0.96)_55%,rgba(0,29,23,0.99)_100%)] px-4 py-3 shadow-[0_18px_32px_rgba(0,0,0,0.3)] backdrop-blur-xl">
+    <div className="rounded-2xl border border-white/12 bg-[linear-gradient(160deg,rgba(0,14,79,0.98)_0%,rgba(7,42,200,0.96)_55%,rgba(0,4,24,0.99)_100%)] px-4 py-3 shadow-[0_18px_32px_rgba(0,0,0,0.3)] backdrop-blur-xl">
       <div className="flex items-center gap-2">
         <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: color }} />
         <span className="text-[12px] font-semibold tracking-[0.02em] text-white/85">{label}</span>
@@ -52,7 +52,7 @@ export function PendapatanChart({ delayMs }: { delayMs: number }) {
   return (
     <article className="hero-reveal flex w-full flex-col items-center justify-center" style={{ animationDelay: `${delayMs}ms` }}>
       <div className="relative aspect-square w-full max-w-60 sm:max-w-72">
-        <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(0,224,161,0.16)_0%,rgba(0,43,34,0.06)_55%,transparent_75%)] blur-3xl" />
+        <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(30,150,252,0.16)_0%,rgba(0,14,79,0.06)_55%,transparent_75%)] blur-3xl" />
 
         <ChartContainer config={pendapatanChartConfig} className="mx-auto h-full w-full">
           <PieChart>

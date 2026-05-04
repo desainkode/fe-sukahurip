@@ -33,8 +33,8 @@ export function AgamaStatCard({
       style={{
         animationDelay: `${delayMs}ms`,
         backgroundImage: isYellow
-          ? "linear-gradient(180deg, #F0B100 0%, #D9A000 100%)"
-          : "linear-gradient(180deg, #00A56A 0%, #009966 100%)",
+          ? "linear-gradient(180deg, #FFC400 0%, #D9A600 100%)"
+          : "linear-gradient(180deg, #001EA5 0%, #072ac8 100%)",
       }}
     >
       <div className="pointer-events-none absolute inset-2.75 rounded-[33px] border border-white/12 bg-white/5 shadow-[inset_4px_-4px_18px_rgba(255,255,255,0.08),inset_-4px_4px_18px_rgba(0,0,0,0.08)] backdrop-blur-xs" />
@@ -42,11 +42,11 @@ export function AgamaStatCard({
 
       <div className="relative z-10 flex h-full flex-col px-5 pb-5 pt-5 sm:px-6 sm:pt-6">
         <div className="flex items-start justify-between gap-4">
-          <div className="inline-flex h-17 w-17 items-center justify-center rounded-full bg-[#0B281F] text-white shadow-[0_10px_18px_rgba(0,0,0,0.18),inset_0_0_0_1px_rgba(255,255,255,0.08)] transition-transform duration-300 group-hover:scale-105">
-            <Icon size={28} strokeWidth={2.2} />
+          <div className="inline-flex h-17 w-17 items-center justify-center rounded-full bg-[#000418] text-white shadow-[0_10px_18px_rgba(0,0,0,0.18),inset_0_0_0_1px_rgba(255,255,255,0.08)] transition-transform duration-300 group-hover:scale-105">
+            <Icon size={24} strokeWidth={2.2} />
           </div>
 
-          <div className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-[#00E397] bg-[#0B281F] px-3 py-1 text-white shadow-[0_8px_16px_rgba(0,0,0,0.18)]">
+          <div className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-[#002AE3] bg-[#000418] px-3 py-1 text-white shadow-[0_8px_16px_rgba(0,0,0,0.18)]">
             <span className="size-2 rounded-full bg-[#FD0000]/70" />
             <span className="text-[12px] font-medium uppercase tracking-[0.6px]">{persentase}%</span>
           </div>
@@ -54,7 +54,7 @@ export function AgamaStatCard({
 
         <div className="mt-2.5 flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <p className="font-upakarti text-[52px] leading-[0.82] text-white sm:text-[58px]">
+            <p className="font-timeless text-[52px] leading-[0.82] text-white sm:text-[58px]">
               {jumlah}
             </p>
             <p className="mt-0.5 font-timeless text-[14px] leading-none text-white sm:text-[16px]">
@@ -67,7 +67,7 @@ export function AgamaStatCard({
           <h3 className="font-timeless text-[20px] leading-[1.05] text-white sm:text-[22px]">
             {nama}
           </h3>
-          <p className="max-w-56 text-[11px] leading-[1.3] text-[#ECFDF5] sm:text-[12px]">
+          <p className="max-w-56 text-[11px] leading-[1.3] text-[#EBEFFE] sm:text-[12px]">
             {deskripsi}
           </p>
         </div>

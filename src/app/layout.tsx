@@ -13,6 +13,8 @@ export const metadata: Metadata = {
 };
 
 import MainLayout from "./MainLayout";
+import { AuthProvider } from "../context/AuthContext";
+import { ThemeProvider } from "../context/ThemeContext";
 
 export default function RootLayout({
   children,
@@ -24,8 +26,12 @@ export default function RootLayout({
       lang="en"
       className={`${upakarti.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#f5f7f6]">
-        <MainLayout>{children}</MainLayout>
+      <body className="min-h-full flex flex-col bg-[#F5F5F7] dark:bg-[#000418]">
+        <ThemeProvider>
+          <AuthProvider>
+            <MainLayout>{children}</MainLayout>
+          </AuthProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -23,7 +23,7 @@ export default async function PotensiDetailPage({ params }: { params: Promise<{ 
   }
 
   return (
-    <main className="min-h-screen bg-[#F6F8F7] pb-24">
+    <main className="min-h-screen bg-[#F6F6F8] pb-24">
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] w-full overflow-hidden">
         <img 
@@ -40,7 +40,7 @@ export default async function PotensiDetailPage({ params }: { params: Promise<{ 
               href="/potensi"
               className="mb-8 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-[13px] font-bold text-white backdrop-blur-md transition-all hover:bg-white/20"
             >
-              <ArrowLeft size={16} />
+              <ArrowLeft size={24} />
               Kembali ke Potensi
             </Link>
             
@@ -82,13 +82,13 @@ export default async function PotensiDetailPage({ params }: { params: Promise<{ 
                   </thead>
                   <tbody className="divide-y divide-[#072ac8]/5">
                     {item.details.map((detail, idx) => (
-                      <tr key={idx} className="group transition-colors hover:bg-[#F6F8F7]">
+                      <tr key={idx} className="group transition-colors hover:bg-[#F6F6F8]">
                         <td className="py-6 font-bold text-[#072ac8]">{detail.subCategory}</td>
                         <td className="py-6 text-[15px] text-[#072ac8]/70">{detail.amount}</td>
                         <td className="py-6 text-[15px] text-[#072ac8]/70">{detail.production}</td>
                         <td className="py-6">
                           <span className="inline-flex items-center gap-1.5 rounded-full bg-[#072ac8]/5 px-3 py-1 text-[13px] font-medium text-[#072ac8]">
-                            <MapPin size={14} />
+                            <MapPin size={24} />
                             {detail.location}
                           </span>
                         </td>
@@ -101,7 +101,7 @@ export default async function PotensiDetailPage({ params }: { params: Promise<{ 
 
             {/* Gallery */}
             <div className="rounded-[40px] border border-white bg-white p-8 shadow-xl md:p-12">
-              <h2 className="mb-8 text-2xl font-bold text-[#0B281F]">Galeri Foto</h2>
+              <h2 className="mb-8 text-2xl font-bold text-[#000418]">Galeri Foto</h2>
               <div className="grid gap-4 sm:grid-cols-2">
                 {item.gallery.map((img, idx) => (
                   <div key={idx} className="aspect-video overflow-hidden rounded-3xl">
@@ -116,14 +116,14 @@ export default async function PotensiDetailPage({ params }: { params: Promise<{ 
           <div className="space-y-8">
             {/* Investment Info */}
             <div className="rounded-[40px] bg-[#1e96fc] p-10 text-white shadow-2xl">
-              <TrendingUp size={32} className="mb-6 text-[#ffc600]" />
+              <TrendingUp size={28} className="mb-6 text-[#FFC400]" />
               <h3 className="mb-4 text-xl font-bold">Peluang Investasi</h3>
               <p className="mb-8 text-[15px] leading-relaxed text-white/80">
                 {item.investmentInfo}
               </p>
               <button className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#072ac8] py-4 text-[14px] font-bold shadow-xl transition-all hover:-translate-y-1 hover:bg-black/20">
                 Dapatkan Proposal
-                <Download size={18} />
+                <Download size={24} />
               </button>
             </div>
 
@@ -140,7 +140,7 @@ export default async function PotensiDetailPage({ params }: { params: Promise<{ 
 
             {/* Support Info */}
             <div className="rounded-[40px] border border-white bg-white p-10 shadow-xl">
-              <Info size={24} className="mb-6 text-[#ffc600]" />
+              <Info size={24} className="mb-6 text-[#FFC400]" />
               <h3 className="mb-4 text-xl font-bold text-[#072ac8]">Informasi Tambahan</h3>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3 text-[14px] text-[#072ac8]/60">
