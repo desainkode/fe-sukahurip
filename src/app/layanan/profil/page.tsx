@@ -198,7 +198,7 @@ export default function ProfilPage() {
                 {isEditing ? (
                   <input
                     type="text"
-                    value={formData[field.id as keyof typeof formData]}
+                    value={formData[field.id as keyof typeof formData] || ''}
                     onChange={(e) => setFormData({ ...formData, [field.id]: e.target.value })}
                     className="w-full bg-transparent border-b-2 border-desa-blue-900/10 focus:border-desa-blue-900 outline-hidden py-2 font-bold text-desa-blue-950 dark:text-white text-lg placeholder:text-desa-blue-950/20 dark:placeholder:text-white/20 transition-all"
                     placeholder={field.placeholder}
