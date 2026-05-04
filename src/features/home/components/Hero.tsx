@@ -6,7 +6,7 @@ import { ArrowRight, Map, Users, LayoutGrid } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-svh lg:h-svh w-full flex-col items-center justify-center bg-[#000418] text-[#F4F3EE]">
+    <section className="relative flex min-h-svh lg:h-svh w-full flex-col items-center justify-center bg-[#000418] text-[#F4F3EE] overflow-hidden">
       {/* Background Media */}
       <div className="absolute inset-0 z-0">
         <video
@@ -105,17 +105,17 @@ export default function Hero() {
             />
 
             {/* Floating Info Badge */}
-            <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-black/40 p-4 shadow-2xl backdrop-blur-xl transition-all duration-500 group-hover:-translate-y-1">
+            <div className="absolute bottom-3 left-3 right-3 rounded-2xl border border-white/10 bg-black/40 p-3 shadow-2xl backdrop-blur-xl transition-all duration-500 group-hover:-translate-y-1 sm:bottom-4 sm:left-4 sm:right-4 sm:p-4">
               <div className="flex items-start justify-between">
-                <div>
-                  <h3 className="text-sm md:text-base font-black leading-tight text-white">Majang Dudi B.</h3>
-                  <p className="mt-1 text-[8px] md:text-[9px] font-bold uppercase tracking-[0.2em] text-desa-yellow-500">Kepala Desa</p>
+                <div className="max-w-[70%]">
+                  <h3 className="text-[12px] md:text-base font-black leading-tight text-white truncate">Majang Dudi B.</h3>
+                  <p className="mt-0.5 text-[7px] md:text-[9px] font-bold uppercase tracking-[0.2em] text-desa-yellow-500">Kepala Desa</p>
                 </div>
-                <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#FFC400] text-lg font-black text-[#000418]">
+                <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-[#FFC400] text-sm font-black text-[#000418] sm:h-8 sm:w-8 sm:rounded-xl sm:text-lg">
                   &quot;
                 </div>
               </div>
-              <p className="mt-3 text-[11px] italic leading-relaxed text-desa-blue-100/80">
+              <p className="mt-2 text-[9px] italic leading-tight text-desa-blue-100/80 sm:mt-3 sm:text-[11px] sm:leading-relaxed">
                 &quot;Melayani dengan hati, membangun dengan inovasi untuk kemajuan bersama.&quot;
               </p>
             </div>
