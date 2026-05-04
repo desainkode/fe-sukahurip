@@ -5,10 +5,10 @@ import { Camera, ChevronDown } from "lucide-react";
 
 export function GaleriHero() {
   return (
-    <section className="relative h-screen min-h-[700px] w-full overflow-hidden bg-[#0B281F] text-white shadow-2xl flex items-center">
+    <section className="relative h-screen min-h-175 w-full overflow-hidden bg-[#0B281F] text-white shadow-2xl flex items-center">
       {/* Decorative Background Elements */}
-      <div className="pointer-events-none absolute -right-24 -top-24 h-[500px] w-[500px] rounded-full bg-[#00E0A1]/10 blur-[120px]" />
-      <div className="pointer-events-none absolute -left-16 -bottom-16 h-[400px] w-[400px] rounded-full bg-[#F0B100]/5 blur-[120px]" />
+      <div className="pointer-events-none absolute -right-24 -top-24 h-125 w-125 rounded-full bg-[#00E0A1]/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -left-16 -bottom-16 h-100 w-100 rounded-full bg-[#F0B100]/5 blur-[120px]" />
       
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
@@ -18,11 +18,11 @@ export function GaleriHero() {
         <div className="flex flex-col items-center text-center">
           <div className="hero-reveal mb-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-[#00E0A1] backdrop-blur-md">
             <span className="h-1.5 w-1.5 rounded-full bg-[#00E0A1] animate-pulse" />
-            Dokumentasi Desa Pameutingan
+            Dokumentasi Desa Sukahurip
           </div>
 
           <h1 className="hero-reveal max-w-5xl font-[Georgia,serif] text-[32px] font-bold leading-[1.05] tracking-tight sm:text-[56px] md:text-[68px] lg:text-[86px]">
-            Rekam Jejak <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E0A1] to-[#F0B100]">Aktivitas</span> <br className="hidden sm:block" />
+            Rekam Jejak <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00E0A1] to-[#F0B100]">Aktivitas</span> <br className="hidden sm:block" />
             & Pembangunan
           </h1>
 
@@ -53,7 +53,7 @@ export function GaleriHero() {
       </div>
 
       {/* Bottom Gradient Fade - Emerald transition */}
-      <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-[#0B281F] via-[#0B281F]/40 to-transparent z-10" />
+      <div className="absolute bottom-0 left-0 w-full h-48 bg-linear-to-t from-[#0B281F] via-[#0B281F]/40 to-transparent z-10" />
     </section>
   );
 }

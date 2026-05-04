@@ -140,7 +140,7 @@ export const leadershipImage = FIGMA_ASSETS.kepalaDesaImage
 
 export const strukturContent: StrukturSectionContent = {
   heading: 'Struktur Tata Kelola Desa',
-  description: 'Struktur kepemimpinan Desa Pameutingan',
+  description: 'Struktur kepemimpinan Desa Sukahurip',
   ctaLink: '/struktur',
   ctaLabel: 'Lihat Selengkapnya',
   positions: [
@@ -188,7 +188,7 @@ export const strukturContent: StrukturSectionContent = {
 // ============================================================================
 
 export const newsContent: NewsSectionContent = {
-  heading: 'Informasi Terkini Desa Pameutingan',
+  heading: 'Informasi Terkini Desa Sukahurip',
   description:
     'Menyajikan ringkasan kabar terbaru desa secara transparan, akurat, dan mudah diakses agar warga dapat mengikuti aktivitas, program, serta perkembangan desa secara cepat.',
   cards: [

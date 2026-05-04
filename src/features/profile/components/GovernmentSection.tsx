@@ -14,7 +14,7 @@ export function GovernmentSection({ members }: { members: GovernmentMember[] }) 
           <Users2 size={16} />
           Struktur Pemerintahan
         </div>
-        <h2 className="font-[Georgia,serif] text-[32px] font-bold text-[#0B281F] md:text-[42px]">Perangkat Desa Pameutingan</h2>
+        <h2 className="font-[Georgia,serif] text-[32px] font-bold text-[#0B281F] md:text-[42px]">Perangkat Desa Sukahurip</h2>
         <p className="max-w-2xl text-[15px] text-[#0B281F]/50">Melayani dengan integritas, transparansi, dan dedikasi untuk kemajuan bersama.</p>
       </div>
 

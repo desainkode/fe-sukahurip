@@ -11,7 +11,7 @@ export default function NewsSection() {
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 md:gap-8">
         <div className="flex items-end justify-between">
           <SectionHeader 
-            title={["Informasi Terkini", "Desa Pameutingan"]}
+            title={["Informasi Terkini", "Desa Sukahurip"]}
             description="Menyajikan ringkasan kabar terbaru desa secara transparan, akurat, dan mudah diakses agar warga dapat mengikuti perkembangan desa secara cepat."
             showInfoButton
           />

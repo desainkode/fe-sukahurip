@@ -6,13 +6,13 @@ import { STATISTIK_DEMOGRAFI } from "../config/home-data";
 export default function StatsSection() {
   return (
     <section className="bg-white px-6 py-8 md:px-10 md:py-12 lg:px-12">
-      <div className="relative mx-auto min-h-[480px] w-full max-w-7xl overflow-hidden rounded-[32px] border border-[#007A55]/20 bg-[#005E45] shadow-2xl md:min-h-[400px] lg:min-h-[420px]">
+      <div className="relative mx-auto min-h-120 w-full max-w-7xl overflow-hidden rounded-[32px] border border-[#007A55]/20 bg-[#005E45] shadow-2xl md:min-h-100 lg:min-h-105">
         {/* Background Gradient & Pattern */}
         <div className="absolute inset-0 bg-linear-to-br from-[#005E45] via-[#004D39] to-[#003B2C]" />
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_2px_2px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[size:24px_24px]" />
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_2px_2px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-size-[24px_24px]" />
         
         {/* Animated Data Wave */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-0">
           <svg
             className="relative block h-32 w-[200%] animate-ocean-wave md:h-40 lg:h-48"
             viewBox="0 0 1200 120"
@@ -49,7 +49,7 @@ export default function StatsSection() {
             </h2>
 
             <p className="mt-5 text-[14px] leading-relaxed text-[#D0FAE5]/60 md:text-[15px]">
-              Menyajikan data kependudukan yang transparan, akurat, dan terintegrasi untuk mendukung perencanaan pembangunan Desa Pameutingan.
+              Menyajikan data kependudukan yang transparan, akurat, dan terintegrasi untuk mendukung perencanaan pembangunan Desa Sukahurip.
             </p>
             
             <div className="mt-8 flex items-center gap-4">
@@ -67,7 +67,7 @@ export default function StatsSection() {
               return (
                 <div
                   key={item.label}
-                  className={`hero-reveal group relative flex h-[120px] w-[120px] flex-col items-center justify-center rounded-full border border-white/10 bg-white/5 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:z-20 hover:-translate-y-2 sm:h-44 sm:w-44 lg:h-52 lg:w-52 ${index > 0 ? "lg:-ml-12" : ""}`}
+                  className={`hero-reveal group relative flex h-30 w-30 flex-col items-center justify-center rounded-full border border-white/10 bg-white/5 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:z-20 hover:-translate-y-2 sm:h-44 sm:w-44 lg:h-52 lg:w-52 ${index > 0 ? "lg:-ml-12" : ""}`}
                   style={{ animationDelay: `${300 + index * 100}ms` }}
                 >
                   <div className="absolute inset-0 rounded-full bg-linear-to-br from-[#00D492] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-10" />

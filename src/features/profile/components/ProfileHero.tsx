@@ -30,7 +30,7 @@ export function ProfileHero({ name, slogan }: { name: string, slogan: string }) 
           </p>
 
           <p className="hero-reveal mt-8 max-w-2xl text-[16px] leading-relaxed text-white/60 sm:text-[18px]">
-            Menelusuri sejarah panjang, visi masa depan, dan struktur kepemimpinan yang membangun harmoni di Desa Pameutingan.
+            Menelusuri sejarah panjang, visi masa depan, dan struktur kepemimpinan yang membangun harmoni di Desa Sukahurip.
           </p>
           
           <div className="hero-reveal mt-12">

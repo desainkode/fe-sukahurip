@@ -29,7 +29,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (nik && password) {
       const mockUser: User = {
         id: "1",
-        name: "Warga Pameutingan",
+        name: "Warga Sukahurip",
         nik: nik,
         email: "warga@desa.com"
       };

@@ -70,10 +70,10 @@ export default function Navbar() {
           </div>
           <span className="flex flex-col leading-none" style={{ fontFamily: 'var(--font-sans)' }}>
             <span className="text-[1.1rem] font-bold tracking-tight text-white md:text-[1.35rem]">
-              Desa Pameutingan
+              Desa Sukahurip
             </span>
             <span className="mt-0.5 text-[0.62rem] font-medium tracking-[0.14em] text-[#D0FAE5]/80 md:text-[0.68rem]">
-              KAB. TASIKMALAYA
+              Kec. Cipatujah Kab. Tasikmalaya
             </span>
           </span>
         </Link>

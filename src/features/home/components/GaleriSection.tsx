@@ -12,7 +12,7 @@ export default function GaleriSection() {
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 md:gap-8">
         <div className="flex items-end justify-between">
           <SectionHeader 
-            title={["Galeri Desa", "Pameutingan"]}
+            title={["Galeri Desa", "Sukahurip"]}
             description="Menampilkan sebagian dokumentasi kegiatan desa, suasana layanan, dan momen kebersamaan warga sebagai preview sebelum melihat galeri lengkap."
             showInfoButton
           />

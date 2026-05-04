@@ -66,7 +66,7 @@ const belanjaData: TableItem[] = [
   { 
     kode: "2", uraian: "BELANJA DESA", anggaran: 1645000000, realisasi: 985000000, level: 1,
     progres: [
-      { image: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=400&auto=format&fit=crop", keterangan: "Pembangunan Jalan Desa Pameutingan", persentase: 60 },
+      { image: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=400&auto=format&fit=crop", keterangan: "Pembangunan Jalan Desa Sukahurip", persentase: 60 },
       { image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=400&auto=format&fit=crop", keterangan: "Renovasi Gedung Serbaguna", persentase: 45 }
     ]
   },
@@ -256,7 +256,7 @@ export default function ApbdesDetailPage() {
             <h1 className="max-w-4xl font-[Georgia,serif] text-[40px] font-bold leading-[1.05] tracking-tight sm:text-[52px] lg:text-[64px]">
               Realisasi <span className="text-[#F0B100]">APB Desa</span>
               <br />
-              Pameutingan 2026
+              Sukahurip 2026
             </h1>
 
             <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-white/70 sm:text-[17px]">
@@ -350,7 +350,7 @@ export default function ApbdesDetailPage() {
               </h2>
               
               <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-white/60 sm:text-[16px]">
-                Pemerintah Desa Pameutingan berkomitmen untuk selalu memperbarui data realisasi ini secara berkala melalui sistem <strong>Siskeudes</strong>. Hal ini dilakukan agar masyarakat dapat terus memantau perkembangan pembangunan secara langsung dan transparan.
+                Pemerintah Desa Sukahurip berkomitmen untuk selalu memperbarui data realisasi ini secara berkala melalui sistem <strong>Siskeudes</strong>. Hal ini dilakukan agar masyarakat dapat terus memantau perkembangan pembangunan secara langsung dan transparan.
               </p>
 
               <div className="mt-10 flex flex-wrap gap-4">
@@ -411,7 +411,7 @@ export default function ApbdesDetailPage() {
           
           <div className="mt-12 flex items-center gap-3 rounded-2xl bg-white/5 p-5 text-[12px] text-white/40 border border-white/5">
             <Info size={18} className="shrink-0 text-[#F0B100]" />
-            <p>Data ini merupakan ringkasan eksekutif dari realisasi APBDes Pameutingan. Untuk rincian per kegiatan secara lebih mendalam, silakan klik dropdown pada tabel di atas.</p>
+            <p>Data ini merupakan ringkasan eksekutif dari realisasi APBDes Sukahurip. Untuk rincian per kegiatan secara lebih mendalam, silakan klik dropdown pada tabel di atas.</p>
           </div>
         </section>
       </div>

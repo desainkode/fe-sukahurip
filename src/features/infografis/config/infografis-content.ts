@@ -60,9 +60,9 @@ export const heroContentByFeature: Record<InfografisKey, HeroContent> = {
   },
   stunting: {
     eyebrow: 'WEBSITE RESMI PEMERINTAH DESA',
-    titleLines: ['data stunting', 'desa pameutingan', ''],
+    titleLines: ['data stunting', 'desa sukahurip', ''],
     description:
-      'Statistik Stunting Desa Pameutingan merupakan data jumlah dan persentase balita yang mengalami stunting sebagai gambaran kondisi gizi dan pertumbuhan anak.',
+      'Statistik Stunting Desa Sukahurip merupakan data jumlah dan persentase balita yang mengalami stunting sebagai gambaran kondisi gizi dan pertumbuhan anak.',
     stats: [
       { label: 'Balita', value: '3.542' },
       { label: 'Stunting', value: '3.542' },
@@ -75,9 +75,9 @@ export const heroContentByFeature: Record<InfografisKey, HeroContent> = {
   },
   bansos: {
     eyebrow: 'Website Resmi Pemerintah Desa',
-    titleLines: ['Data Bansos', 'Desa Pameutingan', ''],
+    titleLines: ['Data Bansos', 'Desa Sukahurip', ''],
     description:
-      'Ringkasan Bantuan Sosial Desa Pameutingan merupakan data jumlah dan jenis bantuan sosial yang diterima masyarakat sebagai gambaran kondisi kesejahteraan warga serta dasar perencanaan dan penyaluran bantuan di desa.',
+      'Ringkasan Bantuan Sosial Desa Sukahurip merupakan data jumlah dan jenis bantuan sosial yang diterima masyarakat sebagai gambaran kondisi kesejahteraan warga serta dasar perencanaan dan penyaluran bantuan di desa.',
     stats: [
       { label: 'Penerima', value: '3.542' },
       { label: 'Kepala Keluarga', value: '1.087' },
@@ -177,7 +177,7 @@ export const apbdesContent: ApbdesSectionContent = {
 
 export const bansosContent: BansosSectionContent = {
   title: 'Bantuan Sosial',
-  description: 'Ringkasan Bantuan Sosial Desa Pameutingan merupakan data jumlah and jenis bantuan sosial yang diterima masyarakat sebagai gambaran kondisi kesejahteraan warga serta dasar perencanaan and penyaluran bantuan di desa.',
+  description: 'Ringkasan Bantuan Sosial Desa Sukahurip merupakan data jumlah and jenis bantuan sosial yang diterima masyarakat sebagai gambaran kondisi kesejahteraan warga serta dasar perencanaan and penyaluran bantuan di desa.',
   indicators: [
     {
       label: 'Total Penerima Bansos',
@@ -272,7 +272,7 @@ export const bansosContent: BansosSectionContent = {
 export const stuntingContent: StuntingSectionContent = {
   title: 'Statistik Stunting',
   description:
-    'Statistik Stunting Desa Pameutingan merupakan data jumlah dan persentase balita yang mengalami stunting sebagai gambaran kondisi gizi dan pertumbuhan anak, yang menjadi dasar perencanaan program kesehatan dan pencegahan stunting di desa.',
+    'Statistik Stunting Desa Sukahurip merupakan data jumlah dan persentase balita yang mengalami stunting sebagai gambaran kondisi gizi dan pertumbuhan anak, yang menjadi dasar perencanaan program kesehatan dan pencegahan stunting di desa.',
   indicators: [
     {
       label: 'Total Anak',

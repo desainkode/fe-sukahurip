@@ -58,7 +58,7 @@ export default function LoginPage() {
               <div className="h-7 w-7 overflow-hidden rounded-lg bg-white p-1 shadow-sm border border-[#0B281F]/5">
                  <img src="/img/image.png" alt="Logo" className="h-full w-full object-contain" />
               </div>
-              <h3 className="text-[10px] font-bold uppercase tracking-widest text-[#0B281F]/40">Desa Pameutingan</h3>
+              <h3 className="text-[10px] font-bold uppercase tracking-widest text-[#0B281F]/40">Desa Sukahurip</h3>
             </div>
             <h3 
               className="text-3xl font-bold text-[#0B281F]"

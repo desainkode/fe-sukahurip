@@ -40,12 +40,12 @@ export default function ProfilePage() {
 
         {/* CTA / Footer Promo */}
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-[48px] bg-[#009966] p-12 text-center text-white shadow-2xl">
-             <h3 className="text-3xl font-bold mb-6">Membangun Bersama Pameutingan</h3>
+          <div className="relative overflow-hidden rounded-[48px] bg-[#1e96fc] p-12 text-center text-white shadow-2xl">
+             <h3 className="text-3xl font-bold mb-6">Membangun Bersama Sukahurip</h3>
              <p className="max-w-2xl mx-auto text-white/70 mb-10">
                Mari berkontribusi dalam mewujudkan visi desa yang mandiri dan berbudaya. Hubungi kami untuk informasi lebih lanjut mengenai program desa.
              </p>
-             <button className="bg-[#0B281F] px-10 py-4 rounded-full font-bold shadow-xl hover:scale-105 transition-transform">
+             <button className="bg-[#072ac8] px-10 py-4 rounded-full font-bold shadow-xl hover:scale-105 transition-transform">
                Hubungi Kami Sekarang
              </button>
           </div>

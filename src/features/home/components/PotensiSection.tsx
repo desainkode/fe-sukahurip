@@ -12,7 +12,7 @@ export default function PotensiSection() {
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 md:gap-8">
         <div className="flex items-end justify-between">
           <SectionHeader 
-            title={["Potensi Desa", "Pameutingan"]}
+            title={["Potensi Desa", "Sukahurip"]}
             description="Menampilkan sebagian potensi desa seperti pertanian, UMKM, dan daya tarik alam sebagai preview sebelum melihat detail lengkap."
             showInfoButton
           />

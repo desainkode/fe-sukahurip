@@ -40,8 +40,8 @@ const pekerjaanProfesional: JobItem[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Detail Pekerjaan | Infografis Desa Pameutingan",
-  description: "Rangkuman lengkap data pekerjaan penduduk Desa Pameutingan.",
+  title: "Detail Pekerjaan | Infografis Desa Sukahurip",
+  description: "Rangkuman lengkap data pekerjaan penduduk Desa Sukahurip.",
 };
 
 function SummaryTile({
@@ -224,7 +224,7 @@ export default async function PekerjaanPage({
             <h1 className="max-w-4xl font-[Georgia,serif] text-[40px] font-bold leading-[1.05] tracking-tight sm:text-[52px] lg:text-[64px]">
               Eksplorasi <span className="text-[#00E0A1]">Jenis Pekerjaan</span>
               <br />
-              Warga Pameutingan
+              Warga Sukahurip
             </h1>
 
             <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-white/70 sm:text-[17px]">

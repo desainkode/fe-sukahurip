@@ -67,7 +67,7 @@ export default function StatusPengajuanPage() {
             <div>
               <h4 className="text-xl font-bold">Informasi Pengambilan</h4>
               <p className="mt-1 text-[14px] text-white/60 leading-relaxed">
-                Untuk pengajuan dengan status <span className="text-[#009966] font-bold">Disetujui</span>, silakan datang ke Balai Desa Pameutingan pada jam kerja dengan membawa dokumen fisik asli untuk verifikasi akhir.
+                Untuk pengajuan dengan status <span className="text-[#009966] font-bold">Disetujui</span>, silakan datang ke Balai Desa Sukahurip pada jam kerja dengan membawa dokumen fisik asli untuk verifikasi akhir.
               </p>
             </div>
           </div>

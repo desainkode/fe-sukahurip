@@ -14,7 +14,7 @@ export const mockPotensi: PotensiItem[] = [
     name: "Pertanian Padi Unggulan",
     category: "Sumber Daya Alam",
     shortDesc: "Lahan persawahan produktif dengan sistem irigasi teknis yang menghasilkan padi kualitas premium.",
-    longDesc: "Desa Pameutingan memiliki potensi pertanian yang sangat besar, terutama dalam komoditas padi. Dengan luas lahan mencapai ratusan hektar, wilayah ini menjadi salah satu lumbung pangan di kabupaten. Didukung oleh sistem irigasi yang tertata dan tanah yang subur, hasil panen padi di sini memiliki kualitas yang diakui oleh pasar luas. Kelompok tani desa juga aktif melakukan inovasi dalam pemilihan bibit dan teknik pemupukan organik.",
+    longDesc: "Desa Sukahurip memiliki potensi pertanian yang sangat besar, terutama dalam komoditas padi. Dengan luas lahan mencapai ratusan hektar, wilayah ini menjadi salah satu lumbung pangan di kabupaten. Didukung oleh sistem irigasi yang tertata dan tanah yang subur, hasil panen padi di sini memiliki kualitas yang diakui oleh pasar luas. Kelompok tani desa juga aktif melakukan inovasi dalam pemilihan bibit dan teknik pemupukan organik.",
     image: "https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?q=80&w=800&auto=format&fit=crop",
     gallery: [
       "https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?q=80&w=800&auto=format&fit=crop",
@@ -37,7 +37,7 @@ export const mockPotensi: PotensiItem[] = [
     name: "UMKM Anyaman Bambu",
     category: "Ekonomi & UMKM",
     shortDesc: "Produk kerajinan tangan berbahan dasar bambu yang bernilai seni tinggi dan ramah lingkungan.",
-    longDesc: "Kerajinan anyaman bambu merupakan warisan turun-temurun di Desa Pameutingan. Saat ini, terdapat puluhan perajin yang tergabung dalam koperasi desa. Produk yang dihasilkan mulai dari alat rumah tangga hingga dekorasi interior modern yang sudah merambah pasar ekspor. Inovasi desain dan ketahanan produk menjadi keunggulan utama kerajinan bambu dari desa kami.",
+    longDesc: "Kerajinan anyaman bambu merupakan warisan turun-temurun di Desa Sukahurip. Saat ini, terdapat puluhan perajin yang tergabung dalam koperasi desa. Produk yang dihasilkan mulai dari alat rumah tangga hingga dekorasi interior modern yang sudah merambah pasar ekspor. Inovasi desain dan ketahanan produk menjadi keunggulan utama kerajinan bambu dari desa kami.",
     image: "https://images.unsplash.com/photo-1590483736622-39da8af75bba?q=80&w=800&auto=format&fit=crop",
     gallery: [
       "https://images.unsplash.com/photo-1590483736622-39da8af75bba?q=80&w=800&auto=format&fit=crop"
@@ -55,11 +55,11 @@ export const mockPotensi: PotensiItem[] = [
   },
   {
     id: "3",
-    slug: "wisata-curug-pameutingan",
-    name: "Wisata Curug Pameutingan",
+    slug: "wisata-curug-sukahurip",
+    name: "Wisata Curug Sukahurip",
     category: "Wisata",
     shortDesc: "Keindahan alam air terjun tersembunyi dengan suasana hutan yang masih asri dan udara sejuk.",
-    longDesc: "Curug Pameutingan adalah permata tersembunyi yang menawarkan pesona air terjun setinggi 15 meter. Dikelilingi oleh vegetasi hijau yang rimbun, lokasi ini menjadi destinasi favorit untuk healing dan fotografi alam. Pengelolaan dilakukan secara swadaya oleh Kelompok Sadar Wisata (Pokdarwis) desa dengan tetap menjaga kelestarian ekosistem sekitar.",
+    longDesc: "Curug Sukahurip adalah permata tersembunyi yang menawarkan pesona air terjun setinggi 15 meter. Dikelilingi oleh vegetasi hijau yang rimbun, lokasi ini menjadi destinasi favorit untuk healing dan fotografi alam. Pengelolaan dilakukan secara swadaya oleh Kelompok Sadar Wisata (Pokdarwis) desa dengan tetap menjaga kelestarian ekosistem sekitar.",
     image: "https://images.unsplash.com/photo-1434725039720-abb26e22ebe8?q=80&w=800&auto=format&fit=crop",
     gallery: [
       "https://images.unsplash.com/photo-1434725039720-abb26e22ebe8?q=80&w=800&auto=format&fit=crop"

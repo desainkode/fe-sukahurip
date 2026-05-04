@@ -31,8 +31,8 @@ export default async function GaleriDetailPage({ params }: { params: Promise<{ s
           alt={item.title} 
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B281F] via-[#0B281F]/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B281F]/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#072ac8] via-[#072ac8]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#072ac8]/60 via-transparent to-transparent" />
         
         <div className="absolute inset-0 flex items-end">
           <div className="mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
@@ -67,8 +67,8 @@ export default async function GaleriDetailPage({ params }: { params: Promise<{ s
                     <Calendar size={18} />
                   </div>
                   <div>
-                    <p className="text-[11px] font-bold uppercase tracking-widest text-[#0B281F]/30">Tanggal</p>
-                    <p className="text-[15px] font-bold text-[#0B281F]">{item.date}</p>
+                    <p className="text-[11px] font-bold uppercase tracking-widest text-[#072ac8]/30">Tanggal</p>
+                    <p className="text-[15px] font-bold text-[#072ac8]">{item.date}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -76,8 +76,8 @@ export default async function GaleriDetailPage({ params }: { params: Promise<{ s
                     <MapPin size={18} />
                   </div>
                   <div>
-                    <p className="text-[11px] font-bold uppercase tracking-widest text-[#0B281F]/30">Lokasi</p>
-                    <p className="text-[15px] font-bold text-[#0B281F]">{item.location}</p>
+                    <p className="text-[11px] font-bold uppercase tracking-widest text-[#072ac8]/30">Lokasi</p>
+                    <p className="text-[15px] font-bold text-[#072ac8]">{item.location}</p>
                   </div>
                 </div>
               </div>
@@ -130,7 +130,7 @@ export default async function GaleriDetailPage({ params }: { params: Promise<{ s
                 </div>
               </div>
 
-              <button className="mt-10 flex w-full items-center justify-center gap-3 rounded-2xl bg-[#009966] py-5 text-[14px] font-bold shadow-xl transition-all hover:-translate-y-1 hover:bg-[#00B373]">
+              <button className="mt-10 flex w-full items-center justify-center gap-3 rounded-2xl bg-[#1e96fc] py-5 text-[14px] font-bold shadow-xl transition-all hover:-translate-y-1 hover:bg-[#1e96fc]">
                 <Share2 size={18} />
                 Bagikan Momen
               </button>

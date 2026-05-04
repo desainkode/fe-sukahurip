@@ -27,7 +27,7 @@ export function LayananHero() {
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             Pelayanan Masyarakat <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E0A1] to-[#F0B100]">Desa Pameutingan</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E0A1] to-[#F0B100]">Desa Sukahurip</span>
           </h1>
 
           <p className="hero-reveal mt-10 max-w-2xl text-[16px] leading-relaxed text-white/60 sm:text-[18px]">

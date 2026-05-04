@@ -154,7 +154,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
             <div className="mt-10 overflow-hidden rounded-[32px] bg-[#0B281F] p-8 text-white shadow-xl">
               <h3 className="text-xl font-bold">Tetap Terhubung</h3>
               <p className="mt-3 text-[13px] text-white/60 leading-relaxed">
-                Dapatkan kabar terbaru Desa Pameutingan langsung di kotak masuk Anda.
+                Dapatkan kabar terbaru Desa Sukahurip langsung di kotak masuk Anda.
               </p>
               <form className="mt-6 flex flex-col gap-3">
                 <input

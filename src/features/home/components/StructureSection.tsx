@@ -19,25 +19,25 @@ export default function StructureSection() {
           {/* Text Content */}
           <div className="hero-reveal flex flex-col gap-6">
             <div className="flex flex-col gap-6">
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#00D492]/10 px-4 py-1.5 border border-[#00D492]/20 w-fit">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#00D492]" />
-                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#00D492]">Perangkat Desa</span>
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#1e96fc]/10 px-4 py-1.5 border border-[#1e96fc]/20 w-fit">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#1e96fc]" />
+                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1e96fc]">Perangkat Desa</span>
               </div>
               
-              <h2 className="hero-reveal text-[38px] font-bold leading-[1.1] tracking-tight text-[#052119] md:text-[52px]">
+              <h2 className="hero-reveal text-[38px] font-bold leading-[1.1] tracking-tight text-[#072ac8] md:text-[52px]">
                 Struktur <br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#00D492] to-[#004D39]">Tata Kelola Desa</span>
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#1e96fc] to-[#072ac8]">Tata Kelola Desa</span>
               </h2>
               
-              <p className="hero-reveal text-[15px] leading-relaxed text-[#052119]/70 md:text-[16px]">
-                Sinergi kepemimpinan Desa Pameutingan yang berdedikasi tinggi dalam melayani masyarakat dengan integritas dan inovasi.
+              <p className="hero-reveal text-[15px] leading-relaxed text-[#072ac8]/70 md:text-[16px]">
+                Sinergi kepemimpinan Desa Sukahurip yang berdedikasi tinggi dalam melayani masyarakat dengan integritas dan inovasi.
               </p>
             </div>
 
             <div className="flex items-center gap-6">
               <Link
                 href="/struktur"
-                className="group inline-flex items-center gap-3 rounded-2xl bg-[#052119] px-8 py-4 text-[15px] font-black text-[#00D492] shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl active:scale-95"
+                className="group inline-flex items-center gap-3 rounded-2xl bg-[#072ac8] px-8 py-4 text-[15px] font-black text-[#1e96fc] shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl active:scale-95"
               >
                 Seluruh Staf
                 <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
@@ -64,7 +64,7 @@ export default function StructureSection() {
                   className="hero-reveal shrink-0 snap-start"
                   style={{ animationDelay: `${item.delay}ms` }}
                 >
-                  <div className="group relative h-[420px] w-[280px] overflow-hidden rounded-[32px] bg-[#052119] shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl md:h-[480px] md:w-[320px]">
+                  <div className="group relative h-105 w-70 overflow-hidden rounded-[32px] bg-[#072ac8] shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl md:h-120 md:w-80">
                     <Image
                       src={item.image}
                       alt={item.nama}
@@ -73,16 +73,16 @@ export default function StructureSection() {
                     />
                     
                     {/* Overlay Gradient */}
-                    <div className="absolute inset-0 bg-linear-to-t from-[#052119] via-transparent to-transparent opacity-80 transition-opacity group-hover:opacity-90" />
+                    <div className="absolute inset-0 bg-linear-to-t from-[#072ac8] via-transparent to-transparent opacity-80 transition-opacity group-hover:opacity-90" />
                     
                     {/* Info */}
                     <div className="absolute bottom-0 left-0 right-0 p-8">
                       <div className="flex flex-col">
-                        <span className="mb-2 w-fit rounded-lg bg-[#00D492]/20 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-[#00D492] backdrop-blur-md">
+                        <span className="mb-2 w-fit rounded-lg bg-[#1e96fc]/20 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-[#1e96fc] backdrop-blur-md">
                           {item.jabatan}
                         </span>
                         <h4 className="font-upakarti text-[24px] font-bold text-white md:text-[28px]">{item.nama}</h4>
-                        <div className="mt-4 h-1 w-0 bg-[#F0B100] transition-all duration-500 group-hover:w-full" />
+                        <div className="mt-4 h-1 w-0 bg-[#ffc600] transition-all duration-500 group-hover:w-full" />
                       </div>
                     </div>
                   </div>

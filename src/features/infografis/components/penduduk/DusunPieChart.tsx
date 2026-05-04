@@ -12,10 +12,10 @@ import { DUSUN_CHART_DATA } from "../../config/penduduk-data";
 
 export function DusunPieChart({ delayMs }: { delayMs: number }) {
   const chartConfig = {
-    dusun1: { label: "Dusun Pameutingan", color: "#00E0A1" },
-    dusun2: { label: "Dusun Citalem", color: "#F0B100" },
+    dusun1: { label: "Dusun Sukahurip", color: "#1e96fc" },
+    dusun2: { label: "Dusun Citalem", color: "#ffc600" },
     dusun3: { label: "Dusun Pencut", color: "#FFFFFF" },
-    dusun4: { label: "Dusun Mekarjaya", color: "#34D399" },
+    dusun4: { label: "Dusun Mekarjaya", color: "#1e96fc" },
   };
 
   const totalValue = React.useMemo(() => {
@@ -25,7 +25,7 @@ export function DusunPieChart({ delayMs }: { delayMs: number }) {
   return (
     <article className="hero-reveal flex w-full flex-col items-center justify-center" style={{ animationDelay: `${delayMs}ms` }}>
       <div className="relative aspect-square w-full max-w-60 sm:max-w-70">
-        <div className="absolute inset-0 rounded-full bg-[#00E0A1]/5 blur-3xl" />
+        <div className="absolute inset-0 rounded-full bg-[#1e96fc]/5 blur-3xl" />
         <ChartContainer config={chartConfig as ChartConfig} className="mx-auto h-full w-full">
           <PieChart>
             <defs>
@@ -79,11 +79,11 @@ export function DusunPieChart({ delayMs }: { delayMs: number }) {
         {DUSUN_CHART_DATA.map((item) => (
           <div key={item.dusun} className="flex items-center gap-2 rounded-full border border-white/5 bg-white/3 py-1.5 pl-2.5 pr-3.5 backdrop-blur-sm transition-all duration-300 hover:bg-white/10">
             <div className="h-2 w-2 shrink-0 rounded-full shadow-[0_0_8px_rgba(255,255,255,0.1)]" style={{ backgroundColor: chartConfig[item.dusun as keyof typeof chartConfig]?.color }} />
-            <div className="flex items-baseline gap-2">
+              <div className="flex items-baseline gap-2">
               <span className="text-[12px] font-medium text-white/70" style={{ fontFamily: "var(--font-upakarti)" }}>
                 {item.label.replace("Dusun ", "")}
               </span>
-              <span className="text-[13px] font-bold text-[#00E0A1]">{item.value}%</span>
+              <span className="text-[13px] font-bold text-[#1e96fc]">{item.value}%</span>
             </div>
           </div>
         ))}

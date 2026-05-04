@@ -6,7 +6,7 @@ import { ArrowRight, Map, Users, LayoutGrid } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[100svh] w-full flex-col items-center justify-center overflow-hidden bg-[#0B281F] text-[#F4F3EF]">
+    <section className="relative flex min-h-svh w-full flex-col items-center justify-center overflow-hidden bg-[#0B281F] text-[#F4F3EF]">
       {/* Background Media */}
       <div className="absolute inset-0 z-0">
         <video
@@ -48,7 +48,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero-reveal mt-4 max-w-xl text-[13px] font-medium leading-relaxed text-[#D0FAE5]/70 sm:text-[16px] [animation-delay:250ms]">
-            Selamat datang di portal digital Desa Pameutingan. Transformasi tata kelola desa yang transparan, modern, dan melayani sepenuh hati.
+            Selamat datang di portal digital Desa Sukahurip. Transformasi tata kelola desa yang transparan, modern, dan melayani sepenuh hati.
           </p>
 
           <div className="hero-reveal mt-6 flex w-full flex-row items-center gap-2.5 [animation-delay:350ms] lg:w-auto lg:items-start sm:gap-5">
@@ -77,7 +77,7 @@ export default function Hero() {
             ].map((stat, i) => (
               <div key={i} className="group flex flex-col items-center rounded-xl border border-white/5 bg-white/2 px-2 py-3 backdrop-blur-sm transition-all hover:bg-white/5 sm:rounded-2xl sm:px-4 sm:py-5 lg:items-start">
                 <div className="mb-2 flex h-6 w-6 items-center justify-center rounded-lg bg-[#00D492]/10 text-[#00D492] transition-colors group-hover:bg-[#00D492] group-hover:text-[#0B281F] sm:mb-3 sm:h-8 sm:w-8">
-                  <stat.icon size={14} className="sm:size-[16px]" />
+                  <stat.icon size={14} className="sm:size-4" />
                 </div>
                 <div className="flex items-baseline gap-0.5 sm:gap-1">
                   <span className="text-[15px] font-black text-white sm:text-2xl">{stat.value}</span>
@@ -90,15 +90,15 @@ export default function Hero() {
         </div>
 
         {/* Hero Image / Card Column */}
-        <div className="hero-reveal relative mx-auto w-full max-w-[260px] [animation-delay:200ms] sm:max-w-sm lg:max-w-md">
+        <div className="hero-reveal relative mx-auto w-full max-w-65 [animation-delay:200ms] sm:max-w-sm lg:max-w-md">
           {/* Decorative Frames */}
           <div className="hero-float absolute -right-4 top-6 h-full w-full rotate-3 rounded-[40px] bg-emerald-500/10 backdrop-blur-3xl [animation-delay:0.5s]" />
           <div className="hero-float absolute -left-4 -top-4 h-full w-full -rotate-2 rounded-[40px] border border-white/5 [animation-delay:1s]" />
 
-          <div className="hero-float group relative aspect-[4/5] overflow-hidden rounded-[40px] bg-linear-to-b from-emerald-900 to-[#0B281F] shadow-2xl [animation-delay:0s]">
+          <div className="hero-float group relative aspect-4/5 overflow-hidden rounded-[40px] bg-linear-to-b from-emerald-900 to-[#0B281F] shadow-2xl [animation-delay:0s]">
             <Image
               src="/img/hero-kepala-desa.png"
-              alt="Kepala Desa Pameutingan"
+              alt="Kepala Desa Sukahurip"
               fill
               className="hero-zoom object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
               priority

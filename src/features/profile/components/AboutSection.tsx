@@ -14,7 +14,7 @@ export function AboutSection() {
           & <span className="text-[#009966]">Kemandirian</span>
         </h2>
         <p className="text-[15px] leading-relaxed text-[#0B281F]/70 md:text-[17px]">
-          Desa Pameutingan adalah wilayah agraris yang berkembang menjadi pusat inovasi ekonomi lokal. Terletak di kawasan strategis, desa ini menggabungkan kearifan lokal dengan tata kelola modern untuk menciptakan lingkungan yang sejahtera bagi seluruh warganya.
+          Desa Sukahurip adalah wilayah agraris yang berkembang menjadi pusat inovasi ekonomi lokal. Terletak di kawasan strategis, desa ini menggabungkan kearifan lokal dengan tata kelola modern untuk menciptakan lingkungan yang sejahtera bagi seluruh warganya.
         </p>
         
         <div className="grid gap-4 sm:grid-cols-2 md:gap-6">

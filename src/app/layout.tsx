@@ -3,8 +3,8 @@ import "./globals.css";
 import { upakarti } from "../lib/fonts";
 
 export const metadata: Metadata = {
-  title: "Website Desa Pameutingan",
-  description: "Portal resmi Desa Pameutingan",
+  title: "Website Desa Sukahurip",
+  description: "Portal resmi Desa Sukahurip",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",

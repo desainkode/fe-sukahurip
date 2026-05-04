@@ -22,7 +22,7 @@ export default function GaleriPage() {
               Punya Dokumentasi Kegiatan <span className="text-[#F0B100]">Desa?</span>
             </h2>
             <p className="mt-6 max-w-xl text-[16px] text-white/80 leading-relaxed">
-              Jika Anda memiliki foto atau video kegiatan positif di Desa Pameutingan, bagikan kepada kami untuk dipublikasikan di Galeri Desa.
+              Jika Anda memiliki foto atau video kegiatan positif di Desa Sukahurip, bagikan kepada kami untuk dipublikasikan di Galeri Desa.
             </p>
             <button className="mt-10 h-16 rounded-full bg-[#0B281F] px-10 text-[15px] font-bold text-white shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl">
               Kirim Dokumentasi

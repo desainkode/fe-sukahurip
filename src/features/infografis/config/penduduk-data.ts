@@ -107,7 +107,7 @@ export const DIAGRAM_KELOMPOK_UMUR = [
 export const BERDASARKAN_DUSUN_CARDS = [
   {
     kode: "01",
-    nama: "Dusun Pameutingan",
+    nama: "Dusun Sukahurip",
     deskripsi: "Sebaran umur warga untuk mendukung program desa.",
     persentase: 30,
   },
@@ -132,7 +132,7 @@ export const BERDASARKAN_DUSUN_CARDS = [
 ];
 
 export const DUSUN_CHART_DATA = [
-  { dusun: "dusun1", label: "Dusun Pameutingan", value: 30, fill: "var(--color-dusun1)" },
+  { dusun: "dusun1", label: "Dusun Sukahurip", value: 30, fill: "var(--color-dusun1)" },
   { dusun: "dusun2", label: "Dusun Citalem", value: 18, fill: "var(--color-dusun2)" },
   { dusun: "dusun4", label: "Dusun Mekarjaya", value: 28, fill: "var(--color-dusun4)" },
 ];

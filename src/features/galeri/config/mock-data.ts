@@ -12,20 +12,20 @@ export const galleryCategories = [
 export const mockGallery: GaleriItem[] = [
   {
     id: "1",
-    slug: "pestival-budaya-pameutingan-2026",
-    title: "Festival Budaya Pameutingan 2026",
+    slug: "festival-budaya-sukahurip-2026",
+    title: "Festival Budaya Sukahurip 2026",
     category: "Acara & Festival",
     date: "12 April 2026",
     location: "Alun-alun Desa",
     shortDesc: "Kemeriahan festival tahunan yang menampilkan kesenian tradisional dan bazar produk lokal.",
-    longDesc: "Festival Budaya Pameutingan 2026 merupakan acara puncak peringatan hari jadi desa yang ke-125. Acara ini dihadiri oleh ribuan warga dan wisatawan dari luar daerah. Berbagai pertunjukan mulai dari tari Jaipong massal hingga wayang golek semalam suntuk disuguhkan untuk melestarikan budaya leluhur.",
+    longDesc: "Festival Budaya Sukahurip 2026 merupakan acara puncak peringatan hari jadi desa yang ke-125. Acara ini dihadiri oleh ribuan warga dan wisatawan dari luar daerah. Berbagai pertunjukan mulai dari tari Jaipong massal hingga wayang golek semalam suntuk disuguhkan untuk melestarikan budaya leluhur.",
     image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=800&auto=format&fit=crop",
     photos: [
       "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1514525253361-bee243870eb2?q=80&w=800&auto=format&fit=crop"
     ],
-    participants: "Seluruh warga Desa Pameutingan dan tamu undangan",
+    participants: "Seluruh warga Desa Sukahurip dan tamu undangan",
     objective: "Melestarikan adat istiadat desa dan mempromosikan UMKM lokal."
   },
   {

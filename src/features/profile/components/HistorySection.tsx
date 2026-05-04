@@ -39,14 +39,14 @@ export function HistorySection({ history, establishedYear }: { history: string, 
                 <Milestone size={24} className="mb-4 text-[#009966]" />
                 <h4 className="font-bold text-[#0B281F]">Asal Usul Nama</h4>
                 <p className="mt-2 text-[14px] text-[#0B281F]/50 leading-relaxed">
-                  Berasal dari kata "Pameutingan" yang berarti tempat singgah bagi para pedagang kuno.
+                  Berasal dari kata "Sukahurip" yang berarti hidup sejahtera bagi para pedagang kuno.
                 </p>
               </div>
               <div className="rounded-[32px] bg-white p-8 shadow-sm border border-[#0B281F]/5">
                 <Milestone size={24} className="mb-4 text-[#009966]" />
                 <h4 className="font-bold text-[#0B281F]">Titik Balik</h4>
                 <p className="mt-2 text-[14px] text-[#0B281F]/50 leading-relaxed">
-                  Tahun 1945, Desa Pameutingan menjadi basis pertahanan pejuang di wilayah selatan.
+                  Tahun 1945, Desa Sukahurip menjadi basis pertahanan pejuang di wilayah selatan.
                 </p>
               </div>
             </div>

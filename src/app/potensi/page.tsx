@@ -22,7 +22,7 @@ export default function PotensiPage() {
               Tertarik Berkolaborasi Mengembangkan <span className="text-[#F0B100]">Potensi Desa?</span>
             </h2>
             <p className="mt-6 max-w-xl text-[16px] text-white/60">
-              Pemerintah Desa Pameutingan membuka peluang kemitraan dan investasi bagi siapa saja yang ingin berkontribusi dalam memajukan ekonomi lokal.
+              Pemerintah Desa Sukahurip membuka peluang kemitraan dan investasi bagi siapa saja yang ingin berkontribusi dalam memajukan ekonomi lokal.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <button className="h-16 rounded-full bg-[#009966] px-10 text-[15px] font-bold text-white shadow-xl transition-all hover:-translate-y-1 hover:bg-[#00B373]">

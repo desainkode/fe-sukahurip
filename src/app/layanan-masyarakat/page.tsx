@@ -38,7 +38,7 @@ export default function LayananPage() {
         <div className="rounded-[40px] bg-[#009966]/5 border border-[#009966]/10 p-10 md:p-16 text-center">
           <h2 className="text-2xl font-bold text-[#0B281F]">Butuh Bantuan Lebih Lanjut?</h2>
           <p className="mt-4 max-w-2xl mx-auto text-[#0B281F]/50">
-            Jika Anda mengalami kendala saat melakukan pengajuan online, silakan hubungi tim IT Desa Pameutingan melalui WhatsApp atau kunjungi langsung Balai Desa.
+            Jika Anda mengalami kendala saat melakukan pengajuan online, silakan hubungi tim IT Desa Sukahurip melalui WhatsApp atau kunjungi langsung Balai Desa.
           </p>
           <button className="mt-8 rounded-full bg-[#0B281F] px-10 py-4 text-[14px] font-bold text-white shadow-xl hover:bg-[#004F3B] transition-all">
             Hubungi Admin Desa

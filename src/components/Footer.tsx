@@ -52,7 +52,7 @@ function FooterList({
         </h4>
         <ChevronDown 
           size={20} 
-          className={`text-[#00D492] transition-transform duration-300 md:hidden ${isOpen ? "rotate-180" : ""}`} 
+          className={`text-[#1e96fc] transition-transform duration-300 md:hidden ${isOpen ? "rotate-180" : ""}`} 
         />
       </button>
 
@@ -78,7 +78,7 @@ function FooterList({
 export default function Footer() {
   return (
     <footer className="w-full bg-white">
-      <div className="relative overflow-hidden rounded-t-[40px] bg-[#052119] text-[#F4F3EF] md:rounded-t-[80px]">
+      <div className="relative overflow-hidden rounded-t-[40px] bg-[#072ac8] text-[#FFFFFF] md:rounded-t-[80px]">
         {/* Background Decoration */}
         <div className="absolute top-0 left-1/4 h-64 w-64 rounded-full bg-[#00D492]/5 blur-[120px]" />
         <div className="absolute bottom-0 right-1/4 h-64 w-64 rounded-full bg-emerald-900/10 blur-[100px]" />
@@ -97,36 +97,36 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col">
                   <p className="text-xl font-black leading-none text-white tracking-tight md:text-2xl" style={{ fontFamily: 'var(--font-sans)' }}>
-                    Desa Pameutingan
+                    Desa Sukahurip
                   </p>
-                  <span className="mt-1 text-[0.65rem] font-bold tracking-[0.15em] text-[#00D492]/60 uppercase">
-                    KAB. TASIKMALAYA
+                  <span className="mt-1 text-[0.65rem] font-bold tracking-[0.15em] text-[#1e96fc]/60 uppercase">
+                    Kec. Cipatujah Kab. Tasikmalaya
                   </span>
                 </div>
               </div>
 
               <div className="space-y-5">
                 <div className="flex items-start gap-4">
-                  <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-emerald-950/50 border border-emerald-900/30">
-                    <MapPin size={14} className="text-[#00D492]" />
+                    <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-emerald-950/50 border border-emerald-900/30">
+                    <MapPin size={14} className="text-[#1e96fc]" />
                   </div>
-                  <p className="text-[13.5px] leading-relaxed text-[#D0FAE5]/70 lg:max-w-[300px]">
-                    Jl. Raya Cipatujah No.16, Kp. Ciceuri, Darawati, Kec. Cipatujah, Kabupaten Tasikmalaya, Jawa Barat 46189
+                  <p className="text-[13.5px] leading-relaxed text-[#a2d6f9]/70 lg:max-w-75">
+                    Jl. Raya Cipatujah, Kp. Cibangsa, Des. Sukahurip, Kec. Cipatujah, Kabupaten Tasikmalaya, Jawa Barat 46187
                   </p>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-emerald-950/50 border border-emerald-900/30">
-                    <Phone size={14} className="text-[#00D492]" />
+                    <Phone size={14} className="text-[#1e96fc]" />
                   </div>
                   <span className="text-[13.5px] text-[#D0FAE5]/70">0813-8944-4933</span>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-emerald-950/50 border border-emerald-900/30">
-                    <Mail size={14} className="text-[#00D492]" />
+                    <Mail size={14} className="text-[#1e96fc]" />
                   </div>
-                  <span className="text-[13.5px] text-[#D0FAE5]/70">kontak@desapameutingan.go.id</span>
+                  <span className="text-[13.5px] text-[#D0FAE5]/70">kontak@desasukahurip.go.id</span>
                 </div>
               </div>
 
@@ -135,7 +135,7 @@ export default function Footer() {
                   <Link
                     key={i}
                     href="#"
-                    className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-[#00D492] transition-all duration-300 hover:-translate-y-1 hover:bg-[#00D492] hover:text-[#052119] hover:shadow-[0_0_20px_rgba(0,212,146,0.3)]"
+                    className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-[#1e96fc] transition-all duration-300 hover:-translate-y-1 hover:bg-[#1e96fc] hover:text-[#072ac8] hover:shadow-[0_0_20px_rgba(30,150,252,0.3)]"
                   >
                     <Icon size={18} />
                   </Link>
@@ -156,7 +156,7 @@ export default function Footer() {
               </h4>
 
               <p className="text-[13px] leading-relaxed text-[#D0FAE5]/50">
-                Layanan bantuan cepat 24 jam untuk warga Desa Pameutingan.
+                Layanan bantuan cepat 24 jam untuk warga Desa Sukahurip.
               </p>
 
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
@@ -186,13 +186,13 @@ export default function Footer() {
           {/* Footer Bottom */}
           <div className="mt-8 flex flex-col gap-6 border-t border-white/5 pt-10 text-[12.5px] md:flex-row md:items-center md:justify-between">
             <div className="flex flex-col gap-1.5 opacity-40">
-              <p>© 2026 Pemerintah Desa Pameutingan.</p>
+              <p>© 2026 Pemerintah Desa Sukahurip.</p>
               <p className="text-[11px] uppercase tracking-widest font-medium">Built for Excellence • Cipatujah, Tasikmalaya</p>
             </div>
 
             <div className="flex items-center gap-8 font-medium">
-              <Link href="#" className="text-[#D0FAE5]/40 transition-colors hover:text-[#00D492]">Kebijakan Privasi</Link>
-              <Link href="#" className="text-[#D0FAE5]/40 transition-colors hover:text-[#00D492]">Syarat & Ketentuan</Link>
+              <Link href="#" className="text-[#a2d6f9]/40 transition-colors hover:text-[#1e96fc]">Kebijakan Privasi</Link>
+              <Link href="#" className="text-[#a2d6f9]/40 transition-colors hover:text-[#1e96fc]">Syarat & Ketentuan</Link>
             </div>
           </div>
         </div>

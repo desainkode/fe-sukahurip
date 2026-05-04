@@ -25,7 +25,7 @@ export default function KontakPage() {
             </h1>
             
             <p className="mt-4 max-w-lg text-[13px] font-light leading-6 text-[#A4F4CF]/80 md:text-[15px]">
-              Kami siap mendengarkan setiap aspirasi, pertanyaan, maupun masukan Anda demi kemajuan Desa Pameutingan yang lebih baik.
+              Kami siap mendengarkan setiap aspirasi, pertanyaan, maupun masukan Anda demi kemajuan Desa Sukahurip yang lebih baik.
             </p>
           </div>
 
@@ -102,7 +102,7 @@ export default function KontakPage() {
             <div className="aspect-video sm:aspect-square md:aspect-[4/5] rounded-[24px] md:rounded-[30px] overflow-hidden shadow-2xl relative">
               <img 
                 src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop" 
-                alt="Desa Pameutingan View"
+                alt="Desa Sukahurip View"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-linear-to-t from-[#0B281F]/40 to-transparent" />

@@ -17,7 +17,7 @@ export function NewsHero() {
         <div className="flex flex-col items-center text-center">
           <div className="hero-reveal mb-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-[#00E0A1] backdrop-blur-md">
             <span className="h-1.5 w-1.5 rounded-full bg-[#00E0A1] animate-pulse" />
-            Portal Berita Pameutingan
+            Portal Berita Sukahurip
           </div>
 
           <h1 className="hero-reveal max-w-5xl font-[Georgia,serif] text-[32px] font-bold leading-[1.05] tracking-tight sm:text-[56px] md:text-[68px] lg:text-[86px]">
@@ -26,7 +26,7 @@ export function NewsHero() {
           </h1>
 
           <p className="hero-reveal mt-10 max-w-2xl text-[16px] leading-relaxed text-white/60 sm:text-[18px] lg:text-[20px]">
-            Eksplorasi warta terkini, progres pembangunan, dan dinamika kemasyarakatan Desa Pameutingan dalam satu genggaman.
+            Eksplorasi warta terkini, progres pembangunan, dan dinamika kemasyarakatan Desa Sukahurip dalam satu genggaman.
           </p>
           
           <div className="hero-reveal mt-12 flex flex-col sm:flex-row gap-4">

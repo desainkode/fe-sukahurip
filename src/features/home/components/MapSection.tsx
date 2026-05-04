@@ -57,23 +57,23 @@ export default function MapSection() {
 
   return (
     <section className="bg-white px-4 py-8 md:px-10 lg:px-12">
-      <div className="relative mx-auto w-full max-w-7xl overflow-hidden rounded-[40px] bg-[#052119] px-6 py-8 text-white shadow-2xl md:px-10 md:py-10 lg:rounded-[60px]">
+      <div className="relative mx-auto w-full max-w-7xl overflow-hidden rounded-[40px] bg-[#072ac8] px-6 py-8 text-white shadow-2xl md:px-10 md:py-10 lg:rounded-[60px]">
         {/* Header Section */}
         <div className="flex flex-col gap-6 border-b border-white/10 pb-6 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
           <div className="max-w-2xl">
-            <h2 className="font-upakarti text-[38px] font-bold leading-[1.05] tracking-tight md:text-[52px] lg:text-[64px]">
+              <h2 className="font-upakarti text-[38px] font-bold leading-[1.05] tracking-tight md:text-[52px] lg:text-[64px]">
               <span className="block opacity-90">Peta &</span>
-              <span className="block text-transparent bg-clip-text bg-linear-to-r from-[#00D492] to-[#A4F4CF]">Batas Wilayah</span>
+              <span className="block text-transparent bg-clip-text bg-linear-to-r from-[#1e96fc] to-[#a2d6f9]">Batas Wilayah</span>
             </h2>
             <p className="mt-6 text-[14px] leading-relaxed text-[#D0FAE5]/70 md:text-[16px]">
-              Gambaran visual pembagian administratif per dusun beserta batas-batas geografis Desa Pameutingan yang strategis dan terdokumentasi secara digital.
+              Gambaran visual pembagian administratif per dusun beserta batas-batas geografis Desa Sukahurip yang strategis dan terdokumentasi secara digital.
             </p>
           </div>
 
-          <div className="hidden h-28 w-28 shrink-0 flex-col items-center justify-center rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md md:flex">
-            <MapPin className="mb-2 text-[#F0B100]" size={24} />
+            <div className="hidden h-28 w-28 shrink-0 flex-col items-center justify-center rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md md:flex">
+            <MapPin className="mb-2 text-[#ffc600]" size={24} />
             <p className="text-[20px] font-black leading-none">345</p>
-            <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-[#00D492]/60">Migrasi</p>
+            <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-[#1e96fc]/60">Migrasi</p>
           </div>
         </div>
 
@@ -88,7 +88,7 @@ export default function MapSection() {
               {BATAS_WILAYAH.map((item, index) => (
                 <button
                   key={item.arah}
-                  className="hero-reveal group flex items-center gap-3 rounded-xl border border-white/5 bg-white/2 p-2.5 text-left transition-all duration-300 hover:bg-white/5 hover:border-[#00D492]/40"
+                  className="hero-reveal group flex items-center gap-3 rounded-xl border border-white/5 bg-white/2 p-2.5 text-left transition-all duration-300 hover:bg-white/5 hover:border-[#1e96fc]/40"
                   onMouseEnter={() => {
                     setIsBoundaryCardHoverActive(true);
                     setCombinedMapActiveLayer(item.layerClass);
@@ -99,7 +99,7 @@ export default function MapSection() {
                     setCombinedMapActiveLayer(hasPinned ? "layer-5" : null);
                   }}
                 >
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#F0B100] text-[#052119] text-[14px] font-black group-hover:scale-110 transition-transform">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#ffc600] text-[#072ac8] text-[14px] font-black group-hover:scale-110 transition-transform">
                     {item.arah.charAt(0)}
                   </div>
                   <div className="min-w-0">
@@ -129,7 +129,7 @@ export default function MapSection() {
 
           {/* 2. Center: Landscape Map */}
           <div className="order-1 lg:order-2">
-            <div className={`relative flex h-full min-h-[400px] flex-col items-center justify-center rounded-[40px] border border-white/10 bg-white/5 p-4 transition-all duration-700 ${isMapLayerActive ? "bg-white/10 shadow-2xl" : ""}`}>
+            <div className={`relative flex h-full min-h-100 flex-col items-center justify-center rounded-[40px] border border-white/10 bg-white/5 p-4 transition-all duration-700 ${isMapLayerActive ? "bg-white/10 shadow-2xl" : ""}`}>
               <div className="relative z-10 h-full w-full">
                 <object
                   ref={combinedMapObjectRef}
@@ -171,9 +171,9 @@ export default function MapSection() {
                         >
                           <div className="h-1.5 w-1.5 rounded-full bg-white" />
 
-                          <div className={`absolute invisible opacity-0 group-hover/marker:visible group-hover/marker:opacity-100 transition-all duration-300 whitespace-nowrap rounded-lg bg-[#052119]/90 backdrop-blur-md px-2.5 py-1.5 text-[10px] font-bold text-white shadow-2xl border border-white/20 pointer-events-none z-50 -translate-x-1/2 bottom-full mb-3 left-1/2 ${isActiveMarker ? '!visible !opacity-100' : ''}`}>
+                          <div className={`absolute visible opacity-100 group-hover/marker:visible group-hover/marker:opacity-100 transition-all duration-300 whitespace-nowrap rounded-lg bg-[#072ac8]/90 backdrop-blur-md px-2.5 py-1.5 text-[10px] font-bold text-white shadow-2xl border border-white/20 pointer-events-none z-50 -translate-x-1/2 bottom-full mb-3 left-1/2`}>
                             {marker.nama}
-                            <div className="absolute border-4 border-transparent top-full left-1/2 -translate-x-1/2 border-t-[#052119]/90" />
+                            <div className="absolute border-4 border-transparent top-full left-1/2 -translate-x-1/2 border-t-[#072ac8]/90" />
                           </div>
                         </button>
                       </div>

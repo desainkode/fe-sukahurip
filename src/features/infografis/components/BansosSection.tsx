@@ -18,7 +18,7 @@ export function BansosSection() {
           </div>
           <div className="flex flex-1 flex-col md:flex-row md:items-center justify-between gap-8">
             <p className="text-sm leading-relaxed text-[#0B281F]/70 md:text-base lg:max-w-lg md:text-center md:mx-auto">
-              Ringkasan Bantuan Sosial Desa Pameutingan merupakan data jumlah dan jenis bantuan sosial yang diterima masyarakat sebagai gambaran kondisi kesejahteraan warga.
+              Ringkasan Bantuan Sosial Desa Sukahurip merupakan data jumlah dan jenis bantuan sosial yang diterima masyarakat sebagai gambaran kondisi kesejahteraan warga.
             </p>
             <div className="absolute right-0 top-0 flex h-11 w-11 items-center justify-center rounded-full bg-[#0B281F] text-white shadow-lg shadow-black/10 md:h-12 md:w-12">
               <CircleDollarSign size={24} />
@@ -43,7 +43,7 @@ export function BansosSection() {
           </div>
           <div className="flex flex-1 flex-col md:flex-row md:items-center justify-between gap-8">
             <p className="text-sm leading-relaxed text-[#0B281F]/70 md:text-base lg:max-w-lg md:text-center md:mx-auto">
-              Statistik bantuan sosial Desa Pameutingan merupakan data jumlah penerima dan alokasi bantuan yang disalurkan kepada masyarakat.
+              Statistik bantuan sosial Desa Sukahurip merupakan data jumlah penerima dan alokasi bantuan yang disalurkan kepada masyarakat.
             </p>
             <div className="absolute right-0 top-0 flex h-11 w-11 items-center justify-center rounded-full bg-[#0B281F] text-white shadow-lg shadow-black/10 md:h-12 md:w-12">
               <CircleDollarSign size={24} />
