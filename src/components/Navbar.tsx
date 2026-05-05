@@ -108,7 +108,7 @@ export default function Navbar() {
               className="group relative hidden sm:flex items-center gap-3 overflow-hidden rounded-2xl bg-desa-yellow-500 px-7 py-3.5 text-[11px] font-black uppercase tracking-widest text-desa-blue-950 shadow-xl transition-all hover:bg-white active:scale-95"
             >
               {user ? <UserIcon size={16} /> : <LogIn size={16} />}
-              <span>{user ? "Portal Warga" : "Masuk"}</span>
+              <span>Layanan Masyarakat</span>
             </Link>
 
             {/* Mobile Menu Toggle */}
@@ -204,7 +204,7 @@ export default function Navbar() {
                 } ${isMenuOpen ? "animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500" : ""}`}
               >
                 {user ? <UserIcon size={20} /> : <LogIn size={20} />}
-                {user ? "Portal Warga" : "Login Portal"}
+                Layanan Masyarakat
               </Link>
               <div className="text-center space-y-2">
                 <div className="h-px w-16 bg-white/10 mx-auto" />

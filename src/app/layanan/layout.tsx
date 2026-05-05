@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/context/AuthContext'
-import { LayoutDashboard, FileText, Clock, History, Bell, User, HelpCircle, LogOut, AlertTriangle, Moon, Sun, ChevronLeft, Menu, X, ArrowRight } from 'lucide-react'
+import { LayoutDashboard, FileText, Clock, History, Bell, User, HelpCircle, LogOut, AlertTriangle, Moon, Sun, ChevronLeft, Menu, X, ArrowRight, MessageSquare } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTheme } from '@/context/ThemeContext'
@@ -15,7 +15,7 @@ export default function LayananLayout({ children }: { children: React.ReactNode 
   const pathname = usePathname()
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [openGroups, setOpenGroups] = useState<string[]>(['pelayanan'])
+  const [openGroups, setOpenGroups] = useState<string[]>(['layanan-surat'])
   const [isNotificationOpen, setIsNotificationOpen] = useState(false)
 
   useEffect(() => {
@@ -41,32 +41,30 @@ export default function LayananLayout({ children }: { children: React.ReactNode 
   const menuGroups = [
     {
       id: 'utama',
-      label: 'Utama',
+      label: 'Menu Utama',
       type: 'link',
       items: [
         { label: 'Dashboard', icon: LayoutDashboard, href: '/layanan/dashboard' },
       ]
     },
     {
-      id: 'pelayanan',
-      label: 'Layanan Pelayanan',
+      id: 'layanan-surat',
+      label: 'Layanan Surat',
       type: 'dropdown',
       items: [
         { label: 'Surat Pindah / Datang', icon: FileText, href: '/layanan/pengajuan?type=pindah' },
-        { label: 'Akta Kematian / Kelahiran', icon: FileText, href: '/layanan/pengajuan?type=akta' },
+        { label: 'Akta Kelahiran / Kematian', icon: FileText, href: '/layanan/pengajuan?type=akta' },
         { label: 'Layanan Kartu Keluarga', icon: FileText, href: '/layanan/pengajuan?type=kk' },
         { label: 'Layanan KTP-el', icon: FileText, href: '/layanan/pengajuan?type=ktp' },
         { label: 'Identitas Anak (KIA)', icon: FileText, href: '/layanan/pengajuan?type=kia' },
-        { label: 'Dispensasi Nikah', icon: FileText, href: '/layanan/pengajuan?type=nikah' },
       ]
     },
     {
       id: 'pengaduan',
       label: 'Layanan Pengaduan',
-      type: 'dropdown',
+      type: 'link',
       items: [
-        { label: 'Pengaduan Pelayanan', icon: AlertTriangle, href: '/layanan/pengaduan?cat=pelayanan' },
-        { label: 'Data Kependudukan', icon: AlertTriangle, href: '/layanan/pengaduan?cat=data' },
+        { label: 'Pengaduan Masyarakat', icon: MessageSquare, href: '/layanan/pengaduan' },
       ]
     },
     {
@@ -74,8 +72,7 @@ export default function LayananLayout({ children }: { children: React.ReactNode 
       label: 'Monitoring',
       type: 'link',
       items: [
-        { label: 'Status Pengajuan', icon: Clock, href: '/layanan/status' },
-        { label: 'Riwayat Layanan', icon: History, href: '/layanan/riwayat' },
+        { label: 'Riwayat Pengajuan', icon: History, href: '/layanan/status' },
       ]
     },
     {
@@ -235,28 +232,44 @@ export default function LayananLayout({ children }: { children: React.ReactNode 
               </button>
               
               {isNotificationOpen && (
-                <div className="absolute right-0 mt-4 w-80 md:w-96 origin-top-right rounded-[32px] bg-white dark:bg-desa-blue-900 border border-desa-blue-900/5 dark:border-white/10 shadow-2xl p-6 z-50 animate-in fade-in zoom-in duration-300">
-                  <div className="flex items-center justify-between mb-6">
-                    <h4 className="font-timeless text-lg font-black text-desa-blue-950 dark:text-white">Notifikasi</h4>
-                    <span className="bg-rose-50 dark:bg-rose-500/10 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest text-rose-600">3 Baru</span>
-                  </div>
-                  <div className="space-y-3">
-                    {[1, 2, 3].map((n) => (
-                      <div key={n} className="group p-4 rounded-2xl bg-desa-blue-50/50 dark:bg-white/5 hover:bg-white dark:hover:bg-white/10 border border-transparent hover:border-desa-blue-900/10 dark:hover:border-white/10 transition-all cursor-pointer">
-                        <div className="flex gap-4">
-                          <div className="h-10 w-10 shrink-0 rounded-xl bg-desa-blue-900 flex items-center justify-center text-white">
-                            <FileText size={18} />
-                          </div>
-                          <div>
-                            <p className="text-xs font-bold text-desa-blue-950 dark:text-white group-hover:text-desa-blue-900 dark:group-hover:text-desa-yellow-500 transition-colors">Pengajuan Surat Pindah</p>
-                            <p className="text-[10px] text-desa-blue-950/40 dark:text-white/40 mt-1">Status pengajuan Anda telah berubah menjadi "Selesai".</p>
-                            <p className="text-[8px] font-black text-desa-blue-900/20 dark:text-white/20 uppercase tracking-widest mt-2">2 Jam yang lalu</p>
+                <>
+                  {/* Backdrop for mobile */}
+                  <div 
+                    className="fixed inset-0 z-[100] bg-desa-blue-950/40 backdrop-blur-sm md:hidden animate-in fade-in duration-300" 
+                    onClick={() => setIsNotificationOpen(false)}
+                  />
+                  
+                  <div className="fixed inset-x-4 top-[15%] z-[101] md:absolute md:inset-auto md:right-0 md:top-full md:mt-4 w-auto md:w-96 origin-top md:origin-top-right rounded-[32px] bg-white dark:bg-desa-blue-900 border border-desa-blue-900/5 dark:border-white/10 shadow-2xl p-6 animate-in fade-in zoom-in duration-300">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="flex items-center gap-3">
+                        <h4 className="font-timeless text-lg font-black text-desa-blue-950 dark:text-white">Notifikasi</h4>
+                        <span className="bg-rose-50 dark:bg-rose-500/10 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest text-rose-600">3 Baru</span>
+                      </div>
+                      <button 
+                        onClick={() => setIsNotificationOpen(false)}
+                        className="flex h-10 w-10 items-center justify-center rounded-xl bg-desa-blue-50 dark:bg-white/5 text-desa-blue-950/40 dark:text-white/40 hover:bg-rose-50 hover:text-rose-600 transition-all active:scale-90"
+                      >
+                        <X size={20} />
+                      </button>
+                    </div>
+                    <div className="space-y-3">
+                      {[1, 2, 3].map((n) => (
+                        <div key={n} className="group p-4 rounded-2xl bg-desa-blue-50/50 dark:bg-white/5 hover:bg-white dark:hover:bg-white/10 border border-transparent hover:border-desa-blue-900/10 dark:hover:border-white/10 transition-all cursor-pointer">
+                          <div className="flex gap-4">
+                            <div className="h-10 w-10 shrink-0 rounded-xl bg-desa-blue-900 flex items-center justify-center text-white">
+                              <FileText size={18} />
+                            </div>
+                            <div>
+                              <p className="text-xs font-bold text-desa-blue-950 dark:text-white group-hover:text-desa-blue-900 dark:group-hover:text-desa-yellow-500 transition-colors">Pengajuan Surat Pindah</p>
+                              <p className="text-[10px] text-desa-blue-950/40 dark:text-white/40 mt-1">Status pengajuan Anda telah berubah menjadi "Selesai".</p>
+                              <p className="text-[8px] font-black text-desa-blue-900/20 dark:text-white/20 uppercase tracking-widest mt-2">2 Jam yang lalu</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </div>
+                </>
               )}
             </div>
 
@@ -280,7 +293,7 @@ export default function LayananLayout({ children }: { children: React.ReactNode 
         </header>
 
         {/* Scrollable Content */}
-        <main className="flex-1 overflow-y-auto no-scrollbar p-6 md:p-10 lg:p-12 overscroll-contain h-full">
+        <main className="flex-1 overflow-y-auto no-scrollbar px-4 pt-3 pb-8 md:pt-6 md:pb-12 md:px-10 lg:px-12 overscroll-contain h-full">
           <div className="max-w-7xl mx-auto">
             {children}
           </div>

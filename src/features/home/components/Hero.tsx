@@ -14,11 +14,11 @@ export default function Hero() {
           loop
           muted
           playsInline
-          className="h-full w-full object-cover opacity-30 brightness-[0.7] contrast-[1.1]"
+          className="h-full w-full object-cover opacity-50 brightness-[0.8] contrast-[1.05]"
         >
           <source src="/video/thumbnail.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-linear-to-b from-[#000418]/60 via-[#000418]/40 to-[#000418]" />
+        <div className="absolute inset-0 bg-linear-to-b from-[#000418]/40 via-[#000418]/20 to-[#000418]/90" />
         
         {/* Subtle Noise Overlay */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />

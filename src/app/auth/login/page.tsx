@@ -42,7 +42,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="relative flex h-screen w-full items-center justify-center bg-white dark:bg-desa-blue-950 px-4 overflow-hidden transition-colors duration-500">
+    <div className="relative flex min-h-screen w-full items-center justify-center bg-white dark:bg-desa-blue-950 px-4 py-24 md:py-10 transition-colors duration-500 overflow-y-auto">
       {/* Top Actions */}
       <div className="absolute inset-x-0 top-0 z-20 flex items-center justify-between p-6 md:p-8">
         <Link 
