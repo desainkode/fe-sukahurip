@@ -26,7 +26,7 @@ export default function ProfileSection() {
                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#ffc600]">Profil Pimpinan</span>
               </div>
               
-              <h3 className="font-upakarti mt-6 text-[38px] font-bold leading-[1.1] tracking-tight md:text-[52px] lg:text-[64px]">
+              <h3 className="font-timeless mt-6 text-[38px] font-bold leading-[1.1] tracking-tight md:text-[52px] lg:text-[64px]">
                 Majang Budi Budiana
               </h3>
               

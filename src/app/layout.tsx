@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { upakarti } from "../lib/fonts";
 
 export const metadata: Metadata = {
   title: "Website Desa Sukahurip",
   description: "Portal resmi Desa Sukahurip",
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+    icon: "/logo-desa-pametingan.svg",
+    shortcut: "/logo-desa-pametingan.svg",
     apple: "/img/image.png",
   },
 };
@@ -24,7 +23,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${upakarti.variable} h-full antialiased`}
+      className="h-full antialiased"
     >
       <body className="min-h-full flex flex-col bg-[#F5F5F7] dark:bg-[#000418]">
         <ThemeProvider>

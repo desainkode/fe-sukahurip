@@ -38,7 +38,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="hero-reveal mt-1.5 font-upakarti text-[28px] font-bold leading-[0.95] tracking-tight sm:text-[44px] md:text-[52px] lg:text-[60px] xl:text-[72px] [animation-delay:150ms]">
+          <h1 className="hero-reveal mt-1.5 font-timeless text-[28px] font-bold leading-[0.95] tracking-tight sm:text-[44px] md:text-[52px] lg:text-[60px] xl:text-[72px] [animation-delay:150ms]">
             <span className="block opacity-90">Membangun Desa,</span>
             <span className="relative block text-transparent bg-clip-text bg-linear-to-r from-desa-blue-400 to-desa-blue-200 py-1">
               Mensejahterakan

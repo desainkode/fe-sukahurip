@@ -19,7 +19,7 @@ export function SectionHeader({ title, description, variant = 'light' }: Section
         className={`text-[28px] font-bold leading-[1.08] tracking-[0.02em] md:text-[34px] ${
           isDark ? 'text-[#F4F3EE]' : 'text-[#000418]'
         }`}
-        style={{ fontFamily: 'var(--font-upakarti)' }}
+        style={{ fontFamily: 'var(--font-timeless)' }}
       >
         {title}
       </h2>

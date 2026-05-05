@@ -33,7 +33,7 @@ export function BelanjaCardSplit() {
         </div>
 
         <div className="mt-auto flex items-end gap-2 pt-4">
-          <p className="text-[28px] font-bold leading-none tracking-tight text-[#000418] sm:text-[32px]" style={{ fontFamily: 'var(--font-upakarti)' }}>
+          <p className="text-[28px] font-bold leading-none tracking-tight text-[#000418] sm:text-[32px]" style={{ fontFamily: 'var(--font-timeless)' }}>
             Rp. 1.000.000
           </p>
           <span className="mb-1 text-[12px] font-bold uppercase tracking-wider text-[#000418]/50">Total</span>

@@ -52,7 +52,7 @@ export default function NewsSection() {
                   <span>Januari 2024</span>
                 </div>
                 
-                <h3 className="font-upakarti text-[20px] font-bold leading-tight text-[#040922] group-hover:text-[#ffc600] transition-colors">
+                <h3 className="font-timeless text-[20px] font-bold leading-tight text-[#040922] group-hover:text-[#ffc600] transition-colors">
                   {item.title}
                 </h3>
                 
