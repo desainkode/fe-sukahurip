@@ -51,21 +51,30 @@ export default function Hero() {
             Selamat datang di portal digital Desa Sukahurip. Transformasi tata kelola desa yang transparan, modern, dan melayani sepenuh hati.
           </p>
 
-          <div className="hero-reveal mt-3 flex w-full flex-row items-center gap-2 [animation-delay:350ms] lg:w-auto lg:items-start sm:gap-5">
+          <div className="hero-reveal mt-3 flex w-full flex-col sm:flex-row items-center gap-3 [animation-delay:350ms] lg:w-auto lg:items-start sm:gap-4">
             <Link
-              href="/layanan-masyarakat"
-              className="group relative flex h-10 flex-1 items-center justify-center overflow-hidden rounded-xl bg-[#FFC400] px-4 text-[12px] font-black text-[#000418] shadow-[0_15px_30px_rgba(240,177,0,0.2)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(240,177,0,0.3)] active:scale-95 sm:h-13 sm:flex-none sm:px-8 sm:text-[15px] sm:rounded-2xl"
+              href="/layanan/dashboard"
+              className="group relative flex h-11 w-full sm:w-auto items-center justify-center overflow-hidden rounded-2xl bg-[#FFC400] px-8 text-[14px] font-black text-[#000418] shadow-[0_15px_30px_rgba(240,177,0,0.2)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(240,177,0,0.3)] active:scale-95"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Layanan <span className="hidden sm:inline">Mandiri</span> <ArrowRight size={20} className="transition-transform group-hover:translate-x-1 sm:size-4" />
+                Layanan Mandiri <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </span>
             </Link>
-            <Link
-              href="/profil"
-              className="flex h-10 flex-1 items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 text-[12px] font-bold text-white backdrop-blur-md transition-all hover:bg-white/10 hover:border-white/20 active:scale-95 sm:h-13 sm:flex-none sm:px-8 sm:text-[15px] sm:rounded-2xl"
-            >
-              <span className="hidden sm:inline">Jelajahi</span> Profil
-            </Link>
+            
+            <div className="flex w-full sm:w-auto items-center gap-2">
+              <Link
+                href="/auth/login"
+                className="flex h-11 flex-1 sm:flex-none items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-6 text-[13px] font-bold text-white backdrop-blur-md transition-all hover:bg-white/10 hover:border-white/20 active:scale-95"
+              >
+                Masuk
+              </Link>
+              <Link
+                href="/auth/register"
+                className="flex h-11 flex-1 sm:flex-none items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-6 text-[13px] font-bold text-white backdrop-blur-md transition-all hover:bg-white/10 hover:border-white/20 active:scale-95"
+              >
+                Daftar
+              </Link>
+            </div>
           </div>
 
           {/* Quick Stats */}

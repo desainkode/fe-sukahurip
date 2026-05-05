@@ -20,7 +20,9 @@ export function BansosSection() {
 
         <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-4 md:gap-6">
           {bansosContent.indicators.map((indicator, index) => (
-            <BansosIndicatorCard key={index} indicator={indicator} />
+            <div key={index} className="hero-reveal" style={{ animationDelay: `${200 + index * 100}ms` }}>
+              <BansosIndicatorCard indicator={indicator} />
+            </div>
           ))}
         </div>
       </section>
@@ -36,7 +38,9 @@ export function BansosSection() {
 
         <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-6">
           {bansosContent.summaries.map((summary, index) => (
-            <BansosAllocationCard key={index} summary={summary} />
+            <div key={index} className="hero-reveal" style={{ animationDelay: `${300 + index * 100}ms` }}>
+              <BansosAllocationCard summary={summary} />
+            </div>
           ))}
         </div>
       </section>
@@ -52,7 +56,9 @@ export function BansosSection() {
 
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
           {bansosContent.distributions.map((dist, index) => (
-            <BansosDistributionCard key={index} data={dist} />
+            <div key={index} className="hero-reveal" style={{ animationDelay: `${400 + index * 100}ms` }}>
+              <BansosDistributionCard data={dist} />
+            </div>
           ))}
         </div>
       </section>
@@ -68,7 +74,9 @@ export function BansosSection() {
 
         <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-8">
           {bansosContent.benefitTypes.map((type, index) => (
-            <BansosBenefitTypeCard key={index} type={type} />
+            <div key={index} className="hero-reveal" style={{ animationDelay: `${500 + index * 100}ms` }}>
+              <BansosBenefitTypeCard type={type} />
+            </div>
           ))}
         </div>
       </section>

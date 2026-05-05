@@ -20,7 +20,7 @@ export function StuntingSection() {
 
         <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
           {stuntingContent.indicators.map((indicator, index) => (
-            <div key={index} className="w-full">
+            <div key={index} className="hero-reveal" style={{ animationDelay: `${200 + index * 100}ms` }}>
               <StuntingIndicatorCard indicator={indicator} />
             </div>
           ))}
@@ -39,7 +39,7 @@ export function StuntingSection() {
         <div className="overflow-x-auto pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <div className="flex gap-4 w-max min-w-full">
             {stuntingContent.prevalenceByAge?.map((data, index) => (
-              <div key={index} className="w-[200px] shrink-0 sm:w-[260px]">
+              <div key={index} className="hero-reveal w-[200px] shrink-0 sm:w-[260px]" style={{ animationDelay: `${300 + index * 100}ms` }}>
                 <StuntingAgeGroupCard data={data} />
               </div>
             ))}
@@ -57,7 +57,9 @@ export function StuntingSection() {
         />
 
         {stuntingContent.trendData && (
-          <StuntingBarChart data={stuntingContent.trendData} />
+          <div className="hero-reveal" style={{ animationDelay: "400ms" }}>
+            <StuntingBarChart data={stuntingContent.trendData} />
+          </div>
         )}
       </section>
 
@@ -72,7 +74,9 @@ export function StuntingSection() {
 
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
           {stuntingContent.programs?.map((program, index) => (
-            <StuntingProgramCard key={index} program={program} />
+            <div key={index} className="hero-reveal" style={{ animationDelay: `${500 + index * 100}ms` }}>
+              <StuntingProgramCard program={program} />
+            </div>
           ))}
         </div>
       </section>

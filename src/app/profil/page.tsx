@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { ProfileHero } from "@/features/profile/components/ProfileHero";
 import { AboutSection } from "@/features/profile/components/AboutSection";
@@ -45,9 +46,12 @@ export default function ProfilePage() {
              <p className="max-w-2xl mx-auto text-white/70 mb-10">
                Mari berkontribusi dalam mewujudkan visi desa yang mandiri dan berbudaya. Hubungi kami untuk informasi lebih lanjut mengenai program desa.
              </p>
-             <button className="bg-[#072ac8] px-10 py-4 rounded-full font-bold shadow-xl hover:scale-105 transition-transform">
+             <Link 
+               href="/kontak"
+               className="inline-block bg-[#072ac8] px-10 py-4 rounded-full font-bold shadow-xl hover:scale-105 transition-transform"
+             >
                Hubungi Kami Sekarang
-             </button>
+             </Link>
           </div>
         </div>
       </div>

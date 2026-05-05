@@ -60,7 +60,7 @@ export const heroContentByFeature: Record<InfografisKey, HeroContent> = {
   },
   stunting: {
     eyebrow: 'WEBSITE RESMI PEMERINTAH DESA',
-    titleLines: ['data stunting', 'desa sukahurip', ''],
+    titleLines: ['Data Stunting,', 'Pantau Tumbuh', 'Kembang Anak'],
     description:
       'Statistik Stunting Desa Sukahurip merupakan data jumlah dan persentase balita yang mengalami stunting sebagai gambaran kondisi gizi dan pertumbuhan anak.',
     stats: [
@@ -75,7 +75,7 @@ export const heroContentByFeature: Record<InfografisKey, HeroContent> = {
   },
   bansos: {
     eyebrow: 'Website Resmi Pemerintah Desa',
-    titleLines: ['Data Bansos', 'Desa Sukahurip', ''],
+    titleLines: ['Bantuan Sosial,', 'Amanah &', 'Tepat Sasaran'],
     description:
       'Ringkasan Bantuan Sosial Desa Sukahurip merupakan data jumlah dan jenis bantuan sosial yang diterima masyarakat sebagai gambaran kondisi kesejahteraan warga serta dasar perencanaan dan penyaluran bantuan di desa.',
     stats: [
@@ -182,26 +182,30 @@ export const bansosContent: BansosSectionContent = {
     {
       label: 'Total Penerima Bansos',
       value: '10',
+      unit: 'Jiwa',
       description: 'Jumlah keseluruhan masyarakat yang menerima bantuan sosial di desa.',
-      color: 'bg-neutral-900',
+      color: 'bg-linear-to-br from-[#000418] to-[#1e1e1e]',
     },
     {
       label: 'Jenis Bantuan',
       value: '10',
+      unit: 'Program',
       description: 'Total program bantuan sosial yang dijalankan di desa.',
-      color: 'bg-desa-blue-800',
+      color: 'bg-linear-to-br from-[#000418] to-desa-blue-900',
     },
     {
       label: 'Total Anggaran Tahunan',
       value: '10',
+      unit: 'Miliar',
       description: 'Jumlah dana dialokasikan untuk program bantuan sosial selama satu tahun.',
-      color: 'bg-desa-blue-600',
+      color: 'bg-linear-to-br from-desa-blue-900 to-desa-blue-600',
     },
     {
       label: 'Jumlah Program Bantuan',
       value: '10',
+      unit: 'Program',
       description: 'Jumlah keseluruhan masyarakat yang menerima bantuan sosial di desa.',
-      color: 'bg-yellow-500',
+      color: 'bg-linear-to-br from-[#F0B100] to-[#FFC400]',
     },
   ],
   summaries: [

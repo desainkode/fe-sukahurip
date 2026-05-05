@@ -67,6 +67,7 @@ export interface ApbdesSectionContent {
 export interface BansosIndicator {
   label: string
   value: string
+  unit: string
   description: string
   color: string
 }

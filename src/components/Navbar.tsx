@@ -47,11 +47,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 z-50 w-full px-4 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] md:px-10 ${
-          isScrolled || isMenuOpen
+        className={`fixed top-0 z-50 w-full px-4 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] md:px-10 ${isScrolled || isMenuOpen
             ? "py-3 border-b border-white/5 bg-desa-blue-950/95 backdrop-blur-2xl shadow-2xl"
             : "py-6 border-b border-transparent bg-transparent"
-        }`}
+          }`}
       >
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
           {/* Logo */}
@@ -71,7 +70,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col leading-none">
               <span className="text-lg md:text-xl font-black tracking-tight text-white transition-colors group-hover:text-desa-yellow-500">
-                SUKAHURIP
+                DESA SUKAHURIP
               </span>
               <span className="mt-1 text-[8px] md:text-[9px] font-black uppercase tracking-[0.25em] text-desa-yellow-500/80 group-hover:text-white transition-colors">
                 Digital Portal
@@ -87,11 +86,10 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`relative px-4 py-2 text-[13px] font-black uppercase tracking-widest transition-all duration-300 group/nav ${
-                    isActive
+                  className={`relative px-4 py-2 text-[13px] font-black uppercase tracking-widest transition-all duration-300 group/nav ${isActive
                       ? "text-desa-yellow-500"
                       : "text-white/60 hover:text-white"
-                  }`}
+                    }`}
                 >
                   <span className="relative z-10">{item.label}</span>
                   <span className={`absolute inset-0 rounded-xl bg-white/5 opacity-0 scale-90 transition-all duration-300 group-hover/nav:opacity-100 group-hover/nav:scale-100 ${isActive ? 'opacity-100 scale-100' : ''}`} />
@@ -114,11 +112,10 @@ export default function Navbar() {
             {/* Mobile Menu Toggle */}
             <button
               onClick={toggleMenu}
-              className={`flex h-11 w-11 items-center justify-center rounded-2xl transition-all active:scale-90 md:hidden z-50 ${
-                isMenuOpen
+              className={`flex h-11 w-11 items-center justify-center rounded-2xl transition-all active:scale-90 md:hidden z-50 ${isMenuOpen
                   ? "bg-white text-desa-blue-950"
                   : "bg-desa-yellow-500/10 text-desa-yellow-500 border border-desa-yellow-500/20 backdrop-blur-md shadow-lg"
-              }`}
+                }`}
             >
               {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -128,23 +125,20 @@ export default function Navbar() {
 
       {/* Mobile Navigation Drawer - Moved outside header for absolute top layering */}
       <div
-        className={`fixed inset-0 z-[999] md:hidden transition-all duration-300 ${
-          isMenuOpen ? "visible" : "invisible pointer-events-none"
-        }`}
+        className={`fixed inset-0 z-[999] md:hidden transition-all duration-300 ${isMenuOpen ? "visible" : "invisible pointer-events-none"
+          }`}
       >
         {/* Solid Background Base */}
         <div
-          className={`absolute inset-0 bg-[#010830] transition-opacity duration-500 ${
-            isMenuOpen ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 bg-[#010830] transition-opacity duration-500 ${isMenuOpen ? "opacity-100" : "opacity-0"
+            }`}
           onClick={closeMenu}
         />
 
         {/* Drawer Content */}
         <div
-          className={`absolute inset-y-0 right-0 w-full shadow-2xl transition-transform duration-700 cubic-bezier(0.16, 1, 0.3, 1) z-[1000] bg-[#072ac8] bg-gradient-to-b from-[#072ac8] to-[#010830] !opacity-100 ${
-            isMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+          className={`absolute inset-y-0 right-0 w-full shadow-2xl transition-transform duration-700 cubic-bezier(0.16, 1, 0.3, 1) z-[1000] bg-[#072ac8] bg-gradient-to-b from-[#072ac8] to-[#010830] !opacity-100 ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
         >
           {/* Branded Header inside Drawer */}
           <div className="flex h-24 items-center justify-between px-8 border-b border-white/10 relative z-20">
@@ -171,11 +165,10 @@ export default function Navbar() {
                     key={item.label}
                     href={item.href}
                     onClick={closeMenu}
-                    className={`group flex items-center justify-between rounded-xl px-5 py-3 transition-all duration-300 ${
-                      isActive 
-                        ? "bg-white text-desa-blue-950 shadow-md" 
+                    className={`group flex items-center justify-between rounded-xl px-5 py-3 transition-all duration-300 ${isActive
+                        ? "bg-white text-desa-blue-950 shadow-md"
                         : "text-white/40 hover:text-white hover:bg-white/5"
-                    } ${isMenuOpen ? "animate-in fade-in slide-in-from-right-8" : ""}`}
+                      } ${isMenuOpen ? "animate-in fade-in slide-in-from-right-8" : ""}`}
                     style={{ transitionDelay: `${i * 15}ms`, animationDelay: `${i * 60}ms` }}
                   >
                     <span
@@ -192,16 +185,15 @@ export default function Navbar() {
                 );
               })}
             </div>
-            
+
             <div className="mt-auto pb-6 space-y-4">
               <Link
                 href={user ? "/layanan/dashboard" : "/auth/login"}
                 onClick={closeMenu}
-                className={`flex w-full items-center justify-center gap-4 rounded-2xl py-6 text-sm font-black uppercase tracking-widest transition-all active:scale-95 ${
-                  user
+                className={`flex w-full items-center justify-center gap-4 rounded-2xl py-6 text-sm font-black uppercase tracking-widest transition-all active:scale-95 ${user
                     ? "bg-desa-yellow-500 text-desa-blue-950 shadow-2xl shadow-desa-yellow-500/20"
                     : "bg-white text-desa-blue-950 shadow-xl"
-                } ${isMenuOpen ? "animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500" : ""}`}
+                  } ${isMenuOpen ? "animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500" : ""}`}
               >
                 {user ? <UserIcon size={20} /> : <LogIn size={20} />}
                 Layanan Masyarakat
