@@ -5,8 +5,8 @@ export const metadata: Metadata = {
   title: "Website Desa Sukahurip",
   description: "Portal resmi Desa Sukahurip",
   icons: {
-    icon: "/logo-desa-pametingan.svg",
-    shortcut: "/logo-desa-pametingan.svg",
+    icon: "/img/image.png",
+    shortcut: "/img/image.png",
     apple: "/img/image.png",
   },
 };
