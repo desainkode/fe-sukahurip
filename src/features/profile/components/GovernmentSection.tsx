@@ -14,39 +14,36 @@ export function GovernmentSection({ members }: { members: GovernmentMember[] }) 
           <Users2 size={24} />
           Struktur Pemerintahan
         </div>
-        <h2 className="font-[Georgia,serif] text-[32px] font-bold text-[#000418] md:text-[42px]">Perangkat Desa Sukahurip</h2>
+        <h2 className="font-timeless text-[32px] font-bold text-[#000418] md:text-[42px]">Perangkat Desa Sukahurip</h2>
         <p className="max-w-2xl text-[15px] text-[#000418]/50">Melayani dengan integritas, transparansi, dan dedikasi untuk kemajuan bersama.</p>
       </div>
 
       {/* Apparatus Grid - Matching Home Page Style */}
       <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
-        {members.map((member, idx) => (
-          <div 
-            key={idx}
-            className="group relative h-[320px] overflow-hidden rounded-[24px] bg-[#000418] shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,4,24,0.2)] sm:h-[380px] sm:rounded-[32px] md:h-[400px]"
+        {members.map((item, index) => (
+          <div
+            key={item.name}
+            className="hero-reveal group relative h-105 w-full overflow-hidden rounded-[32px] bg-[#072ac8] shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl md:h-120"
+            style={{ animationDelay: `${index * 100}ms` }}
           >
-            {/* Base Image */}
-            <img 
-              src={member.photo} 
-              alt={member.name} 
+            <img
+              src={item.photo}
+              alt={item.name}
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
             
-            {/* Overlays */}
-            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
-            <div className="absolute inset-0 border border-white/10 rounded-[24px] pointer-events-none sm:rounded-[32px]" />
-
-            {/* Content at Bottom */}
-            <div className="absolute bottom-0 w-full p-4 text-center sm:p-6">
-              <p 
-                className="text-[16px] font-bold text-white sm:text-xl md:text-2xl"
-                style={{ fontFamily: 'var(--font-heading)' }}
-              >
-                {member.position}
-              </p>
-              <p className="mt-1 text-[11px] font-medium text-[#D2DAFD] sm:text-sm">
-                {member.name}
-              </p>
+            {/* Overlay Gradient */}
+            <div className="absolute inset-0 bg-linear-to-t from-[#072ac8] via-transparent to-transparent opacity-80 transition-opacity group-hover:opacity-90" />
+            
+            {/* Info */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+              <div className="flex flex-col">
+                <span className="mb-2 w-fit rounded-lg bg-[#ffc600]/20 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-[#ffc600] backdrop-blur-md">
+                  {item.position}
+                </span>
+                <h4 className="font-timeless text-[22px] font-bold text-white md:text-[26px]">{item.name}</h4>
+                <div className="mt-4 h-1 w-0 bg-[#FFC400] transition-all duration-500 group-hover:w-full" />
+              </div>
             </div>
           </div>
         ))}

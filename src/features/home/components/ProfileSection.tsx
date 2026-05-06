@@ -27,7 +27,7 @@ export default function ProfileSection() {
               </div>
               
               <h3 className="font-timeless mt-6 text-[38px] font-bold leading-[1.1] tracking-tight md:text-[52px] lg:text-[64px]">
-                Majang Budi Budiana
+                Majang Dudi Budiana
               </h3>
               
               <div className="relative mt-8 max-w-xl">
@@ -54,7 +54,7 @@ export default function ProfileSection() {
               <div className="absolute inset-4 rotate-2 rounded-[40px] border border-[#1e96fc]/20" />
               
               <Image
-                src="/img/unsplash_jiOJQF5xEdw.png"
+                src="/img/hero-kepala-desa.png"
                 alt="Foto Kepala Desa"
                 fill
                 className="absolute inset-0 z-10 object-contain drop-shadow-2xl lg:object-bottom lg:scale-110"

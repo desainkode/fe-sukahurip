@@ -44,42 +44,43 @@ export default function LayananSuratPage() {
   ]
 
   return (
-    <div className="space-y-8 animate-in fade-in duration-1000 pb-20">
-      <section className="hero-reveal space-y-2 px-2">
-        <h2 className="font-timeless text-3xl md:text-5xl font-black text-desa-blue-950 dark:text-white tracking-tight">
-          Layanan <span className="text-desa-blue-900 dark:text-desa-yellow-500">Surat & Administrasi</span>
+    <div className="space-y-12 animate-in fade-in duration-1000 pb-20 px-2">
+      {/* Header Section */}
+      <section className="hero-reveal space-y-6">
+        <h2 className="font-timeless text-4xl md:text-7xl font-black text-desa-blue-950 dark:text-white tracking-tighter leading-tight">
+          Layanan <br className="md:hidden" /> <span className="text-desa-blue-900 dark:text-desa-yellow-500">Surat & Administrasi</span>
         </h2>
-        <p className="text-sm md:text-base font-medium text-desa-blue-950/40 dark:text-white/30 max-w-2xl leading-relaxed">
-          Silakan pilih jenis layanan administrasi yang ingin Anda ajukan. Setiap pengajuan akan diproses oleh admin desa secara transparan.
+        <p className="text-sm md:text-xl font-medium text-desa-blue-950/40 dark:text-white/40 max-w-3xl leading-relaxed uppercase tracking-[0.1em]">
+          Silakan pilih jenis layanan administrasi yang ingin Anda ajukan. Setiap pengajuan akan diproses oleh admin desa secara transparan melalui portal digital terpadu.
         </p>
       </section>
 
-      <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 md:gap-10 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service, i) => (
           <Link 
             key={service.id} 
             href={`/layanan/pengajuan?type=${service.id}`}
-            className="hero-reveal group relative overflow-hidden rounded-[32px] md:rounded-[40px] bg-white dark:bg-desa-blue-900/40 p-6 md:p-10 shadow-xl shadow-desa-blue-900/5 border border-desa-blue-900/5 dark:border-white/5 transition-all hover:-translate-y-3 hover:shadow-2xl active:scale-95"
-            style={{ animationDelay: `${i * 100}ms` }}
+            className="hero-reveal group relative overflow-hidden rounded-[56px] bg-white dark:bg-desa-blue-900/40 p-10 md:p-12 shadow-[0_40px_100px_rgba(0,0,0,0.03)] dark:shadow-none border border-desa-blue-900/5 dark:border-white/5 transition-all duration-700 hover:-translate-y-4 hover:shadow-2xl active:scale-[0.98]"
+            style={{ animationDelay: `${i * 150}ms` }}
           >
-            <div className="flex items-start justify-between mb-8">
-              <div className={`flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-[24px] text-white shadow-xl ${service.color} transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6`}>
-                <service.icon size={28} className="md:w-9 md:h-9" />
+            <div className="flex items-start justify-between mb-12">
+              <div className={`flex h-20 w-20 md:h-24 md:w-24 items-center justify-center rounded-[32px] text-white shadow-2xl ${service.color} transform transition-all duration-700 group-hover:scale-110 group-hover:rotate-12`}>
+                <service.icon size={36} className="md:w-12 md:h-12 group-hover:scale-110 transition-transform" />
               </div>
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-desa-blue-50 dark:bg-white/5 text-desa-blue-950 dark:text-white transition-all group-hover:bg-desa-blue-900 group-hover:text-white dark:group-hover:bg-desa-yellow-500 dark:group-hover:text-desa-blue-950">
-                <ArrowRight size={18} />
+              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-desa-blue-50 dark:bg-white/5 text-desa-blue-950 dark:text-white transition-all duration-500 group-hover:bg-desa-blue-900 group-hover:text-white dark:group-hover:bg-desa-yellow-500 dark:group-hover:text-desa-blue-950 group-hover:rotate-45">
+                <ArrowRight size={28} />
               </div>
             </div>
-            <div className="space-y-3">
-              <h4 className="text-lg md:text-xl font-black text-desa-blue-950 dark:text-white leading-tight group-hover:text-desa-blue-900 dark:group-hover:text-desa-yellow-500 transition-colors">
+            <div className="space-y-4 md:space-y-6">
+              <h4 className="font-timeless text-2xl md:text-3xl font-black text-desa-blue-950 dark:text-white leading-tight group-hover:text-desa-blue-900 dark:group-hover:text-desa-yellow-500 transition-colors tracking-tighter">
                 {service.label}
               </h4>
-              <p className="text-[11px] md:text-xs font-medium text-desa-blue-950/40 dark:text-white/30 leading-relaxed">
+              <p className="text-sm md:text-base font-medium text-desa-blue-950/30 dark:text-white/30 leading-relaxed max-w-xs">
                 {service.desc}
               </p>
             </div>
             {/* Hover Decorative Element */}
-            <div className={`absolute -right-4 -bottom-4 h-24 w-24 rounded-full blur-[40px] opacity-0 transition-opacity duration-700 group-hover:opacity-20 ${service.color}`} />
+            <div className={`absolute -right-12 -bottom-12 h-48 w-48 rounded-full blur-[80px] opacity-0 transition-opacity duration-1000 group-hover:opacity-20 ${service.color}`} />
           </Link>
         ))}
       </div>

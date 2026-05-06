@@ -64,21 +64,21 @@ export default function ApbdesSection() {
                 </h3>
               </div>
 
-              <div ref={yearDropdownRef} className="hero-reveal relative w-full sm:w-auto">
+              <div ref={yearDropdownRef} className="hero-reveal relative w-fit mx-auto md:mx-0">
                 <button
                   type="button"
                   onClick={() => setIsYearDropdownOpen((prev) => !prev)}
-                  className="group/year flex w-full items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/5 px-5 py-2.5 text-[13px] font-bold text-white backdrop-blur-md transition-all hover:bg-white/10 sm:w-auto sm:rounded-2xl sm:px-6 sm:py-3 sm:text-[14px]"
+                  className="group/year flex items-center gap-1 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-[9px] font-black uppercase tracking-widest text-white backdrop-blur-md transition-all hover:bg-white/10 sm:px-3.5 sm:py-1 sm:text-[10px]"
                 >
-                  <span>Pilih Tahun: {selectedYear}</span>
+                  <span>Tahun: {selectedYear}</span>
                   <ChevronDown
-                    size={16}
-                    className={`transition-transform duration-500 sm:size-18 ${isYearDropdownOpen ? "rotate-180" : "rotate-0"}`}
+                    size={9}
+                    className={`transition-transform duration-500 sm:size-10 ${isYearDropdownOpen ? "rotate-180" : "rotate-0"}`}
                   />
                 </button>
 
-                <div className={`absolute right-0 top-[calc(100%+8px)] z-60 w-full origin-top-right rounded-2xl border border-white/10 bg-[#072ac8]/95 p-2 shadow-2xl backdrop-blur-xl transition-all duration-500 sm:top-[calc(100%+12px)] sm:w-56 sm:rounded-3xl sm:p-3 ${isYearDropdownOpen ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-4 pointer-events-none"}`}>
-                  <div className="grid gap-1">
+                <div className={`absolute left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0 top-[calc(100%+5px)] z-60 w-32 origin-top rounded-lg border border-white/10 bg-[#072ac8]/98 p-1 shadow-2xl backdrop-blur-xl transition-all duration-500 sm:top-[calc(100%+6px)] sm:w-36 sm:p-1 ${isYearDropdownOpen ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-2 pointer-events-none"}`}>
+                  <div className="grid gap-0.5">
                     {apbdesYears.map((year) => (
                       <button
                         key={year}
@@ -87,10 +87,10 @@ export default function ApbdesSection() {
                           setSelectedYear(year);
                           setIsYearDropdownOpen(false);
                         }}
-                        className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-[13px] font-bold transition-all sm:rounded-xl sm:px-4 sm:py-3 sm:text-[14px] ${selectedYear === year ? "bg-[#1e96fc] text-[#072ac8]" : "text-white/60 hover:bg-white/5 hover:text-white"}`}
+                        className={`flex w-full items-center justify-between rounded-md px-2 py-0.5 text-left text-[9px] font-black uppercase tracking-widest transition-all sm:px-3 sm:py-1 sm:text-[10px] ${selectedYear === year ? "bg-[#1e96fc] text-[#072ac8]" : "text-white/40 hover:bg-white/5 hover:text-white"}`}
                       >
                         <span>Tahun {year}</span>
-                          {selectedYear === year && <div className="h-1.5 w-1.5 rounded-full bg-[#072ac8]" />}
+                          {selectedYear === year && <div className="h-0.5 w-0.5 rounded-full bg-[#072ac8]" />}
                       </button>
                     ))}
                   </div>
@@ -120,13 +120,13 @@ export default function ApbdesSection() {
                 <p className="hero-reveal text-[13.5px] leading-relaxed text-[#a2d6f9]/70 sm:text-[15px] md:text-[16px]">
                   Dokumentasi transparansi anggaran periode {selectedYear} yang dikelola secara akuntabel untuk pembangunan berkelanjutan Desa Sukahurip.
                 </p>
-                <div className="flex flex-col w-full gap-4 sm:flex-row sm:justify-center lg:justify-start">
+                <div className="flex flex-col w-full items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
                   <Link
                     href="/infografis/apbdes"
-                    className="hero-reveal group inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#FFC400] px-6 py-3 text-[14px] font-black text-[#072ac8] shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl active:scale-95 sm:rounded-2xl sm:px-8 sm:py-4 sm:text-[15px]"
+                    className="hero-reveal group inline-flex w-fit items-center justify-center gap-1 rounded-lg bg-[#FFC400] px-3 py-1 text-[9px] font-black uppercase tracking-widest text-[#072ac8] shadow-xl transition-all hover:bg-white hover:-translate-y-0.5 active:scale-95 sm:px-4 sm:py-1.5 sm:text-[10px]"
                   >
                     Detail Anggaran
-                    <ArrowRight size={16} className="transition-transform group-hover:translate-x-1 sm:size-18" />
+                    <ArrowRight size={9} className="transition-transform group-hover:translate-x-0.5 sm:size-10" />
                   </Link>
                 </div>
               </div>

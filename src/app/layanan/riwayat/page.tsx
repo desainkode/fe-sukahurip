@@ -12,43 +12,58 @@ export default function RiwayatPage() {
   ]
 
   return (
-    <div className="space-y-10 pb-10">
-      <div className="hero-reveal space-y-2">
-        <h2 className="font-timeless text-3xl font-black text-desa-blue-950 dark:text-white">Riwayat Layanan</h2>
-        <p className="text-sm font-medium text-desa-blue-900/50 dark:text-white/40 uppercase tracking-widest">Daftar layanan yang telah selesai diproses</p>
-      </div>
+    <div className="space-y-12 animate-in fade-in duration-1000 pb-20 px-2">
+      {/* Header */}
+      <section className="hero-reveal space-y-4">
+        <h2 className="font-timeless text-4xl md:text-7xl font-black text-desa-blue-950 dark:text-white tracking-tighter leading-tight">Riwayat <br className="md:hidden" /> <span className="text-desa-blue-900 dark:text-desa-yellow-500">Dokumen</span></h2>
+        <p className="text-sm md:text-xl font-medium text-desa-blue-950/40 dark:text-white/40 uppercase tracking-[0.1em] max-w-2xl leading-relaxed">
+          Akses dan unduh kembali arsip dokumen administratif Anda yang telah selesai diproses.
+        </p>
+      </section>
 
       {/* Toolbar */}
-      <div className="hero-reveal relative" style={{ animationDelay: '100ms' }}>
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-desa-blue-950/20 dark:text-white/20" size={18} />
-        <input className="w-full rounded-2xl bg-white dark:bg-white/5 border border-desa-blue-900/5 dark:border-white/5 py-4 pl-12 pr-4 font-bold text-desa-blue-950 dark:text-white outline-hidden focus:ring-2 focus:ring-desa-blue-900 dark:focus:ring-desa-blue-500 shadow-sm transition-all placeholder:text-desa-blue-950/30 dark:placeholder:text-white/20" placeholder="Cari di riwayat..." />
+      <div className="hero-reveal relative group" style={{ animationDelay: '200ms' }}>
+        <Search className="absolute left-8 top-1/2 -translate-y-1/2 text-desa-blue-950/20 dark:text-white/20 group-focus-within:text-desa-blue-900 transition-colors" size={24} />
+        <input 
+          className="w-full rounded-[32px] bg-white dark:bg-desa-blue-900/40 border border-desa-blue-900/5 dark:border-white/5 py-6 pl-18 pr-8 font-bold text-desa-blue-950 dark:text-white outline-none focus:ring-8 focus:ring-desa-blue-900/5 dark:focus:ring-white/5 shadow-[0_20px_50px_rgba(0,0,0,0.03)] transition-all placeholder:text-desa-blue-950/20 dark:placeholder:text-white/20" 
+          placeholder="Cari dalam arsip dokumen..." 
+        />
       </div>
 
-      <div className="hero-reveal grid gap-4" style={{ animationDelay: '200ms' }}>
+      <div className="hero-reveal grid gap-8 md:gap-10" style={{ animationDelay: '400ms' }}>
         {history.map((item, i) => (
-          <div key={item.id} className="group flex items-center justify-between gap-6 rounded-3xl bg-white dark:bg-desa-blue-900/40 p-6 shadow-lg border border-desa-blue-900/5 dark:border-white/5 transition-all hover:border-desa-blue-900/20 dark:hover:border-white/20 hover:bg-desa-blue-50/30 dark:hover:bg-white/5">
-            <div className="flex items-center gap-5">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
-                <FileText size={28} />
+          <div key={item.id} className="group relative overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-8 rounded-[48px] bg-white dark:bg-desa-blue-900/40 p-8 md:p-10 border border-desa-blue-900/5 dark:border-white/5 shadow-[0_40px_100px_rgba(0,0,0,0.02)] transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl">
+            <div className="flex items-center gap-8 md:gap-10">
+              <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-[28px] bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-all duration-700">
+                <FileText size={36} strokeWidth={2.5} />
               </div>
-              <div className="space-y-0.5">
-                <h4 className="font-bold text-desa-blue-950 dark:text-white">{item.type}</h4>
-                <div className="flex items-center gap-3 text-[10px] font-bold text-desa-blue-950/40 dark:text-white/40 uppercase tracking-widest">
-                  <span className="flex items-center gap-1"><Calendar size={12} /> {item.date}</span>
-                  <span>•</span>
-                  <span>{item.size}</span>
+              <div className="space-y-2 md:space-y-3">
+                <h4 className="font-timeless text-2xl md:text-3xl font-black text-desa-blue-950 dark:text-white group-hover:text-desa-blue-900 dark:group-hover:text-desa-yellow-500 transition-colors tracking-tighter leading-tight">{item.type}</h4>
+                <div className="flex flex-wrap items-center gap-6 text-[10px] md:text-[11px] font-black uppercase tracking-[0.3em] text-desa-blue-950/30 dark:text-white/30">
+                  <span className="flex items-center gap-2">
+                    <Calendar size={14} className="opacity-40" /> 
+                    {item.date}
+                  </span>
+                  <span className="h-1.5 w-1.5 rounded-full bg-desa-blue-900/10 dark:bg-white/10" />
+                  <span className="flex items-center gap-2">
+                    <FileText size={14} className="opacity-40" />
+                    {item.size}
+                  </span>
                 </div>
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              <button className="flex h-12 items-center gap-2 rounded-2xl bg-desa-blue-900 dark:bg-desa-blue-500 px-6 font-black text-[10px] uppercase tracking-widest text-white shadow-xl transition-all hover:bg-desa-blue-950 dark:hover:bg-desa-blue-600">
-                <Download size={16} /> Download
+            <div className="flex items-center gap-4 md:gap-6 border-t md:border-none pt-8 md:pt-0">
+              <button className="flex-1 md:flex-none h-16 md:h-18 items-center justify-center gap-4 rounded-[24px] bg-desa-blue-900 dark:bg-desa-blue-500 px-8 md:px-12 font-black text-[12px] uppercase tracking-widest text-white shadow-[0_20px_50px_rgba(7,42,200,0.3)] transition-all hover:bg-desa-blue-950 dark:hover:bg-desa-blue-600 hover:scale-105 active:scale-95 group/btn">
+                <Download size={20} className="group-hover/btn:-translate-y-1 transition-transform" /> 
+                <span>Unduh PDF</span>
               </button>
-              <button className="flex h-12 w-12 items-center justify-center rounded-2xl bg-desa-blue-50 dark:bg-white/5 text-desa-blue-900 dark:text-white transition-all hover:bg-desa-blue-900 hover:text-white dark:hover:bg-desa-blue-500">
-                <ArrowUpRight size={20} />
+              <button className="flex h-16 w-16 md:h-18 md:w-18 items-center justify-center rounded-[24px] bg-desa-blue-50 dark:bg-white/5 text-desa-blue-950/40 dark:text-white/40 border border-desa-blue-900/5 dark:border-white/5 transition-all hover:bg-desa-blue-900 hover:text-white dark:hover:bg-desa-yellow-500 dark:hover:text-desa-blue-950 active:scale-90 group/view">
+                <ArrowUpRight size={28} className="group-hover/view:rotate-45 transition-transform duration-500" />
               </button>
             </div>
+            
+            <div className="absolute -right-24 -bottom-24 h-64 w-64 rounded-full bg-emerald-500/5 blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
           </div>
         ))}
       </div>

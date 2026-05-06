@@ -2,9 +2,15 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Sprout, Store, Mountain } from "lucide-react";
 import { SectionHeader } from "./ui/SectionHeader";
-import { POTENSI_PREVIEW } from "../config/home-data";
+import { mockPotensi } from "../../potensi/config/mock-data";
+
+const categoryMap: Record<string, { icon: any; accent: string }> = {
+  "Sumber Daya Alam": { icon: Sprout, accent: "#072ac8" },
+  "Ekonomi & UMKM": { icon: Store, accent: "#FFC400" },
+  "Wisata": { icon: Mountain, accent: "#072ac8" },
+};
 
 export default function PotensiSection() {
   return (
@@ -21,53 +27,63 @@ export default function PotensiSection() {
 
         <div className="relative -mx-6 overflow-hidden px-6 lg:mx-0 lg:px-0">
           <div className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6 pt-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0 lg:pt-0">
-            {POTENSI_PREVIEW.map((item, index) => (
-              <article 
-                key={item.title} 
-                className="hero-reveal group relative flex h-full w-[280px] shrink-0 snap-start flex-col overflow-hidden rounded-[40px] bg-[#040922] p-6 text-left shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl md:w-[340px] lg:w-full"
-                style={{ animationDelay: `${200 + index * 100}ms` }}
-              >
-              {/* Background Accent */}
-              <div 
-                className="absolute -right-20 -top-20 h-64 w-64 rounded-full opacity-10 blur-[80px] transition-opacity group-hover:opacity-20"
-                style={{ backgroundColor: item.accent }}
-              />
-
-              <div className="relative z-10 flex flex-col h-full">
-                <div className="flex items-center justify-between">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/5 text-white/80 transition-all group-hover:bg-white/10 group-hover:text-[#ffc600]">
-                    <item.icon size={20} strokeWidth={1.5} />
-                  </div>
-                  <Sparkles size={20} className="text-[#FFC400] opacity-0 transition-opacity group-hover:opacity-100" />
-                </div>
-
-                <h3 className="font-timeless mt-6 text-[28px] font-bold leading-tight text-white md:text-[32px]">
-                  {item.title}
-                </h3>
-
-                <p className="mt-4 text-[14px] leading-relaxed text-[#d0e7ff]/50">
-                  {item.description}
-                </p>
-
-                <div className="relative mt-8 aspect-video w-full overflow-hidden rounded-3xl border border-white/5">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
+            {mockPotensi.map((item, index) => {
+              const { icon: Icon, accent } = categoryMap[item.category] || { icon: Sparkles, accent: "#072ac8" };
+              
+              return (
+                <Link
+                  key={item.id}
+                  href={`/potensi/${item.slug}`}
+                  className="hero-reveal group relative flex h-full min-h-[520px] w-[290px] shrink-0 snap-start flex-col overflow-hidden rounded-[40px] bg-[#040922] p-7 text-left shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[#072ac8]/20 border border-white/5 md:w-[350px] lg:w-full"
+                  style={{ animationDelay: `${200 + index * 100}ms` }}
+                >
+                  {/* Background Accent */}
+                  <div 
+                    className="absolute -right-20 -top-20 h-64 w-64 rounded-full opacity-10 blur-[100px] transition-opacity group-hover:opacity-25"
+                    style={{ backgroundColor: accent }}
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-[#040922] via-transparent to-transparent opacity-60" />
-                </div>
 
-                <div className="mt-6 flex items-center justify-between border-t border-white/5 pt-4">
-                  <span className="text-[12px] font-black uppercase tracking-widest text-[#ffc600]">Eksplorasi</span>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FFC400] text-[#040922] transition-all group-hover:rotate-45">
-                    <ArrowRight size={18} strokeWidth={2.5} />
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-white/80 transition-all group-hover:bg-[#FFC400] group-hover:text-[#040922]">
+                        <Icon size={20} strokeWidth={2} />
+                      </div>
+                      <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#ffc600]/50 group-hover:text-[#ffc600] transition-colors">
+                        {item.category}
+                      </span>
+                    </div>
+
+                    <div className="relative mb-6 aspect-[16/10] w-full overflow-hidden rounded-[28px] border border-white/5 shadow-inner">
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        fill
+                        className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-linear-to-t from-[#040922]/60 via-transparent to-transparent opacity-60" />
+                    </div>
+
+                    <h3 className="font-timeless text-[22px] font-bold leading-tight text-white md:text-[26px]">
+                      {item.name}
+                    </h3>
+
+                    <p className="mt-4 text-[14px] leading-relaxed text-[#d0e7ff]/40 line-clamp-2">
+                      {item.shortDesc}
+                    </p>
+
+                    <div className="mt-auto pt-6 flex items-center justify-between border-t border-white/5">
+                      <div className="flex flex-col">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-white/30">Detail</span>
+                        <span className="text-[13px] font-black uppercase tracking-tight text-[#ffc600]">Eksplorasi</span>
+                      </div>
+                      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/5 text-[#FFC400] border border-white/10 transition-all group-hover:bg-[#FFC400] group-hover:text-[#040922] group-hover:rotate-45">
+                        <ArrowRight size={20} strokeWidth={2.5} />
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </article>
-          ))}
+                </Link>
+              );
+            })}
           
           {/* Extra Spacer for mobile scroll-end */}
           <div className="w-12 shrink-0 lg:hidden" />

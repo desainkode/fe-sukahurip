@@ -21,8 +21,8 @@ export function ProfileHero({ name, slogan }: { name: string, slogan: string }) 
             Mengenal Lebih Dekat
           </div>
 
-          <h1 className="hero-reveal max-w-5xl font-[Georgia,serif] text-[48px] font-bold leading-[1.05] tracking-tight sm:text-[68px] lg:text-[86px]">
-            Profil <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#a2d6f9] to-[#FFC400]">{name}</span>
+          <h1 className="hero-reveal max-w-5xl font-timeless text-[48px] font-bold leading-[1.05] tracking-tight sm:text-[68px] lg:text-[86px]">
+            Profil <span className="text-transparent bg-clip-text bg-linear-to-r from-desa-blue-400 to-[#FFC400]">{name}</span>
           </h1>
 
           <p className="hero-reveal mt-10 max-w-2xl text-[18px] font-medium text-[#FFC400] italic sm:text-[22px]">

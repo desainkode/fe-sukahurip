@@ -117,7 +117,7 @@ export default function Hero() {
             <div className="absolute bottom-3 left-3 right-3 rounded-2xl border border-white/10 bg-black/40 p-3 shadow-2xl backdrop-blur-xl transition-all duration-500 group-hover:-translate-y-1 sm:bottom-4 sm:left-4 sm:right-4 sm:p-4">
               <div className="flex items-start justify-between">
                 <div className="max-w-[70%]">
-                  <h3 className="text-[12px] md:text-base font-black leading-tight text-white truncate">Majang Dudi B.</h3>
+                  <h3 className="text-[12px] md:text-base font-black leading-tight text-white truncate">Majang Dudi Budiana</h3>
                   <p className="mt-0.5 text-[7px] md:text-[9px] font-bold uppercase tracking-[0.2em] text-desa-yellow-500">Kepala Desa</p>
                 </div>
                 <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-[#FFC400] text-sm font-black text-[#000418] sm:h-8 sm:w-8 sm:rounded-xl sm:text-lg">

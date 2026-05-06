@@ -20,9 +20,9 @@ export function NewsHero() {
             Portal Berita Sukahurip
           </div>
 
-          <h1 className="hero-reveal max-w-5xl font-[Georgia,serif] text-[32px] font-bold leading-[1.05] tracking-tight sm:text-[56px] md:text-[68px] lg:text-[86px]">
+          <h1 className="hero-reveal max-w-5xl font-timeless text-[32px] font-bold leading-[1.05] tracking-tight sm:text-[56px] md:text-[68px] lg:text-[86px]">
             Jendela Informasi <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#a2d6f9] to-[#FFC400]">Desa Kita</span>
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-desa-blue-400 to-[#FFC400]">Desa Kita</span>
           </h1>
 
           <p className="hero-reveal mt-10 max-w-2xl text-[16px] leading-relaxed text-white/60 sm:text-[18px] lg:text-[20px]">

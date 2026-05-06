@@ -36,7 +36,7 @@ export default function StructureSection() {
 
             <div className="flex items-center gap-6">
               <Link
-                href="/struktur"
+                href="/profil"
                 className="group inline-flex items-center gap-3 rounded-2xl bg-[#072ac8] px-8 py-4 text-[15px] font-black text-[#ffc600] shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl active:scale-95"
               >
                 Seluruh Staf

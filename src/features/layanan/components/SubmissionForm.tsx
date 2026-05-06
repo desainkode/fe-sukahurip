@@ -133,29 +133,45 @@ export function SubmissionForm({ serviceSlug }: SubmissionFormProps) {
   }
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8">
+    <div className="mx-auto max-w-4xl px-4 py-8 md:py-12 animate-in fade-in duration-1000">
+      {/* Back Button */}
       <Link 
         href="/layanan/dashboard"
-        className="mb-4 inline-flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] text-desa-blue-950/40 hover:text-desa-blue-900 dark:hover:text-desa-yellow-500 transition-all group"
+        className="mb-8 inline-flex items-center gap-4 transition-all group"
       >
-        <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-1" />
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white dark:bg-white/5 shadow-sm border border-desa-blue-900/10 dark:border-white/10 transition-all group-hover:bg-desa-blue-900 group-hover:text-white dark:group-hover:bg-desa-yellow-500 dark:group-hover:text-desa-blue-950 group-hover:-translate-x-1">
+          <ArrowLeft size={20} />
+        </div>
+        <div className="flex flex-col">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-desa-blue-950/40 dark:text-white/40">Kembali ke</span>
+          <span className="text-sm font-bold text-desa-blue-950 dark:text-white">Dashboard</span>
+        </div>
       </Link>
 
-      <div className="rounded-[32px] md:rounded-[40px] border border-desa-blue-900/5 dark:border-white/5 bg-white dark:bg-desa-blue-900/40 backdrop-blur-xl p-6 md:p-12 shadow-2xl transition-all duration-500">
-        <div className="mb-6 md:mb-12 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 border-b border-desa-blue-900/5 dark:border-white/5 pb-6 md:pb-10">
-          <div>
-            <h1 className="font-timeless text-xl md:text-3xl font-black text-desa-blue-950 dark:text-white uppercase tracking-tight">Formulir Pengajuan</h1>
-            <p className="mt-1 text-[9px] font-black text-desa-blue-900/40 dark:text-desa-yellow-500 uppercase tracking-[0.3em]">Layanan: {config.label}</p>
+      <div className="overflow-hidden rounded-3xl border border-desa-blue-900/10 dark:border-white/10 bg-white dark:bg-desa-blue-900/40 backdrop-blur-xl p-6 md:p-12 shadow-xl">
+        {/* Header */}
+        <div className="mb-10 md:mb-12 flex items-center justify-between gap-6 border-b border-desa-blue-900/5 dark:border-white/5 pb-8">
+          <div className="space-y-2">
+            <h1 className="font-timeless text-3xl md:text-5xl font-black text-desa-blue-950 dark:text-white tracking-tighter">
+              Form <span className="text-desa-blue-900 dark:text-desa-yellow-500">Layanan</span>
+            </h1>
+            <div className="flex items-center gap-3">
+              <span className="bg-desa-blue-900/10 dark:bg-desa-yellow-500/10 px-3 py-1 rounded-md text-[10px] font-bold text-desa-blue-900 dark:text-desa-yellow-500 uppercase tracking-wider border border-desa-blue-900/10 dark:border-desa-yellow-500/20">
+                {config.label}
+              </span>
+            </div>
           </div>
-          <div className="flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-2xl bg-desa-blue-900 text-white shadow-xl shadow-desa-blue-900/20">
-            <Send size={24} className="md:size-[28px]" />
+          <div className="hidden sm:flex h-16 w-16 items-center justify-center rounded-2xl bg-desa-blue-900 text-white shadow-lg">
+            <Send size={28} />
           </div>
         </div>
 
-        <StepProgressBar currentStep={currentStep} steps={steps} />
+        <div className="px-0">
+          <StepProgressBar currentStep={currentStep} steps={steps} />
+        </div>
 
-        <form onSubmit={handleSubmit} className="mt-6 md:mt-12 space-y-8 md:space-y-12">
-          <div className="min-h-[180px] md:min-h-[300px]">
+        <form onSubmit={handleSubmit} className="mt-12 md:mt-16 space-y-12">
+          <div className="min-h-[300px]">
             {renderStep()}
           </div>
 
@@ -164,7 +180,7 @@ export function SubmissionForm({ serviceSlug }: SubmissionFormProps) {
               <button 
                 type="button"
                 onClick={prevStep}
-                className="flex h-14 w-full sm:w-auto items-center justify-center gap-3 rounded-2xl bg-desa-blue-50/50 dark:bg-white/5 px-8 text-[11px] font-black uppercase tracking-widest text-desa-blue-950 dark:text-white transition-all hover:bg-white dark:hover:bg-white/10 active:scale-95 shadow-sm"
+                className="flex h-14 w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-desa-blue-50 dark:bg-white/5 px-8 text-xs font-bold uppercase tracking-widest text-desa-blue-950 dark:text-white transition-all hover:bg-desa-blue-900 hover:text-white dark:hover:bg-white/10 active:scale-95 border border-desa-blue-900/5 dark:border-white/5"
               >
                 <ArrowLeft size={18} />
                 Sebelumnya
@@ -173,11 +189,12 @@ export function SubmissionForm({ serviceSlug }: SubmissionFormProps) {
 
             <button 
               type="submit"
-              className="group relative flex h-14 w-full sm:w-auto items-center justify-center gap-3 overflow-hidden rounded-2xl bg-desa-blue-900 dark:bg-desa-yellow-500 px-10 text-[11px] font-black uppercase tracking-widest text-white dark:text-desa-blue-950 shadow-xl shadow-desa-blue-900/20 dark:shadow-desa-yellow-500/20 transition-all hover:bg-desa-blue-950 dark:hover:bg-desa-yellow-400 active:scale-95"
+              className="group relative flex h-14 w-full sm:w-auto items-center justify-center gap-3 overflow-hidden rounded-xl bg-desa-blue-900 dark:bg-desa-yellow-500 px-10 text-xs font-bold uppercase tracking-widest text-white dark:text-desa-blue-950 shadow-md transition-all hover:bg-desa-blue-950 dark:hover:bg-desa-yellow-400 active:scale-95"
             >
-              <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer" />
-              {currentStep === steps.length ? 'Kirim Pengajuan' : 'Lanjutkan'}
-              {currentStep === steps.length ? <Send size={18} /> : <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />}
+              <span className="relative z-10">{currentStep === steps.length ? 'Submit Pengajuan' : 'Lanjutkan'}</span>
+              <div className="relative z-10 transition-transform group-hover:translate-x-1 duration-500">
+                {currentStep === steps.length ? <Send size={18} /> : <ArrowRight size={18} />}
+              </div>
             </button>
           </div>
         </form>

@@ -35,10 +35,10 @@ export default function StatsSection() {
               </div>
               <div className="flex flex-col">
                 <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#ffc600]">
-                  Data Terkini 2024
+                  Data Terkini 2026
                 </span>
                 <span className="flex items-center gap-1 text-[11px] font-bold text-white/40">
-                  <TrendingUp size={24} className="text-[#ffc600]" /> Terverifikasi
+                  <TrendingUp size={14} className="text-[#ffc600]" strokeWidth={3} /> Terverifikasi
                 </span>
               </div>
             </div>
@@ -54,7 +54,7 @@ export default function StatsSection() {
             
             <div className="mt-8 flex items-center gap-4">
               <div className="h-0.5 w-12 rounded-full bg-[#FFC400]/30" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#FFC400]">Visi Digital 2024</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#FFC400]">Visi Digital 2026</span>
             </div>
           </div>
 

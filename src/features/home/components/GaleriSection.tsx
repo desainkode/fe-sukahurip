@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Camera, Maximize2 } from "lucide-react";
 import { SectionHeader } from "./ui/SectionHeader";
-import { GALERI_PREVIEW } from "../config/home-data";
+import { mockGallery } from "../../galeri/config/mock-data";
 
 export default function GaleriSection() {
   return (
@@ -21,9 +21,10 @@ export default function GaleriSection() {
 
         <div className="relative -mx-6 overflow-hidden px-6 lg:mx-0 lg:px-0">
           <div className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6 pt-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0 lg:pt-0">
-            {GALERI_PREVIEW.map((item, index) => (
-              <article 
-                key={item.title} 
+            {mockGallery.map((item, index) => (
+              <Link
+                key={item.id}
+                href={`/galeri/${item.slug}`}
                 className="hero-reveal group relative flex h-full w-[280px] shrink-0 snap-start flex-col overflow-hidden rounded-[32px] bg-[#F4F3EE] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl md:w-[340px] lg:w-full"
                 style={{ animationDelay: `${200 + index * 100}ms` }}
               >
@@ -39,7 +40,7 @@ export default function GaleriSection() {
                 
                 <div className="absolute left-4 top-4 flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1.5 text-white backdrop-blur-md border border-white/10">
                   <Camera size={14} />
-                  <span className="text-[10px] font-black uppercase tracking-widest">{item.tag}</span>
+                  <span className="text-[10px] font-black uppercase tracking-widest">{item.category}</span>
                 </div>
 
                 {/* Hover Icon */}
@@ -52,14 +53,14 @@ export default function GaleriSection() {
 
               {/* Info Body */}
               <div className="flex flex-col p-6">
-                <h3 className="font-timeless text-[22px] font-bold leading-tight text-[#040922]">
+                <h3 className="font-timeless text-[22px] font-bold leading-tight text-[#040922] group-hover:text-[#072ac8] transition-colors">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-[14px] leading-relaxed text-[#040922]/60">
-                  {item.description}
+                <p className="mt-3 text-[14px] leading-relaxed text-[#040922]/60 line-clamp-2">
+                  {item.shortDesc}
                 </p>
               </div>
-            </article>
+            </Link>
           ))}
           
           {/* Extra Spacer for mobile scroll-end */}

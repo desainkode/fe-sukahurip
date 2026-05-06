@@ -9,7 +9,7 @@ export function AboutSection() {
           <Info size={24} />
           Sekilas Desa
         </div>
-        <h2 className="font-[Georgia,serif] text-[28px] font-bold leading-tight text-[#000418] sm:text-[32px] md:text-[42px]">
+        <h2 className="font-timeless text-[28px] font-bold leading-tight text-[#000418] sm:text-[32px] md:text-[42px]">
           Harmoni dalam Keberagaman <br className="hidden sm:block" />
           & <span className="text-[#072ac8]">Kemandirian</span>
         </h2>

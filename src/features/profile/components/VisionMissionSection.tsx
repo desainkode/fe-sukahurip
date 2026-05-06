@@ -39,7 +39,7 @@ export function VisionMissionSection({ vision, mission }: { vision: string, miss
             <Target size={24} />
             Visi Desa
           </div>
-          <blockquote className="font-[Georgia,serif] text-lg font-bold italic leading-relaxed sm:text-2xl md:text-3xl min-h-[160px] md:min-h-[200px] text-white">
+          <blockquote className="font-timeless text-lg font-bold italic leading-relaxed sm:text-2xl md:text-3xl min-h-[160px] md:min-h-[200px] text-white">
             &quot;{displayedVision}&quot;
             {isTyping && <span className="ml-1 inline-block w-1 h-8 md:h-10 bg-[#FFC400] animate-pulse" />}
           </blockquote>
@@ -54,7 +54,7 @@ export function VisionMissionSection({ vision, mission }: { vision: string, miss
           <div className="space-y-4 md:space-y-6">
             {mission.map((item, idx) => (
               <div key={idx} className="flex gap-4 group">
-                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#1e96fc] text-white text-[11px] font-bold">
+                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#ffc600] text-[#072ac8] text-[11px] font-bold">
                   {idx + 1}
                 </div>
                 <p className="text-[14px] leading-relaxed text-white/70 group-hover:text-white transition-colors md:text-[15px]">

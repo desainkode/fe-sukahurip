@@ -99,41 +99,43 @@ export default function LayananLayout({ children }: { children: React.ReactNode 
       {/* Sidebar */}
       <aside 
         className={`fixed inset-y-0 left-0 z-50 flex flex-col h-screen bg-white dark:bg-desa-blue-950 border-r border-desa-blue-900/5 dark:border-white/5 transition-all duration-500 lg:sticky lg:top-0 lg:z-0 lg:translate-x-0 shrink-0 ${
-          isSidebarOpen ? 'w-72 md:w-80' : 'w-20 lg:w-24'
+          isSidebarOpen ? 'w-64 md:w-72' : 'w-20 lg:w-24'
         } ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         {/* Sidebar Header */}
-        <div className="flex h-24 items-center px-6 md:px-8 border-b border-desa-blue-900/5 dark:border-white/5">
+        <div className="flex h-20 items-center px-6 border-b border-desa-blue-900/5 dark:border-white/5">
           <Link href="/" className={`flex items-center gap-4 transition-all hover:opacity-80 group ${!isSidebarOpen ? 'mx-auto' : ''}`}>
-            <div className={`flex shrink-0 items-center justify-center bg-desa-blue-900 rounded-2xl p-2 shadow-xl shadow-desa-blue-900/20 transition-all duration-500 ${isSidebarOpen ? 'h-12 w-12' : 'h-11 w-11'}`}>
+            <div className={`flex shrink-0 items-center justify-center bg-desa-blue-900 rounded-[18px] p-2 shadow-[0_15px_30px_rgba(7,42,200,0.15)] transition-all duration-700 group-hover:scale-110 group-hover:rotate-6 ${isSidebarOpen ? 'h-11 w-11' : 'h-10 w-10'}`}>
               <img src="/img/image.png" alt="Logo" className="h-full w-full object-contain" />
             </div>
             {isSidebarOpen && (
-              <div className="animate-in fade-in slide-in-from-left-2 duration-500 overflow-hidden">
-                <h1 className="font-timeless text-lg font-black text-desa-blue-950 dark:text-white leading-none">SUKAHURIP</h1>
-                <p className="mt-1 text-[9px] font-black uppercase tracking-[0.2em] text-desa-blue-900/40 dark:text-desa-yellow-500">Digital Portal</p>
+              <div className="animate-in fade-in slide-in-from-left-4 duration-1000 overflow-hidden">
+                <h1 className="font-timeless text-[16px] font-black text-desa-blue-950 dark:text-white leading-none tracking-tighter">SUKAHURIP</h1>
+                <p className="mt-1 text-[8px] font-black uppercase tracking-[0.3em] text-desa-blue-900/30 dark:text-desa-yellow-500">Portal Digital</p>
               </div>
             )}
           </Link>
         </div>
         {/* Sidebar Menu */}
-        <nav className={`flex-1 min-h-0 overflow-y-auto py-8 custom-scrollbar space-y-8 transition-all duration-500 overscroll-contain ${isSidebarOpen ? 'px-4' : 'px-2'}`}>
+        <nav className={`flex-1 min-h-0 overflow-y-auto py-8 custom-scrollbar space-y-8 transition-all duration-500 overscroll-contain ${isSidebarOpen ? 'px-4' : 'px-3'}`}>
           {menuGroups.map((group) => (
-            <div key={group.id} className="space-y-2">
+            <div key={group.id} className="space-y-3">
               {isSidebarOpen ? (
-                <button 
-                  onClick={() => group.type === 'dropdown' && toggleGroup(group.id)}
-                  className="group/header flex w-full items-center justify-between px-4 py-1 rounded-xl transition-all"
-                >
-                  <span className="text-[9px] font-black uppercase tracking-[0.3em] text-desa-blue-950/20 dark:text-white/20 group-hover/header:text-desa-blue-900 dark:group-hover/header:text-desa-yellow-500 transition-colors">
+                <div className="flex items-center justify-between px-4">
+                  <span className="text-[9px] font-black uppercase tracking-[0.4em] text-desa-blue-950/20 dark:text-white/20">
                     {group.label}
                   </span>
                   {group.type === 'dropdown' && (
-                    <ChevronLeft size={12} className={`text-desa-blue-950/20 dark:text-white/20 group-hover/header:text-desa-blue-900 dark:group-hover/header:text-desa-yellow-500 transition-transform duration-500 ${openGroups.includes(group.id) ? '-rotate-90' : ''}`} />
+                    <button 
+                      onClick={() => toggleGroup(group.id)}
+                      className="p-1 hover:bg-desa-blue-900/5 dark:hover:bg-white/5 rounded-lg transition-colors"
+                    >
+                      <ChevronLeft size={12} className={`text-desa-blue-950/20 dark:text-white/20 transition-transform duration-700 ${openGroups.includes(group.id) ? '-rotate-90' : ''}`} />
+                    </button>
                   )}
-                </button>
+                </div>
               ) : (
-                <div className="h-px bg-desa-blue-900/10 dark:bg-white/10 my-6 mx-2" />
+                <div className="h-px bg-desa-blue-900/10 dark:bg-white/10 my-6 mx-3" />
               )}
               
               <div className={`space-y-1.5 transition-all duration-700 ease-in-out overflow-hidden ${
@@ -148,16 +150,16 @@ export default function LayananLayout({ children }: { children: React.ReactNode 
                       onClick={() => {
                         if (window.innerWidth < 1024) setIsMobileMenuOpen(false)
                       }}
-                      className={`flex items-center gap-4 rounded-2xl py-3.5 text-sm font-bold transition-all duration-500 group/item ${
-                        isSidebarOpen ? 'px-5' : 'justify-center px-0'
+                      className={`flex items-center gap-4 rounded-[20px] py-3.5 text-sm font-bold transition-all duration-500 group/item ${
+                        isSidebarOpen ? 'px-5' : 'justify-center px-0 h-14'
                       } ${
                         isActive 
-                          ? 'bg-desa-blue-900 text-white shadow-xl shadow-desa-blue-900/20 dark:bg-desa-yellow-500 dark:text-desa-blue-950 dark:shadow-desa-yellow-500/10 active:scale-95' 
-                          : 'text-desa-blue-950/40 dark:text-white/40 hover:bg-desa-blue-900/5 dark:hover:bg-white/10 hover:text-desa-blue-900 dark:hover:text-white hover:scale-[1.02] active:scale-95'
+                          ? 'bg-desa-blue-900 text-white shadow-[0_15px_30px_rgba(7,42,200,0.2)] dark:bg-desa-yellow-500 dark:text-desa-blue-950 dark:shadow-[0_15px_30px_rgba(255,191,0,0.1)] scale-[1.02] z-10' 
+                          : 'text-desa-blue-950/40 dark:text-white/40 hover:bg-desa-blue-900/5 dark:hover:bg-white/5 hover:text-desa-blue-900 dark:hover:text-white'
                       }`}
                     >
-                      <item.icon size={isSidebarOpen ? 20 : 22} className={`shrink-0 transition-all duration-500 ${isActive ? 'scale-110' : 'group-hover/item:scale-110'}`} />
-                      {isSidebarOpen && <span className="animate-in fade-in slide-in-from-left-2 duration-500 whitespace-nowrap text-xs">{item.label}</span>}
+                      <item.icon size={isSidebarOpen ? 18 : 22} className={`shrink-0 transition-all duration-700 ${isActive ? 'scale-110 rotate-3' : 'group-hover/item:scale-125 group-hover/item:rotate-6'}`} />
+                      {isSidebarOpen && <span className="animate-in fade-in slide-in-from-left-3 duration-700 whitespace-nowrap text-[13px] tracking-tight">{item.label}</span>}
                     </Link>
                   )
                 })}
@@ -167,16 +169,15 @@ export default function LayananLayout({ children }: { children: React.ReactNode 
         </nav>
 
         {/* Sidebar Footer */}
-        <div className="p-4 border-t border-desa-blue-900/5 dark:border-white/5 space-y-4">
-          
+        <div className="p-5 border-t border-desa-blue-900/5 dark:border-white/5">
           <button
             onClick={logout}
-            className={`flex items-center gap-4 rounded-2xl bg-rose-50 dark:bg-rose-500/10 py-3.5 text-[10px] font-black uppercase tracking-widest text-rose-600 transition-all hover:bg-rose-600 hover:text-white group ${
+            className={`flex items-center gap-4 rounded-[18px] bg-rose-500/5 dark:bg-rose-500/10 py-3.5 text-[10px] font-black uppercase tracking-widest text-rose-600 transition-all hover:bg-rose-600 hover:text-white group active:scale-95 ${
               isSidebarOpen ? 'w-full px-5' : 'w-full justify-center px-0'
             }`}
           >
-            <LogOut size={20} className="shrink-0 transition-transform group-hover:-translate-x-1" />
-            {isSidebarOpen && <span className="animate-in fade-in duration-500">Keluar Sesi</span>}
+            <LogOut size={18} className="shrink-0 transition-transform group-hover:-translate-x-1" />
+            {isSidebarOpen && <span className="animate-in fade-in duration-700">Keluar Sesi</span>}
           </button>
         </div>
       </aside>
@@ -184,8 +185,8 @@ export default function LayananLayout({ children }: { children: React.ReactNode 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col h-screen overflow-hidden">
         {/* Top Header */}
-        <header className="h-20 md:h-24 flex items-center justify-between px-6 md:px-10 bg-white/80 dark:bg-desa-blue-900/40 backdrop-blur-xl border-b border-desa-blue-900/5 dark:border-white/5 z-30">
-          <div className="flex items-center gap-4">
+        <header className="h-20 flex items-center justify-between px-6 md:px-10 bg-white/60 dark:bg-desa-blue-950/60 backdrop-blur-3xl border-b border-desa-blue-900/5 dark:border-white/5 z-30">
+          <div className="flex items-center gap-5">
             <button 
               onClick={() => {
                 if (window.innerWidth < 1024) {
@@ -194,28 +195,25 @@ export default function LayananLayout({ children }: { children: React.ReactNode 
                   setIsSidebarOpen(!isSidebarOpen)
                 }
               }}
-              className="flex h-12 w-12 items-center justify-center rounded-2xl bg-desa-blue-900/5 dark:bg-desa-yellow-500/10 text-desa-blue-900 dark:text-desa-yellow-500 active:scale-90 transition-all shadow-lg shadow-desa-blue-900/5 dark:shadow-desa-yellow-500/5 border border-desa-blue-900/10 dark:border-desa-yellow-500/20 group"
+              className="flex h-12 w-12 items-center justify-center rounded-[16px] bg-white dark:bg-white/5 text-desa-blue-900 dark:text-desa-yellow-500 active:scale-90 transition-all shadow-sm border border-desa-blue-900/5 dark:border-white/10 group"
             >
               {isSidebarOpen ? (
-                <ChevronLeft size={24} className="transition-transform group-hover:-translate-x-0.5" />
+                <ChevronLeft size={20} className="transition-transform group-hover:-translate-x-1" />
               ) : (
-                <Menu size={24} className="transition-transform group-hover:scale-110" />
+                <Menu size={20} className="transition-transform group-hover:scale-110" />
               )}
             </button>
             <div className="flex flex-col">
-              <h2 className="font-timeless text-lg md:text-2xl font-black text-desa-blue-950 dark:text-white leading-tight truncate max-w-[120px] sm:max-w-none">
+              <h2 className="font-timeless text-[20px] md:text-2xl font-black text-desa-blue-950 dark:text-white leading-none tracking-tighter truncate max-w-[180px] sm:max-w-none uppercase">
                 {menuGroups.flatMap(g => g.items).find(i => i.href === pathname)?.label || 'Portal Layanan'}
               </h2>
-              <div className="hidden sm:flex items-center gap-2 text-[9px] font-black uppercase tracking-widest text-desa-blue-900/40 dark:text-desa-yellow-500 mt-0.5">
-                Dashboard <ArrowRight size={10} /> {pathname.split('/').pop()}
-              </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 md:gap-6">
+          <div className="flex items-center gap-4 md:gap-6">
             <button 
               onClick={toggleTheme}
-              className="hidden sm:flex h-12 w-12 items-center justify-center rounded-2xl bg-desa-blue-50 dark:bg-white/5 text-desa-blue-900 dark:text-desa-yellow-500 transition-all hover:scale-105 active:scale-95"
+              className="hidden sm:flex h-12 w-12 items-center justify-center rounded-[16px] bg-white dark:bg-white/5 text-desa-blue-900 dark:text-desa-yellow-500 transition-all hover:scale-105 active:scale-95 shadow-sm border border-desa-blue-900/5 dark:border-white/10"
             >
               {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
             </button>
@@ -223,50 +221,59 @@ export default function LayananLayout({ children }: { children: React.ReactNode 
             <div className="relative">
               <button 
                 onClick={() => setIsNotificationOpen(!isNotificationOpen)}
-                className={`relative flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-2xl transition-all hover:scale-105 active:scale-95 ${
-                  isNotificationOpen ? 'bg-desa-blue-900 text-white' : 'bg-desa-blue-50 dark:bg-white/5 text-desa-blue-900 dark:text-white'
-                } border border-transparent ${isNotificationOpen ? '' : 'hover:border-desa-blue-900/10 dark:hover:border-white/10'}`}
+                className={`relative flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-[16px] transition-all hover:scale-105 active:scale-95 shadow-sm border ${
+                  isNotificationOpen 
+                    ? 'bg-desa-blue-900 text-white border-transparent' 
+                    : 'bg-white dark:bg-white/5 text-desa-blue-900 dark:text-white border-desa-blue-900/5 dark:border-white/10'
+                }`}
               >
                 <Bell size={18} className="md:size-5" />
-                <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 md:h-5 md:w-5 items-center justify-center rounded-full bg-rose-500 text-[7px] md:text-[8px] font-black text-white shadow-lg border-2 border-white dark:border-desa-blue-950">3</span>
+                <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-rose-600 text-[8px] font-black text-white shadow-lg border-2 border-white dark:border-desa-blue-950">3</span>
               </button>
               
               {isNotificationOpen && (
                 <>
-                  {/* Backdrop for mobile */}
                   <div 
-                    className="fixed inset-0 z-[100] bg-desa-blue-950/40 backdrop-blur-sm md:hidden animate-in fade-in duration-300" 
+                    className="fixed inset-0 z-[100] bg-desa-blue-950/20 backdrop-blur-sm md:hidden animate-in fade-in duration-500" 
                     onClick={() => setIsNotificationOpen(false)}
                   />
                   
-                  <div className="fixed inset-x-4 top-[15%] z-[101] md:absolute md:inset-auto md:right-0 md:top-full md:mt-4 w-auto md:w-96 origin-top md:origin-top-right rounded-[32px] bg-white dark:bg-desa-blue-900 border border-desa-blue-900/5 dark:border-white/10 shadow-2xl p-6 animate-in fade-in zoom-in duration-300">
+                  <div className="fixed inset-x-4 top-20 z-[101] md:absolute md:inset-auto md:right-0 md:top-full md:mt-4 w-auto md:w-[380px] origin-top md:origin-top-right rounded-[32px] bg-white/95 dark:bg-desa-blue-900/95 backdrop-blur-2xl border border-desa-blue-900/5 dark:border-white/10 shadow-[0_40px_80px_rgba(0,0,0,0.15)] p-6 animate-in fade-in zoom-in-95 duration-500">
                     <div className="flex items-center justify-between mb-6">
                       <div className="flex items-center gap-3">
-                        <h4 className="font-timeless text-lg font-black text-desa-blue-950 dark:text-white">Notifikasi</h4>
-                        <span className="bg-rose-50 dark:bg-rose-500/10 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest text-rose-600">3 Baru</span>
+                        <h4 className="font-timeless text-xl font-black text-desa-blue-950 dark:text-white tracking-tighter">Notifikasi</h4>
+                        <span className="bg-rose-500/10 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-[0.2em] text-rose-600">3 Baru</span>
                       </div>
                       <button 
                         onClick={() => setIsNotificationOpen(false)}
-                        className="flex h-10 w-10 items-center justify-center rounded-xl bg-desa-blue-50 dark:bg-white/5 text-desa-blue-950/40 dark:text-white/40 hover:bg-rose-50 hover:text-rose-600 transition-all active:scale-90"
+                        className="flex h-10 w-10 items-center justify-center rounded-[14px] bg-desa-blue-900/5 dark:bg-white/5 text-desa-blue-950/40 dark:text-white/40 hover:bg-rose-500/10 hover:text-rose-600 transition-all active:scale-90"
                       >
-                        <X size={20} />
+                        <X size={18} />
                       </button>
                     </div>
-                    <div className="space-y-3">
+                    <div className="space-y-3 max-h-[400px] overflow-y-auto no-scrollbar pr-1">
                       {[1, 2, 3].map((n) => (
-                        <div key={n} className="group p-4 rounded-2xl bg-desa-blue-50/50 dark:bg-white/5 hover:bg-white dark:hover:bg-white/10 border border-transparent hover:border-desa-blue-900/10 dark:hover:border-white/10 transition-all cursor-pointer">
+                        <div key={n} className="group p-4 rounded-[24px] bg-desa-blue-900/5 dark:bg-white/5 hover:bg-white dark:hover:bg-white/10 border border-transparent hover:border-desa-blue-900/5 dark:hover:border-white/5 transition-all duration-500 cursor-pointer shadow-sm">
                           <div className="flex gap-4">
-                            <div className="h-10 w-10 shrink-0 rounded-xl bg-desa-blue-900 flex items-center justify-center text-white">
+                            <div className="h-10 w-10 shrink-0 rounded-[14px] bg-desa-blue-900 text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
                               <FileText size={18} />
                             </div>
                             <div>
-                              <p className="text-xs font-bold text-desa-blue-950 dark:text-white group-hover:text-desa-blue-900 dark:group-hover:text-desa-yellow-500 transition-colors">Pengajuan Surat Pindah</p>
-                              <p className="text-[10px] text-desa-blue-950/40 dark:text-white/40 mt-1">Status pengajuan Anda telah berubah menjadi "Selesai".</p>
-                              <p className="text-[8px] font-black text-desa-blue-900/20 dark:text-white/20 uppercase tracking-widest mt-2">2 Jam yang lalu</p>
+                              <p className="text-[13px] font-black text-desa-blue-950 dark:text-white group-hover:text-desa-blue-900 dark:group-hover:text-desa-yellow-500 transition-colors leading-tight">Pengajuan Surat Pindah</p>
+                              <p className="text-[11px] font-medium text-desa-blue-950/40 dark:text-white/40 mt-1 leading-relaxed">Status pengajuan Anda telah berubah menjadi "Selesai".</p>
+                              <div className="flex items-center gap-2 mt-2">
+                                <Clock size={10} className="text-desa-blue-900/20" />
+                                <p className="text-[8px] font-black text-desa-blue-900/20 dark:text-white/20 uppercase tracking-[0.2em]">2 Jam yang lalu</p>
+                              </div>
                             </div>
                           </div>
                         </div>
                       ))}
+                    </div>
+                    <div className="mt-6 pt-4 border-t border-desa-blue-900/5 dark:border-white/5 text-center">
+                      <button className="text-[10px] font-black uppercase tracking-[0.3em] text-desa-blue-900/40 dark:text-white/40 hover:text-desa-blue-900 dark:hover:text-desa-yellow-500 transition-colors">
+                        Tandai Semua Sudah Dibaca
+                      </button>
                     </div>
                   </div>
                 </>
@@ -275,13 +282,13 @@ export default function LayananLayout({ children }: { children: React.ReactNode 
 
             <Link 
               href="/layanan/profil"
-              className="flex h-10 md:h-14 items-center gap-4 bg-white dark:bg-white/5 px-2 md:px-5 rounded-2xl border border-desa-blue-900/5 dark:border-white/10 shadow-sm hover:bg-desa-blue-50 dark:hover:bg-white/10 transition-all active:scale-95 group"
+              className="flex h-11 md:h-12 items-center gap-4 bg-white dark:bg-white/5 px-1.5 md:pl-5 md:pr-1.5 rounded-[16px] border border-desa-blue-900/5 dark:border-white/10 shadow-sm hover:bg-desa-blue-50 dark:hover:bg-white/10 transition-all duration-500 active:scale-95 group"
             >
               <div className="hidden md:block text-right">
-                <p className="text-sm font-black text-desa-blue-950 dark:text-white leading-none group-hover:text-desa-blue-900 dark:group-hover:text-desa-yellow-500 transition-colors whitespace-nowrap">{user.name}</p>
-                <p className="text-[9px] font-black uppercase tracking-widest text-desa-blue-900/40 dark:text-desa-yellow-500 mt-1.5">Warga Digital</p>
+                <p className="text-[13px] font-black text-desa-blue-950 dark:text-white leading-none group-hover:text-desa-blue-900 dark:group-hover:text-desa-yellow-500 transition-colors whitespace-nowrap">{user.name}</p>
+                <p className="text-[8px] font-black uppercase tracking-[0.2em] text-desa-blue-900/30 dark:text-desa-yellow-500 mt-1.5">Warga Digital</p>
               </div>
-              <div className="h-8 w-8 md:h-10 md:w-10 shrink-0 rounded-xl bg-desa-blue-900 dark:bg-desa-blue-500 flex items-center justify-center text-white font-black text-xs md:text-sm shadow-lg transition-transform group-hover:scale-105 overflow-hidden">
+              <div className="h-8 w-8 md:h-9 md:w-9 shrink-0 rounded-[12px] bg-desa-blue-900 dark:bg-desa-blue-500 flex items-center justify-center text-white font-black text-xs md:text-sm shadow-md transition-all group-hover:scale-105 group-hover:rotate-3 overflow-hidden border border-white dark:border-desa-blue-950/20">
                 {user.avatar ? (
                   <img src={user.avatar} alt={user.name} className="h-full w-full object-cover" />
                 ) : (
@@ -293,8 +300,8 @@ export default function LayananLayout({ children }: { children: React.ReactNode 
         </header>
 
         {/* Scrollable Content */}
-        <main className="flex-1 overflow-y-auto no-scrollbar px-4 pt-3 pb-8 md:pt-6 md:pb-12 md:px-10 lg:px-12 overscroll-contain h-full">
-          <div className="max-w-7xl mx-auto">
+        <main className="flex-1 overflow-y-auto no-scrollbar px-4 pt-4 pb-8 md:pt-8 md:pb-12 md:px-10 lg:px-12 overscroll-contain h-full">
+          <div className="max-w-6xl mx-auto">
             {children}
           </div>
         </main>

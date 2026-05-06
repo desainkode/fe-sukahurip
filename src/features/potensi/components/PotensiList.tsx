@@ -1,33 +1,44 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
-import { Search, Filter, X, Check } from "lucide-react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
+import { Search, Filter, Check, X } from "lucide-react";
 import { mockPotensi } from "../config/mock-data";
 import { PotensiCard } from "./PotensiCard";
 import { PotensiStats } from "./PotensiStats";
 
 const categories = [
-  "Semua",
-  "Sumber Daya Alam",
-  "SDM",
-  "Ekonomi & UMKM",
-  "Wisata",
-  "Peternakan & Perikanan",
-  "Infrastruktur"
+  { id: "1", name: "Semua", slug: "semua" },
+  { id: "2", name: "Sumber Daya Alam", slug: "Sumber Daya Alam" },
+  { id: "3", name: "Ekonomi & UMKM", slug: "Ekonomi & UMKM" },
+  { id: "4", name: "Wisata", slug: "Wisata" },
+  { id: "5", name: "Infrastruktur", slug: "Infrastruktur" },
 ];
 
 export function PotensiList() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [activeCategory, setActiveCategory] = useState("Semua");
+  const [activeCategory, setActiveCategory] = useState("semua");
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const filterRef = useRef<HTMLDivElement>(null);
 
   const filteredItems = useMemo(() => {
     return mockPotensi.filter((item) => {
       const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
                            item.shortDesc.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesCategory = activeCategory === "Semua" || item.category === activeCategory;
+      const matchesCategory = activeCategory === "semua" || item.category === activeCategory;
       return matchesSearch && matchesCategory;
     });
   }, [searchQuery, activeCategory]);
+
+  // Close filter when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (filterRef.current && !filterRef.current.contains(e.target as Node)) {
+        setIsFilterOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <div id="potensi-content" className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
@@ -36,35 +47,63 @@ export function PotensiList() {
         <PotensiStats />
       </div>
 
-      {/* Filter & Search Bar */}
-      <div className="mb-10 flex flex-col gap-6 md:mb-16 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
-        <div className="flex-1 max-w-2xl">
-          <div className="group relative">
-            <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-[#000418]/30 transition-colors group-focus-within:text-[#072ac8]" size={22} />
-            <input
-              type="text"
-              placeholder="Cari potensi desa..."
-              className="h-14 w-full rounded-[20px] border border-white bg-white pl-12 pr-6 text-[14px] font-bold text-black shadow-xl shadow-black/[0.03] outline-none ring-offset-2 transition-all focus:border-[#072ac8]/20 focus:ring-4 focus:ring-[#072ac8]/5 sm:h-16 sm:rounded-full sm:pl-14 sm:pr-8 sm:text-[16px]"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
+      {/* Integrated Search & Filter Bar (Matching News Page) */}
+      <div className="sticky top-28 z-40 mb-12 md:mb-20 flex justify-center">
+        <div className="relative flex w-full max-w-3xl items-center gap-1.5 rounded-[24px] border border-white/40 bg-white/70 p-2 shadow-[0_20px_50px_rgba(0,4,24,0.1)] backdrop-blur-2xl transition-all focus-within:bg-white focus-within:shadow-[0_25px_60px_rgba(0,4,24,0.15)] sm:gap-2 sm:rounded-full sm:p-2.5">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#000418] text-white sm:h-12 sm:w-12">
+            <Search size={20} className="sm:size-5" />
           </div>
-        </div>
+          
+          <input
+            type="text"
+            placeholder="Cari potensi desa..."
+            className="flex-1 bg-transparent px-2 text-[14px] font-bold text-black outline-none placeholder:text-[#000418]/30 sm:px-4 sm:text-[16px]"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
 
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 lg:pb-0 scrollbar-hide sm:gap-3">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`whitespace-nowrap rounded-full px-5 py-2.5 text-[11px] font-black uppercase tracking-widest transition-all sm:px-6 sm:py-3.5 sm:text-[12px] ${
-                activeCategory === cat
-                  ? "bg-[#072ac8] text-white shadow-lg shadow-[#072ac8]/20"
-                  : "bg-white text-[#000418] border border-[#000418]/5 hover:bg-neutral-50"
+          <div className="h-6 w-px bg-[#000418]/10 mx-1 sm:h-8" />
+          
+          <div className="relative" ref={filterRef}>
+            <button 
+              onClick={() => setIsFilterOpen(!isFilterOpen)}
+              className={`flex items-center gap-2 rounded-full px-4 py-2.5 text-[11px] font-black uppercase tracking-widest transition-all sm:px-6 sm:py-3.5 sm:text-[12px] ${
+                isFilterOpen || activeCategory !== "semua"
+                  ? "bg-[#072ac8] text-white shadow-lg"
+                  : "bg-neutral-100 text-[#000418] hover:bg-[#000418]/5"
               }`}
             >
-              {cat}
+              <Filter size={16} className="sm:size-4" />
+              <span className="hidden sm:inline">
+                {activeCategory === "semua" ? "Filter" : categories.find(c => c.slug === activeCategory)?.name}
+              </span>
             </button>
-          ))}
+
+            {/* Dropdown Popup */}
+            {isFilterOpen && (
+              <div className="absolute right-0 mt-4 w-64 overflow-hidden rounded-[28px] border border-white bg-white/95 p-2 shadow-[0_30px_80px_rgba(0,0,0,0.2)] backdrop-blur-xl animate-in zoom-in-95 fade-in duration-200 origin-top-right sm:rounded-[32px]">
+                <div className="flex flex-col gap-1">
+                  {categories.map((category) => (
+                    <button
+                      key={category.id}
+                      onClick={() => {
+                        setActiveCategory(category.slug);
+                        setIsFilterOpen(false);
+                      }}
+                      className={`flex items-center justify-between rounded-2xl px-5 py-3.5 text-left text-[13px] font-bold uppercase tracking-widest transition-all ${
+                        activeCategory === category.slug
+                          ? "bg-[#072ac8] text-white"
+                          : "text-[#000418]/60 hover:bg-[#000418]/5 hover:text-[#000418]"
+                      }`}
+                    >
+                      {category.name}
+                      {activeCategory === category.slug && <Check size={18} strokeWidth={3} />}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 

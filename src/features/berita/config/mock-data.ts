@@ -57,5 +57,21 @@ export const mockNews: NewsItem[] = [
     },
     publishedAt: "2026-04-20",
     readingTime: "6 menit"
+  },
+  {
+    id: "4",
+    title: "Panen Raya Padi Organik Desa Sukahurip Capai Target Memuaskan",
+    slug: "panen-raya-padi-organik-sukahurip",
+    excerpt: "Para petani di Dusun Sukahurip merayakan keberhasilan panen padi organik perdana yang menunjukkan peningkatan kualitas dan kuantitas hasil panen.",
+    content: "Musim panen tahun ini terasa sangat istimewa bagi para petani di Desa Sukahurip. Pasalnya, program padi organik yang dicanangkan sejak awal tahun akhirnya membuahkan hasil yang sangat memuaskan. Volume panen per hektar meningkat sekitar 20% dibandingkan metode konvensional.\n\nKeberhasilan ini tidak lepas dari bimbingan intensif dari dinas pertanian daerah dan penggunaan pupuk kompos buatan kelompok tani mandiri desa. Padi organik ini juga memiliki nilai jual yang lebih tinggi di pasar perkotaan.\n\nKepala Desa menyampaikan bahwa suksesnya panen raya ini adalah langkah awal untuk menjadikan Desa Sukahurip sebagai sentra lumbung padi organik di wilayah Kabupaten.",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop",
+    category: newsCategories[4],
+    author: {
+      name: "Ahmad Fauzi",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=fauzi",
+      role: "Ketua Kelompok Tani"
+    },
+    publishedAt: "2026-04-18",
+    readingTime: "4 menit"
   }
 ];

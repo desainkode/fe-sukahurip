@@ -11,7 +11,7 @@ export function HistorySection({ history, establishedYear }: { history: string, 
               <History size={24} />
               Sejarah Desa
             </div>
-            <h2 className="font-[Georgia,serif] text-[28px] font-bold leading-tight text-[#000418] sm:text-[32px]">
+            <h2 className="font-timeless text-[28px] font-bold leading-tight text-[#000418] sm:text-[32px]">
               Jejak Langkah Sejak <span className="text-[#FFC400]">{establishedYear}</span>
             </h2>
             <div className="h-1 w-20 bg-[#FFC400]" />

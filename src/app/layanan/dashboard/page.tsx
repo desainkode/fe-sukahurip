@@ -37,23 +37,29 @@ export default function DashboardPage() {
 
 
   return (
-    <div className="space-y-8 animate-in fade-in duration-1000 pb-10 md:pb-20">
+    <div className="space-y-12 animate-in fade-in duration-1000 pb-10 md:pb-20 px-2">
       {/* Welcome Section */}
-      <section className="hero-reveal space-y-4 px-2">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="space-y-1 md:space-y-2">
-            <h2 className="font-timeless text-2xl md:text-5xl font-black text-desa-blue-950 dark:text-white tracking-tight">
-              Selamat datang, <span className="text-desa-blue-900 dark:text-desa-yellow-500">{user?.name}!</span>
+      <section className="hero-reveal space-y-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div className="space-y-3 md:space-y-5">
+            <h2 className="font-timeless text-3xl md:text-6xl font-black text-desa-blue-950 dark:text-white tracking-tighter leading-tight md:leading-[0.9]">
+              Selamat datang, <br className="hidden md:block" />
+              <span className="text-desa-blue-900 dark:text-desa-yellow-500">{user?.name}!</span>
             </h2>
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[10px] font-black uppercase tracking-[0.2em] text-desa-blue-950/40 dark:text-white/50">
-              <span className="flex items-center gap-2">NIK: {user?.nik}</span>
-              <span className="flex items-center gap-2">Alamat: {user?.address}</span>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
+              <span className="flex items-center gap-2.5 bg-desa-blue-900/5 dark:bg-white/5 border border-desa-blue-900/5 dark:border-white/5 px-4 py-2 rounded-xl text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-desa-blue-950/50 dark:text-white/50 shadow-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-desa-blue-900 dark:bg-desa-yellow-500" />
+                NIK: {user?.nik}
+              </span>
+              <span className="flex items-center gap-2.5 bg-emerald-500/5 dark:bg-emerald-500/5 border border-emerald-500/10 dark:border-emerald-500/10 px-4 py-2 rounded-xl text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-emerald-600/80 dark:text-emerald-400/80 shadow-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-50 animate-pulse" />
+                Status: Warga Aktif
+              </span>
             </div>
           </div>
-
         </div>
-        <p className="text-xs md:text-sm font-medium text-desa-blue-950/40 dark:text-white/50 max-w-3xl leading-relaxed">
-          Pilih jenis layanan yang Anda butuhkan di bawah ini atau monitor status pengajuan Anda melalui menu Riwayat.
+        <p className="text-sm md:text-lg font-medium text-desa-blue-950/60 dark:text-white/60 max-w-4xl leading-relaxed md:leading-loose">
+          Pusat kendali layanan digital Anda. Pantau pengajuan surat, sampaikan pengaduan, dan akses berbagai kemudahan administrasi Desa Sukahurip secara efisien dan transparan.
         </p>
       </section>
 
@@ -62,84 +68,81 @@ export default function DashboardPage() {
         {stats.map((stat, i) => (
           <div 
             key={i} 
-            className={`hero-reveal group relative overflow-hidden rounded-[32px] md:rounded-[40px] bg-white dark:bg-desa-blue-900/40 p-6 md:p-10 shadow-xl shadow-desa-blue-900/5 border ${stat.border} transition-all hover:-translate-y-2 ${stat.glow}`}
-            style={{ animationDelay: `${i * 100}ms` }}
+            className={`hero-reveal group relative overflow-hidden rounded-[32px] md:rounded-[40px] bg-white dark:bg-desa-blue-900/40 p-6 md:p-10 shadow-[0_30px_80px_rgba(0,0,0,0.02)] dark:shadow-none border border-desa-blue-900/5 dark:border-white/5 transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl ${stat.glow}`}
+            style={{ animationDelay: `${i * 150}ms` }}
           >
-            <div className="relative z-10 flex items-center gap-6">
-              <div className={`flex h-14 w-14 md:h-16 md:w-16 shrink-0 items-center justify-center rounded-[24px] ${stat.bg} transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-inner`}>
-                <Clock size={28} className={`md:w-8 md:h-8 ${stat.color}`} />
+            <div className="relative z-10 flex items-center gap-5 md:gap-8">
+              <div className={`flex h-14 w-14 md:h-18 md:w-18 shrink-0 items-center justify-center rounded-[22px] md:rounded-[28px] ${stat.bg} transition-all duration-700 group-hover:rotate-12 group-hover:scale-110 shadow-inner border border-transparent group-hover:border-white/20`}>
+                <Clock size={stat.label.includes('Total') ? 24 : 26} className={`md:size-8 ${stat.color} transition-transform group-hover:scale-110`} />
               </div>
               <div>
-                <p className="text-2xl md:text-4xl font-black text-desa-blue-950 dark:text-white leading-none mb-1.5 md:mb-2">{stat.value}</p>
-                <p className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.2em] text-desa-blue-950/40 dark:text-white/40">{stat.label}</p>
+                <p className="text-2xl md:text-4xl font-black text-desa-blue-950 dark:text-white leading-none mb-2 tracking-tighter">{stat.value}</p>
+                <p className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.2em] text-desa-blue-950/40 dark:text-white/40 group-hover:text-desa-blue-950/60 dark:group-hover:text-white/60 transition-colors">{stat.label}</p>
               </div>
             </div>
-            <div className={`absolute -right-12 -top-12 h-40 w-40 rounded-full blur-[80px] opacity-0 transition-opacity duration-700 group-hover:opacity-30 ${stat.bg}`} />
           </div>
         ))}
       </section>
 
       {/* Quick Access Section */}
-      <section className="space-y-4 md:space-y-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 px-4">
-          <div className="space-y-1 md:space-y-2">
+      <section className="space-y-8 md:space-y-12">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 px-4">
+          <div className="space-y-2 md:space-y-3">
             <div className="flex items-center gap-4">
-              <div className="h-6 md:h-10 w-1.5 md:w-2 rounded-full bg-desa-blue-900 dark:bg-desa-yellow-500 shadow-lg shadow-desa-blue-900/20" />
-              <h3 className="font-timeless text-xl md:text-3xl font-black text-desa-blue-950 dark:text-white">Layanan Mandiri</h3>
+              <div className="h-8 md:h-10 w-1.5 rounded-full bg-desa-blue-900 dark:bg-desa-yellow-500" />
+              <h3 className="font-timeless text-xl md:text-4xl font-black text-desa-blue-950 dark:text-white tracking-tighter uppercase">Layanan Mandiri</h3>
             </div>
-            <p className="text-[11px] md:text-sm font-medium text-desa-blue-950/40 dark:text-white/50 max-w-xl">
-              Ajukan surat administrasi atau pantau status pengajuan Anda dengan mudah.
+            <p className="text-xs md:text-base font-medium text-desa-blue-950/40 dark:text-white/40 max-w-2xl leading-relaxed">
+              Ajukan surat administrasi atau pantau status pengajuan Anda dengan mudah melalui portal digital kami.
             </p>
           </div>
         </div>
         
-        <div className="grid gap-6 md:gap-8 sm:grid-cols-2">
+        <div className="grid gap-6 md:gap-10 sm:grid-cols-2">
           <Link 
-            href="/layanan/surat"
-            className="hero-reveal group relative overflow-hidden rounded-[32px] md:rounded-[40px] bg-white dark:bg-desa-blue-900/40 p-6 md:p-12 shadow-xl shadow-desa-blue-900/5 border border-desa-blue-900/5 dark:border-white/5 transition-all hover:-translate-y-3 hover:shadow-2xl active:scale-95"
-            style={{ animationDelay: '300ms' }}
+            href="/layanan/pengajuan?type=pindah"
+            className="hero-reveal group relative overflow-hidden rounded-[32px] md:rounded-[48px] bg-white dark:bg-desa-blue-900/40 p-8 md:p-14 shadow-[0_40px_100px_rgba(0,0,0,0.03)] dark:shadow-none border border-desa-blue-900/5 dark:border-white/5 transition-all duration-700 hover:-translate-y-3 hover:shadow-2xl active:scale-[0.98]"
+            style={{ animationDelay: '450ms' }}
           >
-            <div className="flex items-start justify-between mb-6 md:mb-10">
-              <div className="flex h-14 w-14 md:h-20 md:w-20 items-center justify-center rounded-[24px] md:rounded-[28px] bg-desa-blue-900 text-white shadow-xl shadow-desa-blue-900/20 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
-                <FileText size={28} className="md:w-10 md:h-10" />
+            <div className="flex items-start justify-between mb-10 md:mb-16">
+              <div className="flex h-14 w-14 md:h-20 md:w-20 items-center justify-center rounded-[20px] md:rounded-[24px] bg-desa-blue-900 text-white shadow-lg transform transition-all duration-700 group-hover:scale-110 group-hover:rotate-6">
+                <FileText size={28} className="md:size-10" />
               </div>
-              <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-desa-blue-50 dark:bg-white/5 text-desa-blue-950 dark:text-white transition-all group-hover:bg-desa-blue-900 group-hover:text-white dark:group-hover:bg-desa-yellow-500 dark:group-hover:text-desa-blue-950">
-                <ArrowRight size={20} className="md:size-[24px]" />
+              <div className="flex h-10 w-10 md:h-14 md:w-14 items-center justify-center rounded-full bg-desa-blue-50 dark:bg-white/5 text-desa-blue-950 dark:text-white transition-all duration-500 group-hover:bg-desa-blue-900 group-hover:text-white dark:group-hover:bg-desa-yellow-500 dark:group-hover:text-desa-blue-950 group-hover:rotate-45">
+                <ArrowRight size={20} className="md:size-7" />
               </div>
             </div>
-            <div className="space-y-1 md:space-y-2">
-              <h4 className="text-lg md:text-2xl font-black text-desa-blue-950 dark:text-white leading-tight group-hover:text-desa-blue-900 dark:group-hover:text-desa-yellow-500 transition-colors">
-                Ajukan Layanan Surat
+            <div className="space-y-3 md:space-y-5">
+              <h4 className="font-timeless text-xl md:text-3xl font-black text-desa-blue-950 dark:text-white leading-tight group-hover:text-desa-blue-900 dark:group-hover:text-desa-yellow-500 transition-colors tracking-tighter uppercase">
+                Ajukan <br className="hidden md:block" /> Layanan Surat
               </h4>
-              <p className="text-[10px] md:text-sm font-medium text-desa-blue-950/40 dark:text-white/50 leading-relaxed max-w-sm">
-                Mulai pengajuan surat pindah, akta, KK, KTP, dan lainnya secara digital.
+              <p className="text-xs md:text-base font-medium text-desa-blue-950/40 dark:text-white/40 leading-relaxed max-w-xs">
+                Mulai pengajuan surat pindah, akta, KK, KTP, dan administrasi lainnya secara instan.
               </p>
             </div>
-            <div className="absolute -right-8 -bottom-8 h-40 w-40 rounded-full bg-desa-blue-900/5 blur-[60px] group-hover:bg-desa-blue-900/10 transition-all duration-700" />
           </Link>
 
           <Link 
             href="/layanan/status"
-            className="hero-reveal group relative overflow-hidden rounded-[32px] md:rounded-[40px] bg-white dark:bg-desa-blue-900/40 p-6 md:p-12 shadow-xl shadow-desa-blue-900/5 border border-desa-blue-900/5 dark:border-white/5 transition-all hover:-translate-y-3 hover:shadow-2xl active:scale-95"
-            style={{ animationDelay: '400ms' }}
+            className="hero-reveal group relative overflow-hidden rounded-[32px] md:rounded-[48px] bg-white dark:bg-desa-blue-900/40 p-8 md:p-14 shadow-[0_40px_100px_rgba(0,0,0,0.03)] dark:shadow-none border border-desa-blue-900/5 dark:border-white/5 transition-all duration-700 hover:-translate-y-3 hover:shadow-2xl active:scale-[0.98]"
+            style={{ animationDelay: '600ms' }}
           >
-            <div className="flex items-start justify-between mb-6 md:mb-10">
-              <div className="flex h-14 w-14 md:h-20 md:w-20 items-center justify-center rounded-[24px] md:rounded-[28px] bg-emerald-600 text-white shadow-xl shadow-emerald-600/20 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
-                <History size={28} className="md:w-10 md:h-10" />
+            <div className="flex items-start justify-between mb-10 md:mb-16">
+              <div className="flex h-14 w-14 md:h-20 md:w-20 items-center justify-center rounded-[20px] md:rounded-[24px] bg-emerald-600 text-white shadow-lg transform transition-all duration-700 group-hover:scale-110 group-hover:rotate-6">
+                <History size={28} className="md:size-10" />
               </div>
-              <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-emerald-50 dark:bg-white/5 text-emerald-600 dark:text-emerald-400 transition-all group-hover:bg-emerald-600 group-hover:text-white">
-                <ArrowRight size={20} className="md:size-[24px]" />
+              <div className="flex h-10 w-10 md:h-14 md:w-14 items-center justify-center rounded-full bg-emerald-50 dark:bg-white/5 text-emerald-600 dark:text-emerald-400 transition-all duration-500 group-hover:bg-emerald-600 group-hover:text-white group-hover:rotate-45">
+                <ArrowRight size={20} className="md:size-7" />
               </div>
             </div>
-            <div className="space-y-1 md:space-y-2">
-              <h4 className="text-lg md:text-2xl font-black text-desa-blue-950 dark:text-white leading-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-                Riwayat Pengajuan
+            <div className="space-y-3 md:space-y-5">
+              <h4 className="font-timeless text-xl md:text-3xl font-black text-desa-blue-950 dark:text-white leading-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors tracking-tighter uppercase">
+                Pantau <br className="hidden md:block" /> Riwayat Berkas
               </h4>
-              <p className="text-[10px] md:text-sm font-medium text-desa-blue-950/40 dark:text-white/50 leading-relaxed max-w-sm">
-                Pantau status dan tindak lanjut dari surat-surat yang telah Anda ajukan.
+              <p className="text-xs md:text-base font-medium text-desa-blue-950/40 dark:text-white/40 leading-relaxed max-w-xs">
+                Cek progres berkas Anda dan unduh dokumen yang telah selesai diproses oleh admin.
               </p>
             </div>
-            <div className="absolute -right-8 -bottom-8 h-40 w-40 rounded-full bg-emerald-600/5 blur-[60px] group-hover:bg-emerald-600/10 transition-all duration-700" />
           </Link>
         </div>
       </section>

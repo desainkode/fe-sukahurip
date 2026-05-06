@@ -3,7 +3,8 @@
 import { ArrowRight, Leaf, Calendar } from "lucide-react";
 import { SectionHeader } from "./ui/SectionHeader";
 import Image from "next/image";
-import { INFORMASI_TERKINI } from "../config/home-data";
+import Link from "next/link";
+import { mockNews } from "../../berita/config/mock-data";
 
 export default function NewsSection() {
   return (
@@ -23,10 +24,10 @@ export default function NewsSection() {
 
         <div className="relative -mx-6 overflow-hidden px-6 lg:mx-0 lg:px-0">
           <div className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6 pt-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 xl:grid-cols-4 lg:overflow-visible lg:pb-0 lg:pt-0">
-            {INFORMASI_TERKINI.map((item, index) => (
-              <button
-                key={index}
-                type="button"
+            {mockNews.map((item, index) => (
+              <Link
+                key={item.id}
+                href={`/berita/${item.slug}`}
                 className="hero-reveal group relative flex h-full w-[280px] shrink-0 snap-start flex-col overflow-hidden rounded-[32px] bg-[#F4F3EE] border border-[#000418]/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl text-left md:w-[340px] lg:w-full"
                 style={{ animationDelay: `${200 + index * 100}ms` }}
               >
@@ -41,7 +42,7 @@ export default function NewsSection() {
                 <div className="absolute inset-0 bg-linear-to-t from-[#040922]/80 via-transparent to-transparent" />
                 <span className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-[#FFC400] px-3 py-1.5 text-[10px] font-black text-[#040922] shadow-lg">
                   <Leaf size={14} strokeWidth={3} />
-                  BERITA TERBARU
+                  {item.category.name.toUpperCase()}
                 </span>
               </div>
 
@@ -49,15 +50,15 @@ export default function NewsSection() {
               <div className="flex flex-1 flex-col p-5">
                 <div className="mb-4 flex items-center gap-1.5 text-[11px] font-bold text-[#040922]/40 uppercase tracking-widest">
                   <Calendar size={14} />
-                  <span>Januari 2024</span>
+                  <span>{item.publishedAt}</span>
                 </div>
                 
-                <h3 className="font-timeless text-[20px] font-bold leading-tight text-[#040922] group-hover:text-[#ffc600] transition-colors">
+                <h3 className="font-timeless text-[20px] font-bold leading-tight text-[#040922] group-hover:text-[#072ac8] transition-colors">
                   {item.title}
                 </h3>
                 
                 <p className="mt-4 text-[13px] leading-relaxed text-[#040922]/60 line-clamp-3">
-                  {item.description}
+                  {item.excerpt}
                 </p>
                 
                 <div className="mt-auto pt-4 flex items-center justify-between">
@@ -67,7 +68,7 @@ export default function NewsSection() {
                   </div>
                 </div>
               </div>
-            </button>
+            </Link>
           ))}
           
           {/* Extra Spacer for mobile scroll-end */}
