@@ -1,3 +1,5 @@
+"use client";
+
 import { stuntingContent } from '../config/infografis-content'
 import { StuntingIndicatorCard } from './stunting/StuntingIndicatorCard'
 import { StuntingAgeGroupCard } from './stunting/StuntingAgeGroupCard'
@@ -8,9 +10,9 @@ import { SectionHeader } from '../../home/components/ui/SectionHeader'
 
 export function StuntingSection() {
   return (
-    <div className="mx-auto w-full max-w-7xl space-y-12 px-4 py-6 md:space-y-24 md:px-0 md:py-8">
+    <div className="mx-auto w-full max-w-7xl space-y-10 px-4 py-6 sm:space-y-14 md:space-y-24 md:px-0 md:py-8">
       {/* Statistik Stunting Section */}
-      <section className="space-y-10">
+      <section className="space-y-6 sm:space-y-8 md:space-y-10">
         <SectionHeader 
           title={["Statistik", "Stunting"]}
           description={stuntingContent.description}
@@ -28,7 +30,7 @@ export function StuntingSection() {
       </section>
 
       {/* Prevalensi Usia Section */}
-      <section className="space-y-10">
+      <section className="space-y-6 sm:space-y-8 md:space-y-10">
         <SectionHeader 
           title={["Prevalensi", "Usia"]}
           description="Prevalensi Usia merupakan persentase kasus stunting yang dihitung berdasarkan kelompok usia tertentu, sebagai gambaran tingkat kejadian pada setiap rentang umur anak di suatu wilayah."
@@ -36,19 +38,17 @@ export function StuntingSection() {
           icon={Share2}
         />
 
-        <div className="overflow-x-auto pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          <div className="flex gap-4 w-max min-w-full">
-            {stuntingContent.prevalenceByAge?.map((data, index) => (
-              <div key={index} className="hero-reveal w-[200px] shrink-0 sm:w-[260px]" style={{ animationDelay: `${300 + index * 100}ms` }}>
-                <StuntingAgeGroupCard data={data} />
-              </div>
-            ))}
-          </div>
+        <div className="grid grid-cols-2 gap-3.5 sm:gap-6 lg:grid-cols-3 xl:grid-cols-5">
+          {stuntingContent.prevalenceByAge?.map((data, index) => (
+            <div key={index} className="hero-reveal" style={{ animationDelay: `${300 + index * 100}ms` }}>
+              <StuntingAgeGroupCard data={data} />
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Tren Stunting Section */}
-      <section className="space-y-10">
+      <section className="space-y-6 sm:space-y-8 md:space-y-10">
         <SectionHeader 
           title={["Tren", "Stunting"]}
           description="Gambaran perubahan persentase stunting dalam suatu wilayah dari waktu ke waktu, yang menunjukkan peningkatan atau penurunan angka kejadian stunting."
@@ -64,7 +64,7 @@ export function StuntingSection() {
       </section>
 
       {/* Program Stunting Section */}
-      <section className="space-y-10">
+      <section className="space-y-6 sm:space-y-8 md:space-y-10">
         <SectionHeader 
           title={["Program", "Stunting"]}
           description="Merupakan rangkaian kegiatan dan upaya yang dilaksanakan untuk mencegah dan menurunkan angka stunting melalui peningkatan gizi, pelayanan kesehatan, serta edukasi kepada masyarakat."
@@ -72,12 +72,14 @@ export function StuntingSection() {
           icon={ClipboardList}
         />
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
-          {stuntingContent.programs?.map((program, index) => (
-            <div key={index} className="hero-reveal" style={{ animationDelay: `${500 + index * 100}ms` }}>
-              <StuntingProgramCard program={program} />
-            </div>
-          ))}
+        <div className="overflow-x-auto pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="flex gap-4 w-max min-w-full">
+            {stuntingContent.programs?.map((program, index) => (
+              <div key={index} className="hero-reveal w-[280px] shrink-0 sm:w-[320px]" style={{ animationDelay: `${500 + index * 100}ms` }}>
+                <StuntingProgramCard program={program} />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>

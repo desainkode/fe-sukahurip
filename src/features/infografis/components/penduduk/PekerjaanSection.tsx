@@ -24,7 +24,7 @@ export function PekerjaanSection() {
           icon={Briefcase}
         />
 
-        <div className="hero-reveal grid grid-cols-2 gap-4 md:grid-cols-3 lg:gap-5" style={{ animationDelay: "180ms" }}>
+        <div className="hero-reveal grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:gap-5" style={{ animationDelay: "180ms" }}>
           {PEKERJAAN_TOP_CARDS.map((item, idx) => (
             <PekerjaanTopCard
               key={`${item.nama}-${idx}`}
@@ -38,20 +38,20 @@ export function PekerjaanSection() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
-          <div className="hero-reveal relative overflow-hidden rounded-[24px] bg-linear-to-br from-[#FFC400] to-[#DEAA00] p-6 sm:p-8 md:p-10" style={{ animationDelay: "260ms" }}>
+          <div className="hero-reveal relative overflow-hidden rounded-[24px] bg-linear-to-br from-[#FFC400] to-[#DEAA00] p-5 sm:p-8 md:p-10" style={{ animationDelay: "260ms" }}>
             <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/5 blur-3xl" />
             <div className="pointer-events-none absolute -bottom-12 -left-12 h-40 w-40 rounded-full bg-black/5 blur-2xl" />
 
             <div className="relative z-10">
-              <div className="mb-8 flex items-center justify-between">
-                <h3 className="font-[Georgia,serif] text-[28px] font-bold leading-[1.2] text-white md:text-[32px]">
+              <div className="mb-6 flex items-center justify-between sm:mb-8">
+                <h3 className="font-timeless text-[22px] font-bold leading-[1.2] text-white sm:text-[28px] md:text-[32px]">
                   Jenis
                   <br />
                   Pekerjaan
                 </h3>
                 <Link
                   href="/infografis/pekerjaan?section=pertanian"
-                  className="inline-flex items-center gap-2 rounded-lg border border-white/30 bg-white/10 px-4 py-2 text-[12px] font-bold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20"
+                  className="inline-flex items-center gap-2 rounded-lg border border-white/30 bg-white/10 px-3 py-1.5 text-[10px] font-bold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20 sm:px-4 sm:py-2 sm:text-[12px]"
                 >
                   View All <span>→</span>
                 </Link>
@@ -74,20 +74,20 @@ export function PekerjaanSection() {
             </div>
           </div>
 
-          <div className="hero-reveal relative overflow-hidden rounded-[24px] bg-linear-to-br from-[#072ac8] to-[#000F52] p-6 sm:p-8 md:p-10" style={{ animationDelay: "340ms" }}>
+          <div className="hero-reveal relative overflow-hidden rounded-[24px] bg-linear-to-br from-[#072ac8] to-[#000F52] p-5 sm:p-8 md:p-10" style={{ animationDelay: "340ms" }}>
             <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/5 blur-3xl" />
             <div className="pointer-events-none absolute -bottom-12 -left-12 h-40 w-40 rounded-full bg-black/10 blur-2xl" />
 
             <div className="relative z-10">
-              <div className="mb-8 flex items-center justify-between">
-                <h3 className="font-[Georgia,serif] text-[28px] font-bold leading-[1.2] text-white md:text-[32px]">
+              <div className="mb-6 flex items-center justify-between sm:mb-8">
+                <h3 className="font-timeless text-[22px] font-bold leading-[1.2] text-white sm:text-[28px] md:text-[32px]">
                   Jenis
                   <br />
                   Pekerjaan
                 </h3>
                 <Link
                   href="/infografis/pekerjaan?section=profesional"
-                  className="inline-flex items-center gap-2 rounded-lg border border-white/30 bg-white/10 px-4 py-2 text-[12px] font-bold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20"
+                  className="inline-flex items-center gap-2 rounded-lg border border-white/30 bg-white/10 px-3 py-1.5 text-[10px] font-bold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20 sm:px-4 sm:py-2 sm:text-[12px]"
                 >
                   View All <span>→</span>
                 </Link>

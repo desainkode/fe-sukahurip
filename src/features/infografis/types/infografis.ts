@@ -84,6 +84,7 @@ export interface BansosDistributionData {
   dusun: string
   keluarga: number
   alokasi: string
+  color?: string
 }
 
 export interface BansosBenefitType {

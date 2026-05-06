@@ -18,7 +18,7 @@ export function JumlahPendudukSection() {
           icon={Info}
         />
 
-        <div className="hero-reveal grid grid-cols-2 gap-4 md:grid-cols-2 xl:grid-cols-3" style={{ animationDelay: "180ms" }}>
+        <div className="hero-reveal grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3" style={{ animationDelay: "180ms" }}>
           {KARTU_JUMLAH_PENDUDUK.map((item, idx) => (
             <JumlahPendudukCard
               key={`${item.label}-${idx}`}

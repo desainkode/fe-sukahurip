@@ -17,9 +17,9 @@ export function DemografiSection() {
         icon={Info}
       />
 
-      <div className="mt-8 px-2">
+      <div className="mt-8 px-1 sm:px-2">
         <div
-          className="hero-reveal grid grid-cols-2 gap-4 sm:gap-8 lg:grid-cols-4 xl:gap-16"
+          className="hero-reveal grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4 xl:gap-10"
           style={{ animationDelay: "300ms" }}
         >
           {KARTU_DEMOGRAFI.map((item, idx) => (
