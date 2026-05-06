@@ -24,7 +24,7 @@ export function BansosDistributionCard({ data }: BansosDistributionCardProps) {
       
       <div className="flex items-center gap-3 relative z-10">
         <div className={`p-2.5 ${isGoldBg ? 'bg-black/5' : 'bg-white/10'} rounded-xl backdrop-blur-md border border-white/10 transition-all group-hover:bg-[#FFC400] group-hover:text-[#000418] group-hover:rotate-12`}>
-          <User size={18} className={`${iconColor} sm:size-20`} />
+          <User size={18} className={`${iconColor} sm:w-5 sm:h-5`} />
         </div>
         <div className="flex flex-col">
           <span className={`text-[9px] font-bold uppercase tracking-widest ${labelColor} font-timeless sm:text-[10px]`}>Dusun</span>

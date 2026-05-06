@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { Calendar, User, Clock, ArrowRight } from "lucide-react";
@@ -9,60 +11,61 @@ interface NewsCardProps {
 
 export function NewsCard({ news }: NewsCardProps) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-[24px] border border-[#000418]/5 bg-white shadow-[0_12px_40px_rgba(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,4,24,0.08)] sm:rounded-[32px]">
+    <article className="group flex h-full flex-col overflow-hidden rounded-[32px] border border-white bg-white shadow-xl shadow-black/[0.03] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
       {/* Image Section */}
-      <div className="relative h-40 w-full overflow-hidden sm:h-64">
+      <div className="relative aspect-video w-full overflow-hidden sm:aspect-[16/10]">
         <img
           src={news.image}
           alt={news.title}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110"
         />
-        <div className="absolute left-3 top-3 sm:left-4 sm:top-4">
-          <span className="rounded-full bg-white/90 px-3 py-1 text-[8px] font-bold uppercase tracking-widest text-[#000418] backdrop-blur-md shadow-sm sm:px-4 sm:py-1.5 sm:text-[11px]">
+        <div className="absolute inset-0 bg-gradient-to-t from-[#000418]/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        <div className="absolute left-4 top-4 sm:left-6 sm:top-6">
+          <span className="rounded-full bg-[#FFC400] px-4 py-1.5 text-[9px] font-black uppercase tracking-widest text-[#000418] shadow-xl sm:px-5 sm:py-2 sm:text-[10px]">
             {news.category.name}
           </span>
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="flex flex-1 flex-col p-4 sm:p-8">
-        <div className="mb-3 flex flex-wrap items-center gap-2 text-[10px] text-[#000418]/50 sm:mb-4 sm:gap-4 sm:text-[12px]">
-          <div className="flex items-center gap-1.5">
-            <Calendar size={14} className="sm:size-4" />
+      <div className="flex flex-1 flex-col p-6 sm:p-8">
+        <div className="mb-4 flex flex-wrap items-center gap-4 text-[10px] font-black uppercase tracking-widest text-[#072ac8]/40 sm:mb-6">
+          <div className="flex items-center gap-2">
+            <Calendar size={14} strokeWidth={2.5} />
             {news.publishedAt}
           </div>
-          <div className="flex items-center gap-1.5">
-            <Clock size={14} className="sm:size-4" />
-            {news.readingTime}
+          <div className="flex items-center gap-2">
+            <Clock size={14} strokeWidth={2.5} />
+            {news.readingTime} MIN
           </div>
         </div>
 
-        <h3 className="mb-3 font-[Georgia,serif] text-base font-bold leading-snug text-[#000418] transition-colors group-hover:text-[#072ac8] sm:mb-4 sm:text-2xl">
+        <h3 className="mb-4 font-timeless text-[20px] font-bold leading-tight text-[#000418] transition-colors group-hover:text-[#072ac8] sm:mb-6 sm:text-[24px]">
           <Link href={`/berita/${news.slug}`}>
             {news.title}
           </Link>
         </h3>
 
-        <p className="mb-6 line-clamp-2 text-[12px] leading-relaxed text-[#000418]/60 sm:mb-8 sm:line-clamp-3 sm:text-[14px]">
+        <p className="mb-8 line-clamp-2 text-[14px] leading-relaxed text-[#000418]/60 font-medium sm:line-clamp-3">
           {news.excerpt}
         </p>
 
-        <div className="mt-auto flex items-center justify-between border-t border-[#000418]/5 pt-4 sm:pt-6">
-          <div className="flex items-center gap-2 sm:gap-3">
-            <div className="h-8 w-8 overflow-hidden rounded-full border border-[#000418]/10 bg-[#F6F6F8] sm:h-10 sm:w-10">
+        <div className="mt-auto flex items-center justify-between border-t border-[#000418]/5 pt-6 sm:pt-8">
+          <div className="flex items-center gap-3">
+            <div className="h-10 w-10 overflow-hidden rounded-xl border-2 border-white bg-neutral-50 shadow-md sm:h-12 sm:w-12">
               <img src={news.author.avatar} alt={news.author.name} className="h-full w-full object-cover" />
             </div>
             <div className="hidden sm:block">
-              <p className="text-[13px] font-bold text-[#000418]">{news.author.name}</p>
-              <p className="text-[11px] text-[#000418]/50">{news.author.role}</p>
+              <p className="font-timeless text-[14px] font-bold leading-none text-[#000418]">{news.author.name}</p>
+              <p className="mt-1 text-[10px] font-black uppercase tracking-widest text-[#000418]/40">{news.author.role}</p>
             </div>
           </div>
 
           <Link
             href={`/berita/${news.slug}`}
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-[#000418]/5 text-[#000418] transition-all duration-300 group-hover:bg-[#072ac8] group-hover:text-white sm:h-11 sm:w-11"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-[#000418] text-[#FFC400] shadow-lg transition-all duration-300 hover:scale-110 active:scale-95 sm:h-12 sm:w-12"
           >
-            <ArrowRight size={18} className="sm:size-5" />
+            <ArrowRight size={20} strokeWidth={2.5} />
           </Link>
         </div>
       </div>

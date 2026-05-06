@@ -37,7 +37,7 @@ export function BansosIndicatorCard({ indicator }: BansosIndicatorCardProps) {
         <div className="flex items-center gap-3 sm:gap-4">
           <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${isGoldBg ? 'bg-black/5' : 'bg-white/10'} shadow-inner backdrop-blur-md transition-all group-hover:rotate-6 sm:h-14 sm:w-14 sm:rounded-2xl`}>
             <Icon 
-              className={`size-5 sm:size-7 ${iconColor}`} 
+              className={`size-5 sm:size-8 ${iconColor}`} 
             />
           </div>
           <h3 className={`text-[13px] font-black leading-tight tracking-tight font-timeless ${labelColor} sm:text-lg sm:leading-[1.1]`}>

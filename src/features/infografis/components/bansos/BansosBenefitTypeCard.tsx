@@ -23,7 +23,7 @@ export function BansosBenefitTypeCard({ type }: BansosBenefitTypeCardProps) {
       <div className="flex items-center justify-between relative z-10">
         <div className="flex items-center gap-3">
           <div className={`p-2.5 ${isGoldBg ? 'bg-black/5' : 'bg-white/10'} rounded-xl backdrop-blur-md border border-white/10 transition-all group-hover:rotate-12`}>
-            <LayoutGrid size={18} className={`${iconColor} sm:size-20`} />
+            <LayoutGrid size={18} className={`${iconColor} sm:w-5 sm:h-5`} />
           </div>
           <h3 className={`text-[15px] font-black leading-tight tracking-tight font-timeless ${nameColor} sm:text-xl`}>
             {type.name}

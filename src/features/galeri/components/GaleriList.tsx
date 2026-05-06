@@ -22,14 +22,14 @@ export function GaleriList() {
   return (
     <div id="gallery-content" className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
       {/* Search & Filter Bar */}
-      <div className="mb-12 flex flex-col gap-4 md:mb-16 lg:flex-row lg:items-center lg:justify-between lg:gap-6">
+      <div className="mb-10 flex flex-col gap-6 md:mb-16 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
         <div className="flex-1 max-w-2xl">
           <div className="group relative">
-            <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-[#000418]/30" size={24} />
+            <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-[#000418]/30 transition-colors group-focus-within:text-[#072ac8]" size={22} />
             <input
               type="text"
               placeholder="Cari dokumentasi kegiatan..."
-              className="h-14 w-full rounded-full border border-white bg-white pl-12 pr-6 text-[14px] font-medium shadow-[0_15px_40px_rgba(0,0,0,0.04)] outline-none focus:ring-4 focus:ring-[#000418]/5 transition-all sm:h-16 sm:pl-14 sm:pr-8 sm:text-[15px]"
+              className="h-14 w-full rounded-[20px] border border-white bg-white pl-12 pr-6 text-[14px] font-medium text-black shadow-xl shadow-black/[0.03] outline-none ring-offset-2 transition-all focus:border-[#072ac8]/20 focus:ring-4 focus:ring-[#072ac8]/5 sm:h-16 sm:rounded-full sm:pl-14 sm:pr-8 sm:text-[15px]"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -41,10 +41,10 @@ export function GaleriList() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`whitespace-nowrap rounded-full px-5 py-2.5 text-[12px] font-bold transition-all sm:px-6 sm:py-3 sm:text-[13px] ${
+              className={`whitespace-nowrap rounded-full px-5 py-2.5 text-[11px] font-bold transition-all sm:px-6 sm:py-3 sm:text-[13px] ${
                 activeCategory === cat
-                  ? "bg-[#000418] text-white shadow-lg shadow-[#000418]/20"
-                  : "bg-white text-[#000418] border border-[#000418]/5 hover:bg-[#F6F6F8]"
+                  ? "bg-[#072ac8] text-white shadow-lg shadow-[#072ac8]/20"
+                  : "bg-white text-[#000418] border border-[#000418]/5 hover:bg-neutral-50"
               }`}
             >
               {cat}
@@ -56,9 +56,11 @@ export function GaleriList() {
       {/* Grid */}
       {filteredItems.length > 0 ? (
         <>
-          <div className="grid grid-cols-2 gap-4 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
             {filteredItems.slice(0, displayCount).map((item) => (
-              <GaleriCard key={item.id} item={item} />
+              <div key={item.id} className="hero-reveal" style={{ animationDelay: '100ms' }}>
+                <GaleriCard item={item} />
+              </div>
             ))}
           </div>
           
@@ -75,10 +77,12 @@ export function GaleriList() {
           )}
         </>
       ) : (
-        <div className="flex flex-col items-center justify-center rounded-[40px] border-2 border-dashed border-[#000418]/10 py-32 text-center">
-          <Search size={40} className="mb-6 text-[#000418]/20" />
+        <div className="flex flex-col items-center justify-center rounded-[40px] border-2 border-dashed border-[#000418]/10 py-32 text-center bg-white/50 backdrop-blur-sm">
+          <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#000418]/5 text-[#000418]/20">
+            <Search size={40} strokeWidth={1.5} />
+          </div>
           <h3 className="text-xl font-bold text-[#000418]">Dokumentasi Tidak Ditemukan</h3>
-          <p className="mt-2 text-[#000418]/50">Maaf, kami tidak dapat menemukan momen yang Anda cari.</p>
+          <p className="mt-2 text-[#000418]/50 max-w-xs">Maaf, kami tidak dapat menemukan momen yang Anda cari. Coba kata kunci lain.</p>
         </div>
       )}
     </div>

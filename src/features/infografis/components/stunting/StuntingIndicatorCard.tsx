@@ -18,7 +18,8 @@ export function StuntingIndicatorCard({ indicator }: StuntingIndicatorCardProps)
   const Icon = indicator.icon ? iconMap[indicator.icon] : Activity;
 
   // Determine icon and text color based on background
-  const isGoldBg = indicator.color.includes('#FFC400') || indicator.color.includes('#FCC100');
+  const cardColor = indicator.color || 'bg-desa-blue-600';
+  const isGoldBg = cardColor.includes('#FFC400') || cardColor.includes('#FCC100');
   const iconColor = isGoldBg ? 'text-[#072ac8]' : 'text-[#FFC400]';
   const labelColor = isGoldBg ? 'text-[#072ac8]/60' : 'text-[#a2d6f9]';
   const descriptionColor = isGoldBg ? 'text-[#072ac8]/60' : 'text-white/60';
@@ -26,7 +27,7 @@ export function StuntingIndicatorCard({ indicator }: StuntingIndicatorCardProps)
 
   return (
     <div
-      className={`${indicator.color} relative overflow-hidden rounded-[24px] p-5 shadow-xl h-full flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl group border border-white/5 sm:rounded-3xl sm:p-6`}
+      className={`${cardColor} relative overflow-hidden rounded-[24px] p-5 shadow-xl h-full flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl group border border-white/5 sm:rounded-3xl sm:p-6`}
     >
       {/* Premium Glass Overlay */}
       <div className={`absolute inset-0 bg-linear-to-br from-white/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100`} />

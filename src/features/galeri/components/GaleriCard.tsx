@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { Calendar, ArrowRight, Play, Image as ImageIcon } from "lucide-react";
@@ -9,58 +11,58 @@ interface GaleriCardProps {
 
 export function GaleriCard({ item }: GaleriCardProps) {
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-[24px] border border-white bg-white shadow-[0_15px_45px_rgba(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,4,24,0.1)] sm:rounded-[40px]">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-[32px] border border-white bg-white shadow-xl shadow-black/[0.03] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
       {/* Thumbnail */}
-      <div className="relative h-40 w-full overflow-hidden sm:h-64">
+      <div className="relative aspect-video w-full overflow-hidden sm:aspect-[4/3]">
         <img 
           src={item.image} 
           alt={item.title} 
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#000418]/80 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#000418]/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
         
-        <div className="absolute left-3 top-3 sm:left-6 sm:top-6">
-          <span className="rounded-full bg-white/90 px-3 py-1 text-[8px] font-bold uppercase tracking-widest text-[#000418] backdrop-blur-md shadow-sm sm:px-4 sm:py-1.5 sm:text-[10px]">
+        <div className="absolute left-4 top-4 sm:left-6 sm:top-6">
+          <span className="rounded-full bg-white/20 px-3 py-1.5 text-[9px] font-black uppercase tracking-widest text-white backdrop-blur-md border border-white/10 shadow-sm sm:px-4 sm:py-2 sm:text-[10px]">
             {item.category}
           </span>
         </div>
 
         {/* Media Icon Overlay */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-500 group-hover:opacity-100">
-          <div className="flex h-12 w-12 scale-75 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-md transition-transform duration-500 group-hover:scale-100 sm:h-16 sm:w-16">
-            {item.videoUrl ? <Play size={24} className="sm:size-8" /> : <ImageIcon size={24} className="sm:size-8" />}
+          <div className="flex h-14 w-14 scale-50 items-center justify-center rounded-full bg-[#FFC400] text-[#000418] shadow-2xl transition-all duration-500 group-hover:scale-100">
+            {item.videoUrl ? <Play size={24} fill="currentColor" /> : <ImageIcon size={24} />}
           </div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="flex flex-1 flex-col p-4 sm:p-8">
-        <div className="mb-2 flex items-center gap-2 text-[10px] font-medium text-[#000418]/40 sm:mb-4 sm:gap-3 sm:text-[12px]">
-          <Calendar size={14} className="sm:size-4" />
+      <div className="flex flex-1 flex-col p-6 sm:p-8">
+        <div className="mb-3 flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[#072ac8]/40 sm:mb-4">
+          <Calendar size={14} strokeWidth={2.5} />
           {item.date}
         </div>
 
-        <h3 className="mb-2 font-[Georgia,serif] text-base font-bold leading-tight text-[#000418] transition-colors group-hover:text-[#072ac8] sm:mb-4 sm:text-xl">
+        <h3 className="mb-3 font-timeless text-[20px] font-bold leading-tight text-[#000418] transition-colors group-hover:text-[#072ac8] sm:mb-4 sm:text-[22px]">
           <Link href={`/galeri/${item.slug}`}>
             {item.title}
           </Link>
         </h3>
 
-        <p className="mb-4 line-clamp-2 text-[12px] leading-relaxed text-[#000418]/60 sm:mb-8 sm:text-[14px]">
+        <p className="mb-6 line-clamp-2 text-[14px] leading-relaxed text-[#000418]/60 sm:mb-8">
           {item.shortDesc}
         </p>
 
-        <div className="mt-auto flex items-center justify-between border-t border-[#000418]/5 pt-4 sm:pt-6">
+        <div className="mt-auto flex items-center justify-between border-t border-[#000418]/5 pt-5 sm:pt-6">
           <Link 
             href={`/galeri/${item.slug}`}
-            className="flex items-center gap-1 text-[11px] font-bold text-[#000418] transition-colors hover:text-[#072ac8] sm:gap-2 sm:text-[13px]"
+            className="flex items-center gap-2 text-[13px] font-black text-[#000418] transition-all hover:text-[#072ac8] hover:translate-x-1"
           >
-            <span className="sm:inline">Detail</span>
-            <ArrowRight size={14} className="sm:size-4" />
+            DETAIL MOMEN
+            <ArrowRight size={16} strokeWidth={2.5} />
           </Link>
           
-          <span className="text-[9px] font-bold uppercase tracking-widest text-[#000418]/20 sm:text-[11px]">
-            {item.photos.length} Foto
+          <span className="text-[11px] font-bold uppercase tracking-widest text-[#000418]/20">
+            {item.photos.length} FOTO
           </span>
         </div>
       </div>

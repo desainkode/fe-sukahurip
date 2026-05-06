@@ -26,8 +26,8 @@ export function BansosAllocationCard({ summary }: BansosAllocationCardProps) {
           </p>
         </div>
         
-        <div className="w-9 h-9 bg-black/30 backdrop-blur-md rounded-full flex items-center justify-center border border-white/10 transition-all duration-300 group-hover:bg-[#FFC400] group-hover:text-[#000418] group-hover:rotate-45 sm:w-10 sm:h-10">
-          <ArrowUpRight size={18} className="transition-transform sm:size-20" />
+        <div className="w-9 h-9 bg-black/30 backdrop-blur-md rounded-full flex items-center justify-center border border-white/10 transition-all duration-300 group-hover:bg-[#FFC400] group-hover:text-[#000418] group-hover:rotate-45 sm:w-11 sm:h-11">
+          <ArrowUpRight size={18} className="transition-transform sm:w-5 sm:h-5" />
         </div>
       </div>
 
