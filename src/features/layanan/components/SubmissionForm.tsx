@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { ArrowLeft, ArrowRight, Send, CheckCircle2 } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Send, CheckCircle2, User, FileEdit, UploadCloud, ShieldCheck } from 'lucide-react'
 import Link from 'next/link'
 import { StepProgressBar } from './StepProgressBar'
 import { StepDataDiri } from './forms/StepDataDiri'
@@ -30,7 +30,12 @@ export function SubmissionForm({ serviceSlug }: SubmissionFormProps) {
   })
   const [files, setFiles] = useState<Record<string, File | null>>({})
 
-  const steps = ['Data Diri', 'Detail Pengajuan', 'Upload Dokumen', 'Review & Kirim']
+  const steps = [
+    { title: 'Data Diri', icon: User },
+    { title: 'Detail', icon: FileEdit },
+    { title: 'Upload', icon: UploadCloud },
+    { title: 'Review', icon: ShieldCheck }
+  ]
 
   // Define documents per service
   const serviceConfigs: Record<string, { label: string, docs: { id: string, label: string, required: boolean }[] }> = {
