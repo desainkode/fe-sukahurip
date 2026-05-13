@@ -2,6 +2,7 @@
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
 import { usePathname } from "next/navigation";
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
@@ -13,6 +14,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
       {!isLayananPage && <Navbar />}
       <main className="flex-1">{children}</main>
       {!isLayananPage && <Footer />}
+      {!isLayananPage && <ScrollToTop />}
     </>
   );
 }
