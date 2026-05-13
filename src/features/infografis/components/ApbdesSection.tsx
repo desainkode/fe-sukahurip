@@ -41,10 +41,19 @@ export function ApbdesSection() {
         </div>
       </div>
 
-      <div className="grid items-stretch gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="hero-reveal no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 sm:-mx-6 sm:px-6 md:-mx-7 md:px-7 lg:mx-0 lg:grid lg:grid-cols-3 lg:snap-none lg:overflow-visible lg:px-0 lg:pb-0 lg:gap-5 xl:gap-6">
         {apbdesCards.map((card, index) => (
-          <ApbdesCard key={card.title} card={card} index={index} />
+          <div key={card.title} className="w-[280px] shrink-0 snap-center lg:w-auto">
+            <ApbdesCard card={card} index={index} />
+          </div>
         ))}
+      </div>
+
+      {/* Mobile/Tablet Scroll Indicator */}
+      <div className="mt-[-12px] flex justify-center gap-1.5 lg:hidden">
+        <div className="h-1.5 w-6 rounded-full bg-[#072ac8]/30" />
+        <div className="h-1.5 w-1.5 rounded-full bg-[#072ac8]/10" />
+        <div className="h-1.5 w-1.5 rounded-full bg-[#072ac8]/10" />
       </div>
 
       <div className="mt-20 md:mt-24">

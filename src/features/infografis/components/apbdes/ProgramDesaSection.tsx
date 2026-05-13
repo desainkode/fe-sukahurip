@@ -131,12 +131,19 @@ export function ProgramDesaSection() {
         icon={ClipboardList}
       />
 
-      <div className="grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+      <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-8 pt-8 sm:-mx-6 sm:px-6 md:-mx-7 md:px-7 lg:mx-0 lg:grid lg:grid-cols-3 lg:snap-none lg:overflow-visible lg:px-0 lg:pb-0 lg:pt-0 lg:gap-6 xl:gap-8">
         {programs.map((program, index) => (
-          <div key={program.title} style={{ animationDelay: `${200 + index * 100}ms` }}>
+          <div key={program.title} className="w-[280px] shrink-0 snap-center lg:w-auto" style={{ animationDelay: `${200 + index * 100}ms` }}>
             <ProgramCard {...program} />
           </div>
         ))}
+      </div>
+
+      {/* Mobile/Tablet Scroll Indicator */}
+      <div className="mt-[-12px] flex justify-center gap-1.5 lg:hidden">
+        <div className="h-1.5 w-6 rounded-full bg-[#072ac8]/30" />
+        <div className="h-1.5 w-1.5 rounded-full bg-[#072ac8]/10" />
+        <div className="h-1.5 w-1.5 rounded-full bg-[#072ac8]/10" />
       </div>
     </div>
   )

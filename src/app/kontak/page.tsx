@@ -1,212 +1,226 @@
 "use client";
 
 import React from "react";
-import { User, Phone, Mail, ArrowRight, MessageSquare } from "lucide-react";
+import { Phone, Mail, ArrowRight, MessageSquare, MapPin, Clock, ShieldCheck, Landmark, Headphones, Send } from "lucide-react";
+import { SectionHeader } from "@/features/home/components/ui/SectionHeader";
 
 export default function KontakPage() {
   return (
-    <main className="min-h-screen bg-white">
-      {/* Hero Section - Consistency with Infografis */}
-      {/* Hero Section - Consistency with Infografis & Homepage */}
-      <section className="relative flex min-h-[90dvh] flex-col overflow-hidden bg-linear-to-b from-[#000E4F] via-[#000E4F] to-[#000418] pt-24 pb-32 text-[#F4F3EE] md:pt-32">
-        <div className="hero-float pointer-events-none absolute -right-28 -top-44 h-130 w-130 rounded-full bg-[#001260]/30 blur-[110px]" />
-        <div className="hero-float pointer-events-none absolute -bottom-28 -left-24 h-72 w-72 rounded-full bg-[#FFC400]/16 blur-[90px] [animation-delay:900ms]" />
+    <main className="min-h-screen bg-[#F4F7FF]">
+      {/* Hero Section - Immersive & Premium */}
+      <section className="relative flex overflow-hidden bg-linear-to-b from-[#000E4F] via-[#000E4F] to-[#000418] pt-32 pb-48 text-[#F4F3EE] md:pt-44 md:pb-64">
+        {/* Animated Background Gradients */}
+        <div className="hero-float pointer-events-none absolute -right-32 -top-44 h-140 w-140 rounded-full bg-[#072ac8]/25 blur-[120px]" />
+        <div className="hero-float pointer-events-none absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-[#FFC400]/15 blur-[100px] [animation-delay:1200ms]" />
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none" />
 
-        <div className="relative mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-4 md:grid md:grid-cols-1 md:items-center md:gap-5 md:px-10 md:py-6 lg:grid-cols-[minmax(0,1fr)_minmax(320px,400px)] lg:gap-10">
-          <div className="max-w-155 pt-4 md:pt-1">
-            <div className="hero-reveal inline-flex items-center rounded-full border border-[#001260] bg-[#000E4F]/55 px-3 py-1">
-              <span className="mr-2 h-1.5 w-1.5 rounded-full bg-[#FDC200]/70" />
-              <span className="text-[9px] font-medium uppercase tracking-[0.14em] text-[#a2d6f9] md:text-[10px]">
-                HUBUNGI KAMI SEKARANG
+        <div className="relative mx-auto w-full max-w-7xl px-4 md:px-10">
+          <div className="max-w-3xl">
+            <div className="hero-reveal inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-xl">
+              <span className="mr-2 h-2 w-2 rounded-full bg-[#FFC400] animate-pulse" />
+              <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#a2d6f9]">
+                Pusat Bantuan Desa
               </span>
             </div>
             
             <h1
-              className="hero-reveal mt-2 max-w-132 text-[34px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-bold leading-[1.05] tracking-[0.052em] [animation-delay:120ms]"
+              className="hero-reveal mt-8 text-[44px] font-black leading-[1.05] tracking-tight sm:text-[64px] md:text-[82px]"
               style={{ fontFamily: 'var(--font-timeless)' }}
             >
-              <span className="block text-white">Sampaikan,</span>
-              <span className="relative mt-1 block text-[#ffc600]">
-                Aspirasi
-                <span className="absolute -bottom-1 left-[34%] h-0.75 w-[44%] rounded-full bg-[#FFC400] md:h-1" />
-              </span>
-              <span className="mt-1 block text-white">Anda Sekarang</span>
+              <span className="block text-white">Hubungi Kami,</span>
+              <span className="block text-[#FFC400]">Wujudkan Aspirasi.</span>
             </h1>
             
-            <p className="hero-reveal mt-3 max-w-140 text-[10.5px] font-light leading-5 text-[#a2d6f9]/80 sm:text-[11px] md:text-[13px] md:leading-6 [animation-delay:220ms]">
-              Kami siap mendengarkan setiap aspirasi, pertanyaan, maupun masukan Anda demi kemajuan Desa Sukahurip yang lebih baik melalui layanan komunikasi terpadu.
+            <p className="hero-reveal mt-8 max-w-2xl text-base font-medium leading-relaxed text-[#a2d6f9]/80 md:text-xl">
+              Kami berkomitmen memberikan layanan informasi yang transparan dan responsif bagi seluruh warga Desa Sukahurip.
             </p>
 
-            {/* Quick Stats Grid - Consistent with Infografis */}
-            <div className="hero-reveal mt-6 grid grid-cols-3 gap-2 md:gap-4 [animation-delay:350ms]">
-              {[
-                { label: 'Respons Cepat', value: '24/7' },
-                { label: 'Layanan Aktif', value: '99%' },
-                { label: 'Aduan Masuk', value: '1.2k' },
-              ].map((stat, i) => (
-                <div key={i} className="flex flex-col rounded-xl border border-white/5 bg-white/2 p-2.5 backdrop-blur-sm transition-all hover:bg-white/5 md:rounded-2xl md:p-4">
-                  <span className="text-[7px] font-bold uppercase tracking-widest text-[#a2d6f9]/50 md:text-[9px]">{stat.label}</span>
-                  <span className="mt-0.5 text-base font-black text-white md:mt-1 md:text-2xl">{stat.value}</span>
+            <div className="hero-reveal mt-12 grid grid-cols-2 gap-4 lg:w-fit">
+              <div className="flex items-center gap-3 rounded-2xl bg-white/5 px-6 py-5 backdrop-blur-md border border-white/10 transition-all hover:bg-white/10">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#FFC400] text-[#000E4F] shadow-lg shadow-[#FFC400]/20">
+                  <ShieldCheck size={20} strokeWidth={2.5} />
                 </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="hero-reveal relative mx-auto mt-8 w-full max-w-sm [animation-delay:180ms] lg:mt-0 lg:pt-0">
-            <div className="absolute -right-2 top-4 h-full w-full rotate-2 rounded-4xl bg-[#001260]/30" />
-            <div className="absolute -left-3 -top-2 h-full w-full -rotate-2 rounded-4xl border border-[#00167A]/70" />
-
-            <div className="relative h-64 overflow-hidden rounded-3xl bg-linear-to-b from-[#001260] to-[#000418] shadow-[0_18px_36px_-12px_rgba(0,0,0,0.25)] sm:h-88 md:h-112 md:rounded-4xl">
-              <img
-                src="/img/hero-kepala-desa.png"
-                alt="Kepala Desa"
-                className="hero-zoom h-full w-full object-cover"
-                loading="eager"
-              />
-
-              <div className="hero-pulse absolute bottom-3 left-3 right-3 rounded-2xl border border-white/20 bg-black/35 p-2.5 shadow-[0_10px_15px_rgba(0,0,0,0.1),0_4px_6px_rgba(0,0,0,0.1)] backdrop-blur-[2px] md:bottom-4 md:left-4 md:right-4 md:p-3">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <p className="text-[12px] font-bold leading-5 md:text-sm">
-                      Drs. Heri Santoso
-                    </p>
-                    <p className="mt-1 text-[9px] text-[#a2d6f9] md:text-[11px]">
-                      Kepala Desa Sukahurip
-                    </p>
-                  </div>
-                  <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#FFC400] text-xs font-bold text-[#000418] md:h-7 md:w-7">
-                    &quot;
-                  </span>
+                <div>
+                  <p className="text-[9px] font-black uppercase tracking-widest text-[#a2d6f9]/60">Data Warga</p>
+                  <p className="font-timeless text-base font-black text-white">100% Aman</p>
                 </div>
-                <p className="mt-1 text-[9px] italic leading-4 text-[#d0e7ff]/80 md:mt-1.5 md:text-[10px]">
-                  &quot;Kami melayani dengan sepenuh hati demi kemajuan desa.&quot;
-                </p>
+              </div>
+              <div className="flex items-center gap-3 rounded-2xl bg-white/5 px-6 py-5 backdrop-blur-md border border-white/10 transition-all hover:bg-white/10">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#072ac8] text-white shadow-lg shadow-[#072ac8]/20">
+                  <Clock size={20} strokeWidth={2.5} />
+                </div>
+                <div>
+                  <p className="text-[9px] font-black uppercase tracking-widest text-[#a2d6f9]/60">Waktu Respons</p>
+                  <p className="font-timeless text-base font-black text-white">Cepat & Tepat</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Main Content Section: Form & Image */}
-      {/* Main Content Section: Form & Image */}
-      <section className="mx-auto max-w-7xl px-4 py-12 md:px-12 md:py-20 lg:px-16 -mt-12 md:-mt-24 relative z-20">
-        <div className="hero-reveal bg-white rounded-[32px] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] p-6 md:rounded-[48px] md:p-12 lg:p-16 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20 items-start border border-desa-blue-50/50">
-          {/* Form Side */}
-          <div className="flex flex-col gap-6 md:gap-8">
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-2">
-                <div className="h-1.5 w-8 rounded-full bg-desa-yellow-500" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-desa-blue-600">HUBUNGI KAMI</span>
-              </div>
-              <h2 className="text-3xl font-black text-[#000418] md:text-4xl tracking-tight font-timeless">Kirim Pesan <span className="text-desa-blue-600">Langsung</span></h2>
-              <p className="text-sm text-neutral-500 font-medium">Tim kami akan merespons pesan Anda dalam waktu maksimal 24 jam kerja.</p>
-            </div>
-
-            <form className="flex flex-col gap-5 md:gap-6" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-                <div className="space-y-2">
-                  <label className="text-[11px] font-bold uppercase tracking-wider text-[#000418]/60 ml-1">Nama Lengkap</label>
-                  <input 
-                    type="text" 
-                    placeholder="Contoh: Heri Santoso"
-                    className="w-full bg-neutral-50/50 border border-neutral-200/60 rounded-2xl py-4 px-6 text-neutral-900 text-sm placeholder:text-neutral-400 focus:ring-4 focus:ring-desa-blue-500/10 focus:border-desa-blue-500/30 focus:bg-white transition-all outline-none"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[11px] font-bold uppercase tracking-wider text-[#000418]/60 ml-1">Nomor Telepon</label>
-                  <input 
-                    type="tel" 
-                    placeholder="0812 XXXX XXXX"
-                    className="w-full bg-neutral-50/50 border border-neutral-200/60 rounded-2xl py-4 px-6 text-neutral-900 text-sm placeholder:text-neutral-400 focus:ring-4 focus:ring-desa-blue-500/10 focus:border-desa-blue-500/30 focus:bg-white transition-all outline-none"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-[11px] font-bold uppercase tracking-wider text-[#000418]/60 ml-1">Alamat Email</label>
-                <input 
-                  type="email" 
-                  placeholder="name@example.com"
-                  className="w-full bg-neutral-50/50 border border-neutral-200/60 rounded-2xl py-4 px-6 text-neutral-900 text-sm placeholder:text-neutral-400 focus:ring-4 focus:ring-desa-blue-500/10 focus:border-desa-blue-500/30 focus:bg-white transition-all outline-none"
+      {/* Main Content Section */}
+      <section className="relative z-20 mx-auto -mt-36 max-w-7xl px-4 pb-20 md:-mt-52 md:px-10 lg:pb-32">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+          
+          {/* Left: Contact Form */}
+          <div className="hero-reveal lg:col-span-8" style={{ animationDelay: '200ms' }}>
+            <div className="overflow-hidden rounded-[40px] bg-white shadow-[0_40px_80px_-20px_rgba(0,4,24,0.12)] border border-white">
+              <div className="p-8 md:p-14">
+                <SectionHeader 
+                  title={["Sampaikan Pesan", "& Aspirasi Anda"]}
+                  description="Formulir ini adalah kanal resmi untuk menyampaikan pertanyaan, saran, atau aspirasi langsung kepada Pemerintah Desa Sukahurip."
+                  icon={MessageSquare}
+                  showInfoButton
                 />
-              </div>
+                
+                <form className="mt-12 space-y-8" onSubmit={(e) => e.preventDefault()}>
+                  <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                    <div className="space-y-3">
+                      <label className="ml-1 text-[11px] font-black uppercase tracking-[0.2em] text-[#000418]/40">Nama Lengkap</label>
+                      <input 
+                        type="text" 
+                        placeholder="Contoh: Heri Santoso"
+                        className="w-full rounded-2xl border border-neutral-100 bg-neutral-50/50 px-6 py-4 text-sm font-bold text-[#000418] outline-none transition-all placeholder:text-neutral-400 focus:border-[#072ac8]/40 focus:bg-white focus:ring-8 focus:ring-[#072ac8]/5"
+                      />
+                    </div>
+                    <div className="space-y-3">
+                      <label className="ml-1 text-[11px] font-black uppercase tracking-[0.2em] text-[#000418]/40">WhatsApp / HP</label>
+                      <input 
+                        type="tel" 
+                        placeholder="0812 XXXX XXXX"
+                        className="w-full rounded-2xl border border-neutral-100 bg-neutral-50/50 px-6 py-4 text-sm font-bold text-[#000418] outline-none transition-all placeholder:text-neutral-400 focus:border-[#072ac8]/40 focus:bg-white focus:ring-8 focus:ring-[#072ac8]/5"
+                      />
+                    </div>
+                  </div>
 
-              <div className="space-y-2">
-                <label className="text-[11px] font-bold uppercase tracking-wider text-[#000418]/60 ml-1">Pesan / Aspirasi</label>
-                <textarea 
-                  placeholder="Tuliskan pesan atau masukan Anda di sini..."
-                  rows={5}
-                  className="w-full bg-neutral-50/50 border border-neutral-200/60 rounded-2xl py-5 px-6 text-neutral-900 text-sm placeholder:text-neutral-400 focus:ring-4 focus:ring-desa-blue-500/10 focus:border-desa-blue-500/30 focus:bg-white transition-all outline-none resize-none"
-                ></textarea>
-              </div>
+                  <div className="space-y-3">
+                    <label className="ml-1 text-[11px] font-black uppercase tracking-[0.2em] text-[#000418]/40">Alamat Email (Opsional)</label>
+                    <input 
+                      type="email" 
+                      placeholder="name@example.com"
+                      className="w-full rounded-2xl border border-neutral-100 bg-neutral-50/50 px-6 py-4 text-sm font-bold text-[#000418] outline-none transition-all placeholder:text-neutral-400 focus:border-[#072ac8]/40 focus:bg-white focus:ring-8 focus:ring-[#072ac8]/5"
+                    />
+                  </div>
 
-              <button className="group mt-2 flex items-center justify-between bg-[#001260] hover:bg-desa-yellow-500 rounded-2xl p-1.5 pr-2 transition-all duration-500 w-full md:w-fit md:gap-12 shadow-xl shadow-desa-blue-900/10 hover:shadow-desa-yellow-500/20 active:scale-95">
-                <span className="pl-6 font-black text-white group-hover:text-[#000418] text-base transition-colors uppercase tracking-widest">Kirim Sekarang</span>
-                <div className="h-11 w-11 bg-white/10 rounded-xl flex items-center justify-center text-white transition-all group-hover:bg-[#000418]/10 group-hover:text-[#000418]">
-                  <ArrowRight size={22} className="transition-transform group-hover:translate-x-1" />
-                </div>
-              </button>
-            </form>
+                  <div className="space-y-3">
+                    <label className="ml-1 text-[11px] font-black uppercase tracking-[0.2em] text-[#000418]/40">Subjek Pesan</label>
+                    <div className="relative">
+                      <select className="w-full appearance-none rounded-2xl border border-neutral-100 bg-neutral-50/50 px-6 py-4 text-sm font-bold text-[#000418] outline-none transition-all focus:border-[#072ac8]/40 focus:bg-white focus:ring-8 focus:ring-[#072ac8]/5">
+                        <option>Pertanyaan Layanan Publik</option>
+                        <option>Aspirasi Pembangunan Desa</option>
+                        <option>Laporan / Aduan Masyarakat</option>
+                        <option>Lainnya</option>
+                      </select>
+                      <div className="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2 text-[#072ac8]">
+                        <ArrowRight size={18} className="rotate-90" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <label className="ml-1 text-[11px] font-black uppercase tracking-[0.2em] text-[#000418]/40">Detail Pesan / Aspirasi</label>
+                    <textarea 
+                      placeholder="Tuliskan detail aspirasi atau pertanyaan Anda di sini secara lengkap..."
+                      rows={6}
+                      className="w-full resize-none rounded-3xl border border-neutral-100 bg-neutral-50/50 px-6 py-5 text-sm font-bold text-[#000418] outline-none transition-all placeholder:text-neutral-400 focus:border-[#072ac8]/40 focus:bg-white focus:ring-8 focus:ring-[#072ac8]/5"
+                    />
+                  </div>
+
+                  <button className="group relative flex w-full items-center justify-between overflow-hidden rounded-2xl bg-[#072ac8] p-1.5 shadow-2xl shadow-[#072ac8]/20 transition-all hover:bg-[#000E4F] md:w-fit md:gap-20">
+                    <span className="pl-8 text-[13px] font-black uppercase tracking-[0.25em] text-white">Kirim Aspirasi</span>
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/15 text-white transition-all group-hover:rotate-[-45deg] group-hover:bg-[#FFC400] group-hover:text-[#000E4F]">
+                      <Send size={20} strokeWidth={2.5} />
+                    </div>
+                  </button>
+                </form>
+              </div>
+            </div>
           </div>
 
-          {/* Image Side */}
-          <div className="relative">
-            <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl relative group">
-              <img 
-                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2000&auto=format&fit=crop" 
-                alt="Kantor Desa Sukahurip"
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-[#000418]/60 via-transparent to-transparent opacity-60" />
-              
-              {/* Floating badges */}
-              <div className="absolute top-6 left-6 flex flex-col gap-2">
-                <div className="bg-white/10 backdrop-blur-xl border border-white/20 px-4 py-2 rounded-2xl flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-[10px] font-bold text-white uppercase tracking-widest">Sistem Online</span>
-                </div>
-              </div>
-            </div>
+          {/* Right: Info Sidebar */}
+          <div className="flex flex-col gap-6 lg:col-span-4">
             
-            {/* Contact quick info overlay - Redesigned */}
-            <div className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 bg-linear-to-br from-[#001260] to-[#000418] p-8 rounded-[40px] text-white shadow-2xl max-w-xs border border-white/10 overflow-hidden group/info">
-              <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-white/5 blur-3xl transition-all group-hover/info:scale-150" />
-              
+            {/* Direct Contact Card - Redesigned with Gradient */}
+            <div className="hero-reveal group overflow-hidden rounded-[32px] bg-linear-to-br from-[#000E4F] to-[#000418] p-8 text-white shadow-2xl" style={{ animationDelay: '400ms' }}>
               <div className="relative z-10">
-                <div className="h-12 w-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-md">
-                  <MessageSquare className="text-desa-yellow-500" />
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md">
+                  <Headphones className="text-[#FFC400]" size={28} />
                 </div>
-                <h3 className="text-xl font-black mb-3 font-timeless tracking-tight">Butuh Bantuan Cepat?</h3>
-                <p className="text-[12px] text-white/60 mb-8 leading-relaxed font-medium">
-                  Tim layanan mandiri kami siap membantu Anda setiap hari kerja pukul 08:00 - 16:00 WIB.
+                <h4 className="font-timeless text-2xl font-black tracking-tight">Hubungi Kami</h4>
+                <p className="mt-2 text-xs font-medium text-white/50 leading-relaxed">
+                  Tim sekretariat desa siap membantu Anda pada jam kerja operasional.
                 </p>
-                
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4 group/item">
-                    <div className="h-10 w-10 rounded-xl bg-white/5 flex items-center justify-center transition-all group-hover/item:bg-desa-yellow-500 group-hover/item:text-[#000418]">
-                      <Phone size={18} />
+
+                <div className="mt-10 space-y-5">
+                  <a href="tel:081389444493" className="flex items-center gap-4 rounded-2xl bg-white/5 p-4 border border-white/5 transition-all hover:bg-white/10 hover:border-white/10">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#FFC400] text-[#000E4F]">
+                      <Phone size={20} strokeWidth={2.5} />
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Telepon</span>
-                      <span className="text-[15px] font-black font-timeless">0813-8944-4493</span>
+                      <span className="text-[9px] font-black uppercase tracking-widest text-white/40">WhatsApp Center</span>
+                      <span className="font-timeless text-lg font-bold">0813-8944-4493</span>
                     </div>
-                  </div>
-                  <div className="flex items-center gap-4 group/item">
-                    <div className="h-10 w-10 rounded-xl bg-white/5 flex items-center justify-center transition-all group-hover/item:bg-desa-yellow-500 group-hover/item:text-[#000418]">
-                      <Mail size={18} />
+                  </a>
+                  <a href="mailto:desa@sukahurip.id" className="flex items-center gap-4 rounded-2xl bg-white/5 p-4 border border-white/5 transition-all hover:bg-white/10 hover:border-white/10">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#072ac8] text-white">
+                      <Mail size={20} strokeWidth={2.5} />
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Email Resmi</span>
-                      <span className="text-[15px] font-black font-timeless">desa@sukahurip.id</span>
+                      <span className="text-[9px] font-black uppercase tracking-widest text-white/40">Email Resmi</span>
+                      <span className="font-timeless text-lg font-bold">desa@sukahurip.id</span>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
+              <div className="absolute -right-10 -bottom-10 h-40 w-40 rounded-full bg-[#072ac8]/20 blur-3xl" />
             </div>
+
+            {/* Location Card with Map Overlay */}
+            <div className="hero-reveal overflow-hidden rounded-[32px] bg-white shadow-xl border border-[#072ac8]/5" style={{ animationDelay: '500ms' }}>
+              <div className="p-8">
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#072ac8]/10 text-[#072ac8]">
+                    <MapPin size={20} strokeWidth={2.5} />
+                  </div>
+                  <h4 className="font-timeless text-xl font-black text-[#000418]">Kantor Desa</h4>
+                </div>
+                <p className="text-sm font-medium text-[#000418]/60 leading-relaxed">
+                  Jl. Raya Desa Sukahurip No. 12, Bekasi, Jawa Barat 17610.
+                </p>
+              </div>
+              <div className="aspect-[4/3] w-full bg-neutral-100 grayscale hover:grayscale-0 transition-all duration-700">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15867.756285863952!2d107.16432615!3d-6.13885235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a629b3b89069d%3A0x67399f187a41490!2sSukahurip%2C%20Kec.%20Sukatani%2C%20Kabupaten%20Bekasi%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1715606400000!5m2!1sid!2sid"
+                  width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" 
+                />
+              </div>
+            </div>
+
+            {/* CTA Card: Layanan Mandiri */}
+            <div className="hero-reveal group relative overflow-hidden rounded-[32px] bg-[#FFC400] p-8 shadow-2xl" style={{ animationDelay: '600ms' }}>
+              <div className="relative z-10">
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#000E4F] text-[#FFC400]">
+                  <Landmark size={28} />
+                </div>
+                <h4 className="font-timeless text-2xl font-black text-[#000E4F]">Layanan Mandiri</h4>
+                <p className="mt-3 text-sm font-bold text-[#000E4F]/70 leading-relaxed">
+                  Butuh layanan administrasi cepat? Gunakan platform digital kami.
+                </p>
+                <button className="mt-8 flex w-full items-center justify-center gap-3 rounded-2xl bg-[#000E4F] py-4 text-[11px] font-black uppercase tracking-widest text-white shadow-xl transition-all hover:bg-[#072ac8] active:scale-95">
+                  Buka Platform
+                  <ArrowRight size={16} strokeWidth={3} />
+                </button>
+              </div>
+              <div className="absolute -right-4 -bottom-4 h-24 w-24 rounded-full bg-white/20 blur-2xl transition-all group-hover:scale-150" />
+            </div>
+
           </div>
         </div>
       </section>
     </main>
   );
 }
+
+
    

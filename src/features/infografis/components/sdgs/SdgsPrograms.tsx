@@ -17,11 +17,11 @@ export function SdgsPrograms({ programs, onGoalClick }: SdgsProgramsProps) {
         <span className="text-xs font-bold text-[#000418]/40 uppercase tracking-widest">Total {programs.length} Program</span>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-6 pt-2 lg:mx-0 lg:grid lg:grid-cols-2 lg:snap-none lg:overflow-visible lg:px-0 lg:pb-0 lg:pt-0">
         {programs.map((program, idx) => (
           <div 
             key={idx}
-            className="group flex items-center justify-between gap-4 rounded-3xl bg-white p-5 shadow-lg border border-[#072ac8]/5 transition-all hover:border-[#072ac8]/20 hover:shadow-xl"
+            className="group flex w-[280px] shrink-0 snap-center items-center justify-between gap-4 rounded-3xl bg-white p-5 shadow-lg border border-[#072ac8]/5 transition-all hover:border-[#072ac8]/20 hover:shadow-xl sm:w-[320px] lg:w-auto"
           >
             <div className="flex flex-col gap-1">
               <h5 className="font-bold text-[#000418]">{program.name}</h5>
@@ -46,6 +46,13 @@ export function SdgsPrograms({ programs, onGoalClick }: SdgsProgramsProps) {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Mobile/Tablet Scroll Indicator */}
+      <div className="mt-2 flex justify-center gap-1.5 lg:hidden">
+        <div className="h-1.5 w-6 rounded-full bg-[#072ac8]/30" />
+        <div className="h-1.5 w-1.5 rounded-full bg-[#072ac8]/10" />
+        <div className="h-1.5 w-1.5 rounded-full bg-[#072ac8]/10" />
       </div>
     </div>
   )

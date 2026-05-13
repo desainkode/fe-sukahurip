@@ -22,13 +22,14 @@ export function SdgsSummaryCards({ totalGoals, overallScore, counts }: SdgsSumma
   ]
 
   return (
-    <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-      {stats.map((stat, idx) => (
-        <div 
-          key={stat.label}
-          className="hero-reveal relative flex flex-col items-center justify-center rounded-[28px] bg-white p-6 shadow-xl border border-[#072ac8]/5 text-center transition-all duration-300 hover:-translate-y-1"
-          style={{ animationDelay: `${100 * idx}ms` }}
-        >
+    <div className="relative">
+      <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-6 pt-8 sm:-mx-6 sm:px-6 md:-mx-8 md:px-8 lg:mx-0 lg:grid lg:grid-cols-4 lg:snap-none lg:overflow-visible lg:px-0 lg:pb-0 lg:pt-0">
+        {stats.map((stat, idx) => (
+          <div 
+            key={stat.label}
+            className="hero-reveal relative flex w-[180px] shrink-0 snap-center flex-col items-center justify-center rounded-[28px] bg-white p-6 shadow-xl border border-[#072ac8]/5 text-center transition-all duration-300 hover:-translate-y-1 sm:w-[220px] lg:w-auto"
+            style={{ animationDelay: `${100 * idx}ms` }}
+          >
           <div className={`mb-3 flex h-12 w-12 items-center justify-center rounded-2xl ${stat.bg} ${stat.color}`}>
             <stat.icon size={24} />
           </div>
@@ -40,7 +41,15 @@ export function SdgsSummaryCards({ totalGoals, overallScore, counts }: SdgsSumma
             {stat.label}
           </p>
         </div>
-      ))}
+        ))}
+      </div>
+
+      {/* Mobile/Tablet Scroll Indicator */}
+      <div className="mt-2 flex justify-center gap-1.5 lg:hidden">
+        <div className="h-1.5 w-6 rounded-full bg-[#072ac8]/30" />
+        <div className="h-1.5 w-1.5 rounded-full bg-[#072ac8]/10" />
+        <div className="h-1.5 w-1.5 rounded-full bg-[#072ac8]/10" />
+      </div>
     </div>
   )
 }
