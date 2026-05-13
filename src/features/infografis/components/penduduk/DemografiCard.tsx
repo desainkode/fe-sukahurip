@@ -49,22 +49,22 @@ export function DemografiCard({
       <div className="absolute left-[17%] top-[20.5%] w-[70%] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-0.5">
         <div className="flex flex-col items-start justify-center gap-4 sm:gap-8" style={{ color: textColor }}>
           <h3
-            className="whitespace-pre-line font-timeless text-[12px] font-bold leading-[1.1] sm:text-[19px]"
+            className="whitespace-pre-line font-timeless text-[11px] font-bold leading-[1.1] sm:text-[16px]"
             style={{ color: labelColor }}
           >
             {label}
           </h3>
 
           <p
-            className="text-[34px] font-timeless leading-[0.85] sm:text-[60px]"
+            className="text-[28px] font-timeless leading-[0.85] sm:text-[48px]"
           >
             {angka}
           </p>
         </div>
       </div>
 
-      <div className="absolute left-[70%] top-0 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black text-white shadow-[0_8px_16px_rgba(0,0,0,0.2)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 group-hover:-rotate-3 sm:left-[72%] sm:h-14.5 sm:w-14.5">
-        <Icon size={14} strokeWidth={2.2} className="sm:size-6" />
+      <div className="absolute left-[70%] top-0 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black text-white shadow-[0_8px_16px_rgba(0,0,0,0.2)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 group-hover:-rotate-3 sm:left-[72%] sm:h-12 sm:w-12">
+        <Icon size={12} strokeWidth={2.2} className="sm:size-5" />
       </div>
     </article>
   );

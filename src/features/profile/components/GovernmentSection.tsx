@@ -19,11 +19,11 @@ export function GovernmentSection({ members }: { members: GovernmentMember[] }) 
       </div>
 
       {/* Apparatus Grid - Matching Home Page Style */}
-      <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="flex gap-4 overflow-x-auto pb-8 snap-x snap-mandatory no-scrollbar -mx-4 px-4 sm:-mx-6 sm:px-6 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-3 xl:grid-cols-4 lg:gap-6 lg:overflow-visible lg:pb-0">
         {members.map((item, index) => (
           <div
             key={item.name}
-            className="hero-reveal group relative h-105 w-full overflow-hidden rounded-[32px] bg-[#072ac8] shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl md:h-120"
+            className="hero-reveal group relative h-105 w-[280px] shrink-0 snap-center overflow-hidden rounded-[32px] bg-[#072ac8] shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl md:h-120 sm:w-[320px] lg:w-full lg:shrink"
             style={{ animationDelay: `${index * 100}ms` }}
           >
             <img

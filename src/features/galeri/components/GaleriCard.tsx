@@ -11,7 +11,7 @@ interface GaleriCardProps {
 
 export function GaleriCard({ item }: GaleriCardProps) {
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-[32px] border border-white bg-white shadow-xl shadow-black/[0.03] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-[24px] sm:rounded-[32px] border border-white bg-white shadow-xl shadow-black/[0.03] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
       {/* Thumbnail */}
       <div className="relative aspect-video w-full overflow-hidden sm:aspect-[4/3]">
         <img 
@@ -38,7 +38,7 @@ export function GaleriCard({ item }: GaleriCardProps) {
       {/* Content */}
       <div className="flex flex-1 flex-col p-6 sm:p-8">
         <div className="mb-3 flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[#072ac8]/40 sm:mb-4">
-          <Calendar size={14} strokeWidth={2.5} />
+          <Calendar className="h-3.5 w-3.5" strokeWidth={2.5} />
           {item.date}
         </div>
 
@@ -57,8 +57,8 @@ export function GaleriCard({ item }: GaleriCardProps) {
             href={`/galeri/${item.slug}`}
             className="flex items-center gap-2 text-[13px] font-black text-[#000418] transition-all hover:text-[#072ac8] hover:translate-x-1"
           >
-            DETAIL MOMEN
-            <ArrowRight size={16} strokeWidth={2.5} />
+            LIHAT DETAIL
+            <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
           </Link>
           
           <span className="text-[11px] font-bold uppercase tracking-widest text-[#000418]/20">

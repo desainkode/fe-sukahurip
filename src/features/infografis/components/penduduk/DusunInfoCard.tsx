@@ -19,8 +19,8 @@ export function DusunInfoCard({
 }: DusunInfoCardProps) {
   return (
     <article className="hero-reveal group relative pt-3 sm:pt-4" style={{ animationDelay: `${delayMs}ms` }}>
-      <div className="absolute -left-1.5 -top-3 z-20 inline-flex h-10 w-12 items-start justify-start rounded-lg bg-[#FFC400] px-1.5 pt-0.5 shadow-[0_8px_14px_rgba(0,0,0,0.16)] transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3 sm:-left-3 sm:-top-5 sm:h-17 sm:w-19 sm:rounded-xl sm:px-2.5 sm:pt-1">
-        <span className="text-[22px] font-timeless leading-none text-white sm:text-[38px]">
+      <div className="absolute -left-1.5 -top-3 z-20 inline-flex h-10 w-12 items-center justify-center rounded-lg bg-[#FFC400] shadow-[0_8px_14px_rgba(0,0,0,0.16)] transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3 sm:-left-3 sm:-top-5 sm:h-16 sm:w-18 sm:rounded-xl">
+        <span className="text-[22px] font-timeless leading-none text-white sm:text-[36px]">
           {kode}
         </span>
       </div>

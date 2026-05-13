@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 
 export function PotensiHero() {
   return (
-    <section className="relative h-screen min-h-175 w-full overflow-hidden bg-[#000418] text-white shadow-2xl flex items-center">
+    <section className="relative h-[85vh] sm:h-screen min-h-[500px] sm:min-h-175 w-full overflow-hidden bg-[#000418] text-white shadow-2xl flex items-center">
       {/* Decorative Background Elements */}
       <div className="pointer-events-none absolute -right-24 -top-24 h-125 w-125 rounded-full bg-[#a2d6f9]/10 blur-[120px]" />
       <div className="pointer-events-none absolute -left-16 -bottom-16 h-100 w-100 rounded-full bg-[#FFC400]/5 blur-[120px]" />
